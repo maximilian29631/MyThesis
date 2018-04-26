@@ -16,20 +16,14 @@
 %%  https://www.math.msu.edu/latex/dissertation/
 
 \documentclass{msuphddissertation}
-
-\usepackage{subfiles}
-\usepackage{graphicx}
-\graphicspath{ {Figures/}}
-
-
 %% This is the first command that must appear in your thesis.
 %% Insert packages you wish to use except setspace, subfig
 %% geometry and pdflscape. 
 %% These packages are loaded automatically.
 %% IMPORTANT: Load only those packages you know you will use.
 %% Some packages can cause conflicts resulting in improper formatting.
-\author{Maximilian Nathan Hughes} %% Put your name in full as it is officially recognized by Michigan State University here.
-\title{Precision Measurements of $^{20}$F Beta Decay} %% Put the title of your dissertation here.
+\author{} %% Put your name in full as it is officially recognized by Michigan State University here.
+\title{} %% Put the title of your dissertation here.
 %% Go to http://grad.msu.edu/etd/docs/DegreeGrantingUnits.pdf
 %% and find your GRADUATE DEGREE GRANTING UNIT/PROGRAM
 %% and DEGREE.
@@ -55,7 +49,6 @@
 %% Type your abstract here. An abstract is REQUIRED and limited to two pages.
 %% The abstract must not include any figures.
 \end{abstract}
-
 
 %% If you wish to have a copyright page, remove the "%" 
 %% in front of \begin{copyrt}
@@ -121,24 +114,6 @@
 \pagenumbering{arabic}
 \begin{doublespace}
 
-\chapter{Introduction}
-\subfile{IntroChapter/Introduction.tex}
-
-\chapter{Theoretical Description of Beta Decay Spectrum}
-\subfile{TheoryChapter/TheoryFactors.tex}
-
-\chapter{$^{20}$F}
-\subfile{20FChapter/20Description.tex}
-
-\chapter{Experimental Description}
-\subfile{ExperimentDesChapter/ExpDiscription.tex}
-
-\chapter{Data Processing}
-\subfile{DataProcessing/DataProcessChapter.tex}
-
-\chapter{Half Life Measurement}
-\subfile{HalfLifeChapter/HalfLifeSection.tex}
-
 %% Put the body of your dissertation here. 
 %% DO NOT include the bibliography or any appendices.
 %% These topics will be discussed later.
@@ -168,8 +143,8 @@
 %% as Appendix A, just type \chapter{<appendix 1 name>}
 %% and enter the text of the appendix as you would a chapter,
 %% with one exception. If you use any subdivisions, such as 
-%% chapter, subchapter etc., use the starred version; that is,
-%% \chapter*{chapter name}.  Such subdivisions are not to be 
+%% section, subsection etc., use the starred version; that is,
+%% \section*{section name}.  Such subdivisions are not to be 
 %% listed in the Table of Contents.
 
 %%%%%%% A NOTE ABOUT APPENDICES %%%%%%%%%
@@ -194,8 +169,7 @@
 %% To do so, copy and paste your choice into the empty argument 
 %% of the following command and remove the "%".
 %\renewcommand{\bibname}{}
-\bibliography{./Biliography/thebibliography}
-\bibliographystyle{plain}
+
 %% The bibliography may be made using BibTeX.
 %% To do so the necessary commands must be entered in the 
 %% preamble and here.

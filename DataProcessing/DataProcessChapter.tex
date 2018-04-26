@@ -1,0 +1,69 @@
+The detector were tested using an oscilliscope to check for their signals.
+The signals were then inserted into a digital data acqusition system.
+
+\section{Data acquisiton}
+
+All the signals for all the detectors were sent to digitizers.
+These digitizers were three 250 mega-samples per second 16 channel XIA PIXIE modules. 
+They were run with the digital NSCL system.
+The first module had the implant detectors and the four gamma detectors. 
+The second module had five signals from the PPAC and one signal for the Si dector. 
+Both of these had the beam on signal, beam off signal, a 100 Hz pulser, and the signal from the PIN photodiode. 
+The third module only recorded the digitized waveforms from the PVT detector.
+
+Each of the channels on each of those modules outputted a time stamp and an energy calculated from a trapezoidal fitler.
+The third module output the digitized waveform over 400ns.
+The clock used was a stable EPSON SGR-8002JC programmable crystal oscillator.
+
+The first thing the PIXIE modules did was to digitize the wave forms of the signals.
+The digital wave forms of the signals were only saved for the PVT implant detector.
+The PIXIE modules' software applied a trapezoidal energy filter to the digital wave froms.
+The parameters of the trapezoidal needed to be set by hand.
+There was also a trigger filter in the PIXIE system.
+
+\subsection{Data Acquisition Sofware}
+In order to set the parameters of the various filters, a program called NSCOPE was used \cite{REFHERE}
+The program GUI was used to set the rise time, the gap, and the threshold for both the energy filter and the trigger filter.
+These parameters were set differently for each detector type.
+The CsI(Na) detectors (the implant and the 4 gamma detectors) shared the rise time and gap time, while other detectors had different parameters.
+Sample spectra were taken with NSCOPE, and the parameters saved to a file.
+
+This file was loaded with a program called ReadOut, which ran the data taking.
+The ReadOut program used a ringbuffer in order to record the output of the data.
+The program recorded data as an .evt binary file if the record data button was checked.
+
+The ringbuffer was also fed to a program called scalers.
+This gave the rates of the events coming into each channel.
+It gave an input rate to each channel, the recorded rate, and the total over each run.
+This was to check how each channel in each module was doing.
+
+For online analysis, a program called SpecTcl was used.
+It took the evt files and processed them into histograms.
+These histograms could be put in coincidence.
+Displays of the implant detector energy and rate were displayed.
+The energy of the implant vs time was also displayed.
+Additionally, the implant energy vs time since last beam on was plotted as a 2-D spectra.
+The decay curves (time in implant minus last beam on) were also plotted.
+These histograms were used as diagnostics. 
+
+\section{Data Taking and Processing}
+To take data, the ReadOut program was activated. 
+Data was taken in one hour intervals, unless one of the detectors stopped counting early
+If a detector stopped early, it was the up detector.
+The run was then ended early and then a new one resarted.
+
+The resulting .evt files of ReadOut were processed using a program called DDAS dumper.
+This converted the .evt files to ROOT files.
+These ROOT files contained a TTRee that had the energy and time stamps of each detector.
+There was also information on the trace of the detector.
+
+From the ROOT files from the ddasdumper, another ROOT file was built.
+These files were processed with a code called scan, which was written by Stan Paulauskas.
+First, the various energies and times for each detector were built into a histogram.
+Then, the energy and times for the implant detectors, four gamma detectors, beam on signal, and beam off signals were saved to a variable.
+This information was used to build new events for a new TTree.
+
+Each event started with a non-zero energy reading in any of the five detectors.
+Then, a 400 ns long time gate opened, during which all energies and times were saved into the event.
+The time signatures of the last beam on and beam off signals were also saved into each event.
+The energies of the beam on or beam off signals were 0 or 1.

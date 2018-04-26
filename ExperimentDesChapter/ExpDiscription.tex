@@ -1,26 +1,37 @@
 
+
+To measure the $^{20}$F beta decay spectrum, a beam of $^{20}$F was implanted into one of two different detectors.
+The isotope was implanted deeply enough from so that the detector material could completely absorb the energy of electron at the end point energy.
+The implantation of the beam was done to avoid instrumental effects of a non-calorimetry experiment.
+If there is a dead layer, there is more detector behind the layer to absorb the energy.
+The electron cannot scatter out of the detector.
+
 The experiment was run at the National Superconducting Cyclotron Laboratory (NSCL) in East Lansing, Michigan. 
+The detector set up is describe below.
 
 \section{Detector Set Up}
 
 \subsection{$^{20}$F Decay Detectors}
 One scintillator was a 3 in diameter by 3 in long cylinder of EJ-200 polyvinyltoluene (PVT).
 It was attached to a clear plastic disk attached to a photomultiplier tube.
-The idea was to avoid a rate dependent gain effect that was seen in a previous experiment, since this detector is a fast scintillator.
-This detector was built by the colaborators and was not a part of any pre-existing system. 
+The idea was to avoid a rate dependent gain effect that was seen in a previous experiment.
+The plastic detector signal is fast (around 100 ns) which makes pile-up a lesser concern.
+This detector was built by colaborators for this experiment.
 During the experiment the voltage on the PMT of this scintillator was varied.
 This was due do an observed distortion in the beta decay spectrum.
 A gain montitoring system was installed.
 
-To monitor the gain, a plastic disk containing an optical fiber was placed between the crystal and the photomultiplier tube. 
+To monitor the gain of the plastic detector, a plastic disk containing an optical fiber was placed between the crystal and the photomultiplier tube. 
 The other end of the fiber was fed into a box with an LED driven by a function generator. 
-Another fiber took the light directly out for monitoring.
+The box was made light-tight with electrical tape and black paint.
+An additional optical fiber fed the light to a Si PIN diode.
+This was to monitor the light output of the LED.
 
-An addtional implantation detector was ued.
+To help check for systematics effects, another implant detector was used.
 It was a 2 in by 2 in by 4 in  CsI(Na) detector. 
 This detector was a module from the CAESAR array.
 It does not have any gain monitoring like the PVT detector, but it is similar to a detector used in a different experiment. 
-The other experiment was a similar measurement, but with $^{6}$He and not $^{20}$F.
+The other experiment was a similar measurement with $^{6}$He instead of $^{20}$F.
 
 In order to measure the gamma ray from the $^{20}$F decay, a frame was built to hold four cubic 3 in CsI(Na) detectors.  
 These were also part of the CAESAR array.
@@ -37,6 +48,11 @@ A sketch of both detector configurations is shown in Figure \ref{fig:detsketch}.
 	The bottom image shows a side of the detector set-up.}
 	\label{fig:detsketch}
 \end{figure}
+
+To switch between different implant detectors, the central detector in the frame was removed and put on the floor.
+The other detector was placed in the center of the four gamma detectors.
+The PVT detector was supported on a metal rail, while the CsI (Na) detector was supported on pile of scrap aluminum.
+Both of the detectors had the active scintillator part free in between the four large gamma detectors. 
 
 \subsection{Other detectors}
 
@@ -77,38 +93,6 @@ The voltages of the detectors is shown in table \ref{tab:detvolt}.
 	\label{tab:detvolt}
 	\end{tabular}
 \end{center}
-
-\section{Experimental Conditions}
-The data was taken in runs of roughly one hour. 
-However, many runs where cut short when the DAQ stopped recording data for one of the detectors.
-In order to properly measure the decay, the beam was pulsed with an implantation time of anywhere from 1 to 2 seconds, and a decay time ranging from 22 s to 32 s. 
-The beam was turned off since the light from the implantation of the beam would drown out any signal obtained. 
-A run with a decay time of 60 seconds was also taken for each implant detector. 
-The beam on and beam off signals fed into a timer box, which dephased the cyclotron's RF.
-This turned the beam on and off. 
-
-After the frist couple of runs with the PVT detector, a high-voltage inhibitor box was installed.
-It was discovered that during the implantation period, a large amount of current was drawn by the PVT detector's PMT. 
-There were also instabilities seen in the gain directly after beam on period.
-The inhibitor box does cause the gain during the beam on period to be very small, but that information is ignored.
-Any decay that happens during that period is swamped by the light produced by the beam imlpanting.
-
-For the CsI(Na) runs, a current limit on the power supplies was enabled.
-It has a similar effect to the inhibitor box. 
-
-\section{Data acquisiton}
-
-All the signals for all the detectors were sent to digitizers.
-These digitizers were three 250 mega-samples per second 16 channel XIA PIXIE modules. 
-They were run with the digital NSCL system.
-The first module had the implant detectors and the four gamma detectors. 
-The second module had five signals from the PPAC and one signal for the Si dector. 
-Both of these had the beam on signal, beam off signal, a 100 Hz pulser, and the signal from the PIN photodiode. 
-The third module only recorded the digitized waveforms from the PVT detector.
-
-Each of the channels on each of those modules outputted a time stamp and an energy calculated from a trapezoidal fitler.
-The third module output the digitized waveform over 400ns.
-The clock used was a stable EPSON SGR-8002JC programmable crystal oscillator.
 
 \section{Beam}
 
@@ -189,4 +173,32 @@ The beam was caught by a CsI(Na) scintillator of a similar design to the one use
 The angle of the degrader was changed to change the effective thickness of aluminum that the beam had to travel through.
 By varying this thickness to the one predicted to stop the beam out side of the detector, the depth of implantion could be verified.
 This was done after the main run, and the simulations proved to be correct.
+
+\section{Experimental Conditions}
+The data was taken in runs of roughly one hour. 
+However, many runs where cut short when the DAQ stopped recording data for one of the detectors.
+In order to properly measure the decay, the beam was pulsed with an implantation time of anywhere from 1 to 2 seconds, and a decay time ranging from 22 s to 32 s. 
+The beam was turned off since the light from the implantation of the beam would drown out any signal obtained. 
+A run with a decay time of 60 seconds was also taken for each implant detector. 
+
+To achieve the beam pulsing, two timer boxes were used.
+A CAEN N1145 quad scaler module was used to control the beam off time.
+This module had a digital control of time down to 1 ms.
+Once the the time finished counting down, a signal was sent to a second module. 
+A CAEN N93B dual timer used the signal from the quad scaler as a start signal.
+The time period was set using a dial, which was less precise. 
+Once the dual timer finished its time, it sent a signal back to the quad scaler to restart the cycle.
+The output of these two modules created a signal with one voltage level durinng the dual timer's time and another voltage condition during the quad scaler's time.
+This signal was fed into a box.
+The voltage level during the quad scaler's time dephased the cyclotron RF, turning the beam off.
+When the dual timer voltage level occured, the RF returned to the tuned value, turning the beam on.  
+
+After the frist couple of runs with the PVT detector, a high-voltage inhibitor box was installed.
+It was discovered that during the implantation period, a large amount of current was drawn by the PVT detector's PMT. 
+There were also instabilities seen in the gain directly after beam on period.
+The inhibitor box does cause the gain during the beam on period to be very small, but that information is ignored.
+Any decay that happens during that period is swamped by the light produced by the beam imlpanting.
+
+For the CsI(Na) runs, a current limit on the power supplies was enabled.
+It has a similar effect to the inhibitor box. 
 

@@ -1,0 +1,131 @@
+In order to get a measurement of the Fierz term, the spectrum shape needed to get fit.
+The effect of bremstrahlung and the effieciency of the detectors needed to be accounted for.
+The way this was done was with a a simulation.
+
+\section{GEANT4 Monte Carlo}
+The corrected beta decay spectrum was fed as input to a Monte Carlo.
+The program used to model the detectors was GEANT4.
+In order to use the program, parameters must be introduced.
+
+\subsection{Detector Simulation}
+The geometry of the detector set-up was programmed into the simulation.
+The implant detector was modeled as a square prism of CsI.
+The rectangular prism was 9.76 cm deep with a 5 cm square base.
+The front edge implant detector was put at the center of the simulation.
+The aluminum sheath and MgO layer was not simulated for the implant detector.
+
+The four large gamma detectors also square prisms.
+The active volume was 79.5 mm square and 76.2 mm deep.
+It was also made of CsI.
+Around this detector, a 1.5 mm laywer of MgO was added.
+On top of this, the can of aluminum, 1 mm thick, was added into the simulation.
+
+The four large gamma detectors were arranged into a square around the implant detector.
+Each square base of the gamma detectors was centered one inch upstream from the face of the implant detector.
+This modeled how the implant detector was recessed in the experiment. 
+
+\subsection{Source Definition}
+The next step was to define a region inside the implant detector.
+This region was where the gamma and beta particles orignated from.
+The depth of the region was calculated using LISE++, a ion optics code.
+The verticle and horizontal size of the region was calulated by using the PPAC measurement and an ion optics simulation.
+This size was 0.4 mm deep, 3.5 mm wide, and 3.6 mm tall.
+The source was implanted 1.156 cm into the detector.
+
+Once these parameters were known, GEANT4 was told to generate two particles.
+First, the corrected beta energy spectrum was sampled and an electron of that energy was generated inside the implant region.
+The beta energy spectrum was generated using all the corrections described in chapter (COME BACK TO THIS).
+The location of the electron was recovered, and a photon with an energy of  1.6 MeV was generated as well.
+The initital direction of the two particles was as isometric.
+These particles where then propagated through the detector setup..
+GEANT4 uses a physics list that has all the interactions a particle could take.
+The physics list used was standard option 4.
+This list is better at low energy electron physics. 
+
+\subsection{Primary Particle Definitions}
+There were three primary particles generated.
+Two were photons and one was an electron.
+All three particles had an isotropic angular distribution.
+The origin points of all the primary particles was the same.
+
+One photon was the 1.6336 MeV photon from the $^{20}$F decay.
+The energy of this photon was not changed.
+
+The electron was generated according to phase space spectrum (equation \ref{eq:phase_space}) times all the corrections.
+For the radiative correction, the electron was generated with the formala that assumes all real photon energy is absorbed (equation \ref{eq:fayans_ps}).
+However, this is not exactly true. 
+In this case, due to the geometry, photons are absorbed totaly if they are below 100 keV in energy.
+In order to properly see the effect of the real photon emmission, the second primary particle is used.
+
+After the electron energy is generated, a formula describing the energy spectrum of the inner bremsstrahlung photons is generated. 
+This spectrum is written out in equation \ref{eq:KUB}. % Add KUB again here? Probably.
+Further discussion of this formula is found in the theory chapter.
+A cutoff of 50 keV is imposed to the formula, as it has a singularity at zero photon energy.
+Then, the formula is numerical integrated from 50 keV to the electron energy.
+This is the total probablity that an electron emits a KUB photon.
+This number is compared to a random number from 0 to 1.
+If the random number is below the integral, the inner bremsstrahlung energy spectrum is sampled.
+The algorithm used for this sampling is the van Neumann method \cite{neu51}.
+The sampled energy is given to the third primary particle.
+The energy of the electron is reduced accordingly.
+
+After all three particles have their energies defined, they are propogated through the detector set up.
+
+\subsection{Simulation Results Processing}
+The particles were tracked and the energy deposited in each detector summed up.
+The energy deposited in the implant detector was further seperated into two parts:
+Energy from the  electron and the inner bremstrahlung photon.
+Energy from the 1.6336 MeV photon
+After the energies of the particles reached a certain threshold, the simulation of one decay was finished.
+All the energies deposited into each of the detectors was summed up and saved as an event in a ROOT tree.
+Then, the process was repeated.
+A new location inside the region was generated and another decay generated.
+
+In order to get to get the necessary statistics, 2 * 10$^{9}$ events had to be generated. 
+After the events were done, the simulation data was processed further. 
+Much like the experimental data, the simulated data had to be filtered.
+The energy absorbed in the implant detector was filtered by the energy absorbed in the outer four gamma detecters in the simulation.
+
+The filtered data was seperated into two parts:
+Absorbed energy in the implant detector only orginating from the electron.
+Absorbed energy in the implant detector with some contribution from the gamma ray.
+These energies were built into two different histograms.
+These two histograms had the detector resolution applied to it. 
+
+The convolution function was
+
+\begin{equation}
+	\sigma = A\sqrt{E}
+	\label{eq:convo}
+\end{equation}
+
+where $\sigma$ was the energy resolution, $E$ the energy, and $A$ a constant found through a calibration.
+After all histograms were convulted, they were ready to fit.
+
+\section{Calibration}
+In order to properly fit the energy spectrum, a calibration of the CsI(Na) detector had to be done.
+Several different energy lines were used to find the calibration and the energy resolution function.
+The lines were the 1.173228 MeV and 1.332.492 MeV gammas from a $^{60}$Co source, the 0.661657 MeV gamma ray from a$^{137}$Cs source, and the 0.511 MeV and 1.274527 MeV gamma rays from a $^{22}$Na source.
+These gamma rays were fitting with a gaussian and a background.
+The background varried from a linear background, a quadratic background, and an error function background.
+For the $^{60}$Co, both peaks were fit at once.
+These different background gave slightly different results for the centroids and the widths of the gaussians.
+The different widths and centroids were taken as a systematic error.
+From the centroids, the calibration for each detector was calculated as:
+
+\begin{equation}
+	C = G * E + b
+	\label{eq:convo}
+\end{equation}
+
+where $C$ is the location of the peak in ADC channels, $G$ the gain in channels/keV, and b the offset in channels.
+The widths of the peaks were calibrated with the gain and plotted vs energy.
+Then, equation \ref{eq:convo} was fit to the results in order to determine $A$.
+
+\section{Fitting Procedure}
+The simulation described above were only part of what was needed.
+Other simulations included in the fit had the phase space times corrections times or divided an additional factor of the total energy of the electron.
+The simulations were all convoluted and filtered as described above.
+The various simulations were taken together and the fit using the ROOT algorithm.
+
+I NEED TO EXPLAIN BETTER

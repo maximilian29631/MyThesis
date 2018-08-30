@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2017.3.9)  20 APR 2018 14:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2017.3.9)  30 AUG 2018 14:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -186,7 +186,14 @@ Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 \Gin@req@height=\dimen119
 \Gin@req@width=\dimen120
 )
-(./MaxHughesThesis.aux)
+(./MaxHughesThesis.aux
+
+LaTeX Warning: Label `eq:qval' multiply defined.
+
+
+LaTeX Warning: Label `eq:convo' multiply defined.
+
+)
 \openout1 = `MaxHughesThesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
@@ -307,14 +314,14 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-(./MaxHughesThesis.toc)
+(./MaxHughesThesis.toc [3
+
+
+])
 \tf@toc=\write3
 \openout3 = `MaxHughesThesis.toc'.
 
- [3
-
-
-] [4]
+ [4]
 Chapter 1.
 (./IntroChapter/Introduction.tex) [1
 
@@ -323,7 +330,27 @@ Chapter 1.
 Chapter 2.
 (./TheoryChapter/TheoryFactors.tex [2
 
-] [3]) [4]
+] [3]
+
+Package caption Warning: \label without proper \caption on input line 100.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `tab:variables' on page 4 undefined on input line 86.
+
+[4]
+
+Package caption Warning: \label without proper \caption on input line 100.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `tab:variables' on page 5 undefined on input line 105.
+
+
+
+LaTeX Warning: Citation `Wil89' on page 5 undefined on input line 114.
+
+) [5] [6]
 Chapter 3.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <24.88> on input line 130.
@@ -331,100 +358,166 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <20.74> on input line 130.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <17.28> on input line 130.
-(./20FChapter/20Description.tex) [5
+(./20FChapter/20Description.tex
+<Figures/20FDecayScheme.png, id=41, 289.08pt x 226.33395pt>
+File: Figures/20FDecayScheme.png Graphic file (type png)
 
-]
+<use Figures/20FDecayScheme.png>
+Package pdftex.def Info: Figures/20FDecayScheme.png used on input line 5.
+(pdftex.def)             Requested size: 366.40834pt x 286.89178pt.
+ [7
+
+ <./Figures/20FDecayScheme.png>]) [8]
 Chapter 4.
-(./ExperimentDesChapter/ExpDiscription.tex [6
+(./ExperimentDesChapter/ExpDiscription.tex [9
 
 ]
-<Figures/fig_setup.pdf, id=42, 867.24pt x 505.89pt>
+<Figures/fig_setup.pdf, id=55, 867.24pt x 505.89pt>
 File: Figures/fig_setup.pdf Graphic file (type pdf)
 
 <use Figures/fig_setup.pdf>
 Package pdftex.def Info: Figures/fig_setup.pdf used on input line 44.
 (pdftex.def)             Requested size: 413.3867pt x 241.14163pt.
- [7] [8 <./Figures/fig_setup.pdf>] [9]
-<Figures/PPACFitted.png, id=60, 700.6175pt x 475.7775pt>
+ [10]
+
+Package caption Warning: \label without proper \caption on input line 93.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `tab:detvolt' on page 11 undefined on input line 77.
+
+[11 <./Figures/fig_setup.pdf>] [12]
+<Figures/PPACFitted.png, id=72, 700.6175pt x 475.7775pt>
 File: Figures/PPACFitted.png Graphic file (type png)
 
 <use Figures/PPACFitted.png>
 Package pdftex.def Info: Figures/PPACFitted.png used on input line 133.
 (pdftex.def)             Requested size: 413.3867pt x 280.72806pt.
- [10] [11 <./Figures/PPACFitted.png>] [12] [13])
-[14]
+ [13] [14 <./Figures/PPACFitted.png>] [15])
+[16]
 Chapter 5.
-(./DataProcessing/DataProcessChapter.tex [15
+(./DataProcessing/DataProcessChapter.tex [17
 
 ]
 
-LaTeX Warning: Citation `REFHERE' on page 16 undefined on input line 25.
+LaTeX Warning: Citation `REFHERE' on page 18 undefined on input line 25.
 
-[16]) [17]
+[18]) [19]
 Chapter 6.
 (./HalfLifeChapter/HalfLifeSection.tex
-<Figures/CsILBCvHL.png, id=86, 436.905pt x 259.515pt>
+<Figures/fig_ideogramBefore.png, id=95, 852.18375pt x 403.5075pt>
+File: Figures/fig_ideogramBefore.png Graphic file (type png)
+
+<use Figures/fig_ideogramBefore.png>
+Package pdftex.def Info: Figures/fig_ideogramBefore.png used on input line 17.
+(pdftex.def)             Requested size: 366.40834pt x 173.49869pt.
+ [20
+
+ <./Figures/fig_ideogramBefore.png>]
+<Figures/CsILBCvHL.png, id=100, 436.905pt x 259.515pt>
 File: Figures/CsILBCvHL.png Graphic file (type png)
 
 <use Figures/CsILBCvHL.png>
-Package pdftex.def Info: Figures/CsILBCvHL.png used on input line 32.
+Package pdftex.def Info: Figures/CsILBCvHL.png used on input line 47.
 (pdftex.def)             Requested size: 366.40834pt x 217.6545pt.
- [18
+ [21 <./Figures/CsILBCvHL.png>]
+<Figures/fig_pulserVsTime.pdf, id=106, 569.12625pt x 386.44376pt>
+File: Figures/fig_pulserVsTime.pdf Graphic file (type pdf)
 
-] [19 <./Figures/CsILBCvHL.png>]
-<Figures/fig_2Dh.pdf, id=94, 569.12625pt x 386.44376pt>
+<use Figures/fig_pulserVsTime.pdf>
+Package pdftex.def Info: Figures/fig_pulserVsTime.pdf used on input line 93.
+(pdftex.def)             Requested size: 366.40834pt x 248.80911pt.
+ [22]
+<Figures/fig_2Dh.pdf, id=110, 569.12625pt x 386.44376pt>
 File: Figures/fig_2Dh.pdf Graphic file (type pdf)
 
 <use Figures/fig_2Dh.pdf>
-Package pdftex.def Info: Figures/fig_2Dh.pdf used on input line 62.
+Package pdftex.def Info: Figures/fig_2Dh.pdf used on input line 108.
 (pdftex.def)             Requested size: 366.40834pt x 248.80911pt.
 
-<Figures/fig_betaSpec.pdf, id=95, 569.12625pt x 305.14pt>
+<Figures/fig_betaSpec.pdf, id=111, 569.12625pt x 305.14pt>
 File: Figures/fig_betaSpec.pdf Graphic file (type pdf)
 
 <use Figures/fig_betaSpec.pdf>
-Package pdftex.def Info: Figures/fig_betaSpec.pdf used on input line 68.
+Package pdftex.def Info: Figures/fig_betaSpec.pdf used on input line 114.
 (pdftex.def)             Requested size: 366.40834pt x 196.46225pt.
 
-<Figures/fig_gammaSpec.pdf, id=96, 569.12625pt x 305.14pt>
+<Figures/fig_gammaSpec.pdf, id=112, 569.12625pt x 305.14pt>
 File: Figures/fig_gammaSpec.pdf Graphic file (type pdf)
 
 <use Figures/fig_gammaSpec.pdf>
-Package pdftex.def Info: Figures/fig_gammaSpec.pdf used on input line 76.
+Package pdftex.def Info: Figures/fig_gammaSpec.pdf used on input line 122.
 (pdftex.def)             Requested size: 366.40834pt x 196.46225pt.
- [20 <./Figures/fig_2Dh.pdf, page is rotated 90 degrees>] [21 <./Figures/fig_be
-taSpec.pdf, page is rotated 90 degrees> <./Figures/fig_gammaSpec.pdf, page is r
-otated 90 degrees>]
-<Figures/fig_tbgSpec1.pdf, id=234, 569.12625pt x 305.14pt>
+ [23 <./Figures/fig_pulserVsTime.pdf, page is rotated 90 degrees>] [24 <./Figur
+es/fig_2Dh.pdf, page is rotated 90 degrees> <./Figures/fig_betaSpec.pdf, page i
+s rotated 90 degrees>]
+<Figures/fig_tbgSpec1.pdf, id=249, 569.12625pt x 305.14pt>
 File: Figures/fig_tbgSpec1.pdf Graphic file (type pdf)
 
 <use Figures/fig_tbgSpec1.pdf>
-Package pdftex.def Info: Figures/fig_tbgSpec1.pdf used on input line 100.
+Package pdftex.def Info: Figures/fig_tbgSpec1.pdf used on input line 146.
 (pdftex.def)             Requested size: 413.3867pt x 221.6515pt.
- [22 <./Figures/fig_tbgSpec1.pdf, page is rotated 90 degrees>] <Figures/fig_dec
-aySpec.pdf, id=281, 794.97pt x 614.295pt>
+
+<Figures/PileUpSketch.png, id=250, 307.1475pt x 353.19049pt>
+File: Figures/PileUpSketch.png Graphic file (type png)
+
+<use Figures/PileUpSketch.png>
+Package pdftex.def Info: Figures/PileUpSketch.png used on input line 168.
+(pdftex.def)             Requested size: 413.3867pt x 475.38538pt.
+
+<Figures/fig_tbgSpec2.pdf, id=251, 569.12625pt x 305.14pt>
+File: Figures/fig_tbgSpec2.pdf Graphic file (type pdf)
+
+<use Figures/fig_tbgSpec2.pdf>
+Package pdftex.def Info: Figures/fig_tbgSpec2.pdf used on input line 184.
+(pdftex.def)             Requested size: 413.3867pt x 221.6515pt.
+ [25 <./Figures/fig_gammaSpec.pdf, page is rotated 90 degrees>] [26 <./Figures/
+fig_tbgSpec1.pdf, page is rotated 90 degrees>]
+[27 <./Figures/PileUpSketch.png>] [28 <./Figures/fig_tbgSpec2.pdf, page is rota
+ted 90 degrees>] <Figures/fig_decaySpec.pdf, id=395, 794.97pt x 614.295pt>
 File: Figures/fig_decaySpec.pdf Graphic file (type pdf)
 
 <use Figures/fig_decaySpec.pdf>
-Package pdftex.def Info: Figures/fig_decaySpec.pdf used on input line 151.
+Package pdftex.def Info: Figures/fig_decaySpec.pdf used on input line 239.
 (pdftex.def)             Requested size: 413.3867pt x 319.44461pt.
- [23] [24 <./Figures/fig_decaySpec.pdf, page is rotated 90 degrees>] [25] [26] 
-[27] [28]
-<Figures/fig_halfLives.pdf, id=309, 794.97pt x 614.295pt>
+ [29] [30 <./Figures/fig_decaySpec.pdf, page is rotated 90 degrees>]
+<Figures/fig_hlVsWtbg.png, id=410, 757.8714pt x 391.2216pt>
+File: Figures/fig_hlVsWtbg.png Graphic file (type png)
+
+<use Figures/fig_hlVsWtbg.png>
+Package pdftex.def Info: Figures/fig_hlVsWtbg.png used on input line 282.
+(pdftex.def)             Requested size: 413.3867pt x 213.39958pt.
+ [31 <./Figures/fig_hlVsWtbg.png>] [32]
+
+LaTeX Warning: Reference `fig:htimediffvshl' on page 33 undefined on input line
+ 349.
+
+[33] [34] <Figures/fig_halfLives.pdf, id=425, 794.97pt x 614.295pt>
 File: Figures/fig_halfLives.pdf Graphic file (type pdf)
 
 <use Figures/fig_halfLives.pdf>
-Package pdftex.def Info: Figures/fig_halfLives.pdf used on input line 281.
+Package pdftex.def Info: Figures/fig_halfLives.pdf used on input line 388.
 (pdftex.def)             Requested size: 413.3867pt x 319.44461pt.
- [29]
-<Figures/fig_ideogramAfter.png, id=313, 721.33641pt x 357.94104pt>
+ [35]
+<Figures/fig_ideogramAfter.png, id=430, 851.43094pt x 405.76593pt>
 File: Figures/fig_ideogramAfter.png Graphic file (type png)
 
 <use Figures/fig_ideogramAfter.png>
-Package pdftex.def Info: Figures/fig_ideogramAfter.png used on input line 338.
-(pdftex.def)             Requested size: 413.3867pt x 205.13177pt.
- [30 <./Figures/fig_halfLives.pdf, page is rotated 90 degrees>]) (./MaxHughesTh
-esis.bbl [31 <./Figures/fig_ideogramAfter.png>] [32
+Package pdftex.def Info: Figures/fig_ideogramAfter.png used on input line 445.
+(pdftex.def)             Requested size: 413.3867pt x 197.00674pt.
+ [36 <./Figures/fig_halfLives.pdf, page is rotated 90 degrees>]) [37 <./Figures
+/fig_ideogramAfter.png>]
+Chapter 7.
+(./BetaFitChapter/BetaFitChapter.tex [38
+
+] [39]
+
+LaTeX Warning: Reference `eq:fayans_ps' on page 40 undefined on input line 55.
+
+
+LaTeX Warning: Reference `eq:KUB' on page 40 undefined on input line 61.
+
+[40] [41] [42]) (./MaxHughesThesis.bbl [43] [44
 
 ]
 Missing character: There is no ∆ in font cmr12!
@@ -434,24 +527,44 @@ Missing character: There is no ≤ in font cmr12!
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no à in font cmr12!
 Missing character: There is no í in font cmr12!
-) [33
+Missing character: There is no √ in font cmr12!
+Missing character: There is no ¢ in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ç in font cmr12!
+Missing character: There is no ¨ in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ù in font cmr12!
+Missing character: There is no √ in font cmr12!
+Missing character: There is no é in font cmr12!
+Missing character: There is no ¬ in font cmr12!
+Missing character: There is no ≥ in font cmr12!
+Missing character: There is no √ in font cmr12!
+Missing character: There is no ¢ in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ç in font cmr12!
+Missing character: There is no ¨ in font cmr12!
+Missing character: There is no ¬ in font cmr12!
+Missing character: There is no ê in font cmr12!
+ [45
 
-] (./MaxHughesThesis.aux)
+]) [46]
+(./MaxHughesThesis.aux)
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3736 strings out of 494977
- 59020 string characters out of 6180184
- 120012 words of memory out of 5000000
- 6886 multiletter control sequences out of 15000+600000
+ 3787 strings out of 494977
+ 60181 string characters out of 6180184
+ 120237 words of memory out of 5000000
+ 6927 multiletter control sequences out of 15000+600000
  9783 words of font info for 34 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 51i,7n,44p,526b,354s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 51i,11n,44p,651b,355s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
@@ -461,10 +574,10 @@ t/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmti12.pfb>
-Output written on MaxHughesThesis.pdf (37 pages, 547961 bytes).
+Output written on MaxHughesThesis.pdf (50 pages, 862012 bytes).
 PDF statistics:
- 366 PDF objects out of 1000 (max. 8388607)
- 202 compressed objects within 3 object streams
+ 503 PDF objects out of 1000 (max. 8388607)
+ 266 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 

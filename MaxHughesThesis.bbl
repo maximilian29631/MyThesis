@@ -5,6 +5,11 @@ D.~E. Alburger and F.~P. Calaprice.
 \newblock Half-lives of $^{18}\mathrm{Ne}$ and $^{20}\mathrm{F}$.
 \newblock {\em Phys. Rev. C}, 12:1690--1691, Nov 1975.
 
+\bibitem{Ang13}
+I.~{Angeli} and K.~P. {Marinova}.
+\newblock {Table of experimental nuclear ground state charge radii: An update}.
+\newblock {\em Atomic Data and Nuclear Data Tables}, 99:69--95, January 2013.
+
 \bibitem{Gen76}
 H.~Genz, A.~Richter, B.M. Schmitz, and H.~Behrens.
 \newblock Half-life, endpoint energy, ƒt value and shape factor in the β−
@@ -43,17 +48,39 @@ D.R. Tilley, C.M. Cheves, J.H. Kelley, S.~Raman, and H.R. Weller.
 \newblock Energy levels of light nuclei, a = 20.
 \newblock {\em Nuclear Physics A}, 636(3):249 -- 364, 1998.
 
+\bibitem{neu51}
+John {von Neumann}.
+\newblock Various techniques used in connection with random digits.
+\newblock pages 36--38, 1951.
+
 \bibitem{Wan92}
 T.F. Wang, R.N. Boyd, G.J. Mathews, M.L. Roberts, K.E. Sale, M.M. Farrell, M.S.
   Islam, and G.W. Kolnicki.
 \newblock Measurement of the half-life of 20f.
 \newblock {\em Nuclear Physics A}, 536(1):159 -- 167, 1992.
 
+\bibitem{Wei10}
+D.~Weisshaar, A.~Gade, T.~Glasmacher, G.F. Grinyer, D.~Bazin, P.~Adrich,
+  T.~Baugher, J.M. Cook, C.Aa. Diget, S.~McDaniel, A.~Ratkiewicz, K.P. Siwek,
+  and K.A. Walsh.
+\newblock Caesarâ€”a high-efficiency csi(na) scintillator array for
+  in-beam Î³â€ray spectroscopy with fast rare-isotope beams.
+\newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
+  Accelerators, Spectrometers, Detectors and Associated Equipment}, 624(3):615
+  -- 623, 2010.
+
 \bibitem{Wil70}
 D.~H. Wilkinson and D.~E. Alburger.
 \newblock Mirror symmetry in the $\ensuremath{\beta}$ decay of the $a=20$ and
   25 systems.
 \newblock {\em Phys. Rev. Lett.}, 24:1134--1136, May 1970.
+
+\bibitem{Wil89}
+D.H. Wilkinson.
+\newblock Evaluation of beta-decay: I. the traditional phase space factors.
+\newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
+  Accelerators, Spectrometers, Detectors and Associated Equipment}, 275(2):378
+  -- 386, 1989.
 
 \bibitem{Yul67}
 Herbert~P. Yule.

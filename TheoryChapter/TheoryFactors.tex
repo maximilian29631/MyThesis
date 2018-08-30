@@ -2,7 +2,7 @@ To obtain a measure of the Fierz term, the beta decay spectrum must be precisely
 The description of the beta decay spectrum is writen as a series of corrections on top of the main phase space factor.  
 
 The corrections depend on several parameters of the decay. 
-Some of them are just numbers, such as the Z of the daughter or mother nucleus or the A of the system.
+Some of them are just numbers, such as the atomic number of the daughter or mother nucleus or the mass number of the system.
 However, there are two important paramters that are inexact.
 They are measured experimentally.
 
@@ -79,9 +79,57 @@ Since the measurement is not an absolute one, but only concerned with the shape 
 
 This is the main factor in describing the beta decay energy spectrum.
 
+\section{Variables of Correction Formula}
+
+For the rest of the discussion on beta decay corrections, everything is given without units.
+All of the energies are divided by the electron mass, i.e. 511 keV.
+The other important variables are shown in table \ref{tab:vars}
+
+\begin{table}[!hbt]
+	\centering
+		\begin{tabular}{r|l|l}
+		Variable & Description & Equation or Value \\ \hline		
+		$A$ & Mass number & 20 \\ 
+		$Z$ & Atomic number of daughter & 10 \\
+		$\alpha$ & Fine structure constant & 1/137.0359\\
+		$R$ & Root mean square charge radius of daughter & 3.055 fm \cite{Ang13} \\
+		$W$ & Total energy of beta electron & $E/m_{e}$ \\
+		$p$ & Electron momentum & $\sqrt{W^{2} - 1}$ \\
+		$E_{0}$ & Maximum electron energy & $\frac{M_{^{20}F} - M_{^{20}Ne} - E_{gamma ray}}{m_{e}}$ \\
+		$\gamma$ & Factor that shows up in EM corrections& $\sqrt{1 - (\alpha Z)^{2}}$ 
+		\label{tab:vars}
+		\end{tabular}
+\end{table}
+
+To convert the RMS charge radius into the regular charge radius, it is assumed that the nucleus was a sphere. 
+This means multiplying the radius given in table \ref{tab:vars} by $\sqrt{\frac{3}{5}}$.
+Finally, in order to put it into natural units, the result was divided by the reduced Compton wavelength of the electron.
+
+The two factors that require experimental input were $R$ and $E_{0}$. 
+$R$ was given directly in data tables.
+For $E_{0}$, the mass of $^{20}$F and $^{20}$Ne were needed.
+The energy of the gamma ray photon was also needed.
+Each one of these had an uncertainty, which propogates through the various correction functions.
+Before the theoretical corrections were fed into a Monte Carlo simulation, the uncertainties were checked.
+The theoretical spectrum was built with each value plus or minus it's uncertainty.
+The results of those ratios are seen in figure \ref{fig:theoryuncer}.
 
 \section{Fermi Function}
 
 The first correction is the Fermi function.
 This accounts for the interaction of the charge of the outgoing electron and the charge of the nucleus.
- 
+It is calculated by taking the Dirac equation wave functions and assuming the nucleus is a point charge of Ze.
+The Dirac wave functions are taken down to a nuclear radius R.
+This is since the wave functions diverge \cite{Wil89}.
+
+The Fermi function is printed in equation \ref{eq:fermifunc}
+
+\begin{equation}
+	F(Z,W) = 2\frac{\gamma + 1}{\Gamma(2\gamma +1)^{2}}(2pR)^{2(\gamma - 1)}e^{\frac{\pi\alpha ZW}{p}}\|\Gamma(\gamma + i\frac{\alpha ZW}{p}\|^{2}
+	\label{eq:fermifunc}
+\end{equation}
+
+This function does not account for 
+\section{Radiative Correction}
+
+\subsection{Inner Bremmsstrahlung}

@@ -1,4 +1,45 @@
+The experiment was run at the National Superconducting Cyclotron Laboratory (NSCL) in East Lansing, Michigan. 
+The experiment was run from September 1, 2015 to September 7, 2015.
 
+\section{Experimental technique}
+The technique used was a calorimetric technique.
+This reduced several effects could otherwise distort the beta decay spectrum.
+The largest of these is backscattering.
+If a beta decay source is placed outside a scintillator, there is a chance that the electrons will go into the scintillator and bounce back out.
+This happens in the surface of the detector, and therefor the electron deposits very little energy into the detector. 
+The disortion of backscattering is most at low energies.
+Beta decay electrons can also scatter out of the detector to the sides as well. 
+This also distorts the beta spectrum.
+Lastly if there is a dead layer at the surface of the crystal, the energy depositted in that layer will not be absorbed.
+
+With the calorimetric technique, the radioacive nucleus is surrounded by scintillator material.
+As long as the nuclei are implanted deep enough, the electrons will not have enough energy to escape the detector.
+Even if the electron scatters several times, it still deposits all it's energy.
+This range depends on the detector material.
+Since any dead layers are at the surface, the decays inside the detector do not see them.
+A $4\pi$ angular coverage is also obtained, as the detector material surrounds the source.
+
+There are some caveats for a calorimetric technique. 
+The first is that the electrons moving through the scintillator material will emit a lot of bremsstrahlung.
+Using a low-Z detector material will lesen this effect.
+The machines used to generate the isotope of interest must be able to create them at high enough energy in order to implant the isotopes deep enough into your detector.
+This limits what nuclei can be used for this technique.
+The act of implanting the nuclei creates a lot of light. 
+The beam used needs to be allowed to implant, and then allowed to decay over some time.
+
+For this experiment, a  beam of  $^{20}$F, was implanted into two different detectors.
+Two different detectors were used to cross-check different systematics.
+After an amount of $^{20}$F was implanted, the beam was turned off by dephasing the cyclotrons.
+Then, the $^{20}$F was allowed to decay inside the detector. 
+Given the half-life of $^{20}$F of 11 s, the decay time was varied between 22 and 60 s.
+
+\section{Creating $^{20}$F Beam}
+
+The primary beam of $^{22}$Ne was accelerated by the coupled cyclotrons to 150 MeV/A. 
+A typical intensity of the primary beam was around $60 * 10^{-5}$pnA.
+It was impinged on a Be target and sent through the fragment separator. 
+The resulting $^{20}$F beam was at an energy of 130 MeV/A. 
+The intensity of the $^{20}$F was about $2 * 10^{-5}$ pnA, and the purity was about $93\%$ at the end of the fragment separator.
 
 To measure the $^{20}$F beta decay spectrum, a beam of $^{20}$F was implanted into one of two different detectors.
 The isotope was implanted deeply enough from so that the detector material could completely absorb the energy of electron at the end point energy.
@@ -6,8 +47,59 @@ The implantation of the beam was done to avoid instrumental effects of a non-cal
 If there is a dead layer, there is more detector behind the layer to absorb the energy.
 The electron cannot scatter out of the detector.
 
-The experiment was run at the National Superconducting Cyclotron Laboratory (NSCL) in East Lansing, Michigan. 
-The detector set up is describe below.
+\subsection{Beam Size and Location}
+To test the size of the beam, a parralel plate avalanche counter was used.
+The size of the detector was 10 cm by 10 cm square. 
+It was placed 65 cm upstream of the target.
+A horizontal and verticle grid was in the detector.
+Depending on where on each of the grids the particles hit, different charges were sent to either end of the PPAC.
+The signals were fed into a digital data acquisition system, and read out as an energy.
+The difference of the two signals divided by the sum was interpretted as a position.
+
+To calibrate the detector, a mask with several holes was used. 
+This mask covered the front of the detector, and an alpha source in the vacuum was placed in front of the PPAC.
+Then, everything was left to run until an image of the mask was formed.
+The mask had holes in it every 1 cm. 
+It also had a large L shaped hole so that the orientation of the mask could be seen. 
+With this, the PPAC could be calibrated.
+
+Before taking data for the beta decay spectrum measurement, the PPAC was inserted into the beam.
+After adjusting the parameters of the upstream beam optics, the final beam size at the PPAC was measured.
+The calibrated data of the signals was built into a 3-D histogram.
+There was some ringing in the PPAC, so the peak of the beam spot was fitted with a 3-D gaussian function.
+The average of the gaussian and the sigma in the x and y direction was taken. 
+From the sigmas, the half widths at half maximum (HWHM) in both directions were calculated. 
+The distribution of the locations were sampled at eight different points. 
+The points are shown as the black dots in Fig: \ref{fig:PPACSpotch}.
+They are one HWHM away from the center. 
+
+\begin{figure}
+	\includegraphics[width=0.88\textwidth]{PPACFitted.png}
+	\caption{The beam spot of the calibrated PPAC spectrum. 
+		 The samples of the spectrum that were averaged together are shown in the black dots.
+		 The center of the fit is not shown.}
+	\label{fig:PPACSpotch}
+\end{figure}  
+
+After averaging the 8 points, the range on the z axis was taken from the average of those points to the top.
+The resulting beam was measured to be 8 mm by 6 mm large.
+
+This is the size of the spot at the PPAC. 
+Ion optics simulations were used to build the cross section of the beam at the PPAC and at the target.
+Using these cross sections, the magnification between the two locations was calculated.
+The magnification was different between the x and y directions.
+
+\subsection{Beam Purity}
+
+The beam was filtered by S800 spectrograph. 
+The purity measured there was at 93\%, with the main contaminates being $^{18}$O and $^{19}$O. 
+This was measured up stream of the detector set up.
+To double check the beam purity, two detectors were used. 
+One was a thin Si PIN detector that was used as a sectionE detector. 
+The other detector was a small CsI(Na) detector similar to the implant detector that was used during the steering and during the beam size measurement. 
+It had a much lower voltage than the one used for the implantation measurement. 
+Both of these in tandem were used to build a particle identification plot.
+From this, it was found that the beam is very clean.
 
 \section{Detector Set Up}
 
@@ -52,7 +144,6 @@ A sketch of both detector configurations is shown in Figure \ref{fig:detsketch}.
 To switch between different implant detectors, the central detector in the frame was removed and put on the floor.
 The other detector was placed in the center of the four gamma detectors.
 The PVT detector was supported on a metal rail, while the CsI (Na) detector was supported on pile of scrap aluminum.
-Both of the detectors had the active scintillator part free in between the four large gamma detectors. 
 
 \subsection{Other detectors}
 
@@ -94,84 +185,27 @@ The voltages of the detectors is shown in table \ref{tab:detvolt}.
 		\end{tabular}
 \end{table}
 
-\section{Beam}
+During the implantation cycle, a large amount of current was generated in the implant detectors.
+In order to counteract this, a limiter box was installed for the PVT detector for sets 3 to 6.
+The limiter box had several relays that cut the power to the PVT detector's photomultiplier tube during the beam on cycle. 
+To accomplish this, the limiter box was given the same signal that fed the beam on/beam off for the cyclotrons.
+For the CsI(Na) implant detector, the HV supply had the current limiter enabled.
+This accomplished the same thing.
 
-\subsection{Beam Discription}
-The primary beam of $^{22}$Ne was accelerated by the coupled cyclotrons to 150 MeV/A. 
-A typical intensity of the primary beam was around $60 * 10^{-5}$pnA.
-It was impinged on a Be target and sent through the fragment separator. 
-The resulting $^{20}$F beam was at an energy of 130 MeV/A. 
-The intensity of the $^{20}$F was about $2 * 10^{-5}$ pnA, and the purity was about $93\%$ at the end of the fragment separator.
 
-\subsection{Beam Size and Location}
-To test the size of the beam, a parralel plate avalanche counter was used.
-The size of the detector was 10 cm by 10 cm square. 
-It was placed 65 cm upstream of the target.
-A horizontal and verticle grid was in the detector.
-Depending on where on each of the grids the particles hit, different charges were sent to either end of the PPAC.
-The signals were fed into a digital data acquisition system, and read out as an energy.
-The difference of the two signals divided by the sum was interpretted as a position.
+For the depth of the implantation of the beam, ion simulations were used. 
+The LISE++ program was fed the beam meagnets. It was given the energy of the beam and the detector set up. 
+It then calculated the depth of the implantation of the detector and the range of the depth inside the detector. 
+This gave a depth of 3.02 cm in side the PVT detector and a depth of 1.156 cm in the CsI(Na) detector. 
+The range of the depth was 1.2 mm in the PVT detector and 0.4 mm in the CsI(Na) detector.
 
-To calibrate the detector, a mask with several holes was used. 
-This mask covered the front of the detector, and an alpha source in the vacuum was placed in front of the PPAC.
-Then, everything was left to run until an image of the mask was formed.
-The mask had holes in it every 1 cm. 
-It also had a large L shaped hole so that the orientation of the mask could be seen. 
-With this, the PPAC could be calibrated.
 
-Before taking data for the beta decay spectrum measurement, the PPAC was inserted into the beam.
-After adjusting the parameters of the upstream beam optics, the final beam size at the PPAC was measured.
-The calibrated data of the signals was built into a 3-D histogram.
-There was some ringing in the PPAC, so the peak of the beam spot was fitted with a 3-D gaussian function.
-The average of the gaussian and the sigma in the x and y direction was taken. 
-From the sigmas, the half widths at half maximum (HWHM) in both directions were calculated. 
-The distribution of the locations were sampled at eight different points. 
-The points are shown as the black dots in Fig: \ref{fig:PPACSpotch}.
-They are one HWHM away from the center. 
+\subsection{Verifcation of Implant Depth}
 
-\begin{figure}
-	\includegraphics[width=0.88\textwidth]{PPACFitted.png}
-	\caption{The beam spot of the calibrated PPAC spectrum. 
-		 The samples of the spectrum that were averaged together are shown in the black dots.
-		 The center of the fit is not shown.}
-	\label{fig:PPACSpotch}
-\end{figure}  
-
-After averaging the 8 points, the range on the z axis was taken from the average of those points to the top.
-The resulting beam was measured to be 8 mm by 6 mm large.
-
-This is the size of the spot at the PPAC. 
-Ion optics simulations were used to build the cross section of the beam at the PPAC and at the target.
-Using these cross sections, the magnification between the two locations was calculated.
-The magnification was different between the x and y directions.
-Using the magnification, the X and Y beam size was found to be 3.6 mm by 3.4 mm.
-
-For the depth of the implantation of the beam, ion simulations were used.
-The LISE++ program was fed the beam meagnets.
-It was given the energy of the beam and the detector set up.
-It then calculated the depth of the implantation of the detector and the range of the depth inside the detector.
-This gave a depth of 3.02 cm in side the PVT detector and a depth of 1.156 cm in the CsI(Na) detector.
-The range of the depth was 1.2 mm in the PVT detector and 0.4 mm in the CsI(Na) detector. 
-%Put figure - YES
-
-\subsubsection{Beam Purity}
-The beam was filtered by S800 spectrograph.
-The purity measured there was at 93\%, with the main contaminates being $^{18}$O and $^{19}$O.
-This was measured up stream of the detector set up. 
-
-To double check the beam purity, two detectors were used.
-One was a thin Si PIN detector that was used as a $\delta$E detector.
-The other detector was a small CsI(Na) detector similar to the implant detector that was used during the steering and during the beam size measurement. 
-It had a much lower voltage than the one used for the implantation measurement.
-Both of these in tandem were used to build a particle identification plot.
-From this, it was found that the beam is very clean.
-
-\subsection{Beam Implantation Depth}
 In order to verify the simulations for the beam implant depth, a degrader was inserted into the beam for a beam depth measurement.
-The degrader was made of aluminum and had two different thicknesses: 7.89 mm and 11.38 mm.
-The beam was caught by a CsI(Na) scintillator of a similar design to the one used for the implantation measurement.
-The angle of the degrader was changed to change the effective thickness of aluminum that the beam had to travel through.
-By varying this thickness to the one predicted to stop the beam out side of the detector, the depth of implantion could be verified.
+The degrader was made of aluminum and had two different thicknesses: 7.89 mm and 11.38 mm. 
+The beam was caught by a CsI(Na) scintillator of a similar design to the one used for the implantation measurement.The angle of the degrader was changed to change the ective thickness of aluminum that the beam
+had to travel through. By varying this thickness to the one predicted to stop the beam out side of the detector, the depth of implantion could be verfied. 
 This was done after the main run, and the simulations proved to be correct.
 
 \section{Experimental Conditions}
@@ -193,12 +227,4 @@ This signal was fed into a box.
 The voltage level during the quad scaler's time dephased the cyclotron RF, turning the beam off.
 When the dual timer voltage level occured, the RF returned to the tuned value, turning the beam on.  
 
-After the frist couple of runs with the PVT detector, a high-voltage inhibitor box was installed.
-It was discovered that during the implantation period, a large amount of current was drawn by the PVT detector's PMT. 
-There were also instabilities seen in the gain directly after beam on period.
-The inhibitor box does cause the gain during the beam on period to be very small, but that information is ignored.
-Any decay that happens during that period is swamped by the light produced by the beam imlpanting.
-
-For the CsI(Na) runs, a current limit on the power supplies was enabled.
-It has a similar effect to the inhibitor box. 
 

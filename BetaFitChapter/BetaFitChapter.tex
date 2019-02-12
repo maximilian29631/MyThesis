@@ -100,7 +100,36 @@ The convolution function was
 \end{equation}
 
 where $\sigma$ was the energy resolution, $E$ the energy, and $A$ a constant found through a calibration.
-After all histograms were convulted, they were ready to fit.
+
+\subsubsection{Pile-up Modelling}
+After the convolution, the simulation data was sent through a simulation to model pile-up.
+The model used for the CsI(Na) signals was a linear rise and then an exponential decay.
+The linear part went from 0 to 1 over 100 ns. 
+The exponential piece started at 100 ns at 1 and decayed with a $\tau$ of 760 ns.
+This analytic equation was scaled up or down to whatever energy was sampled.
+It was then fed into a model of trapezoidal filter of PIXIE. 
+The math was the same as described in the chapter on data aquisition.
+
+
+This model was tuned on calibration data. 
+A run was taken of $^{137}$Cs at 25000 counts per second.
+A 2000 counts per second $^{137}$Cs run was used as a background and subracted off.
+Then, samples of the background-subtracted spectrum were taken up to the end of the 661 keV peak.
+Monte Carlo methods were used to model the time difference between two samples.
+If the two samples fell within the pile-up window, then the piled-up signal models were fed into the trapezoidal filter.
+The calculated pile-up energy was saved to a histogram.
+If the two samples did not fall with in the pile-up window, then they were not fed into the filter model and just filled into the histogram.
+The paremeters were adjusted until the generated pile-up matched the measured pile-up in the spectrum.
+The results of the tuning is seen in figure \ref{fig:pileuptune}
+
+\begin{figure}[!htb]
+	\centerline{\includegraphics[width=0.78\textwidth]{PileUpTuningThesis.png}}
+	\caption{The tuning of the pile-up.
+		 The input spectrum is in blue.
+		 It was sampled up to 1000 channels.
+		 The generated spectrum is in red.}
+	\label{fig:pileuptune}
+\end{figure}
 
 \section{Calibration}
 In order to properly fit the energy spectrum, a calibration of the CsI(Na) detector had to be done.

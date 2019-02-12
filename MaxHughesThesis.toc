@@ -1,50 +1,58 @@
+\contentsline {chapter}{\textbf {LIST OF TABLES}}{vii}
+\contentsline {chapter}{\textbf {LIST OF FIGURES}}{viii}
 \contentsline {chapter}{\numberline {Chapter 1}Introduction}{1}
 \contentsline {section}{\numberline {1.1}Beta Decay}{1}
 \contentsline {chapter}{\numberline {Chapter 2}Theoretical Description of Beta Decay Spectrum}{2}
 \contentsline {section}{\numberline {2.1}Phase Space Beta Decay}{3}
-\contentsline {section}{\numberline {2.2}Variables of Correction Formula}{4}
-\contentsline {section}{\numberline {2.3}Fermi Function}{5}
-\contentsline {section}{\numberline {2.4}Radiative Correction}{6}
-\contentsline {subsection}{\numberline {2.4.1}Inner Bremmsstrahlung}{6}
-\contentsline {chapter}{\numberline {Chapter 3}$^{20}$F}{7}
-\contentsline {section}{\numberline {3.1}Theory Parameters}{7}
-\contentsline {chapter}{\numberline {Chapter 4}Experimental Description}{9}
-\contentsline {section}{\numberline {4.1}Detector Set Up}{9}
-\contentsline {subsection}{\numberline {4.1.1}$^{20}$F Decay Detectors}{9}
-\contentsline {subsection}{\numberline {4.1.2}Other detectors}{11}
-\contentsline {subsection}{\numberline {4.1.3}Powering the Detectors}{11}
-\contentsline {section}{\numberline {4.2}Beam}{12}
-\contentsline {subsection}{\numberline {4.2.1}Beam Discription}{12}
-\contentsline {subsection}{\numberline {4.2.2}Beam Size and Location}{12}
-\contentsline {subsubsection}{\numberline {4.2.2.1}Beam Purity}{14}
-\contentsline {subsection}{\numberline {4.2.3}Beam Implantation Depth}{15}
-\contentsline {section}{\numberline {4.3}Experimental Conditions}{15}
-\contentsline {chapter}{\numberline {Chapter 5}Data Processing}{17}
-\contentsline {section}{\numberline {5.1}Data acquisiton}{17}
-\contentsline {subsection}{\numberline {5.1.1}Data Acquisition Sofware}{18}
-\contentsline {section}{\numberline {5.2}Data Taking and Processing}{19}
-\contentsline {chapter}{\numberline {Chapter 6}Half Life Measurement}{20}
-\contentsline {section}{\numberline {6.1}Motivation}{20}
-\contentsline {section}{\numberline {6.2}Half life data analysis}{21}
-\contentsline {subsection}{\numberline {6.2.1}Data Selection}{21}
-\contentsline {subsection}{\numberline {6.2.2}Cut Selection}{23}
-\contentsline {section}{\numberline {6.3}Systematic Effects}{29}
-\contentsline {subsection}{\numberline {6.3.1}Dead Time}{29}
-\contentsline {subsection}{\numberline {6.3.2}Pile Up Effects}{30}
-\contentsline {subsection}{\numberline {6.3.3}Background}{31}
-\contentsline {subsubsection}{\numberline {6.3.3.1}Simultaneous vs Seperate Fitting}{32}
-\contentsline {subsubsection}{\numberline {6.3.3.2}Spectra Arguments}{33}
-\contentsline {subsection}{\numberline {6.3.4}Cut Sensitivity}{34}
-\contentsline {subsection}{\numberline {6.3.5}Oscillator Stability}{34}
-\contentsline {subsection}{\numberline {6.3.6}Binning and Fitting}{35}
-\contentsline {section}{\numberline {6.4}Result and discussion}{35}
-\contentsline {section}{\numberline {6.5}Conclusion}{36}
-\contentsline {chapter}{\numberline {Chapter 7}Fitting Beta Spectrum}{38}
-\contentsline {section}{\numberline {7.1}GEANT4 Monte Carlo}{38}
-\contentsline {subsection}{\numberline {7.1.1}Detector Simulation}{38}
-\contentsline {subsection}{\numberline {7.1.2}Source Definition}{39}
-\contentsline {subsection}{\numberline {7.1.3}Primary Particle Definitions}{39}
-\contentsline {subsection}{\numberline {7.1.4}Simulation Results Processing}{41}
-\contentsline {section}{\numberline {7.2}Calibration}{42}
-\contentsline {section}{\numberline {7.3}Fitting Procedure}{42}
-\contentsline {chapter}{BIBLIOGRAPHY}{44}
+\contentsline {subsection}{\numberline {2.1.1}Matrix Elements}{5}
+\contentsline {section}{\numberline {2.2}Variables of Correction Formula}{5}
+\contentsline {section}{\numberline {2.3}Fermi Function}{7}
+\contentsline {section}{\numberline {2.4}Radiative Correction}{7}
+\contentsline {subsection}{\numberline {2.4.1}Inner Bremmsstrahlung}{8}
+\contentsline {section}{\numberline {2.5}Screening}{10}
+\contentsline {subsection}{\numberline {2.5.1}Potentials Used in Screening Derivation}{11}
+\contentsline {subsection}{\numberline {2.5.2}Screening Correction Formula}{13}
+\contentsline {chapter}{\numberline {Chapter 3}$^{20}$F}{14}
+\contentsline {section}{\numberline {3.1}Theory Parameters}{15}
+\contentsline {chapter}{\numberline {Chapter 4}Experimental Description}{16}
+\contentsline {section}{\numberline {4.1}Experimental technique}{16}
+\contentsline {section}{\numberline {4.2}Creating $^{20}$F Beam}{17}
+\contentsline {subsection}{\numberline {4.2.1}Beam Size and Location}{18}
+\contentsline {subsection}{\numberline {4.2.2}Beam Purity}{19}
+\contentsline {section}{\numberline {4.3}Detector Set Up}{20}
+\contentsline {subsection}{\numberline {4.3.1}$^{20}$F Decay Detectors}{20}
+\contentsline {subsection}{\numberline {4.3.2}Other detectors}{22}
+\contentsline {subsection}{\numberline {4.3.3}Powering the Detectors}{22}
+\contentsline {subsection}{\numberline {4.3.4}Verifcation of Implant Depth}{23}
+\contentsline {section}{\numberline {4.4}Experimental Conditions}{24}
+\contentsline {chapter}{\numberline {Chapter 5}Data Processing}{25}
+\contentsline {section}{\numberline {5.1}Data acquisiton}{25}
+\contentsline {subsection}{\numberline {5.1.1}Filter Description}{26}
+\contentsline {subsection}{\numberline {5.1.2}Data Acquisition Sofware}{27}
+\contentsline {section}{\numberline {5.2}Data Taking and Processing}{28}
+\contentsline {chapter}{\numberline {Chapter 6}Half Life Measurement}{30}
+\contentsline {section}{\numberline {6.1}Motivation}{30}
+\contentsline {section}{\numberline {6.2}Half life data analysis}{31}
+\contentsline {subsection}{\numberline {6.2.1}Data Selection}{31}
+\contentsline {subsection}{\numberline {6.2.2}Cut Selection}{33}
+\contentsline {section}{\numberline {6.3}Systematic Effects}{40}
+\contentsline {subsection}{\numberline {6.3.1}Dead Time}{40}
+\contentsline {subsection}{\numberline {6.3.2}Pile Up Effects}{40}
+\contentsline {subsection}{\numberline {6.3.3}Background}{41}
+\contentsline {subsubsection}{\numberline {6.3.3.1}Simultaneous vs Seperate Fitting}{42}
+\contentsline {subsubsection}{\numberline {6.3.3.2}Spectra Arguments}{43}
+\contentsline {subsection}{\numberline {6.3.4}Cut Sensitivity}{44}
+\contentsline {subsection}{\numberline {6.3.5}Oscillator Stability}{44}
+\contentsline {subsection}{\numberline {6.3.6}Binning and Fitting}{45}
+\contentsline {section}{\numberline {6.4}Result and discussion}{45}
+\contentsline {section}{\numberline {6.5}Conclusion}{46}
+\contentsline {chapter}{\numberline {Chapter 7}Fitting Beta Spectrum}{48}
+\contentsline {section}{\numberline {7.1}GEANT4 Monte Carlo}{48}
+\contentsline {subsection}{\numberline {7.1.1}Detector Simulation}{48}
+\contentsline {subsection}{\numberline {7.1.2}Source Definition}{49}
+\contentsline {subsection}{\numberline {7.1.3}Primary Particle Definitions}{49}
+\contentsline {subsection}{\numberline {7.1.4}Simulation Results Processing}{51}
+\contentsline {subsubsection}{\numberline {7.1.4.1}Pile-up Modelling}{52}
+\contentsline {section}{\numberline {7.2}Calibration}{52}
+\contentsline {section}{\numberline {7.3}Fitting Procedure}{54}
+\contentsline {chapter}{BIBLIOGRAPHY}{55}

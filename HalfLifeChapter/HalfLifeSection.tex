@@ -35,11 +35,13 @@ First, the data was processed as described in the previous chapter.
 
 \subsection{Data Selection}
 Only the data from the PVT impantation set was used for the half-life analysis.
-The rate depedent gain effect causes a large systematic effect in the CsI(Na) data.
-This effect causes the gain at early times is higher than the gain at later times in the decay cycle.
-The cuts, however, stay in the same position.
+Afterglow was present in the CsI(Na) detector.
+This caused a slow pile-up effect, where a higher rate means more light.
+The extra light pushed events at higher rates towards higher energies.
+For the decay curve, it meant that at earlier times, the effective gain of the implant detector was higher.
+The beta cuts, however, stayed in the same position.
 Early in the decay cycle, events near the cuts could start out inside the window.
-As time goes on and the gain changes, these cuts could move below the lower beta cut. 
+As time went on and the gain changes, these cuts could move below the lower beta cut. 
 Due to the shape of the beta spectrum, the higher the lower beta cut, the larger the effect.
 This effect is seen in Figure \ref{fig:LBCvHL}.
 
@@ -56,9 +58,8 @@ The offest of the calibration was seen to be independent of time.
 The resulting time-dependent calibration was used to analyze the data.
 This reduced the effect seen in Figure \ref{fig:LBCvHL}, but did not entirely eliminate it.
 Since the CsI(Na) data has a small statistical impact, it was decided to elliminate that data from the analysis of the half-life.
-The cause of the rate dependent gain effect is afterglow in the CsI (Na) scintillator.
-The plastic scintllator does not have any afterglow, so the PVT implant detector is immune to this effect. 
 
+The plastic scintllator did not have any afterglow, so the PVT implant detector was immune to this effect. 
 The PVT data was seperated into 7 sets.
 A summary of the set conditions is shown in Table \ref{tab:ExpConditions}
 As shown in the table, the major conditions were the PVT high voltage, the inhibitor box, and the beam current. 
@@ -83,9 +84,11 @@ As shown in the table, the major conditions were the PVT high voltage, the inhib
 %
 
 The inhibitor box was not installed until the third set of data. 
-Without it, a time-dependent gain shift over the fitting window was induced.
+The inhibitor box shut off the high-voltage during the beam on period.
+Without the box, the current on the PMT was saturated during the beam on period.
+This casued a gain shift over time as the power supply recovered.
 This time-dependent gain shift caused large systematic errors when the beta cuts were moved.
-Thus, sets 1 and 2 where not used in the final analysis.
+Thus, sets 1 and 2 where not used in the final analysis, but are listed here for completness's sake.
 These gain shifts can be seen in Figure \ref{fig:pulserfig}.
 
 
@@ -124,19 +127,15 @@ A sample spectrum of all the gamma and beta energies is shown in Figure \ref{fig
 	\label{fig:GammaGraph}
 \end{figure}
 
-Hard coded gates were used for to select in the beta window for the PVT run sets.
+Fixed energy gates were used for to select in the beta window for the PVT run sets.
 Each different data set had a different energy window due to the gain shifts.
 A sample spectrum with the gates can be seen in Figure \ref{fig:BetaGraph}.
-This spectrum is put in coincidence with the gamma spectra. 
+This spectrum was put in coincidence with the gamma spectra. 
 The lower beta cut was selected to cut out the 511 beta spectram as seen in Figure \ref{fig:2DGraph}.
 When gated around that energies, the resulting gammas measured by the large CsI(Na) detectors are consistent with $^{10}$C and $^{11}$C.
 This comes from the break-up of the plastic. 
 
-The set of runs before the limiter box was installed have a gain shift within each run, similar to the rate dependent gain effect.
-This causes the half-life to vary greatly with the beta cut.
-As the beta gates are moved, different counts move across it over the time interval, causing a change in lifetime. 
-Only the runs after the installation of the limiter box were used for the half-life analysis. 
-This excluded the first and second sets of data.
+As described above, only the runs after the installation of the limiter box were used for the half-life analysis. 
 
 A time difference condition was set by building a spectrum of the time differences between the implant detector's event and one of the four gamma detector's events. 
 The peak of this time difference spectrum was found, and an interval of $\pm$24 ns  was use for this gate.
@@ -153,7 +152,7 @@ A sample time difference spectrum can be seen in Figure \ref{fig:timediff}
 
 The time differnce spectrum shows several features.
 First is the prompt peak, which are correlated gamma and beta events. 
-To the right of the prompt peak, there is a pedistal of events.
+To the right of the prompt peak, there is a pedestal of events.
 These come from pile-up events.
 What happens is that a $^{20}$F event decays and the time stamp of the emmitted beta is recorded.
 The corresponding gamma ray is not detected.
@@ -183,7 +182,7 @@ The pedistal can be seen in full in Figure \ref{fig:timediff2}.
 \begin{figure}
 	\centerline{\includegraphics[width = 0.88\textwidth]{fig_tbgSpec2.pdf}}	
 	\caption{The time difference spectrum zoomed out.
-		 There is still a gamma and beta energy conditions on this graph.}
+		 This figure is shown with energy coincidences.}
 	\label{fig:timediff2}
 \end{figure}
 

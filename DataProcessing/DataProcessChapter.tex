@@ -13,13 +13,78 @@ The third module only recorded the digitized waveforms from the PVT detector.
 
 Each of the channels on each of those modules outputted a time stamp and an energy calculated from a trapezoidal fitler.
 The third module output the digitized waveform over 400ns.
+The digitizers took samples every 8 ns.
 The clock used was a stable EPSON SGR-8002JC programmable crystal oscillator.
 
 The first thing the PIXIE modules did was to digitize the wave forms of the signals.
 The digital wave forms of the signals were only saved for the PVT implant detector.
 The PIXIE modules' software applied a trapezoidal energy filter to the digital wave froms.
-The parameters of the trapezoidal needed to be set by hand.
+
+\subsection{Filter Description}
+The parameters of the trapezoidal filter needed to be set by hand.
+First, three sums of the digitize wave-forms were taken.
+The first sum was over a time known as $tPEAKING$.
+Then, a second sum was taken directly after the first over a time known as $tGAP$.
+Then, a third sum was taken directly after the the second with over a period of $tPEAKING$ again.
+These three sums were added with equation \ref{eq:ensum}
+
+\begin{equation}
+	E = C_{0} * S_{0} + C_{g} * S_{g} + C_{1} * S_{1} 
+	\label{eq:ensum}
+\end{equation} 
+
+with $S_{0}$ being the first sum over tPeaking described above, $S_{G}$ being teh sum over tGap, and $S_{1}$ being the second sum over tPeaking.
+$C_{0}$ is described in equation \ref{eq:c0sum}
+
+\begin{equation}
+	C_{0} = \frac{-(1 - e^{\frac{tSPL}{\tau}})e^{\frac{tPEAKING}{\tau}}}{1 - e^{\frac{tPEAKING}{\tau}}}
+	\label{eq:c0sum}
+\end{equation}
+
+where $tPEAKING$ is the time described above, $tSPL$ is the 8 ns sampling time, and $\tau$ an additional tunable parameter.
+
+$C_{g}$ is described in \ref{eq:cgsum}
+
+\begin{equation}
+	C_{g} = 1 - e^{\frac{tSPL}{\tau}}
+	\label{eq:cgsum}
+\end{equation}
+
+with the same variables.
+Finally, $C_{1}$ is described in \ref{eq:c1sum}.
+
+\begin{equation}
+	C_{1} = \frac{1 - e^{\frac{tSPL}{\tau}}}{1 - e^{\frac{tPEAKING}{\tau}}}
+	\label{eq:c1sum}
+\end{equation}
+
+With the same variables.
+This filter averaged the background before a pulse in $C_{0}$ over $tPEAKING$.
+It took a sample of the pulse, averaged over $tPEAKING$ again in $C_{1}$.
+Then, it subtracted off $C_{0}$ from $C_{1}$, after adjusting for the exponential decay of the pulse.
+The time constant of that decay is the $\tau$ parameter.
+When tuning the PIXIE system, the $\tau$ parameter has the most effect on the output energy.
+
+For this experiment, the various filter parameters are summarized in table \ref{tab:pixieparams}  
+%
+\begin{table}[!hbt]
+	\centering
+	\caption{Energy Filter Parameters}
+	\resizebox{\textwidth}{!}{
+			\begin{tabular}{lrrr}
+			Detector & $\tau$ & $tPEAKING$ & $tGAP$ \\ \hline
+			PVT implant & 60 ns & 208 ns & 128 ns \\
+			All CsI (Na) Detectors & 900 ns & 480 ns & 48 ns \\
+			PPAC Channels & 300000 ns & 1200 ns & 96 ns  
+			\end{tabular}}	
+			\label{tab:pixieparams}
+\end{table}
+%
+
 There was also a trigger filter in the PIXIE system.
+The filter was the same, but the times were much shorter, so that the trigger filter could work quicker. 
+There was a threshold that the output of the trigger filter had to be above in order to be recorded.
+The times for the trigger filter were half that of the energy filter.
 
 \subsection{Data Acquisition Sofware}
 In order to set the parameters of the various filters, a program called NSCOPE was used \cite{REFHERE}
@@ -47,10 +112,11 @@ The decay curves (time in implant minus last beam on) were also plotted.
 These histograms were used as diagnostics. 
 
 \section{Data Taking and Processing}
-To take data, the ReadOut program was activated. 
+To take data, the ReadOutGUI program was activated. 
 Data was taken in one hour intervals, unless one of the detectors stopped counting early
 If a detector stopped early, it was the up detector.
 The run was then ended early and then a new one resarted.
+The events built by Readout had a time interval of 1000 ns.
 
 The resulting .evt files of ReadOut were processed using a program called DDAS dumper.
 This converted the .evt files to ROOT files.
@@ -58,7 +124,8 @@ These ROOT files contained a TTRee that had the energy and time stamps of each d
 There was also information on the trace of the detector.
 
 From the ROOT files from the ddasdumper, another ROOT file was built.
-These files were processed with a code called scan, which was written by Stan Paulauskas.
+These files were processed with a modyfied version of a program called $scan$.
+The original version was written by Stan Paulauskas.
 First, the various energies and times for each detector were built into a histogram.
 Then, the energy and times for the implant detectors, four gamma detectors, beam on signal, and beam off signals were saved to a variable.
 This information was used to build new events for a new TTree.

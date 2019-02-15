@@ -84,7 +84,24 @@ For this experiment, the various filter parameters are summarized in table \ref{
 There was also a trigger filter in the PIXIE system.
 The filter was the same, but the times were much shorter, so that the trigger filter could work quicker. 
 There was a threshold that the output of the trigger filter had to be above in order to be recorded.
-The times for the trigger filter were half that of the energy filter.
+These values are shown in table \ref{tab:trigfilter}
+
+%
+\begin{table}[!hbt]
+	\centering
+	\caption{Trigger Filter Parameters}
+	\resizebox{\textwidth}{!}{
+			\begin{tabular}{lrrr}
+			Detector & $tPEAKING$ & $tGAP$ & Threshold\\ \hline
+			PVT implant & 104 ns & 104 ns & 30 \\ 
+			All CsI (Na) Detectors & 200 ns & 72 ns & 20 \\
+			PPAC Channels & 904 & 104 & 200 
+			\end{tabular}}	
+			\label{tab:trigfilter}
+\end{table}
+%
+
+The peak of the trigger filter was used to calculate the time stamps of the events.  
 
 \subsection{Data Acquisition Sofware}
 In order to set the parameters of the various filters, a program called NSCOPE was used \cite{REFHERE}

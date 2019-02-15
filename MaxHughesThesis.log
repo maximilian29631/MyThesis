@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2018.11.12)  31 JAN 2019 14:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2018.11.12)  15 FEB 2019 11:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -186,7 +186,9 @@ Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 \Gin@req@height=\dimen119
 \Gin@req@width=\dimen120
 )
-(./MaxHughesThesis.aux
+(/usr/share/texlive/texmf-dist/tex/latex/tools/xr.sty
+Package: xr 1994/05/28 v5.02 eXternal References (DPC)
+) (./MaxHughesThesis.aux
 
 LaTeX Warning: Label `eq:qval' multiply defined.
 
@@ -196,18 +198,18 @@ LaTeX Warning: Label `eq:convo' multiply defined.
 )
 \openout1 = `MaxHughesThesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
@@ -304,11 +306,11 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 44.
+(Font)              <14.4> on input line 45.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 44.
+(Font)              <7> on input line 45.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 44.
+(Font)              <12> on input line 45.
 
 [1
 
@@ -375,17 +377,17 @@ ures/RadCorrections_20F_Matching.pdf, page is rotated 90 degrees>] [12])
 ! Missing } inserted.
 <inserted text> 
                 }
-l.128 \subfile{TheoryChapter/TheoryFactors.tex}
+l.130 \subfile{TheoryChapter/TheoryFactors.tex}
                                                
 ? 
 [13]
 Chapter 3.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <24.88> on input line 130.
+(Font)              <24.88> on input line 132.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <20.74> on input line 130.
+(Font)              <20.74> on input line 132.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <17.28> on input line 130.
+(Font)              <17.28> on input line 132.
 (./20FChapter/20Description.tex
 <Figures/20FDecayScheme.png, id=91, 289.08pt x 226.33395pt>
 File: Figures/20FDecayScheme.png Graphic file (type png)
@@ -423,29 +425,11 @@ LaTeX Warning: Reference `tab:detvolt' on page 22 undefined on input line 168.
 
 [22] [23]) [24]
 Chapter 5.
-(./DataProcessing/DataProcessChapter.tex
+(./DataProcessing/DataProcessChapter.tex [25
 
-LaTeX Warning: Reference `eq:ensum' on page 25 undefined on input line 29.
+] [26]
 
-[25
-
-]
-
-LaTeX Warning: Reference `eq:c0sum' on page 26 undefined on input line 37.
-
-
-LaTeX Warning: Reference `eq:cgsum' on page 26 undefined on input line 46.
-
-
-LaTeX Warning: Reference `eq:c1sum' on page 26 undefined on input line 54.
-
-[26]
-
-LaTeX Warning: Reference `tab:pixieparams' on page 27 undefined on input line 6
-8.
-
-
-LaTeX Warning: Citation `REFHERE' on page 27 undefined on input line 90.
+LaTeX Warning: Citation `REFHERE' on page 27 undefined on input line 107.
 
 [27] [28]) [29]
 Chapter 6.
@@ -553,22 +537,19 @@ Package pdftex.def Info: Figures/fig_ideogramAfter.png used on input line 444.
  [46 <./Figures/fig_halfLives.pdf, page is rotated 90 degrees>]) [47 <./Figures
 /fig_ideogramAfter.png>]
 Chapter 7.
-(./BetaFitChapter/BetaFitChapter.tex [48
+(./BetaFitChapter/BetaFitChapter.tex
+Package xr Info: IMPORTING LABELS FROM MaxHughesThesis.aux on input line 1.
+ [48
 
 ] [49]
 
-LaTeX Warning: Reference `eq:fayans_ps' on page 50 undefined on input line 55.
+LaTeX Warning: Reference `eq:fayans_ps' on page 50 undefined on input line 57.
 
-[50] [51]
-
-LaTeX Warning: Reference `fig:pileuptune' on page 52 undefined on input line 12
-3.
-
-<Figures/PileUpTuningThesis.png, id=513, 600.74437pt x 334.42589pt>
+[50] [51] <Figures/PileUpTuningThesis.png, id=513, 600.74437pt x 334.42589pt>
 File: Figures/PileUpTuningThesis.png Graphic file (type png)
 
 <use Figures/PileUpTuningThesis.png>
-Package pdftex.def Info: Figures/PileUpTuningThesis.png used on input line 126.
+Package pdftex.def Info: Figures/PileUpTuningThesis.png used on input line 128.
 
 (pdftex.def)             Requested size: 366.40834pt x 203.97908pt.
  [52] [53 <./Figures/PileUpTuningThesis.png>]) (./MaxHughesThesis.bbl [54] [55
@@ -616,13 +597,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3840 strings out of 494977
- 61217 string characters out of 6180182
- 120404 words of memory out of 5000000
- 6970 multiletter control sequences out of 15000+600000
+ 3859 strings out of 494977
+ 61467 string characters out of 6180182
+ 120748 words of memory out of 5000000
+ 6986 multiletter control sequences out of 15000+600000
  9783 words of font info for 34 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 51i,12n,44p,651b,356s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 51i,12n,44p,651b,351s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
@@ -632,7 +613,7 @@ t/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmti12.pfb>
-Output written on MaxHughesThesis.pdf (66 pages, 1161239 bytes).
+Output written on MaxHughesThesis.pdf (66 pages, 1161721 bytes).
 PDF statistics:
  568 PDF objects out of 1000 (max. 8388607)
  309 compressed objects within 4 object streams

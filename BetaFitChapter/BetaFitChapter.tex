@@ -1,3 +1,5 @@
+\externaldocument[I-]{MaxHughesThesis}
+
 In order to get a measurement of the Fierz term, the spectrum shape needed to get fit.
 The effect of bremstrahlung and the effieciency of the detectors needed to be accounted for.
 The way this was done was with a a simulation.
@@ -34,7 +36,7 @@ The source was implanted 1.156 cm into the detector.
 
 Once these parameters were known, GEANT4 was told to generate two particles.
 First, the corrected beta energy spectrum was sampled and an electron of that energy was generated inside the implant region.
-The beta energy spectrum was generated using all the corrections described in chapter (COME BACK TO THIS).
+The beta energy spectrum was generated using all the corrections described in chapter \ref{ch:theory}. 
 The location of the electron was recovered, and a photon with an energy of  1.6 MeV was generated as well.
 The initital direction of the two particles was as isometric.
 These particles where then propagated through the detector setup..
@@ -52,7 +54,7 @@ One photon was the 1.6336 MeV photon from the $^{20}$F decay.
 The energy of this photon was not changed.
 
 The electron was generated according to phase space spectrum (equation \ref{eq:phase_space}) times all the corrections.
-For the radiative correction, the electron was generated with the formala that assumes all real photon energy is absorbed (equation \ref{eq:fayans_ps}).
+For the radiative correction, the electron was generated with the formala that assumes all real photon energy is absorbed (equation \ref{eq:fayansrad}).
 However, this is not exactly true. 
 In this case, due to the geometry, photons are absorbed totaly if they are below 100 keV in energy.
 In order to properly see the effect of the real photon emmission, the second primary particle is used.
@@ -140,11 +142,11 @@ The background varried from a linear background, a quadratic background, and an 
 For the $^{60}$Co, both peaks were fit at once.
 These different background gave slightly different results for the centroids and the widths of the gaussians.
 The different widths and centroids were taken as a systematic error.
-From the centroids, the calibration for each detector was calculated as:
+From the centroids, the calibration for each detector was calculated and shown in equation \ref{eq:cal}
 
 \begin{equation}
 	C = G * E + b
-	\label{eq:convo}
+	\label{eq:cal}
 \end{equation}
 
 where $C$ is the location of the peak in ADC channels, $G$ the gain in channels/keV, and b the offset in channels.
@@ -155,6 +157,35 @@ Then, equation \ref{eq:convo} was fit to the results in order to determine $A$.
 The simulation described above were only part of what was needed.
 Other simulations included in the fit had the phase space times corrections times or divided an additional factor of the total energy of the electron.
 The simulations were all convoluted and filtered as described above.
-The various simulations were taken together and the fit using the ROOT algorithm.
 
-I NEED TO EXPLAIN BETTER
+\subsection{Data Processing}
+The data was processes from the TTrees described in the previous section.
+The energy spectrum of the implant detector was put in coincidence with the 4 gamma detectors.
+The energy cuts of the gamma detectors were the same as in the life-time measurement.
+There was a time difference condition as well.
+For this measurement, the time difference between a beta event and a gamma event had to be between -300 and 24 ns.
+Then, a 2-D histogram was built, with energy on one axis and time since last beam on on there other.
+Since afterglow causes an effect that looks like a gain shift, different time cuts of equal statistics were taken from this 2-D histogram. 
+These time cuts were then fit. 
+The gain was left as a free parameter to counteract this afterglow effect.
+
+\subsection{Fit Function}
+The fit function used was as follows.
+First, the x axis of the data was read.
+This number was in ADC units, so equation \ref{eq:cal} was used to turn this number into energy in keV.
+For the fitting, the gain $G$ was left as a free parameter, but the offset $b$ was set from the calibration.
+
+\begin{equation}
+	A * (f(E)_{nosum} * S(E,b_{wm}$) + f(E)_{summing}) + B*p(E)
+	\label{eq:betafit}
+\end{equation}
+
+where $A$ is the normalization, $B$ the level of pile-up, $E$ the energy, $b_{wm}$ the weak magnetism, $S(E,b_{wm})$ the shape factor, $f(E)_{nosum}$ the output of the GEANT4 simulation without any energy summing between the gamma and beta, and $f(E)_{summing}$ the output of the GEANT4 simulation with energy summing.
+The free parameters here are $A$, $B$, and $b_{wm}$.
+
+\subsection{Fit details}
+The fit was done run by run.
+First a prefit for each section was done to calibrate the energy.
+Then, two endpoints in keV were used for the fit.
+The fitting function with a fixed offset was fit using a maximum likelyhood method.
+The resulting $b_{wm}$ was recorded. 

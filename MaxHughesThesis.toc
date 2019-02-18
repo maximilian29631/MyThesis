@@ -55,4 +55,7 @@
 \contentsline {subsubsection}{\numberline {7.1.4.1}Pile-up Modelling}{52}
 \contentsline {section}{\numberline {7.2}Calibration}{52}
 \contentsline {section}{\numberline {7.3}Fitting Procedure}{54}
-\contentsline {chapter}{BIBLIOGRAPHY}{55}
+\contentsline {subsection}{\numberline {7.3.1}Data Processing}{54}
+\contentsline {subsection}{\numberline {7.3.2}Fit Function}{54}
+\contentsline {subsection}{\numberline {7.3.3}Fit details}{55}
+\contentsline {chapter}{BIBLIOGRAPHY}{56}

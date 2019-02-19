@@ -5,45 +5,45 @@ The style file: plain.bst
 Database file #1: ./Biliography/thebibliography.bib
 Warning--I didn't find a database entry for "REFHERE"
 Warning--empty journal in neu51
-You've used 21 entries,
+You've used 22 entries,
             2118 wiz_defined-function locations,
-            661 strings with 7539 characters,
-and the built_in function-call counts, 7591 in all, are:
-= -- 744
-> -- 359
+            668 strings with 9535 characters,
+and the built_in function-call counts, 11807 in all, are:
+= -- 1028
+> -- 997
 < -- 1
-+ -- 144
-- -- 122
-* -- 610
-:= -- 1284
-add.period$ -- 64
-call.type$ -- 21
-change.case$ -- 124
++ -- 399
+- -- 376
+* -- 1138
+:= -- 2090
+add.period$ -- 67
+call.type$ -- 22
+change.case$ -- 254
 chr.to.int$ -- 0
-cite$ -- 22
-duplicate$ -- 241
-empty$ -- 581
-format.name$ -- 122
-if$ -- 1549
+cite$ -- 23
+duplicate$ -- 252
+empty$ -- 610
+format.name$ -- 376
+if$ -- 2246
 int.to.chr$ -- 0
-int.to.str$ -- 21
-missing$ -- 21
-newline$ -- 109
-num.names$ -- 42
-pop$ -- 91
+int.to.str$ -- 22
+missing$ -- 22
+newline$ -- 114
+num.names$ -- 44
+pop$ -- 219
 preamble$ -- 1
-purify$ -- 103
+purify$ -- 232
 quote$ -- 0
-skip$ -- 159
+skip$ -- 166
 stack$ -- 0
-substring$ -- 616
-swap$ -- 27
+substring$ -- 648
+swap$ -- 28
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 84
+type$ -- 88
 warning$ -- 1
-while$ -- 70
-width$ -- 23
-write$ -- 234
+while$ -- 73
+width$ -- 24
+write$ -- 245
 (There were 2 warnings)

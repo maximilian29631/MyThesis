@@ -1,15 +1,16 @@
 \externaldocument[I-]{MaxHughesThesis}
 
-In order to get a measurement of the Fierz term, the spectrum shape needed to get fit.
-The effect of bremstrahlung and the effieciency of the detectors needed to be accounted for.
-The way this was done was with a a simulation.
+After the half-life measurement was completed, the next step was to use the shape of the spectrum to deduce Fierz term. 
+In order to get a measurement of the Fierz term, the spectrum shape needed to be carefully described.
+In addtion to all the theoretical corrections, the effect of bremstrahlung and the effieciency of the detectors needed to be accounted for.
+The way this was done was with a GEANT4 simulation.
 
 \section{GEANT4 Monte Carlo}
 The corrected beta decay spectrum was fed as input to a Monte Carlo.
 The program used to model the detectors was GEANT4.
-In order to use the program, parameters must be introduced.
+In order to use the program, a model of the detector set-up and the initial energies of the primary particles need to be introduced.  
 
-\subsection{Detector Simulation}
+\subsection{Detector Geometry}
 The geometry of the detector set-up was programmed into the simulation.
 The implant detector was modeled as a square prism of CsI.
 The rectangular prism was 9.76 cm deep with a 5 cm square base.
@@ -27,6 +28,14 @@ The four large gamma detectors were arranged into a square around the implant de
 Each square base of the gamma detectors was centered one inch upstream from the face of the implant detector.
 This modeled how the implant detector was recessed in the experiment.
 
+A visualization of the CsI crystals in GEANT4 is shown in figure \ref{gif:GEANT4Det}
+
+\begin{figure}[!htb]
+	\centerline{\includegraphics[width=0.78\textwidth]{GEANT4WithoutAl.png}}
+	\caption{The detector geometry inside GEANT4}
+	\label{fig:GEANT4Det}
+\end{figure}
+
 \subsection{Source Definition}
 The next step was to define a region inside the implant detector.
 This region was where the gamma and beta particles orignated from.
@@ -35,44 +44,44 @@ The verticle and horizontal size of the region was calulated by using the PPAC m
 This size was 0.4 mm deep, 3.5 mm wide, and 3.6 mm tall.
 The source was implanted 1.156 cm into the detector.
 
-Once these parameters were known, GEANT4 was told to generate two particles.
-First, the corrected beta energy spectrum was sampled and an electron of that energy was generated inside the implant region.
-The beta energy spectrum was generated using all the corrections described in chapter \ref{ch:theory}.
-The location of the electron was recovered, and a photon with an energy of  1.6 MeV was generated as well.
-The initital direction of the two particles was as isometric.
-These particles where then propagated through the detector setup..
-GEANT4 uses a physics list that has all the interactions a particle could take.
-The physics list used was standard option 4.
-This list is better at low energy electron physics.
-
 \subsection{Primary Particle Definitions}
 There were three primary particles generated.
 Two were photons and one was an electron.
-All three particles had an isotropic angular distribution.
-The origin points of all the primary particles was the same.
+All three particles had an isotropic angular distribution, and would propogate in different directions.
 
-One photon was the 1.6336 MeV photon from the $^{20}$F decay.
+The first particle was an electron. 
+This selected the point in the source region.
+In order to generate the correct energy for this electron, the following process was used.
+First, all the corrections described in chapter \ref{ch:theory} were multiplied with equation \ref{eq:phase_space}.
+This resulting function was evaluated at 1024 evenly space points from 0 keV to the end point energy.
+This list of 1024 points was fed into GEANT4 as a histogram, as GEANT4 can only take a histogram of up to 1024 bins. 
+Linear interpolation was used to make this histogram back into a smooth function.
+This is not exactly a histogram of the beta energy spectrum.
+The original function was fit to the generated beta energies, and no distortions were generated using this procedure.
+
+The next photon was the 1.6336 MeV photon from the $^{20}$F decay.
 The energy of this photon was not changed.
 
-The electron was generated according to phase space spectrum (equation \ref{eq:phase_space}) times all the corrections.
-For the radiative correction, the electron was generated with the formala that assumes all real photon energy is absorbed (equation \ref{eq:fayansrad}).
-However, this is not exactly true. 
-In this case, due to the geometry, photons are absorbed totaly if they are below 100 keV in energy.
-In order to properly see the effect of the real photon emmission, the second primary particle is used.
-
-After the electron energy is generated, a formula describing the energy spectrum of the inner bremsstrahlung photons is generated. 
+The last photon was to account for the inner bremsstrahlung.
+The radiative correction used to generate the electron energy was the formala that assumes all real photon energy is absorbed (equation \ref{eq:fayansrad}).
+After the electron energy is generated, the formula describing the energy spectrum of the inner bremsstrahlung photons is generated. 
 This spectrum is written out in equation \ref{eq:KUB}. % Add KUB again here? Probably.
 Further discussion of this formula is found in the theory chapter.
 A cutoff of 50 keV is imposed to the formula, as it has a singularity at zero photon energy.
-Then, the formula is numerical integrated from 50 keV to the electron energy.
+In addition, with this geometry, all photon energies below 100 keV and absorbed.
+Then, the formula is numerical integrated from 50 keV to the electron energy over X steps using the trapezoidal rule.
 This is the total probablity that an electron emits a KUB photon.
 This number is compared to a random number from 0 to 1.
 If the random number is below the integral, the inner bremsstrahlung energy spectrum is sampled.
 The algorithm used for this sampling is the van Neumann method \cite{neu51}.
 The sampled energy is given to the third primary particle.
+If the random number is more than the integral, the third primary particle is given an energy of 0 keV.
 The energy of the electron is reduced accordingly.
 
-After all three particles have their energies defined, they are propogated through the detector set up.
+The two photons had their initial points moved to match that of the electrons.
+All three particles were then free to propagate throug the detectors.
+
+\section{Particle Propogation}  
 
 \section{MC Output}
 The particles were tracked and the energy deposited in each detector summed up.
@@ -85,5 +94,11 @@ Then, the process was repeated.
 A new location inside the region was generated and another decay generated.
 
 In order to get to get the necessary statistics, 2 * 10$^{9}$ events had to be generated. 
+This initially took 7 days to run. 
+In order to decrease the time it took to run, the range cuts on the gamma rays were changed.
+The range cuts were changed from 5 $\mu$m to 5 mm for all gamma rays.
+The range cuts for other particles stayed at 5 $\mu$m.
 
+\section{Simulation Devolopment}
+Initially,  
 

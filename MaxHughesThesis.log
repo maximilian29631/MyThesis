@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2018.11.12)  19 FEB 2019 14:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2018.11.12)  19 FEB 2019 14:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -538,21 +538,44 @@ Chapter 7.
 Package xr Info: IMPORTING LABELS FROM MaxHughesThesis.aux on input line 1.
  [48
 
-] [49] [50]) [51]
+]
+
+LaTeX Warning: Reference `gif:GEANT4Det' on page 49 undefined on input line 31.
+
+
+<Figures/GEANT4WithoutAl.png, id=504, 943.3644pt x 609.9588pt>
+File: Figures/GEANT4WithoutAl.png Graphic file (type png)
+
+<use Figures/GEANT4WithoutAl.png>
+Package pdftex.def Info: Figures/GEANT4WithoutAl.png used on input line 34.
+(pdftex.def)             Requested size: 366.40834pt x 236.91502pt.
+ [49 <./Figures/GEANT4WithoutAl.png>] [50])
+[51]
 Chapter 8.
 (./BetaFitChapter/BetaFitChapter.tex
 Package xr Info: IMPORTING LABELS FROM MaxHughesThesis.aux on input line 1.
+
+
+LaTeX Warning: Reference `fig:GEANT4Hists' on page 52 undefined on input line 1
+5.
+
+<Figures/GEANT4OutputBetter.png, id=514, 1165.35374pt x 475.7775pt>
+File: Figures/GEANT4OutputBetter.png Graphic file (type png)
+
+<use Figures/GEANT4OutputBetter.png>
+Package pdftex.def Info: Figures/GEANT4OutputBetter.png used on input line 18.
+(pdftex.def)             Requested size: 366.40834pt x 149.58757pt.
  [52
 
-]
-<Figures/PileUpTuningThesis.png, id=517, 600.74437pt x 334.42589pt>
+] [53 <./Figures/GEANT4OutputBetter.png>] <Figures/PileUpTuningThesis.png, id=5
+22, 600.74437pt x 334.42589pt>
 File: Figures/PileUpTuningThesis.png Graphic file (type png)
 
 <use Figures/PileUpTuningThesis.png>
-Package pdftex.def Info: Figures/PileUpTuningThesis.png used on input line 48.
+Package pdftex.def Info: Figures/PileUpTuningThesis.png used on input line 59.
 (pdftex.def)             Requested size: 366.40834pt x 203.97908pt.
- [53] [54 <./Figures/PileUpTuningThesis.png>] [55]) (./MaxHughesThesis.bbl [56]
- [57
+ [54 <./Figures/PileUpTuningThesis.png>]
+[55]) (./MaxHughesThesis.bbl [56] [57
 
 ]
 Missing character: There is no Ã in font cmr12!
@@ -597,10 +620,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3864 strings out of 494977
- 61564 string characters out of 6180182
+ 3877 strings out of 494977
+ 61918 string characters out of 6180182
  120770 words of memory out of 5000000
- 6987 multiletter control sequences out of 15000+600000
+ 6998 multiletter control sequences out of 15000+600000
  9783 words of font info for 34 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  51i,12n,44p,651b,351s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -613,10 +636,10 @@ t/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmti12.pfb>
-Output written on MaxHughesThesis.pdf (68 pages, 1165502 bytes).
+Output written on MaxHughesThesis.pdf (68 pages, 1192894 bytes).
 PDF statistics:
- 575 PDF objects out of 1000 (max. 8388607)
+ 577 PDF objects out of 1000 (max. 8388607)
  314 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
- 101 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 111 words of extra memory for PDF output out of 10000 (max. 10000000)
 

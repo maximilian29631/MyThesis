@@ -46,16 +46,18 @@
 \contentsline {subsection}{\numberline {6.3.6}Binning and Fitting}{45}
 \contentsline {section}{\numberline {6.4}Result and discussion}{45}
 \contentsline {section}{\numberline {6.5}Conclusion}{46}
-\contentsline {chapter}{\numberline {Chapter 7}Fitting Beta Spectrum}{48}
+\contentsline {chapter}{\numberline {Chapter 7}GEANT4 Monte Carlo}{48}
 \contentsline {section}{\numberline {7.1}GEANT4 Monte Carlo}{48}
 \contentsline {subsection}{\numberline {7.1.1}Detector Simulation}{48}
 \contentsline {subsection}{\numberline {7.1.2}Source Definition}{49}
 \contentsline {subsection}{\numberline {7.1.3}Primary Particle Definitions}{49}
-\contentsline {subsection}{\numberline {7.1.4}Simulation Results Processing}{51}
-\contentsline {subsubsection}{\numberline {7.1.4.1}Pile-up Modelling}{52}
-\contentsline {section}{\numberline {7.2}Calibration}{52}
-\contentsline {section}{\numberline {7.3}Fitting Procedure}{54}
-\contentsline {subsection}{\numberline {7.3.1}Data Processing}{54}
-\contentsline {subsection}{\numberline {7.3.2}Fit Function}{54}
-\contentsline {subsection}{\numberline {7.3.3}Fit details}{55}
-\contentsline {chapter}{BIBLIOGRAPHY}{56}
+\contentsline {section}{\numberline {7.2}MC Output}{51}
+\contentsline {chapter}{\numberline {Chapter 8}Fitting Beta Spectrum}{52}
+\contentsline {section}{\numberline {8.1}Simulation Results Processing}{52}
+\contentsline {subsubsection}{\numberline {8.1.0.1}Pile-up Modelling}{53}
+\contentsline {section}{\numberline {8.2}Calibration}{53}
+\contentsline {section}{\numberline {8.3}Fitting Procedure}{55}
+\contentsline {subsection}{\numberline {8.3.1}Data Processing}{55}
+\contentsline {subsection}{\numberline {8.3.2}Fit Function}{55}
+\contentsline {subsection}{\numberline {8.3.3}Fit details}{56}
+\contentsline {chapter}{BIBLIOGRAPHY}{57}

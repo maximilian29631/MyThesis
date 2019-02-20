@@ -4,14 +4,16 @@ The output of the GEANT4 was used to fit the data spectra.
 First, however, it had to be processed. 
 
 \section{Simulation Results Processing}
-After the events were done, the simulation data was processed further. 
+After the GEANT4 simulation was done, the output file had to processed further.  
 Much like the experimental data, the simulated data had to be filtered.
+This was done using the TTrees from the output files of the GEANT4 simulation.
 The energy absorbed in the implant detector was filtered by the energy absorbed in the outer four gamma detecters in the simulation.
 
-The filtered data was seperated into two parts:
-Absorbed energy in the implant detector only orginating from the electron.
-Absorbed energy in the implant detector with some contribution from the gamma ray.
-These energies were built into two different histograms.
+The two different categories of energy absorbed in the implant detector were built into two histograms. 
+One histogram had a condition that the energy absorbed by the intial gamma ray had to be zero.
+This histogram was the energy absorbed without any summing.
+The second histogram was the energy absorbed where there was a contribution from the gamma ray.
+This histogram was known as the energy absorbed with summing.
 These two histograms can be seen in figure \ref{fig:GEANT4Hists}
 
 \begin{figure}[!htb]
@@ -22,9 +24,9 @@ These two histograms can be seen in figure \ref{fig:GEANT4Hists}
 	\label{fig:GEANT4Hists}
 \end{figure}
 
-
-These two histograms had the detector resolution applied to it. 
-
+\subsubsection{Detector Resolution}
+The next step was the apply the detector resolution to this histogram.
+This was done by applying a convolution function to the histograms built from the GEANT4 output files.
 The convolution function was
 
 \begin{equation}
@@ -33,6 +35,14 @@ The convolution function was
 \end{equation}
 
 where $\sigma$ was the energy resolution, $E$ the energy, and $A$ a constant found through a calibration.
+This was done by looping through each of the histograms bin by bin and reading the number of counts in each bin.
+For each bin a Gaussian function was built.
+The centroid of the Gaussian was the center of each bin in keV.
+The $\sigma$ of the Gaussian was calculated by using equation \ref{eq:convo}.
+This Gaussian function was sampled as many times as there were counts in the bin.
+These samples were filled into a new histogram.
+This was repeated bin by bin until all bins were distributed.
+The value of $A$ used for this procedure was 1.118.
 
 \subsubsection{Pile-up Modelling}
 After the convolution, the simulation data was sent through a simulation to model pile-up.

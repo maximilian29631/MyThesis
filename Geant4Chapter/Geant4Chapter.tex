@@ -2,8 +2,9 @@
 
 After the half-life measurement was completed, the next step was to use the shape of the spectrum to deduce Fierz term. 
 In order to get a measurement of the Fierz term, the spectrum shape needed to be carefully described.
-In addtion to all the theoretical corrections, the effect of bremstrahlung and the effieciency of the detectors needed to be accounted for.
+In addtion to all the theoretical corrections, the effect of bremsstrahlung and the efficiency of the detectors needed to be accounted for.
 The way this was done was with a GEANT4 simulation \cite{Ago03}.
+The most updated copy of the code can be found at https://github.com/maximilian29631/Geant4for20F/tree/RealDeadLayer. 
 
 \section{GEANT4 Monte Carlo}
 The corrected beta decay spectrum was fed as input to a Monte Carlo.
@@ -21,7 +22,7 @@ The four large gamma detectors also square prisms.
 The active volume was 79.5 mm square and 76.2 mm deep.
 It was also made of CsI.
 There was a 2 mm dead layer of vacuum around the detector.
-Above this dead layer, a 1.5 mm laywer of MgO was added.
+Above this dead layer, a 1.5 mm layer of MgO was added.
 On top of this, the can of aluminum, 1 mm thick, was added into the simulation.
 
 The four large gamma detectors were arranged into a square around the implant detector.
@@ -38,9 +39,9 @@ A visualization of the CsI crystals in GEANT4 is shown in figure \ref{gif:GEANT4
 
 \subsection{Source Definition}
 The next step was to define a region inside the implant detector.
-This region was where the gamma and beta particles orignated from.
+This region was where the gamma and beta particles originated from.
 The depth of the region was calculated using LISE++, a ion optics code.
-The verticle and horizontal size of the region was calulated by using the PPAC measurement and an ion optics simulation.
+The verticle and horizontal size of the region was calculated by using the PPAC measurement and an ion optics simulation.
 This size was 0.4 mm deep, 3.5 mm wide, and 3.6 mm tall.
 The source was implanted 1.156 cm into the detector.
 
@@ -69,8 +70,8 @@ This spectrum is written out in equation \ref{eq:KUB}. % Add KUB again here? Pro
 Further discussion of this formula is found in the theory chapter.
 A cutoff of 50 keV is imposed to the formula, as it has a singularity at zero photon energy.
 In addition, with this geometry, all photon energies below 100 keV and absorbed.
-Then, the formula is numerical integrated from 50 keV to the electron energy over X steps using the trapezoidal rule.
-This is the total probablity that an electron emits a KUB photon.
+Then, the formula is numerical integrated from 50 keV to the electron energy over 1000 steps using the trapezoidal rule.
+This is the total probability that an electron emits a KUB photon.
 This number is compared to a random number from 0 to 1.
 If the random number is below the integral, the inner bremsstrahlung energy spectrum is sampled.
 The algorithm used for this sampling is the van Neumann method \cite{neu51}.
@@ -81,8 +82,8 @@ The energy of the electron is reduced accordingly.
 The two photons had their initial points moved to match that of the electrons.
 All three particles were then free to propagate throug the detectors.
 
-\section{Particle Propogation}  
-GEANT4 propogates the particles in steps.
+\section{Particle Propagation}  
+GEANT4 propagates the particles in steps.
 During or after each step, different physics processes are carried out.
 The physics process may create secondary particles.
 If these secondary particles cannot make it the length of the range cut, they will not be created.
@@ -93,7 +94,7 @@ These steps happen until the primary particle runs out of energy.
 \section{MC Output}
 The particles were tracked and the energy deposited in each detector summed up.
 The energies deposited into the implant detector was summed up into two categories.
-The energy deposited from the intitial gamma ray was one category.
+The energy deposited from the initial gamma ray was one category.
 The other was the energy deposited from the initial electron.
 After the energies of the particles reached a certain threshold, the simulation of one decay was finished.
 All the energies deposited into each of the detectors was summed up and saved as an event in a ROOT tree.
@@ -116,10 +117,10 @@ Initially, all energy absorbed by the implant was recorded, regardless of its or
 This was found not to be the correct way to fit the data.
 To counteract that, the class G4VUserTrackInformation was implemented.
 This gave the each track the information about the primary particle.
-To split the energies from different detectors, the initial energy of each primary particle was checked.
+To split the energies from different detectors, the initial energy and charge of each primary particle was checked.
 Since the gamma rays are mono-chromatic, the energy of the primary particle was compared to 1.6336 MeV.
-It was also checked if the primary particle had a charge or not.
-This took care of most cases, unless a sampled inner bremsstrahlung photon had exactly that energy, which was rare enough to be negligable.
+If the primary particle had charge or it was a photon without an initial energy of 1.6336 MeV, it was put in the category of energy from the initial electron. 
+This took care of most cases, unless a sampled inner bremsstrahlung photon had exactly that energy, which was rare enough to be negligible.
 
 The radiative correction used was changed.
 Initially, it was assumed that all the real photons generated by the radiative correction would be absorbed.

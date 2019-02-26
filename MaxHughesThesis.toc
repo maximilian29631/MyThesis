@@ -18,7 +18,7 @@
 \contentsline {section}{\numberline {4.1}Experimental technique}{16}
 \contentsline {section}{\numberline {4.2}Creating $^{20}$F Beam}{17}
 \contentsline {subsection}{\numberline {4.2.1}Beam Size and Location}{18}
-\contentsline {subsection}{\numberline {4.2.2}Beam Purity}{19}
+\contentsline {subsection}{\numberline {4.2.2}Beam Purity}{20}
 \contentsline {section}{\numberline {4.3}Detector Set Up}{20}
 \contentsline {subsection}{\numberline {4.3.1}$^{20}$F Decay Detectors}{20}
 \contentsline {subsection}{\numberline {4.3.2}Other detectors}{22}
@@ -51,15 +51,16 @@
 \contentsline {subsection}{\numberline {7.1.1}Detector Geometry}{48}
 \contentsline {subsection}{\numberline {7.1.2}Source Definition}{49}
 \contentsline {subsection}{\numberline {7.1.3}Primary Particle Definitions}{50}
-\contentsline {section}{\numberline {7.2}Particle Propogation}{51}
+\contentsline {section}{\numberline {7.2}Particle Propagation}{51}
 \contentsline {section}{\numberline {7.3}MC Output}{51}
 \contentsline {section}{\numberline {7.4}Simulation Devolopment}{52}
-\contentsline {chapter}{\numberline {Chapter 8}Fitting Beta Spectrum}{53}
-\contentsline {section}{\numberline {8.1}Simulation Results Processing}{53}
-\contentsline {subsubsection}{\numberline {8.1.0.1}Pile-up Modelling}{54}
-\contentsline {section}{\numberline {8.2}Calibration}{55}
-\contentsline {section}{\numberline {8.3}Fitting Procedure}{56}
-\contentsline {subsection}{\numberline {8.3.1}Data Processing}{56}
-\contentsline {subsection}{\numberline {8.3.2}Fit Function}{57}
-\contentsline {subsection}{\numberline {8.3.3}Fit details}{57}
-\contentsline {chapter}{BIBLIOGRAPHY}{58}
+\contentsline {chapter}{\numberline {Chapter 8}Fitting Beta Spectrum}{54}
+\contentsline {section}{\numberline {8.1}Simulation Results Processing}{54}
+\contentsline {subsubsection}{\numberline {8.1.0.1}Detector Resolution}{55}
+\contentsline {subsubsection}{\numberline {8.1.0.2}Pile-up Modelling}{56}
+\contentsline {section}{\numberline {8.2}Calibration}{56}
+\contentsline {section}{\numberline {8.3}Fitting Procedure}{58}
+\contentsline {subsection}{\numberline {8.3.1}Data Processing}{58}
+\contentsline {subsection}{\numberline {8.3.2}Fit Function}{58}
+\contentsline {subsection}{\numberline {8.3.3}Fit details}{59}
+\contentsline {chapter}{BIBLIOGRAPHY}{60}

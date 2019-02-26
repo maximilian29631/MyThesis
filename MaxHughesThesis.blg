@@ -3,47 +3,46 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: MaxHughesThesis.aux
 The style file: plain.bst
 Database file #1: ./Biliography/thebibliography.bib
-Warning--I didn't find a database entry for "REFHERE"
 Warning--empty journal in neu51
-You've used 22 entries,
+You've used 24 entries,
             2118 wiz_defined-function locations,
-            668 strings with 9535 characters,
-and the built_in function-call counts, 11807 in all, are:
-= -- 1028
-> -- 997
+            678 strings with 9931 characters,
+and the built_in function-call counts, 12495 in all, are:
+= -- 1089
+> -- 1042
 < -- 1
-+ -- 399
-- -- 376
-* -- 1138
-:= -- 2090
-add.period$ -- 67
-call.type$ -- 22
-change.case$ -- 254
++ -- 417
+- -- 392
+* -- 1189
+:= -- 2208
+add.period$ -- 72
+call.type$ -- 24
+change.case$ -- 268
 chr.to.int$ -- 0
-cite$ -- 23
-duplicate$ -- 252
-empty$ -- 610
-format.name$ -- 376
-if$ -- 2246
+cite$ -- 25
+duplicate$ -- 270
+empty$ -- 660
+format.name$ -- 392
+if$ -- 2385
 int.to.chr$ -- 0
-int.to.str$ -- 22
-missing$ -- 22
-newline$ -- 114
-num.names$ -- 44
-pop$ -- 219
+int.to.str$ -- 24
+missing$ -- 23
+newline$ -- 123
+num.names$ -- 48
+pop$ -- 236
 preamble$ -- 1
-purify$ -- 232
+purify$ -- 244
 quote$ -- 0
-skip$ -- 166
+skip$ -- 181
 stack$ -- 0
-substring$ -- 648
-swap$ -- 28
+substring$ -- 685
+swap$ -- 30
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 88
+type$ -- 96
 warning$ -- 1
-while$ -- 73
-width$ -- 24
-write$ -- 245
-(There were 2 warnings)
+while$ -- 78
+width$ -- 26
+write$ -- 264
+(There was 1 warning)

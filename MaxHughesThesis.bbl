@@ -57,6 +57,10 @@ S.~A. Fayans.
 \newblock {\em Sov. J. Nucl. Phys.}, 42:590, 1985.
 \newblock [Yad. Fiz.42,929(1985)].
 
+\bibitem{DAQ17}
+Ron Fox.
+\newblock Nscl data acquisition documentation, 2017.
+
 \bibitem{Gen76}
 H.~Genz, A.~Richter, B.M. Schmitz, and H.~Behrens.
 \newblock Half-life, endpoint energy, ƒt value and shape factor in the β−
@@ -67,6 +71,17 @@ H.~Genz, A.~Richter, B.M. Schmitz, and H.~Behrens.
 S.~S. Glickstein and R.~G. Winter.
 \newblock Properties of ${\mathrm{f}}^{20}$.
 \newblock {\em Phys. Rev.}, 129:1281--1283, Feb 1963.
+
+\bibitem{Huy18}
+X.~Huyan, O.~Naviliat-Cuncic, P.~Voytas, S.~Chandavar, M.~Hughes,
+  K.~Minamisono, and S.V. Paulauskas.
+\newblock Geant4 simulations of the absorption of photons in csi and nai
+  produced by electrons with energies up to 4 mev and their application to
+  precision measurements of the β-energy spectrum with a calorimetric
+  technique.
+\newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
+  Accelerators, Spectrometers, Detectors and Associated Equipment}, 879:134 --
+  140, 2018.
 
 \bibitem{Ito95}
 S.~Itoh, M.~Yasuda, H.~Yamamoto, T.~Iida, A.~Takahashi, and K.~Kawade.

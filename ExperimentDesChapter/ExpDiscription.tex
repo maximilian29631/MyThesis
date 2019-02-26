@@ -85,7 +85,7 @@ The points are shown as the black dots in Fig: \ref{fig:PPACSpotch}.
 They are one HWHM away from the center. 
 
 \begin{figure}
-	\includegraphics[width=0.88\textwidth]{PPACFitted.png}
+	\centerline{\includegraphics[width=0.88\textwidth]{PPACFitted.png}}
 	\caption{The beam spot of the calibrated PPAC spectrum. 
 		 The samples of the spectrum that were averaged together are shown in the black dots.
 		 The center of the fit is not shown.}
@@ -114,7 +114,7 @@ The beam was caught by a CsI(Na) scintillator of a similar design to the one use
 had to travel through. By varying this thickness to the one predicted to stop the beam out side of the detector, the depth of implantation could be verified. 
 This was done after the main run, and the simulations proved to be correct.
 
-\section{Detector Set Up}
+\section{Detector Configuration}
 
 \subsection{$^{20}$F Decay Detectors}
 One implant detector was a scintillator 3 in diameter by 3 in long cylinder of EJ-200 polyvinyltoluene (PVT).
@@ -148,7 +148,7 @@ However, no other configurations were used during the experiment.
 A sketch of both detector configurations is shown in Figure \ref{fig:detsketch}.
 
 \begin{figure}
-	\includegraphics[width=0.88\textwidth]{fig_setup.pdf}
+	\centerline{\includegraphics[width=0.68\textwidth]{fig_setup.pdf}}
 	\caption{A sketch of the detector set up. 
 	Shown here is with the PVT detector implant.
 	The CsI (Na) detector was centered in the middle of the the four gamma detectors and recessed by 1 inch.
@@ -159,6 +159,37 @@ A sketch of both detector configurations is shown in Figure \ref{fig:detsketch}.
 To switch between different implant detectors, the central detector in the frame was removed and put on the floor.
 The other detector was placed in the center of the four gamma detectors.
 The PVT detector was supported on a metal rail, while the CsI (Na) detector was supported on pile of scrap aluminum.
+The rail for the PVT detector, along with the four gamma detectors,  can be see in figure \ref{fig:PVTPicture}.
+
+\begin{figure}
+	\centerline{\includegraphics[width=0.68\textwidth]{fig_PVTSetupPicture.png}}
+	\caption{A piture of the PVT configuration. 
+		 The colored tape on the PMTs of the gamma detectors was to keep track of what power and signal cable went to which detector.
+		 The rail the detector rested on can be seen.
+		 The optical fibers (the black cords) can be seen running into the black box with the LED.
+		 }
+	\label{fig:PVTPicture}
+\end{figure}
+
+A better view of the gamma detector cross can be seen in figure \ref{fig:CsIPicture}.
+\begin{figure}
+	\centerline{\includegraphics[width=0.68\textwidth]{fig_CsISetupPicture.png}}
+	\caption{A piture of the CsI setup.
+		 The active cyrstal of the implant detector can been seen much better. 
+		 }
+	\label{fig:CsIPicture}
+\end{figure}
+
+\subsection{Detector Frame}
+The aluminum sheathing came with the detectors.
+However, the bars of aluminum in figure \ref{fig:PVTPicture} were not part of the detector array.
+These bars made up the frame which was designed seperately.
+In order to design the frame, the program FreeCAD was used.
+The detector crystals were modelled as cubes. 
+The frame was made from extruded aluminum alloy bars from 80/20 Inc.
+Models of the bars were positioned in the program, and the frame built up from there.
+The frame was designed so that the gamma detectors could move around into a pin-wheel configuration.
+This configuration was not used during the experiment.
 
 \subsection{Powering the Detectors}
 

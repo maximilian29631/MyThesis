@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2018.11.12)  26 FEB 2019 10:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2018.11.12)  26 FEB 2019 11:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -403,173 +403,186 @@ Chapter 4.
 File: Figures/PPACFitted.png Graphic file (type png)
 
 <use Figures/PPACFitted.png>
-Package pdftex.def Info: Figures/PPACFitted.png used on input line 78.
+Package pdftex.def Info: Figures/PPACFitted.png used on input line 88.
 (pdftex.def)             Requested size: 413.3867pt x 280.72806pt.
- [19 <./Figures/PPACFitted.png>] [20]
-<Figures/fig_setup.pdf, id=118, 867.24pt x 505.89pt>
+ [19] [20 <./Figures/PPACFitted.png>] [21]
+<Figures/fig_setup.pdf, id=121, 867.24pt x 505.89pt>
 File: Figures/fig_setup.pdf Graphic file (type pdf)
 
 <use Figures/fig_setup.pdf>
-Package pdftex.def Info: Figures/fig_setup.pdf used on input line 137.
-(pdftex.def)             Requested size: 413.3867pt x 241.14163pt.
- [21 <./Figures/fig_setup.pdf>]
+Package pdftex.def Info: Figures/fig_setup.pdf used on input line 151.
+(pdftex.def)             Requested size: 319.42996pt x 186.33496pt.
 
-Package caption Warning: \label without proper \caption on input line 185.
+<Figures/fig_PVTSetupPicture.png, id=122, 304.9794pt x 228.3732pt>
+File: Figures/fig_PVTSetupPicture.png Graphic file (type png)
+
+<use Figures/fig_PVTSetupPicture.png>
+Package pdftex.def Info: Figures/fig_PVTSetupPicture.png used on input line 165
+.
+(pdftex.def)             Requested size: 319.42996pt x 239.19955pt.
+
+<Figures/fig_CsISetupPicture.png, id=123, 305.71358pt x 228.28143pt>
+File: Figures/fig_CsISetupPicture.png Graphic file (type png)
+
+<use Figures/fig_CsISetupPicture.png>
+Package pdftex.def Info: Figures/fig_CsISetupPicture.png used on input line 176
+.
+(pdftex.def)             Requested size: 319.42996pt x 238.54263pt.
+ [22 <./Figures/fig_setup.pdf>] [23 <./Figures/fig_PVTSetupPicture.png> <./Figu
+res/fig_CsISetupPicture.png>]
+
+Package caption Warning: \label without proper \caption on input line 223.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `tab:detvolt' on page 22 undefined on input line 169.
+LaTeX Warning: Reference `tab:detvolt' on page 24 undefined on input line 206.
 
-[22] [23]) [24]
+[24] [25]) [26]
 Chapter 5.
-(./DataProcessing/DataProcessChapter.tex [25
+(./DataProcessing/DataProcessChapter.tex [27
 
-] [26]
-
-LaTeX Warning: Citation `DAQ17' on page 27 undefined on input line 107.
-
-[27] [28]) [29]
+] [28] [29] [30]) [31]
 Chapter 6.
 (./HalfLifeChapter/HalfLifeSection.tex
-<Figures/fig_ideogramBefore.png, id=155, 852.18375pt x 403.5075pt>
+<Figures/fig_ideogramBefore.png, id=165, 852.18375pt x 403.5075pt>
 File: Figures/fig_ideogramBefore.png Graphic file (type png)
 
 <use Figures/fig_ideogramBefore.png>
 Package pdftex.def Info: Figures/fig_ideogramBefore.png used on input line 17.
 (pdftex.def)             Requested size: 366.40834pt x 173.49869pt.
- [30
+ [32
 
  <./Figures/fig_ideogramBefore.png>]
-<Figures/CsILBCvHL.png, id=160, 436.905pt x 259.515pt>
+<Figures/CsILBCvHL.png, id=170, 436.905pt x 259.515pt>
 File: Figures/CsILBCvHL.png Graphic file (type png)
 
 <use Figures/CsILBCvHL.png>
 Package pdftex.def Info: Figures/CsILBCvHL.png used on input line 49.
 (pdftex.def)             Requested size: 366.40834pt x 217.6545pt.
- [31 <./Figures/CsILBCvHL.png>]
-<Figures/fig_pulserVsTime.pdf, id=165, 569.12625pt x 386.44376pt>
+ [33 <./Figures/CsILBCvHL.png>]
+<Figures/fig_pulserVsTime.pdf, id=176, 569.12625pt x 386.44376pt>
 File: Figures/fig_pulserVsTime.pdf Graphic file (type pdf)
 
 <use Figures/fig_pulserVsTime.pdf>
 Package pdftex.def Info: Figures/fig_pulserVsTime.pdf used on input line 96.
 (pdftex.def)             Requested size: 366.40834pt x 248.80911pt.
- [32]
-<Figures/fig_2Dh.pdf, id=169, 569.12625pt x 386.44376pt>
+ [34]
+<Figures/fig_2Dh.pdf, id=181, 569.12625pt x 386.44376pt>
 File: Figures/fig_2Dh.pdf Graphic file (type pdf)
 
 <use Figures/fig_2Dh.pdf>
 Package pdftex.def Info: Figures/fig_2Dh.pdf used on input line 111.
 (pdftex.def)             Requested size: 366.40834pt x 248.80911pt.
 
-<Figures/fig_betaSpec.pdf, id=170, 569.12625pt x 305.14pt>
+<Figures/fig_betaSpec.pdf, id=182, 569.12625pt x 305.14pt>
 File: Figures/fig_betaSpec.pdf Graphic file (type pdf)
 
 <use Figures/fig_betaSpec.pdf>
 Package pdftex.def Info: Figures/fig_betaSpec.pdf used on input line 117.
 (pdftex.def)             Requested size: 366.40834pt x 196.46225pt.
 
-<Figures/fig_gammaSpec.pdf, id=171, 569.12625pt x 305.14pt>
+<Figures/fig_gammaSpec.pdf, id=183, 569.12625pt x 305.14pt>
 File: Figures/fig_gammaSpec.pdf Graphic file (type pdf)
 
 <use Figures/fig_gammaSpec.pdf>
 Package pdftex.def Info: Figures/fig_gammaSpec.pdf used on input line 125.
 (pdftex.def)             Requested size: 366.40834pt x 196.46225pt.
- [33 <./Figures/fig_pulserVsTime.pdf, page is rotated 90 degrees>] [34 <./Figur
+ [35 <./Figures/fig_pulserVsTime.pdf, page is rotated 90 degrees>] [36 <./Figur
 es/fig_2Dh.pdf, page is rotated 90 degrees> <./Figures/fig_betaSpec.pdf, page i
 s rotated 90 degrees>]
-<Figures/fig_tbgSpec1.pdf, id=309, 569.12625pt x 305.14pt>
+<Figures/fig_tbgSpec1.pdf, id=319, 569.12625pt x 305.14pt>
 File: Figures/fig_tbgSpec1.pdf Graphic file (type pdf)
 
 <use Figures/fig_tbgSpec1.pdf>
 Package pdftex.def Info: Figures/fig_tbgSpec1.pdf used on input line 145.
 (pdftex.def)             Requested size: 413.3867pt x 221.6515pt.
 
-<Figures/PileUpSketch.png, id=310, 307.1475pt x 353.19049pt>
+<Figures/PileUpSketch.png, id=320, 307.1475pt x 353.19049pt>
 File: Figures/PileUpSketch.png Graphic file (type png)
 
 <use Figures/PileUpSketch.png>
 Package pdftex.def Info: Figures/PileUpSketch.png used on input line 167.
 (pdftex.def)             Requested size: 413.3867pt x 475.38538pt.
 
-<Figures/fig_tbgSpec2.pdf, id=311, 569.12625pt x 305.14pt>
+<Figures/fig_tbgSpec2.pdf, id=321, 569.12625pt x 305.14pt>
 File: Figures/fig_tbgSpec2.pdf Graphic file (type pdf)
 
 <use Figures/fig_tbgSpec2.pdf>
 Package pdftex.def Info: Figures/fig_tbgSpec2.pdf used on input line 183.
 (pdftex.def)             Requested size: 413.3867pt x 221.6515pt.
- [35 <./Figures/fig_gammaSpec.pdf, page is rotated 90 degrees>] [36 <./Figures/
+ [37 <./Figures/fig_gammaSpec.pdf, page is rotated 90 degrees>] [38 <./Figures/
 fig_tbgSpec1.pdf, page is rotated 90 degrees>]
-[37 <./Figures/PileUpSketch.png>] [38 <./Figures/fig_tbgSpec2.pdf, page is rota
-ted 90 degrees>] <Figures/fig_decaySpec.pdf, id=455, 794.97pt x 614.295pt>
+[39 <./Figures/PileUpSketch.png>] [40 <./Figures/fig_tbgSpec2.pdf, page is rota
+ted 90 degrees>] <Figures/fig_decaySpec.pdf, id=466, 794.97pt x 614.295pt>
 File: Figures/fig_decaySpec.pdf Graphic file (type pdf)
 
 <use Figures/fig_decaySpec.pdf>
 Package pdftex.def Info: Figures/fig_decaySpec.pdf used on input line 238.
 (pdftex.def)             Requested size: 413.3867pt x 319.44461pt.
- [39 <./Figures/fig_decaySpec.pdf, page is rotated 90 degrees>] [40]
-<Figures/fig_hlVsWtbg.png, id=471, 757.8714pt x 391.2216pt>
+ [41 <./Figures/fig_decaySpec.pdf, page is rotated 90 degrees>] [42]
+<Figures/fig_hlVsWtbg.png, id=481, 757.8714pt x 391.2216pt>
 File: Figures/fig_hlVsWtbg.png Graphic file (type png)
 
 <use Figures/fig_hlVsWtbg.png>
 Package pdftex.def Info: Figures/fig_hlVsWtbg.png used on input line 281.
 (pdftex.def)             Requested size: 413.3867pt x 213.39958pt.
- [41 <./Figures/fig_hlVsWtbg.png>] [42] [43]
-[44] <Figures/fig_halfLives.pdf, id=485, 794.97pt x 614.295pt>
+ [43 <./Figures/fig_hlVsWtbg.png>] [44] [45]
+[46] <Figures/fig_halfLives.pdf, id=496, 794.97pt x 614.295pt>
 File: Figures/fig_halfLives.pdf Graphic file (type pdf)
 
 <use Figures/fig_halfLives.pdf>
 Package pdftex.def Info: Figures/fig_halfLives.pdf used on input line 387.
 (pdftex.def)             Requested size: 413.3867pt x 319.44461pt.
- [45]
-<Figures/fig_ideogramAfter.png, id=489, 851.43094pt x 405.76593pt>
+ [47]
+<Figures/fig_ideogramAfter.png, id=500, 851.43094pt x 405.76593pt>
 File: Figures/fig_ideogramAfter.png Graphic file (type png)
 
 <use Figures/fig_ideogramAfter.png>
 Package pdftex.def Info: Figures/fig_ideogramAfter.png used on input line 444.
 (pdftex.def)             Requested size: 413.3867pt x 197.00674pt.
- [46 <./Figures/fig_halfLives.pdf, page is rotated 90 degrees>]) [47 <./Figures
+ [48 <./Figures/fig_halfLives.pdf, page is rotated 90 degrees>]) [49 <./Figures
 /fig_ideogramAfter.png>]
 Chapter 7.
 (./Geant4Chapter/Geant4Chapter.tex
 Package xr Info: IMPORTING LABELS FROM MaxHughesThesis.aux on input line 1.
- [48
+ [50
 
 ]
-<Figures/GEANT4WithoutAl.png, id=504, 943.3644pt x 609.9588pt>
+<Figures/GEANT4WithoutAl.png, id=514, 943.3644pt x 609.9588pt>
 File: Figures/GEANT4WithoutAl.png Graphic file (type png)
 
 <use Figures/GEANT4WithoutAl.png>
 Package pdftex.def Info: Figures/GEANT4WithoutAl.png used on input line 35.
 (pdftex.def)             Requested size: 366.40834pt x 236.91502pt.
- [49 <./Figures/GEANT4WithoutAl.png>] [50]
-[51]
+ [51 <./Figures/GEANT4WithoutAl.png>] [52]
+[53]
 Overfull \hbox (68.60977pt too wide) in paragraph at lines 116--124
 \OT1/cmr/m/n/12 was found not to be the cor-rect way to fit the data. To coun-t
 er-act that, the class G4VUserTrackInformation
  []
 
-[52]) [53]
+[54]) [55]
 Chapter 8.
 (./BetaFitChapter/BetaFitChapter.tex
 Package xr Info: IMPORTING LABELS FROM MaxHughesThesis.aux on input line 1.
 
-<Figures/GEANT4OutputBetter.png, id=521, 1165.35374pt x 475.7775pt>
+<Figures/GEANT4OutputBetter.png, id=531, 1165.35374pt x 475.7775pt>
 File: Figures/GEANT4OutputBetter.png Graphic file (type png)
 
 <use Figures/GEANT4OutputBetter.png>
 Package pdftex.def Info: Figures/GEANT4OutputBetter.png used on input line 20.
 (pdftex.def)             Requested size: 366.40834pt x 149.58757pt.
- [54
+ [56
 
-] [55 <./Figures/GEANT4OutputBetter.png>] <Figures/PileUpTuningThesis.png, id=5
-28, 600.74437pt x 334.42589pt>
+] [57 <./Figures/GEANT4OutputBetter.png>] <Figures/PileUpTuningThesis.png, id=5
+38, 600.74437pt x 334.42589pt>
 File: Figures/PileUpTuningThesis.png Graphic file (type png)
 
 <use Figures/PileUpTuningThesis.png>
 Package pdftex.def Info: Figures/PileUpTuningThesis.png used on input line 69.
 (pdftex.def)             Requested size: 366.40834pt x 203.97908pt.
- [56] [57 <./Figures/PileUpTuningThesis.png>] [58]) (./MaxHughesThesis.bbl [59]
- [60
+ [58] [59 <./Figures/PileUpTuningThesis.png>] [60]) (./MaxHughesThesis.bbl [61]
+ [62
 
 ]
 Missing character: There is no Ã in font cmr12!
@@ -592,7 +605,7 @@ Missing character: There is no ² in font cmr12!
 Missing character: There is no â in font cmr12!
 Missing character: There is no ˆ in font cmr12!
 Missing character: There is no ’ in font cmr12!
- [61
+ [63
 
 ]
 Missing character: There is no Î in font cmr12!
@@ -616,7 +629,7 @@ Missing character: There is no ‚ in font cmr12!
 Missing character: There is no ¬ in font cmr12!
 Missing character: There is no Â in font cmr12!
 Missing character: There is no  in font cmr12!
- [62]) [63]
+ [64]) [65]
 (./MaxHughesThesis.aux)
 
 LaTeX Warning: There were undefined references.
@@ -626,10 +639,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3877 strings out of 494977
- 61896 string characters out of 6180182
- 120800 words of memory out of 5000000
- 6998 multiletter control sequences out of 15000+600000
+ 3889 strings out of 494977
+ 62260 string characters out of 6180182
+ 120826 words of memory out of 5000000
+ 7008 multiletter control sequences out of 15000+600000
  9783 words of font info for 34 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  51i,12n,44p,651b,351s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -642,10 +655,10 @@ t/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmti12.pfb>
-Output written on MaxHughesThesis.pdf (72 pages, 1199788 bytes).
+Output written on MaxHughesThesis.pdf (74 pages, 2501949 bytes).
 PDF statistics:
- 589 PDF objects out of 1000 (max. 8388607)
- 322 compressed objects within 4 object streams
+ 601 PDF objects out of 1000 (max. 8388607)
+ 328 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
- 111 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 121 words of extra memory for PDF output out of 10000 (max. 10000000)
 

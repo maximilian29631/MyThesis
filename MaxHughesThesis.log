@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2018.11.12)  26 FEB 2019 11:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2018.11.12)  5 MAR 2019 15:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -370,10 +370,59 @@ Package pdftex.def Info: Figures/RadCorrections_20F_Matching.pdf used on input
 line 257.
 (pdftex.def)             Requested size: 366.40834pt x 283.14153pt.
  [10 <./Figures/RadCorrections_20F.pdf, page is rotated 90 degrees>] [11 <./Fig
-ures/RadCorrections_20F_Matching.pdf, page is rotated 90 degrees>] [12])
-! Missing } inserted.
+ures/RadCorrections_20F_Matching.pdf, page is rotated 90 degrees>] [12]
+! Missing $ inserted.
 <inserted text> 
-                }
+                $
+l.342 
+      
+? 
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.342 
+      
+? 
+! You can't use `\eqno' in vertical mode.
+\endequation ->\eqno 
+                     \hbox {\@eqnnum }$$\@ignoretrue 
+l.344 \end{equation}
+                    
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.344 \end{equation}
+                    
+? 
+! Display math should end with $$.
+<to be read again> 
+                   \endgroup 
+l.344 \end{equation}
+                    
+? 
+
+LaTeX Warning: Reference `eq:screeningX' on page 13 undefined on input line 347
+.
+
+)
+Runaway argument?
+{1 + \frac {W' + \gamma m}{W'}\frac {\beta }{p}^{2} + \frac {1}{2}\gamma \ETC.
+! File ended while scanning use of \frac.
+<inserted text> 
+                \par 
+l.130 \subfile{TheoryChapter/TheoryFactors.tex}
+                                               
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.130 \subfile{TheoryChapter/TheoryFactors.tex}
+                                               
+? 
+! Display math should end with $$.
+<to be read again> 
+                   \endgroup 
 l.130 \subfile{TheoryChapter/TheoryFactors.tex}
                                                
 ? 
@@ -419,23 +468,23 @@ File: Figures/fig_PVTSetupPicture.png Graphic file (type png)
 <use Figures/fig_PVTSetupPicture.png>
 Package pdftex.def Info: Figures/fig_PVTSetupPicture.png used on input line 165
 .
-(pdftex.def)             Requested size: 319.42996pt x 239.19955pt.
+(pdftex.def)             Requested size: 272.45877pt x 204.0251pt.
 
 <Figures/fig_CsISetupPicture.png, id=123, 305.71358pt x 228.28143pt>
 File: Figures/fig_CsISetupPicture.png Graphic file (type png)
 
 <use Figures/fig_CsISetupPicture.png>
-Package pdftex.def Info: Figures/fig_CsISetupPicture.png used on input line 176
+Package pdftex.def Info: Figures/fig_CsISetupPicture.png used on input line 177
 .
-(pdftex.def)             Requested size: 319.42996pt x 238.54263pt.
+(pdftex.def)             Requested size: 272.45877pt x 203.46591pt.
  [22 <./Figures/fig_setup.pdf>] [23 <./Figures/fig_PVTSetupPicture.png> <./Figu
 res/fig_CsISetupPicture.png>]
 
-Package caption Warning: \label without proper \caption on input line 223.
+Package caption Warning: \label without proper \caption on input line 225.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `tab:detvolt' on page 24 undefined on input line 206.
+LaTeX Warning: Reference `tab:detvolt' on page 24 undefined on input line 208.
 
 [24] [25]) [26]
 Chapter 5.
@@ -581,8 +630,14 @@ File: Figures/PileUpTuningThesis.png Graphic file (type png)
 <use Figures/PileUpTuningThesis.png>
 Package pdftex.def Info: Figures/PileUpTuningThesis.png used on input line 69.
 (pdftex.def)             Requested size: 366.40834pt x 203.97908pt.
- [58] [59 <./Figures/PileUpTuningThesis.png>] [60]) (./MaxHughesThesis.bbl [61]
- [62
+ [58] [59 <./Figures/PileUpTuningThesis.png>] [60])
+! Missing } inserted.
+<inserted text> 
+                }
+l.150 \end{doublespace}
+                       
+? 
+(./MaxHughesThesis.bbl [61] [62
 
 ]
 Missing character: There is no √ in font cmr12!
@@ -629,33 +684,47 @@ Missing character: There is no Ç in font cmr12!
 Missing character: There is no ¨ in font cmr12!
 Missing character: There is no ¬ in font cmr12!
 Missing character: There is no ê in font cmr12!
- [64]) [65]
-(./MaxHughesThesis.aux)
+ [64])
+
+! LaTeX Error: \begin{doublespace} on input line 123 ended by \end{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.220 \end{document}
+                    
+? 
+[65] (./MaxHughesThesis.aux)
 
 LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
- ) 
+ )
+(\end occurred inside a group at level 1)
+
+### semi simple group (level 1) entered at line 123 (\begingroup)
+### bottom level 
 Here is how much of TeX's memory you used:
- 3889 strings out of 494977
- 62260 string characters out of 6180182
- 120826 words of memory out of 5000000
- 7008 multiletter control sequences out of 15000+600000
+ 3891 strings out of 494977
+ 62290 string characters out of 6180182
+ 120839 words of memory out of 5000000
+ 7010 multiletter control sequences out of 15000+600000
  9783 words of font info for 34 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 51i,12n,44p,651b,351s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmti12.pfb>
-Output written on MaxHughesThesis.pdf (74 pages, 2501949 bytes).
+ 51i,12n,44p,651b,418s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on MaxHughesThesis.pdf (74 pages, 2503997 bytes).
 PDF statistics:
  601 PDF objects out of 1000 (max. 8388607)
  328 compressed objects within 4 object streams

@@ -338,6 +338,16 @@ $C(Z)$ in equation \ref{eq:screenbeta} is $0.907 * 1.13 = 1.02491$.
 The result is shown in equation \ref{eq:screeningQ} \cite{Buh84}.
 
 \begin{equation}
-	Q(Z,W) = X(\frac{W'}{W})|\frac{\Gamma(\gamma_{1} + i y')}{\Gamma(\gamma_{1} + i y)}|^{2}
+	Q(Z,W) = X(\frac{W'}{W})|\frac{\Gamma(\gamma + i y')}{\Gamma(\gamma+ i y)}|^{2}|\frac{\Gamma(\gamma + 2 i \frac{p'}{\beta})}{\Gamma(\gamma + 2 i \frac{p}{\beta})}|^{2}e^{-\pi y}(\frac{2p}{\beta})^{2(1 - \gamma)}
+
 	\label{eq:screeningQ}
+\end{equation}
+
+with $y = \frac{\alpha Z W}{p}$, $y' = \frac{\alpha Z W'}{p'}$,$ \gamma$ is in table \ref{tab:vars}, $W' = W - \frac{1}{2}\alpha Z \beta$, and $p' = \frac{1}{2}p + \frac{1}{2}\sqrt{p^{2} - 2 \alpha Z W' \beta}$.
+
+$X(\frac{W'}{W})$ is in equation \ref{eq:screeningX}
+
+\begin{equation}
+	X = \frac{1 + \frac{W' + \gamma m}{W'}\frac{\beta}{p}^{2} + \frac{1}{2}\gamma^{2}[1 + (1 - \alpha Z \beta/(W + m))^{frac{1}{2}]^{-2}[\frac{W - m}{W'}\frac{\beta}{p}^{2}[1 - \frac{1 - \gamma}{8\gamma}\frac{\beta}{p}^{2}]} {1 + \frac{\beta}{4p}^{2}}
+	\label{eq:screeningX}
 \end{equation}

@@ -1,3 +1,12 @@
+%\documentclass{article}
+
+%\usepackage{subfiles}
+%\usepackage{graphicx}
+%\usepackage{xr}
+%\graphicspath{ {../Figures/}}
+
+
+%\begin{document}
 To obtain a measure of the Fierz term, the beta decay spectrum must be precisely described.
 The description of the beta decay spectrum is writen as a series of corrections on top of the main phase space factor.  
 
@@ -339,7 +348,6 @@ The result is shown in equation \ref{eq:screeningQ} \cite{Buh84}.
 
 \begin{equation}
 	Q(Z,W) = X(\frac{W'}{W})|\frac{\Gamma(\gamma + i y')}{\Gamma(\gamma+ i y)}|^{2}|\frac{\Gamma(\gamma + 2 i \frac{p'}{\beta})}{\Gamma(\gamma + 2 i \frac{p}{\beta})}|^{2}e^{-\pi y}(\frac{2p}{\beta})^{2(1 - \gamma)}
-
 	\label{eq:screeningQ}
 \end{equation}
 
@@ -348,6 +356,8 @@ with $y = \frac{\alpha Z W}{p}$, $y' = \frac{\alpha Z W'}{p'}$,$ \gamma$ is in t
 $X(\frac{W'}{W})$ is in equation \ref{eq:screeningX}
 
 \begin{equation}
-	X = \frac{1 + \frac{W' + \gamma m}{W'}\frac{\beta}{p}^{2} + \frac{1}{2}\gamma^{2}[1 + (1 - \alpha Z \beta/(W + m))^{frac{1}{2}]^{-2}[\frac{W - m}{W'}\frac{\beta}{p}^{2}[1 - \frac{1 - \gamma}{8\gamma}\frac{\beta}{p}^{2}]} {1 + \frac{\beta}{4p}^{2}}
+	X = \frac{1 + \frac{W' + \gamma m}{W'} \frac{\beta}{p}^{2} + \frac{1}{2}\gamma^{2}[1 + (1 - \frac{\alpha Z}{\beta(W + m)})^{\frac{1}{2}}]^{-2}\frac{W - m}{W'} \frac{\beta}{p}^{2}[1 - \frac{1 - \gamma}{8\gamma}\frac{\beta}{p}^{2}]}{(1 + \frac{\beta}{4p}^{2})}
 	\label{eq:screeningX}
 \end{equation}
+
+%\end{document}

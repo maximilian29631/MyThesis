@@ -7,10 +7,10 @@ First, however, it had to be processed.
 After the GEANT4 simulation was done, the output file had to processed further.  
 Much like the experimental data, the simulated data had to be filtered.
 This was done using the TTrees from the output files of the GEANT4 simulation.
-The energy absorbed in the implant detector was filtered by the energy absorbed in the outer four gamma detecters in the simulation.
+The energy absorbed in the implant detector was filtered by the energy absorbed in the outer four gamma detectors in the simulation.
 
 The two different categories of energy absorbed in the implant detector were built into two histograms. 
-One histogram had a condition that the energy absorbed by the intial gamma ray had to be zero.
+One histogram had a condition that the energy absorbed by the initial gamma ray had to be zero.
 This histogram was the energy absorbed without any summing.
 The second histogram was the energy absorbed where there was a contribution from the gamma ray.
 This histogram was known as the energy absorbed with summing.
@@ -49,10 +49,10 @@ In order to properly fit the energy spectrum, a calibration of the CsI(Na) detec
 The calibration was used to find what the detector resolution was.
 Several different energy lines were used to find the calibration and the energy resolution function.
 The lines were the 1.173228 MeV and 1.332492 MeV gammas from a $^{60}$Co source, the 0.661657 MeV gamma ray from a$^{137}$Cs source, and the 0.511 MeV and 1.274527 MeV gamma rays from a $^{22}$Na source.
-These gamma rays were fitting with a gaussian and a background.
-The background varried from a linear background, a quadratic background, and an error function background.
+These gamma rays were fitting with a Gaussian and a background.
+The background varied from a linear background, a quadratic background, and an error function background.
 For the $^{60}$Co, both peaks were fit at once.
-These different background gave slightly different results for the centroids and the widths of the gaussians.
+These different background gave slightly different results for the centroids and the widths of the Gaussian.
 The different widths and centroids were taken as a systematic error.
 From the centroids, the calibration for each detector was calculated and shown in equation \ref{eq:cal}
 
@@ -131,13 +131,18 @@ The free parameters here are $A$, $B$, and $b_{wm}$.
 \subsection{Determining Offset for Shape Fit}
 
 Initially, the offset used was the offset from the calibration  in equation \label{eq:cal}.
-This was found to induce a large change in $b_{WM}$ as the start of the fit changes. 
+The offset used was 10.05 ADC units.
+This calibration was determined using photons instead of electrons.
+Electrons generate 2\% less light than photons \cite{REFHERE}
+This means that the offset found from this fit is suspect to apply to our electron shape measurement.
+
+When applying an offset of 10.05 in a fit of the data, it was found that the output varied greatly as a function of where the fit was started.
 This is seen in figure \ref{fig:LBCvbwm}.
 
 %\begin{figure}[!htb]
 %ADD FIGURE OF LBC v bwm here
 
-There are many different methods to induce such an effect.
+While investigating this effect, several different potential causes were investigated.
 The first is if the facator $A$ iin equation \ref{eq:convo} used in to convolute the detector simulation was not the same as the actual detector resolution.
 To test that, a Monte Carlo simulation was written.
 The space space in equation \ref{eq:phase_space} was multiplied by the shape factor in equation \ref{eq:shapefactor}.
@@ -147,19 +152,31 @@ One histogram was sampled a turther $10^{6}$ times 10 times to build a sample da
 The other convoluted histogram was used to fit the generated data set.
 The first histogram's $A$ was fixed, while the second histogram's $A$ was adjusted.
 When the sample data's $A$ matched the $A$ that were used, no dependence of $b_{wm}$ on the start of the fit.
-When the $A$ of the data sample and the $A$, the first thing that happened was that the $b_{wm}$ chagned.
+When the $A$ of the data sample and the $A$, the first thing that happened was that the $b_{wm}$ changed.
 If the $A$ differ by a factor of 2 or more, a shift in $b_{wm}$ appears.
 However, $A$ was determined to 10\% (FIX)
-This cannot explain the effect seen in \ref{fig:fig:LBCvbwm}
+Having a wrong $A$ cannot explain the effect seen in \ref{fig:LBCvbwm}
 
+The largest effect comes from having the wrong offset in the calibration.
+A similar Monte Carlo was written where no convolution was applied.
+Sample histograms were generated directly from an analytic function instead of a histogram.
+These histograms were generated with an offset of 10 ADC units.
+Then, the fit function had a different offset applied to it.
+For example, fitting the histogram generated with an offset of 10, and fit with an offset of 20 gives an effect as seen in \ref{fig:MCoffset10applied20}.
+This is on the same order of magnitude as the effect we see in the data in figure \ref{fig:LBCvbwm}.
 
- 
- 
+This effect can be exploited to determine the offset using only electron data, 
+The size of the slope induced is linear compared to the offset.
+By adjusting the offset and noting the slope of the $b_{wm}$ vs the lower beta cut and plotting against the offset, the location of zero slope can be calculated.
+This was done, and the result is seen in figure \ref{fig:offsetvslope} 
+
+Doing this procedure gives an offset of -5.11 ADC units. 
+
 \subsection{Fit details}
 The fit was done run by run.
 First a prefit for each section was done to calibrate the energy.
 Then, two endpoints in keV were used for the fit.
-The fitting function with a fixed offset was fit using a maximum likelyhood method.
+The fitting function with a fixed offset was fit using a maximum likelihood method.
 The resulting $b_{wm}$ was recorded.
 
 The gain used for these fits was 10.05 ADC channels.

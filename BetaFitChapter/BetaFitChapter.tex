@@ -25,6 +25,7 @@ These two histograms can be seen in figure \ref{fig:GEANT4Hists}
 \end{figure}
 
 \subsubsection{Detector Resolution}
+\label{sec:convolution}
 The next step was the apply the detector resolution to this histogram.
 This was done by applying a convolution function to the histograms built from the GEANT4 output files.
 The convolution function was
@@ -42,40 +43,10 @@ The $\sigma$ of the Gaussian was calculated by using equation \ref{eq:convo}.
 This Gaussian function was sampled as many times as there were counts in the bin.
 These samples were filled into a new histogram.
 This was repeated bin by bin until all bins were distributed.
-The value of $A$ used for this procedure was 1.118.
 
-\subsubsection{Pile-up Modelling}
-After the convolution, the simulation data was sent through a simulation to model pile-up.
-The model used for the CsI(Na) signals was a linear rise and then an exponential decay.
-The linear part went from 0 to 1 over 100 ns. 
-The exponential piece started at 100 ns at 1 and decayed with a $\tau$ of 760 ns.
-This analytic equation was scaled up or down to whatever energy was sampled.
-It was then fed into a model of trapezoidal filter of PIXIE. 
-The math was the same as described in the chapter on data aquisition.
-
-
-This model was tuned on calibration data. 
-A run was taken of $^{137}$Cs at 25000 counts per second.
-A 2000 counts per second $^{137}$Cs run was used as a background and subracted off.
-Then, samples of the background-subtracted spectrum were taken up to the end of the 661 keV peak.
-Monte Carlo methods were used to model the time difference between two samples.
-If the two samples fell within the pile-up window, then the piled-up signal models were fed into the trapezoidal filter.
-The calculated pile-up energy was saved to a histogram.
-If the two samples did not fall with in the pile-up window, then they were not fed into the filter model and just filled into the histogram.
-The paremeters were adjusted until the generated pile-up matched the measured pile-up in the spectrum.
-The results of the tuning is seen in figure \ref{fig:pileuptune}
-
-\begin{figure}[!htb]
-	\centerline{\includegraphics[width=0.78\textwidth]{PileUpTuningThesis.png}}
-	\caption{The tuning of the pile-up.
-		 The input spectrum is in blue.
-		 It was sampled up to 1000 channels.
-		 The generated spectrum is in red.}
-	\label{fig:pileuptune}
-\end{figure}
-
-\section{Calibration}
+\subsubsection{Determining Detector Resolution}
 In order to properly fit the energy spectrum, a calibration of the CsI(Na) detector had to be done.
+The calibration was used to find what the detector resolution was.
 Several different energy lines were used to find the calibration and the energy resolution function.
 The lines were the 1.173228 MeV and 1.332492 MeV gammas from a $^{60}$Co source, the 0.661657 MeV gamma ray from a$^{137}$Cs source, and the 0.511 MeV and 1.274527 MeV gamma rays from a $^{22}$Na source.
 These gamma rays were fitting with a gaussian and a background.
@@ -91,12 +62,44 @@ From the centroids, the calibration for each detector was calculated and shown i
 \end{equation}
 
 where $C$ is the location of the peak in ADC channels, $G$ the gain in channels/keV, and b the offset in channels.
+This calibration curve was only used for the resolution determination.
 The widths of the peaks were calibrated with the gain and plotted vs energy.
 Then, equation \ref{eq:convo} was fit to the results in order to determine $A$.
+The value of $A$ used for this procedure was 1.118.
+
+\subsubsection{Pile-up Modeling}
+After the convolution, the simulation data was sent through a simulation to model pile-up.
+The model used for the CsI(Na) signals was a linear rise and then an exponential decay.
+The linear part went from 0 to 1 over 100 ns. 
+The exponential piece started at 100 ns at 1 and decayed with a $\tau$ of 760 ns.
+This analytic equation was scaled up or down to whatever energy was sampled.
+It was then fed into a model of trapezoidal filter of PIXIE. 
+The math was the same as described in the chapter on data acquisition.
+
+
+This model was tuned on calibration data. 
+A run was taken of $^{137}$Cs at 25000 counts per second.
+A 2000 counts per second $^{137}$Cs run was used as a background and subtracted off.
+Then, samples of the background-subtracted spectrum were taken up to the end of the 661 keV peak.
+Monte Carlo methods were used to model the time difference between two samples.
+If the two samples fell within the pile-up window, then the piled-up signal models were fed into the trapezoidal filter.
+The calculated pile-up energy was saved to a histogram.
+If the two samples did not fall with in the pile-up window, then they were not fed into the filter model and just filled into the histogram.
+The parameters were adjusted until the generated pile-up matched the measured pile-up in the spectrum.
+The results of the tuning is seen in figure \ref{fig:pileuptune}
+
+\begin{figure}[!htb]
+	\centerline{\includegraphics[width=0.78\textwidth]{PileUpTuningThesis.png}}
+	\caption{The tuning of the pile-up.
+		 The input spectrum is in blue.
+		 It was sampled up to 1000 channels.
+		 The generated spectrum is in red.}
+	\label{fig:pileuptune}
+\end{figure}
 
 \section{Fitting Procedure}
 The simulation described above were only part of what was needed.
-Other simulations included in the fit had the phase space times corrections times or divided an additional factor of the total energy of the electron.
+Other simulations included in the fit had the phase space times corrections times or divided an additional factor of the total energy of the electron.:wq:
 The simulations were all convoluted and filtered as described above.
 
 \subsection{Data Processing}
@@ -121,9 +124,37 @@ For the fitting, the gain $G$ was left as a free parameter, but the offset $b$ w
 	\label{eq:betafit}
 \end{equation}
 
-where $A$ is the normalization, $B$ the level of pile-up, $E$ the energy, $b_{wm}$ the weak magnetism, $S(E,b_{wm})$ the shape factor, $f(E)_{nosum}$ the output of the GEANT4 simulation without any energy summing between the gamma and beta, and $f(E)_{summing}$ the output of the GEANT4 simulation with energy summing.
+where $A$ is the normalization, $B$ the level of pile-up, $E$ the energy, $b_{wm}$ the weak magnetism, $S(E,b_{wm})$ the shape factor, $f(E)_{nosum}$ the output of the GEANT4 simulation without any energy summing between the ga:
+Gamma and beta, and $f(E)_{summing}$ the output of the GEANT4 simulation with energy summing.
 The free parameters here are $A$, $B$, and $b_{wm}$.
 
+\subsection{Determining Offset for Shape Fit}
+
+Initially, the offset used was the offset from the calibration  in equation \label{eq:cal}.
+This was found to induce a large change in $b_{WM}$ as the start of the fit changes. 
+This is seen in figure \ref{fig:LBCvbwm}.
+
+%\begin{figure}[!htb]
+%ADD FIGURE OF LBC v bwm here
+
+There are many different methods to induce such an effect.
+The first is if the facator $A$ iin equation \ref{eq:convo} used in to convolute the detector simulation was not the same as the actual detector resolution.
+To test that, a Monte Carlo simulation was written.
+The space space in equation \ref{eq:phase_space} was multiplied by the shape factor in equation \ref{eq:shapefactor}.
+This function was sampled $10^{9}$ times twice to build two histograms. 
+Both histograms had a detector resolution applied as described in section \ref{sec:convolution}
+One histogram was sampled a turther $10^{6}$ times 10 times to build a sample data set.
+The other convoluted histogram was used to fit the generated data set.
+The first histogram's $A$ was fixed, while the second histogram's $A$ was adjusted.
+When the sample data's $A$ matched the $A$ that were used, no dependence of $b_{wm}$ on the start of the fit.
+When the $A$ of the data sample and the $A$, the first thing that happened was that the $b_{wm}$ chagned.
+If the $A$ differ by a factor of 2 or more, a shift in $b_{wm}$ appears.
+However, $A$ was determined to 10\% (FIX)
+This cannot explain the effect seen in \ref{fig:fig:LBCvbwm}
+
+
+ 
+ 
 \subsection{Fit details}
 The fit was done run by run.
 First a prefit for each section was done to calibrate the energy.

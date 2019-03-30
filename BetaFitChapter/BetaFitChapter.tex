@@ -172,14 +172,34 @@ This was done, and the result is seen in figure \ref{fig:offsetvslope}
 
 Doing this procedure gives an offset of -5.11 ADC units. 
 
+\subsection{Fit method characterization}
+To characterize the fitting method, two GEANT4 Monte Carlos were generated.
+One had had the nuclear shape factor with the nominal value of $b_{wm}$. 
+The other had no shape factor, much like the fitting function.
+After applying the gamma filtering to both simulations, the simulation results without the shape factor were used to fit the simulation results with the shape factor.
+The spectrum with the shape factor became the psuedo-data spectrum.
+To manually check the statistical uncertainty, the psuedo-data spectrum was fluctuated.
+Each bin had its content and error read. 
+That bin error and content was used to build a gaussian random number distribution.
+This random number distribution was sampled, and a new bin center created.
+After doing this to the entire spectrum, the new spectrum was fit.
+The resulting $b_{wm}$ was recorded.
+Then, $b_{wm}$ was set to 43.3, and the Fierz term fit. 
+These fitted terms were saved to a histogram.
+This was done 1000 times to get a spread of values.
+From this, it was discovered that spline interpolation was the best way to fit the spectra.
+
 \subsection{Fit details}
 The fit was done run by run.
 First a prefit for each section was done to calibrate the energy.
 Then, two endpoints in keV were used for the fit.
 The fitting function with a fixed offset was fit using a maximum likelihood method.
 The resulting $b_{wm}$ was recorded.
+For the Fierz term fit, the $b_{wm}$ of ^{20}$F decay (43.4) was applied to the shape factor.
+Then, the Fierz term was applied to the no summing spectrum and fit. 
 
-The gain used for these fits was 10.05 ADC channels.
+The offset used for the fit was -5.11 channels.
 The end points for the calibration pre-fit were 540 channels to 7000 channels.
 The calibrated end points were 800 keV to 7500 keV. 
  
+\subsection{Systematic effects}

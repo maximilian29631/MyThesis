@@ -1,5 +1,4 @@
 %\documentclass{article}
-
 %\usepackage{subfiles}
 %\usepackage{graphicx}
 %\usepackage{xr}
@@ -9,6 +8,7 @@
 %\begin{document}
 To obtain a measure of the Fierz term, the beta decay spectrum must be precisely described.
 The description of the beta decay spectrum is writen as a series of corrections on top of the main phase space factor.  
+Through out this chapter, $\hbar = c = 1$.
 
 The corrections depend on several parameters of the decay. 
 Some of them are just numbers, such as the atomic number of the daughter or mother nucleus or the mass number of the system.
@@ -18,14 +18,26 @@ They are measured experimentally.
 One is the q-value of the decay, which is defined in equation \ref{eq:qval}.
 
 \begin{equation}
-	Q = m_{p} - (m_{d} + E_{\gamma})
+	Q = m_{p} - (m_{d} + E_{level})
 	\label{eq:qval}
 \end{equation} 
-where $Q$ is the q-value, $m_{p}$ is the mass of the parent nucleus, $m_{d}$ is the mass of the daughter nucleus, and $E_{\gamma}$ is the energy of any gamma rays in the decay.
+
+where $Q$ is the q-value, $m_{p}$ is the mass of the parent nucleus, $m_{d}$ is the mass of the daughter nucleus, and $E_{level}$ is the of the nuclear state populated by the decay. 
+
+This value feeds into the maximum electron energy.
+To get to the maximum electron energy, $E_{0}$, the energy of the recoiling nucleus has to be taken into account.
+The formula is shown in equation \ref{eq:recoilqval}
+
+\begin{equation}
+	E_{0} = Q\frac{1 + \frac{m_{e}^{2}}{2MQ}}{1 + \frac{Q}{2M}} 
+	\label{eq:recoilqval}
+\end{equation} 
+
+with $m_{e}$ is the electron mass and $M$ is the average nuclear mass \cite{Hol74}.
+This is a shift of a couple keV, but still is important.
 For this measurement, the atomic mass of $^{20}$Ne and $^{20}$F were used \cite{Pfe12}.
-The mass of the electrons subtracts out atomic masses, since in neutral fluorine there are nine electrons, and one electron is gained from the beta decay.
-This then equals the ten electrons in the atomic mass of neon.
-The only correction missing is the small, eV scale electron binding energy of the last electron.
+This means that the average mass needs to have the mass of the electrons subtracted off. 
+For the q-value, this means adding an energy of $m_{e}$ to get to the total energy difference.
 
 The other parameter is the charge radius of the daughter nucleus.
 There are several ways to calculate the charge radius.
@@ -97,11 +109,16 @@ This is the main factor in describing the beta decay energy spectrum.
 
 \subsection{Matrix Elements}
 In the above disccusion, the matrix elements of the beta decay was glossed over.
+The matrix elements are the nuclear matrix elements.
+$^{20}F$ decay is an allowed Gamow-Teller decay.
+This means that, to first order, the matrix element is constant. 
 
-INSERT DISCUSSION HERE
+\subsubsection{Fierz Term}
+
 \section{Variables of Correction Formula}
 
 For the rest of the discussion on beta decay corrections, everything is given without units.
+These corrections are largely electromagnetic in orgin.
 All of the energies are divided by the electron mass, i.e. 511 keV.
 The other important variables are shown in table \ref{tab:vars}
 
@@ -117,7 +134,8 @@ The other important variables are shown in table \ref{tab:vars}
 		$R$ & Root mean square charge radius of daughter & 3.055 fm \cite{Ang13} \\
 		$W$ & Total energy of beta electron & $E/m_{e}$ \\
 		$p$ & Electron momentum & $\sqrt{W^{2} - 1}$ \\
-		$W_{0}$ & Maximum electron energy & $\frac{M_{^{20}F} - M_{^{20}Ne} - E_{gamma ray}}{m_{e}}$ \\
+		$W_{0}$ & Maximum electron energy & $\frac{E_{0}}{m_{e}}$ \\
+		$M_{ave}$ & Average nuclear mass & $\frac{M_{20Ne} + M_{20F} - 19 m_{e}}{2 m_{e}}$
 		$\gamma$ & Factor that shows up in EM corrections& $\sqrt{1 - (\alpha Z)^{2}}$ 
 		\end{tabular}}
 	\label{tab:vars}
@@ -360,4 +378,86 @@ $X(\frac{W'}{W})$ is in equation \ref{eq:screeningX}
 	\label{eq:screeningX}
 \end{equation}
 
+The factor $X$ in equation \ref{eq:screeningX} is very close to 1.
+This correction matters most at low energy, and is very flat above 100 keV.
+
+\section{Finite Mass Correction}
+The finite mass correction corrects for the recoil of the $^{20}$F nucleus.
+The form of finite mass corrections is given in equation \ref{eq:finitemass} \cite{WIL90}
+
+\begin{equation}
+	R(W,W_{0},M) = 1 + r_{0} + \frac{r_{1}}{W} + r_{2}W + r_{3}W^{2}
+	\label{eq:finitemass}
+\end{equation}
+
+With $W$ being the total electron energy, $W_{0}$ the maximum electron energy,  and $M$ the nuclear bass of $^{20}$Ne.
+The form of the $r_{i}$ depends on if the decay is a vector decay or an axial decay. 
+This is due to angular momentum conservation.
+Since $^{20}$F is an axial decay, the form of the finite mass correction is shown in equations \ref{eq:finitemassrs} 
+
+\begin{equation}
+	\label{eq:finitemassrs}
+	\begin{split}
+	r_{0} & = -\frac{2W_{0}}{M} - \frac{W_{0}^{2}}{6M^{2}} - \frac{77}{18M^{2}} \\
+	r_{1} & = -\frac{2}{3M} + \frac{7W_{0}}{9M^{2}} \\
+	r_{2} & = \frac{10}{3M} - \frac{28W_{0}}{9M^{2}} \\
+	r_{3} & = \frac{88}{9M}
+	\end{split}
+\end{equation}
+
+This effect is not a large effect.
+
+\section{Finite Size Correction}
+The finite size correction originates from treating the nucleus as a sphere uniformaly charged sphere instead of a point particle.
+This sphere has a radius of $R$, as shown in equation \ref{eq:sphereeq}.
+The form of the finite size correction is shown in equation \ref{eq:finitesize} \cite{WIL90}
+
+\begin{equation}
+	\label{eq:finitesize}
+	L_{0}(Z,W) = 1 + \frac{13(\alpha Z)^{2}}{60} - \alpha Z W R \frac{41 - 26\gamma}{15(2\gamma - 1)} - \alpha Z R \gamma \frac{17 - 2\gamma}{30W(2\gamma - 1)} + a_{-1} \frac{R}{W} + \sum_{n=0}^{5} a_{n} (W R)^{n} + 0.41(R - 0.0164)(a Z)^{4.5}
+\end{equation}
+
+Where the $a_{i}$ coefficents are parameterized by equation \ref{eq:A}
+\begin{equation}
+	a = \sum_{x = 1}^{6} b_{x} (\alpha Z)^{x}
+	\label{eq:A}
+\end{equation}
+
+The $b_{x}$ coeffiecents are numbers shown in table \ref{tab:bcoef}
+
+\begin{table}[!hbt]
+	\centering
+	\caption{Coefficents for finite mass correction}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{lllllll}
+		         & $b_{1}$ & $b_{2}$ & $b_{3}$ & $b_{4}$ & $b_{5}$ & $b_{6}$ \\
+		$a_{-1}$ & 0.115 & -1.8123 & 8.2498 & -11.223 & -14.854 & 32.086 \\
+		$a_{0}$  & -0.00062 & 0.007165 & 0.01841 & -0.053736 & 1.12691 & -1.5467 \\
+		$a_{1}$  & 0.02482 & -0.05975 & 4.84199 & -15.3374 & 23.9774 & -12.6534 \\
+		$a_{2}$  & -0.14038 & 3.64953 & -38.8143 & 172.1368 & -346.708 & 288.7873 \\
+		$a_{3}$  & 0.008152 & -1.15664 & 49.9663 & -273.711 & 657.6292 & -603.7033 \\
+		$a_{4}$  & 1.2145 & -23.9931 & 149.9718 & -471.2985 & 662.1909 & -305.6804 \\
+		$a_{5}$  & -1.5632 & 33.4192 & -255.1333 & 938.5297 & -1641.2845 & 1095.358 
+		\end{tabular}}
+	\label{tab:vars}
+\end{table}
+
+This is the last of the relavent. electromagnetic corrections
+
+\section{Nuclear Corrections}
+
+Nuclear form factors are one of the largest corrections to the beta spectrum.
+There are 4 form factors that come together into a correction called here the "Nuclear Shape Factor."
+The four factors are $c_{1nuc}$, which is the Gamow-Teller matrix element, $c_{2nuc}$, which parameterizes the dependence of the Gamow-Teller form factor on the momentum transfwer, $b_{wm}$, which is the weak magnetism, and $d$, which is the induced tensor term.
+The nuclear shape factor is then written as shown in equation \ref{eq:shapefactor}
+
+\begin{equation}
+	\label{eq:shapefactor}
+	S(E) = 1 + C_{0} + C_{1} + \frac{C_{-1}}{E} + C_{2}E^{2}	
+\end{equation}
+
+where the $C$ terms depend on the form factors and nuclear decay variables.
+
+
+\subsection{The Weak Magnetism}
 %\end{document}

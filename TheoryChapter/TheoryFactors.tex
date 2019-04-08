@@ -7,12 +7,12 @@
 
 %\begin{document}
 To obtain a measure of the Fierz term, the beta decay spectrum must be precisely described.
-The description of the beta decay spectrum is writen as a series of corrections on top of the main phase space factor.  
+The description of the beta decay spectrum is written as a series of corrections on top of the main phase space factor.  
 Through out this chapter, $\hbar = c = 1$.
 
 The corrections depend on several parameters of the decay. 
 Some of them are just numbers, such as the atomic number of the daughter or mother nucleus or the mass number of the system.
-However, there are two important paramters that are inexact.
+However, there are two important parameters that are inexact.
 They are measured experimentally.
 
 One is the q-value of the decay, which is defined in equation \ref{eq:qval}.
@@ -34,7 +34,7 @@ The formula is shown in equation \ref{eq:recoilqval}
 \end{equation} 
 
 with $m_{e}$ is the electron mass and $M$ is the average nuclear mass \cite{Hol74}.
-This is a shift of a couple keV, but still is important.
+This is a shift of a 2 (ADD REAL NUMBER) keV, but still is important.
 For this measurement, the atomic mass of $^{20}$Ne and $^{20}$F were used \cite{Pfe12}.
 This means that the average mass needs to have the mass of the electrons subtracted off. 
 For the q-value, this means adding an energy of $m_{e}$ to get to the total energy difference.
@@ -72,7 +72,7 @@ This comes in from Fermi's Golden Rule, which is shown in equation \ref{eq:fgr}.
 	\label{eq:fgr}
 \end{equation}
 
-where $\lambda$ is the transition probablity, $M$ the matrix element, and $\rho$ the density of the states.
+where $\lambda$ is the transition probability, $M$ the matrix element, and $\rho$ the density of the states.
 The main effect on the spectrum shape originates from the density of states.
 The number of states for both the electron and the neutrino is show in equation \ref{eq:densityofstates}
 
@@ -91,9 +91,9 @@ Assuming spherical symmetry, the new integral is shown in equation \ref{eq:dossp
 	\label{eq:dosspherical}
 \end{equation}
 
-This is simplfied by approximating the neutrino as massless.
+This is simplified by approximating the neutrino as mass-less.
 The momentum of the neutrino is then equal to the energy of the neutrino.
-Then, the total energy $E$ is written as a sum of the neutrino energy (or momemntum) and the beta energy.
+Then, the total energy $E$ is written as a sum of the neutrino energy (or momentum) and the beta energy.
 Plugging that in gives equation \ref{eq:dosintegral} after integrating over the neutrino degrees of freedom. 
 
 \begin{equation}
@@ -108,7 +108,7 @@ Since the measurement is not an absolute one, but only concerned with the shape 
 This is the main factor in describing the beta decay energy spectrum.
 
 \subsection{Matrix Elements}
-In the above disccusion, the matrix elements of the beta decay was glossed over.
+In the above discussion, the matrix elements of the beta decay was glossed over.
 The matrix elements are the nuclear matrix elements.
 $^{20}F$ decay is an allowed Gamow-Teller decay.
 This means that, to first order, the matrix element is constant. 
@@ -118,7 +118,7 @@ This means that, to first order, the matrix element is constant.
 \section{Variables of Correction Formula}
 
 For the rest of the discussion on beta decay corrections, everything is given without units.
-These corrections are largely electromagnetic in orgin.
+These corrections are largely electromagnetic in origin.
 All of the energies are divided by the electron mass, i.e. 511 keV.
 The other important variables are shown in table \ref{tab:vars}
 
@@ -149,7 +149,7 @@ The two factors that require experimental input were $R$ and $E_{0}$.
 $R$ was given directly in data tables.
 For $E_{0}$, the mass of $^{20}$F and $^{20}$Ne were needed.
 The energy of the gamma ray photon was also needed.
-Each one of these had an uncertainty, which propogates through the various correction functions.
+Each one of these had an uncertainty, which propagates through the various correction functions.
 Before the theoretical corrections were fed into a Monte Carlo simulation, the uncertainties were checked.
 Theoretical spectra were  built with each value plus or minus it's uncertainty.
 Ratios between the spectra were taken and fit with a line.
@@ -163,7 +163,7 @@ The results of those ratios are seen in figure \ref{fig:theoryuncer}.
 	\label{fig:theoryuncer}
 \end{figure}
 
-Since the slopes of each line are much smaller than the shape factor values, the experimental uncertainties are negligable. 
+Since the slopes of each line are much smaller than the shape factor values, the experimental uncertainties are negligible. 
 The various theoretical corrections that are needed are now discussed below.
 
 \section{Fermi Function}
@@ -190,7 +190,7 @@ The radiative correction was the next largest correction.
 For this measurement, the correction is only need to first order, which is on order $\alpha$.
 The correction is a QED correction that stems from photons emitted from the beta particle.
 This photon can be absorbed by the nucleus of the daughter, which makes it a virtual photon.
-The photon can also be a real photon that propogates out off to inifinity.
+The photon can also be a real photon that propagates out off to infinity.
 The real photons are known as inner bremsstrahlung.
 
 There are different descriptions of the radiative correction.  
@@ -248,14 +248,14 @@ This equation was derived one way using outgoing waves from the Dirac equation i
 The first order Born approximations was used.
 This means that at low energies, equation \ref{eq:KUB} is inaccurate. 
 That can be seen, as the equation diverges as $k$ goes to zero.
-If more orders of the approximation are added, this diveregence can be controlled.
+If more orders of the approximation are added, this divergence can be controlled.
 These higher orders would correspond to emitting multiple photons.
 Each of these orders would have a probablity reduced by a factor of $\alpha$ compared to equation \ref{eq:KUB}.
 The higher orders would be less significant, expect for at low energies. 
 Since the probablity density diverges, the higher orders could contribute.
 This would make the probablity of emitting no photons finite.	 		
 
-However, another possiblity is to add a cutoff. 
+However, another possibility is to add a cutoff. 
 As long as the cutoff is high enough to be in the region where the first order Born approximation is valid, but low enough not to cut out gamma rays that are not full absorbed, equation \ref{eq:KUB} is usable.
 The cutoff used was 50 keV.
 This cutoff was checked using Monte Carlo, and is within the region where the detector and the source geometry absorbs all gamma rays.
@@ -294,7 +294,7 @@ The strongest effect of the screening correction is at low electron energies.
 This is a correction to the Fermi function.
 
 \subsection{Potentials Used in Screening Derivation}
-To calculate this correction, the Coulumb potential used to calculate the Fermi function is replaced with a Hulth\'en potential.
+To calculate this correction, the Coulomb potential used to calculate the Fermi function is replaced with a Hulth\'en potential.
 This is shown in equation \ref{eq:hulth}
 
 \begin{equation}
@@ -302,11 +302,11 @@ This is shown in equation \ref{eq:hulth}
 	\label{eq:hulth}
 \end{equation}
 
-Where $r$ is the distance away from the center and $\beta$ is a parameter characterizing the defuseness of the electron cloud.
+Where $r$ is the distance away from the center and $\beta$ is a parameter characterizing the diffuseness of the electron cloud.
 The ratio of this new Fermi function to the old Fermi function is the screening correction.
 It multiplies the phase space. 
 
-The screening correction is negligable expect for near the origin.
+The screening correction is negligible expect for near the origin.
 Near the origin, equation \ref{eq:hulth} behaves as equation \ref{eq:hulthorg}
 
 \begin{equation}
@@ -322,7 +322,7 @@ and $\beta$ is given by equation \ref{eq:screenbeta} \cite{Buh84}.
 \end{equation}
 
 In the case of beta decay, the $Z$ is number electrons of the mother atom.
-The assumption is that beta decay is occuring from neutral mother atoms.
+The assumption is that beta decay is occurring from neutral mother atoms.
 The only unknown is $C(Z)$.
 
 To find the value of $C(Z)$, a comparison to another method of treating screening is needed.
@@ -408,7 +408,7 @@ Since $^{20}$F is an axial decay, the form of the finite mass correction is show
 This effect is not a large effect.
 
 \section{Finite Size Correction}
-The finite size correction originates from treating the nucleus as a sphere uniformaly charged sphere instead of a point particle.
+The finite size correction originates from treating the nucleus as a sphere uniformly charged sphere instead of a point particle.
 This sphere has a radius of $R$, as shown in equation \ref{eq:sphereeq}.
 The form of the finite size correction is shown in equation \ref{eq:finitesize} \cite{WIL90}
 
@@ -417,17 +417,17 @@ The form of the finite size correction is shown in equation \ref{eq:finitesize} 
 	L_{0}(Z,W) = 1 + \frac{13(\alpha Z)^{2}}{60} - \alpha Z W R \frac{41 - 26\gamma}{15(2\gamma - 1)} - \alpha Z R \gamma \frac{17 - 2\gamma}{30W(2\gamma - 1)} + a_{-1} \frac{R}{W} + \sum_{n=0}^{5} a_{n} (W R)^{n} + 0.41(R - 0.0164)(a Z)^{4.5}
 \end{equation}
 
-Where the $a_{i}$ coefficents are parameterized by equation \ref{eq:A}
+Where the $a_{i}$ coefficients are parameterized by equation \ref{eq:A}
 \begin{equation}
 	a = \sum_{x = 1}^{6} b_{x} (\alpha Z)^{x}
 	\label{eq:A}
 \end{equation}
 
-The $b_{x}$ coeffiecents are numbers shown in table \ref{tab:bcoef}
+The $b_{x}$ coefficients are numbers shown in table \ref{tab:bcoef}
 
 \begin{table}[!hbt]
 	\centering
-	\caption{Coefficents for finite mass correction}
+	\caption{Coefficients for finite mass correction}
 	\resizebox{\textwidth}{!}{
 		\begin{tabular}{lllllll}
 		         & $b_{1}$ & $b_{2}$ & $b_{3}$ & $b_{4}$ & $b_{5}$ & $b_{6}$ \\
@@ -442,14 +442,27 @@ The $b_{x}$ coeffiecents are numbers shown in table \ref{tab:bcoef}
 	\label{tab:vars}
 \end{table}
 
-This is the last of the relavent. electromagnetic corrections
+This is the last of the relevant. electromagnetic corrections
 
 \section{Nuclear Corrections}
 
 Nuclear form factors are one of the largest corrections to the beta spectrum.
 There are 4 form factors that come together into a correction called here the "Nuclear Shape Factor."
-The four factors are $c_{1nuc}$, which is the Gamow-Teller matrix element, $c_{2nuc}$, which parameterizes the dependence of the Gamow-Teller form factor on the momentum transfwer, $b_{wm}$, which is the weak magnetism, and $d$, which is the induced tensor term.
-The nuclear shape factor is then written as shown in equation \ref{eq:shapefactor}
+The form factors are described in table \ref{tab:formfact}
+
+\begin{table}[!hbt]
+	\centering
+	\caption{Nuclear Form Factors}
+	\resizebox{\textwidth{!}{
+		\begin{tabular}{lll}
+		Form Factor & Name & Value \\
+		$c_{1nuc}$ & Fermi matrix element & 0.253 \\
+		$c_{2nuc}$ & Matrix element momentum transfer factor & 0.755 fm$^{2]$ \\
+		$b_{wm}$ & Weak magnetism & 43.4 \\
+		$d$ & Induced tensor term & 20.5
+		\end{tabular}
+	\label{tab:formfact}
+\end{table}
 
 \begin{equation}
 	\label{eq:shapefactor}
@@ -457,7 +470,27 @@ The nuclear shape factor is then written as shown in equation \ref{eq:shapefacto
 \end{equation}
 
 where the $C$ terms depend on the form factors and nuclear decay variables.
+How the shape factor depends on the form factors is shown in equation \ref{eq:sfcs} 
 
+\begin{equation}
+	\label{eq:sfcs}
+	\begin{split}
+	c_{0} & = -\frac{2 E_{0}}{M_{ave}}(1 + \frac{d}{c_{1nuc}} + \frac{b_{wm}}{c_{1nuc}})  + \frac{2 c_{2nuc}}{9 c_{2nuc}} 11 m_{e}^{2} \\
+	c_{-1} & = -\frac{m_{e}^{2}}{3M_{ave}} (2 + \frac{2b_{wm}}{c_{1nuc}} + \frac{d}{c_{1nuc}})  - \frac{2 c_{2nuc}}{9 c_{1nuc}} 2 m_{e}^{2} E_{0}\\
+	c_{1} & =  \frac{2}{3M_{ave}} (5 + \frac{b_{wm}}{c_{1nuc}}) + \frac{2 c_{2nuc}}{9 c_{1nuc}} 20 E_{0} \\
+	c_{2} & = -\frac{40 c_{2nuc}}{9 c_{1nuc}} 
+	\end{split}
+\end{equation}
+
+Two of the form factors, $b_{wm}$ and $c_{1nuc}$ are calculated from experimental data. 
+The other two are calculated from theory. 
+Different values of $d$, or instance, range from 20.5 to 40.5.  %need citations here.
+The calculation of $c_{1nuc}$ depends on the $ft$ value. 
+The calculation is shown in equation \ref{eq:c1eq}
+
+The weak magnetism ,$b_{wm}$, is of special theoretical interest. 
 
 \subsection{The Weak Magnetism}
+
+The weak magnetism form factor is one of the two form factors determined 
 %\end{document}

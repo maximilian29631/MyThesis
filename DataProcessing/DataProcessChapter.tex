@@ -1,26 +1,27 @@
-The detector were tested using an oscilliscope to check for their signals.
-The signals were then inserted into a digital data acqusition system.
+The detectors were tested using an oscilloscope to check for their signals.
+The timing of each detector signal was recorded and used to tune the data acquisition. 
+The signals were then inserted into a digital data acquisition system.
 
-\section{Data acquisiton}
+\section{Data acquisition}
 
 All the signals for all the detectors were sent to digitizers.
 These digitizers were three 250 mega-samples per second 16 channel XIA PIXIE modules. 
 They were run with the digital NSCL system.
 The first module had the implant detectors and the four gamma detectors. 
-The second module had five signals from the PPAC and one signal for the Si dector. 
-Both of these had the beam on signal, beam off signal, a 100 Hz pulser, and the signal from the PIN photodiode. 
-The third module only recorded the digitized waveforms from the PVT detector.
+The second module had five signals from the PPAC and one signal for the Si detector. 
+Both of these had the beam on signal, beam off signal, a 100 Hz pulser, and the signal from the PIN photo-diode. 
+The third module only recorded the digitized wave-forms from the PVT detector.
 
-Each of the channels on each of those modules outputted a time stamp and an energy calculated from a trapezoidal fitler.
-The third module output the digitized waveform over 400ns.
+Each of the channels on each of those modules outputted a time stamp and an energy calculated from a trapezoidal filter.
+The third module output the digitized waveform over 400 ns.
 The digitizers took samples every 8 ns.
 The clock used was a stable EPSON SGR-8002JC programmable crystal oscillator.
 
 The first thing the PIXIE modules did was to digitize the wave forms of the signals.
 The digital wave forms of the signals were only saved for the PVT implant detector.
-The PIXIE modules' software applied a trapezoidal energy filter to the digital wave froms.
+The PIXIE modules' software applied a trapezoidal energy filter to the digital wave-forms.
 
-\subsection{Filter Description}
+\subsection{Trapezoidal Filter Description}
 The parameters of the trapezoidal filter needed to be set by hand.
 First, three sums of the digitize wave-forms were taken.
 The first sum was over a time known as $tPEAKING$.
@@ -33,7 +34,7 @@ These three sums were added with equation \ref{eq:ensum}
 	\label{eq:ensum}
 \end{equation} 
 
-with $S_{0}$ being the first sum over tPeaking described above, $S_{G}$ being teh sum over tGap, and $S_{1}$ being the second sum over tPeaking.
+with $S_{0}$ being the first sum over $tPEAKING$ described above, $S_{G}$ being the sum over $tGAP$, and $S_{1}$ being the second sum over $tPEAKING$.
 $C_{0}$ is described in equation \ref{eq:c0sum}
 
 \begin{equation}
@@ -41,7 +42,7 @@ $C_{0}$ is described in equation \ref{eq:c0sum}
 	\label{eq:c0sum}
 \end{equation}
 
-where $tPEAKING$ is the time described above, $tSPL$ is the 8 ns sampling time, and $\tau$ an additional tunable parameter.
+where $tPEAKING$ is the time described above, $tSPL$ is the 8 ns sampling time, and $\tau$ an additional parameter.
 
 $C_{g}$ is described in \ref{eq:cgsum}
 
@@ -103,7 +104,7 @@ These values are shown in table \ref{tab:trigfilter}
 
 The peak of the trigger filter was used to calculate the time stamps of the events.  
 
-\subsection{Data Acquisition Sofware}
+\subsection{Data Acquisition Software}
 In order to set the parameters of the various filters, a program called NSCOPE was used \cite{DAQ17}.
 The program GUI was used to set the rise time, the gap, and the threshold for both the energy filter and the trigger filter.
 These parameters were set differently for each detector type.
@@ -112,7 +113,7 @@ Sample spectra were taken with NSCOPE, and the parameters saved to a file.
 
 This file was loaded with a program called ReadOut, which ran the data taking.
 The ReadOut program used a ringbuffer in order to record the output of the data.
-The program recorded data as an .evt binary file if the record data button was checked.
+The program recorded data as an .evt binary file if the record option was selected.
 
 The ringbuffer was also fed to a program called scalers.
 This gave the rates of the events coming into each channel.
@@ -130,21 +131,34 @@ These histograms were used as diagnostics.
 
 \section{Data Taking and Processing}
 To take data, the ReadOutGUI program was activated. 
-Data was taken in one hour intervals, unless one of the detectors stopped counting early
+Data was taken in one hour intervals called runs, unless one of the detectors stopped counting early
 If a detector stopped early, it was the up detector.
-The run was then ended early and then a new one resarted.
-The events built by Readout had a time interval of 1000 ns.
+When that happened, the run was ended before one hour was up. 
+The events built by Readout had a time interval of 8000 ns.
 
+Each run generated one or more .evt files. 
 The resulting .evt files of ReadOut were processed using a program called DDAS dumper.
 This converted the .evt files to ROOT files.
-These ROOT files contained a TTRee that had the energy and time stamps of each detector.
-There was also information on the trace of the detector.
+One .evt was dumped to .root file. 
+These ROOT files contained a TTree that had the energy and time stamps of each detector.
+The information was saved event by event. 
+It was formatted in a C++ class called DDASEvent. 
+This event class contained data for each channel from the data acquisition.
+The energy was given out in ADC units and was not calibrated.
+The time was given counts of DAQ clock.
+The digitized wave forms were also saved in this event. 
 
 From the ROOT files from the ddasdumper, another ROOT file was built.
-These files were processed with a modyfied version of a program called $scan$.
+All the ROOT files from one run was built into one new ROOT file. 
+These files were processed with a modified version of a program called $scan$.
 The original version was written by Stan Paulauskas.
-First, the various energies and times for each detector were built into a histogram.
-Then, the energy and times for the implant detectors, four gamma detectors, beam on signal, and beam off signals were saved to a variable.
+The TTree was looped over event by event.
+For each event, each channel was looped over. 
+For the first event and first channel, the time integer was recorded. 
+This first time was subtracted from all subsequent time stamps.
+The time differences were multiplied 8 ns to turn them into time in seconds. 
+Then, the various energies and times for each detector were built into histograms for each channel. 
+During looping through the events, the energy and times for the implant detectors, four gamma detectors, beam on signal, and beam off signals were saved to a variable.
 This information was used to build new events for a new TTree.
 
 Each event started with a non-zero energy reading in any of the five detectors.

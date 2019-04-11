@@ -6,12 +6,23 @@ In addition to all the theoretical corrections, the effect of bremsstrahlung and
 The way this was done was with a GEANT4 simulation \cite{Ago03}.
 The most updated copy of the code can be found at https://github.com/maximilian29631/Geant4for20F/tree/RealDeadLayer. 
 
+
 \section{GEANT4 Monte Carlo}
 The corrected beta decay spectrum was fed as input to a Monte Carlo.
 The program used to model the detectors was GEANT4.
 In order to use the program, a model of the detector set-up and the initial energies of the primary particles need to be introduced.  
 
 \subsection{Detector Geometry}
+A source of the detector geometry were the technical drawings of detectors. 
+A drawing of the CsI(Na) implant detector is shown in figure \ref{fig:ImplantTech}
+
+\begin{figure}[!htb]
+	\centerline{\includegraphics[width=0.78\textwidth]{ImplantDrawing.png}}
+	\caption{A techincal drawing of the CsI(Na) implant detector}
+	\label{fig:ImplantTech}
+\end{figure}
+
+
 The geometry of the detector set-up was programmed into the simulation.
 The implant detector was modeled as a square prism of CsI.
 The rectangular prism was 9.76 cm deep with a 5 cm square base.
@@ -46,15 +57,34 @@ Pictures of that detector being taken apart showed where the spacer were on the 
 
 This is shown in figure \ref{fig:detpic}
 
+\begin{figure}[!htb]
+	\centerline{\includegraphics[width=0.78\textwidth]{PaulsSpacerImage.png}}
+	\caption{A CsI(Na) detector being taken apart.
+		 The red circle shows the side spacers}
+	\label{fig:detpic}
+\end{figure}
+
 To see if the spacer was located in the path of the beam, the data with the degrader in front of the beam was used.
 The rates inside the implant detector was compared to the effective thickness of aluminum. 
 It was found took 14 mm of aluminum to bring the rate down to zero.
+This is shown in figure \ref{fig:degraderdata}.
 If there were a PTFE spacer in the way of the beam, it would take 12 mm of aluminum to completely stop the beam.
-These results were calculated using LISE++.
+These results were calculated using LISE++ and are shown in figure \ref{fig:lisealcal}.
 
-This calculation is shown in figure \ref{fig:lisealcalc}.
+\begin{figure}[!htb]
+	\centerline{\includegraphics[width=0.78\textwidth]{CsIRawRatevDegraderThicknessFixed.png}}
+	\caption{The experimental data from the degrader. 
+		 All the fluorine is blocked after 14 mm of degrader}
+	\label{fig:degraderdata}
+\end{figure}
 
-This is compared to the data in figure \ref{fig:aldegrader}.
+\begin{figure}[!htb]
+	\centerline{\includegraphics[width=0.78\textwidth]{degrad.pdf}}
+	\caption{Calculating how thick an Al degrader would have to be to block the beam.
+	 	 A model with no spacer matches the data better.}
+	\label{fig:lisealcalc}
+\end{figure}
+
 
 \subsection{Source Definition}
 The next step was to define a region inside the implant detector.

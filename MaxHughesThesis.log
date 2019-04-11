@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2018.11.12)  1 APR 2019 15:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2018.11.12)  11 APR 2019 15:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -249,9 +249,6 @@ LaTeX Info: Redefining \] on input line 2666.
 )
 (./MaxHughesThesis.aux
 
-LaTeX Warning: Label `tab:vars' multiply defined.
-
-
 LaTeX Warning: Label `eq:qval' multiply defined.
 
 
@@ -260,18 +257,18 @@ LaTeX Warning: Label `eq:cal' multiply defined.
 )
 \openout1 = `MaxHughesThesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
@@ -378,24 +375,24 @@ e
 \tf@toc=\write3
 \openout3 = `MaxHughesThesis.toc'.
 
- [6] (./MaxHughesThesis.lot)
+ [6] [7] (./MaxHughesThesis.lot)
 \tf@lot=\write4
 \openout4 = `MaxHughesThesis.lot'.
 
- [7
+ [8
 
 
 
 ]
-(./MaxHughesThesis.lof [8
+(./MaxHughesThesis.lof [9
 
 
 
-])
+] [10])
 \tf@lof=\write5
 \openout5 = `MaxHughesThesis.lof'.
 
- [9]
+ [11]
 Chapter 1.
 (./IntroChapter/Introduction.tex) [1
 
@@ -404,50 +401,61 @@ Chapter 1.
 Chapter 2.
 (./TheoryChapter/TheoryFactors.tex [2
 
-]
-
-LaTeX Warning: Citation `Hol74' on page 3 undefined on input line 36.
-
-[3] [4]
+] [3] [4] [5]
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.140 		\end{tabular}}
+l.163 		\end{tabular}}
                       
 ? 
-[5] <Figures/RatioPlot_2.pdf, id=54, 794.97pt x 614.295pt>
+[6] <Figures/RatioPlot_2.pdf, id=63, 794.97pt x 614.295pt>
 File: Figures/RatioPlot_2.pdf Graphic file (type pdf)
 
 <use Figures/RatioPlot_2.pdf>
-Package pdftex.def Info: Figures/RatioPlot_2.pdf used on input line 159.
+Package pdftex.def Info: Figures/RatioPlot_2.pdf used on input line 182.
 (pdftex.def)             Requested size: 366.40834pt x 283.14153pt.
- [6] [7 <./Figures/RatioPlot_2.pdf, page is rotated 90 degrees>] [8] [9]
-<Figures/RadCorrections_20F.pdf, id=70, 794.97pt x 614.295pt>
+
+Overfull \hbox (0.26276pt too wide) in paragraph at lines 192--192
+[]\OT1/cmr/bx/n/17.28 Electromagnetic Cor-rec-tions and Hardonic Cor-rec-
+ []
+
+<Figures/Corrections_F20_ForCom_nokey.pdf, id=64, 794.97pt x 614.295pt>
+File: Figures/Corrections_F20_ForCom_nokey.pdf Graphic file (type pdf)
+
+<use Figures/Corrections_F20_ForCom_nokey.pdf>
+Package pdftex.def Info: Figures/Corrections_F20_ForCom_nokey.pdf used on input
+ line 199.
+(pdftex.def)             Requested size: 274.80223pt x 212.35379pt.
+
+<Figures/Corrections_F20Key.png, id=65, 274.1442pt x 146.63478pt>
+File: Figures/Corrections_F20Key.png Graphic file (type png)
+
+<use Figures/Corrections_F20Key.png>
+Package pdftex.def Info: Figures/Corrections_F20Key.png used on input line 202.
+
+(pdftex.def)             Requested size: 147.9744pt x 79.14803pt.
+ [7 <./Figures/RatioPlot_2.pdf, page is rotated 90 degrees>] [8 <./Figures/Corr
+ections_F20_ForCom_nokey.pdf, page is rotated 90 degrees> <./Figures/Correction
+s_F20Key.png>] [9] [10]
+<Figures/RadCorrections_20F.pdf, id=87, 794.97pt x 614.295pt>
 File: Figures/RadCorrections_20F.pdf Graphic file (type pdf)
 
 <use Figures/RadCorrections_20F.pdf>
-Package pdftex.def Info: Figures/RadCorrections_20F.pdf used on input line 273.
+Package pdftex.def Info: Figures/RadCorrections_20F.pdf used on input line 312.
 
 (pdftex.def)             Requested size: 366.40834pt x 283.14153pt.
- [10 <./Figures/RadCorrections_20F.pdf, page is rotated 90 degrees>]
-<Figures/RadCorrections_20F_Matching.pdf, id=78, 794.97pt x 614.295pt>
+
+<Figures/RadCorrections_20F_Matching.pdf, id=88, 794.97pt x 614.295pt>
 File: Figures/RadCorrections_20F_Matching.pdf Graphic file (type pdf)
 
 <use Figures/RadCorrections_20F_Matching.pdf>
 Package pdftex.def Info: Figures/RadCorrections_20F_Matching.pdf used on input 
-line 284.
+line 323.
 (pdftex.def)             Requested size: 366.40834pt x 283.14153pt.
- [11 <./Figures/RadCorrections_20F_Matching.pdf, page is rotated 90 degrees>] [
-12] [13]
-
-LaTeX Warning: Citation `WIL90' on page 14 undefined on input line 386.
-
-[14]
-
-LaTeX Warning: Citation `WIL90' on page 15 undefined on input line 413.
-
-
-Overfull \hbox (121.31781pt too wide) detected at line 418
+ [11] [12 <./Figures/RadCorrections_20F.pdf, page is rotated 90 degrees>] [13 <
+./Figures/RadCorrections_20F_Matching.pdf, page is rotated 90 degrees>] [14] [1
+5]
+Overfull \hbox (121.31781pt too wide) detected at line 457
 \OML/cmm/m/it/12 L[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 Z; W\OT1/cmr/m/n/12 ) = 1
  + [] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 ZWR[] \OMS/cmsy/m/n/12 ^^@ \OML/cm
 m/m/it/12 ZR^^M[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 a[][] \OT1/cmr/m/n/12 + [
@@ -457,51 +465,44 @@ m/m/it/12 ZR^^M[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 a[][] \OT1/cmr/m/n/12 + [
 1/cmr/m/n/12 )[]
  []
 
-
-LaTeX Warning: Reference `tab:bcoef' on page 15 undefined on input line 426.
-
-
-LaTeX Warning: Reference `eq:shapefactor' on page 15 undefined on input line 45
-2.
-
-[15])
+[16] [17] [18])
 ! Missing } inserted.
 <inserted text> 
                 }
-l.131 \subfile{TheoryChapter/TheoryFactors.tex}
+l.132 \subfile{TheoryChapter/TheoryFactors.tex}
                                                
 ? 
-[16]
+[19]
 Chapter 3.
 (./20FChapter/20Description.tex
-<Figures/20FDecayScheme.png, id=101, 289.08pt x 226.33395pt>
+<Figures/20FDecayScheme.png, id=123, 289.08pt x 226.33395pt>
 File: Figures/20FDecayScheme.png Graphic file (type png)
 
 <use Figures/20FDecayScheme.png>
 Package pdftex.def Info: Figures/20FDecayScheme.png used on input line 5.
 (pdftex.def)             Requested size: 366.40834pt x 286.89178pt.
- [17
+ [20
 
- <./Figures/20FDecayScheme.png>]) [18]
+ <./Figures/20FDecayScheme.png>]) [21]
 Chapter 4.
-(./ExperimentDesChapter/ExpDiscription.tex [19
+(./ExperimentDesChapter/ExpDiscription.tex [22
 
-] [20] [21]
-<Figures/PPACFitted.png, id=120, 700.6175pt x 475.7775pt>
+] [23] [24]
+<Figures/PPACFitted.png, id=142, 700.6175pt x 475.7775pt>
 File: Figures/PPACFitted.png Graphic file (type png)
 
 <use Figures/PPACFitted.png>
 Package pdftex.def Info: Figures/PPACFitted.png used on input line 88.
 (pdftex.def)             Requested size: 413.3867pt x 280.72806pt.
- [22] [23 <./Figures/PPACFitted.png>] [24]
-<Figures/fig_setup.pdf, id=131, 867.24pt x 505.89pt>
+ [25] [26 <./Figures/PPACFitted.png>] [27]
+<Figures/fig_setup.pdf, id=153, 867.24pt x 505.89pt>
 File: Figures/fig_setup.pdf Graphic file (type pdf)
 
 <use Figures/fig_setup.pdf>
 Package pdftex.def Info: Figures/fig_setup.pdf used on input line 151.
 (pdftex.def)             Requested size: 319.42996pt x 186.33496pt.
 
-<Figures/fig_PVTSetupPicture.png, id=132, 304.9794pt x 228.3732pt>
+<Figures/fig_PVTSetupPicture.png, id=154, 304.9794pt x 228.3732pt>
 File: Figures/fig_PVTSetupPicture.png Graphic file (type png)
 
 <use Figures/fig_PVTSetupPicture.png>
@@ -509,194 +510,229 @@ Package pdftex.def Info: Figures/fig_PVTSetupPicture.png used on input line 165
 .
 (pdftex.def)             Requested size: 272.45877pt x 204.0251pt.
 
-<Figures/fig_CsISetupPicture.png, id=133, 305.71358pt x 228.28143pt>
+<Figures/fig_CsISetupPicture.png, id=155, 305.71358pt x 228.28143pt>
 File: Figures/fig_CsISetupPicture.png Graphic file (type png)
 
 <use Figures/fig_CsISetupPicture.png>
 Package pdftex.def Info: Figures/fig_CsISetupPicture.png used on input line 177
 .
 (pdftex.def)             Requested size: 272.45877pt x 203.46591pt.
- [25 <./Figures/fig_setup.pdf>] [26 <./Figures/fig_PVTSetupPicture.png> <./Figu
+ [28 <./Figures/fig_setup.pdf>] [29 <./Figures/fig_PVTSetupPicture.png> <./Figu
 res/fig_CsISetupPicture.png>]
 
 Package caption Warning: \label without proper \caption on input line 225.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `tab:detvolt' on page 27 undefined on input line 208.
+LaTeX Warning: Reference `tab:detvolt' on page 30 undefined on input line 208.
 
-[27] [28]) [29]
+[30] [31]) [32]
 Chapter 5.
-(./DataProcessing/DataProcessChapter.tex [30
+(./DataProcessing/DataProcessChapter.tex [33
 
-] [31] [32] [33]) [34]
+] [34] [35] [36]) [37] [38]
 Chapter 6.
 (./HalfLifeChapter/HalfLifeSection.tex
-<Figures/fig_ideogramBefore.png, id=176, 852.18375pt x 403.5075pt>
+<Figures/fig_ideogramBefore.png, id=201, 852.18375pt x 403.5075pt>
 File: Figures/fig_ideogramBefore.png Graphic file (type png)
 
 <use Figures/fig_ideogramBefore.png>
 Package pdftex.def Info: Figures/fig_ideogramBefore.png used on input line 17.
 (pdftex.def)             Requested size: 366.40834pt x 173.49869pt.
- [35
+ [39
 
  <./Figures/fig_ideogramBefore.png>]
-<Figures/CsILBCvHL.png, id=181, 436.905pt x 259.515pt>
+<Figures/CsILBCvHL.png, id=206, 436.905pt x 259.515pt>
 File: Figures/CsILBCvHL.png Graphic file (type png)
 
 <use Figures/CsILBCvHL.png>
 Package pdftex.def Info: Figures/CsILBCvHL.png used on input line 49.
 (pdftex.def)             Requested size: 366.40834pt x 217.6545pt.
- [36 <./Figures/CsILBCvHL.png>]
-<Figures/fig_pulserVsTime.pdf, id=186, 569.12625pt x 386.44376pt>
+ [40 <./Figures/CsILBCvHL.png>]
+<Figures/fig_pulserVsTime.pdf, id=211, 569.12625pt x 386.44376pt>
 File: Figures/fig_pulserVsTime.pdf Graphic file (type pdf)
 
 <use Figures/fig_pulserVsTime.pdf>
 Package pdftex.def Info: Figures/fig_pulserVsTime.pdf used on input line 96.
 (pdftex.def)             Requested size: 366.40834pt x 248.80911pt.
- [37]
-<Figures/fig_2Dh.pdf, id=190, 569.12625pt x 386.44376pt>
+ [41]
+<Figures/fig_2Dh.pdf, id=215, 569.12625pt x 386.44376pt>
 File: Figures/fig_2Dh.pdf Graphic file (type pdf)
 
 <use Figures/fig_2Dh.pdf>
 Package pdftex.def Info: Figures/fig_2Dh.pdf used on input line 111.
 (pdftex.def)             Requested size: 366.40834pt x 248.80911pt.
 
-<Figures/fig_betaSpec.pdf, id=191, 569.12625pt x 305.14pt>
+<Figures/fig_betaSpec.pdf, id=216, 569.12625pt x 305.14pt>
 File: Figures/fig_betaSpec.pdf Graphic file (type pdf)
 
 <use Figures/fig_betaSpec.pdf>
 Package pdftex.def Info: Figures/fig_betaSpec.pdf used on input line 117.
 (pdftex.def)             Requested size: 366.40834pt x 196.46225pt.
 
-<Figures/fig_gammaSpec.pdf, id=192, 569.12625pt x 305.14pt>
+<Figures/fig_gammaSpec.pdf, id=217, 569.12625pt x 305.14pt>
 File: Figures/fig_gammaSpec.pdf Graphic file (type pdf)
 
 <use Figures/fig_gammaSpec.pdf>
 Package pdftex.def Info: Figures/fig_gammaSpec.pdf used on input line 125.
 (pdftex.def)             Requested size: 366.40834pt x 196.46225pt.
- [38 <./Figures/fig_pulserVsTime.pdf, page is rotated 90 degrees>] [39 <./Figur
+ [42 <./Figures/fig_pulserVsTime.pdf, page is rotated 90 degrees>] [43 <./Figur
 es/fig_2Dh.pdf, page is rotated 90 degrees> <./Figures/fig_betaSpec.pdf, page i
 s rotated 90 degrees>]
-<Figures/fig_tbgSpec1.pdf, id=328, 569.12625pt x 305.14pt>
+<Figures/fig_tbgSpec1.pdf, id=353, 569.12625pt x 305.14pt>
 File: Figures/fig_tbgSpec1.pdf Graphic file (type pdf)
 
 <use Figures/fig_tbgSpec1.pdf>
 Package pdftex.def Info: Figures/fig_tbgSpec1.pdf used on input line 145.
 (pdftex.def)             Requested size: 413.3867pt x 221.6515pt.
 
-<Figures/PileUpSketch.png, id=329, 307.1475pt x 353.19049pt>
+<Figures/PileUpSketch.png, id=354, 307.1475pt x 353.19049pt>
 File: Figures/PileUpSketch.png Graphic file (type png)
 
 <use Figures/PileUpSketch.png>
 Package pdftex.def Info: Figures/PileUpSketch.png used on input line 167.
 (pdftex.def)             Requested size: 413.3867pt x 475.38538pt.
 
-<Figures/fig_tbgSpec2.pdf, id=330, 569.12625pt x 305.14pt>
+<Figures/fig_tbgSpec2.pdf, id=355, 569.12625pt x 305.14pt>
 File: Figures/fig_tbgSpec2.pdf Graphic file (type pdf)
 
 <use Figures/fig_tbgSpec2.pdf>
 Package pdftex.def Info: Figures/fig_tbgSpec2.pdf used on input line 183.
 (pdftex.def)             Requested size: 413.3867pt x 221.6515pt.
- [40 <./Figures/fig_gammaSpec.pdf, page is rotated 90 degrees>] [41 <./Figures/
+ [44 <./Figures/fig_gammaSpec.pdf, page is rotated 90 degrees>] [45 <./Figures/
 fig_tbgSpec1.pdf, page is rotated 90 degrees>]
-[42 <./Figures/PileUpSketch.png>] [43 <./Figures/fig_tbgSpec2.pdf, page is rota
-ted 90 degrees>] <Figures/fig_decaySpec.pdf, id=475, 794.97pt x 614.295pt>
+[46 <./Figures/PileUpSketch.png>] [47 <./Figures/fig_tbgSpec2.pdf, page is rota
+ted 90 degrees>] <Figures/fig_decaySpec.pdf, id=500, 794.97pt x 614.295pt>
 File: Figures/fig_decaySpec.pdf Graphic file (type pdf)
 
 <use Figures/fig_decaySpec.pdf>
 Package pdftex.def Info: Figures/fig_decaySpec.pdf used on input line 238.
 (pdftex.def)             Requested size: 413.3867pt x 319.44461pt.
- [44 <./Figures/fig_decaySpec.pdf, page is rotated 90 degrees>] [45]
-<Figures/fig_hlVsWtbg.png, id=490, 757.8714pt x 391.2216pt>
+ [48 <./Figures/fig_decaySpec.pdf, page is rotated 90 degrees>] [49]
+<Figures/fig_hlVsWtbg.png, id=515, 757.8714pt x 391.2216pt>
 File: Figures/fig_hlVsWtbg.png Graphic file (type png)
 
 <use Figures/fig_hlVsWtbg.png>
 Package pdftex.def Info: Figures/fig_hlVsWtbg.png used on input line 281.
 (pdftex.def)             Requested size: 413.3867pt x 213.39958pt.
- [46 <./Figures/fig_hlVsWtbg.png>] [47] [48]
-[49] <Figures/fig_halfLives.pdf, id=505, 794.97pt x 614.295pt>
+ [50 <./Figures/fig_hlVsWtbg.png>] [51] [52]
+[53] <Figures/fig_halfLives.pdf, id=530, 794.97pt x 614.295pt>
 File: Figures/fig_halfLives.pdf Graphic file (type pdf)
 
 <use Figures/fig_halfLives.pdf>
 Package pdftex.def Info: Figures/fig_halfLives.pdf used on input line 387.
 (pdftex.def)             Requested size: 413.3867pt x 319.44461pt.
- [50]
-<Figures/fig_ideogramAfter.png, id=509, 851.43094pt x 405.76593pt>
+ [54]
+<Figures/fig_ideogramAfter.png, id=534, 851.43094pt x 405.76593pt>
 File: Figures/fig_ideogramAfter.png Graphic file (type png)
 
 <use Figures/fig_ideogramAfter.png>
 Package pdftex.def Info: Figures/fig_ideogramAfter.png used on input line 444.
 (pdftex.def)             Requested size: 413.3867pt x 197.00674pt.
- [51 <./Figures/fig_halfLives.pdf, page is rotated 90 degrees>]) [52 <./Figures
+ [55 <./Figures/fig_halfLives.pdf, page is rotated 90 degrees>]) [56 <./Figures
 /fig_ideogramAfter.png>]
 Chapter 7.
 (./Geant4Chapter/Geant4Chapter.tex
 Package xr Info: IMPORTING LABELS FROM MaxHughesThesis.aux on input line 1.
- [53
+
+<Figures/ImplantDrawing.png, id=546, 516.10207pt x 416.33804pt>
+File: Figures/ImplantDrawing.png Graphic file (type png)
+
+<use Figures/ImplantDrawing.png>
+Package pdftex.def Info: Figures/ImplantDrawing.png used on input line 20.
+(pdftex.def)             Requested size: 366.40834pt x 295.58301pt.
+ [57
 
 ]
-<Figures/GEANT4WithoutAl.png, id=524, 943.3644pt x 609.9588pt>
+<Figures/GEANT4WithoutAl.png, id=550, 943.3644pt x 609.9588pt>
 File: Figures/GEANT4WithoutAl.png Graphic file (type png)
 
 <use Figures/GEANT4WithoutAl.png>
-Package pdftex.def Info: Figures/GEANT4WithoutAl.png used on input line 35.
+Package pdftex.def Info: Figures/GEANT4WithoutAl.png used on input line 46.
 (pdftex.def)             Requested size: 366.40834pt x 236.91502pt.
- [54 <./Figures/GEANT4WithoutAl.png>] [55]
-[56]
-Overfull \hbox (68.60977pt too wide) in paragraph at lines 116--124
+ [58 <./Figures/ImplantDrawing.png>]
+<Figures/PaulsSpacerImage.png, id=555, 1284.8pt x 963.6pt>
+File: Figures/PaulsSpacerImage.png Graphic file (type png)
+
+<use Figures/PaulsSpacerImage.png>
+Package pdftex.def Info: Figures/PaulsSpacerImage.png used on input line 61.
+(pdftex.def)             Requested size: 366.40834pt x 274.8053pt.
+
+
+LaTeX Warning: Reference `fig:lisealcal' on page 59 undefined on input line 72.
+
+
+
+<Figures/CsIRawRatevDegraderThicknessFixed.png, id=556, 800.9925pt x 475.7775pt
+>
+File: Figures/CsIRawRatevDegraderThicknessFixed.png Graphic file (type png)
+ <use Figures/CsIRawRatevDegraderThicknessFixed.png>
+Package pdftex.def Info: Figures/CsIRawRatevDegraderThicknessFixed.png used on 
+input line 75.
+(pdftex.def)             Requested size: 366.40834pt x 217.64066pt.
+
+<Figures/degrad.pdf, id=557, 794.97pt x 614.295pt>
+File: Figures/degrad.pdf Graphic file (type pdf)
+ <use Figures/degrad.pdf>
+Package pdftex.def Info: Figures/degrad.pdf used on input line 82.
+(pdftex.def)             Requested size: 366.40834pt x 283.14153pt.
+
+[59 <./Figures/GEANT4WithoutAl.png>]
+Overfull \vbox (4.36574pt too high) has occurred while \output is active []
+
+
+[60 <./Figures/PaulsSpacerImage.png (PNG copy)> <./Figures/CsIRawRatevDegraderT
+hicknessFixed.png>] [61 <./Figures/degrad.pdf, page is rotated 90 degrees>]
+[62] [63]
+Overfull \hbox (68.60977pt too wide) in paragraph at lines 165--173
 \OT1/cmr/m/n/12 was found not to be the cor-rect way to fit the data. To coun-t
 er-act that, the class G4VUserTrackInformation
  []
 
-[57]) [58]
+) [64]
 Chapter 8.
 (./BetaFitChapter/BetaFitChapter.tex
 Package xr Info: IMPORTING LABELS FROM MaxHughesThesis.aux on input line 1.
 
-<Figures/GEANT4OutputBetter.png, id=541, 1165.35374pt x 475.7775pt>
+<Figures/GEANT4OutputBetter.png, id=580, 1165.35374pt x 475.7775pt>
 File: Figures/GEANT4OutputBetter.png Graphic file (type png)
 
 <use Figures/GEANT4OutputBetter.png>
 Package pdftex.def Info: Figures/GEANT4OutputBetter.png used on input line 20.
 (pdftex.def)             Requested size: 366.40834pt x 149.58757pt.
- [59
+ [65
 
-] [60 <./Figures/GEANT4OutputBetter.png>] [61] <Figures/PileUpTuningThesis.png,
- id=551, 600.74437pt x 334.42589pt>
+] [66 <./Figures/GEANT4OutputBetter.png>] [67] <Figures/PileUpTuningThesis.png,
+ id=590, 600.74437pt x 334.42589pt>
 File: Figures/PileUpTuningThesis.png Graphic file (type png)
 
 <use Figures/PileUpTuningThesis.png>
 Package pdftex.def Info: Figures/PileUpTuningThesis.png used on input line 92.
 (pdftex.def)             Requested size: 366.40834pt x 203.97908pt.
- [62 <./Figures/PileUpTuningThesis.png>]
-[63]
+ [68 <./Figures/PileUpTuningThesis.png>]
+[69]
 
-LaTeX Warning: Citation `REFHERE' on page 64 undefined on input line 136.
-
-
-LaTeX Warning: Reference `fig:LBCvbwm' on page 64 undefined on input line 140.
+LaTeX Warning: Citation `REFHERE' on page 70 undefined on input line 136.
 
 
-LaTeX Warning: Reference `eq:shapefactor' on page 64 undefined on input line 14
-8.
+LaTeX Warning: Reference `fig:LBCvbwm' on page 70 undefined on input line 140.
 
 
-LaTeX Warning: Reference `fig:LBCvbwm' on page 64 undefined on input line 158.
+LaTeX Warning: Reference `fig:LBCvbwm' on page 70 undefined on input line 158.
 
-[64]
+[70]
 
-LaTeX Warning: Reference `fig:MCoffset10applied20' on page 65 undefined on inpu
+LaTeX Warning: Reference `fig:MCoffset10applied20' on page 71 undefined on inpu
 t line 165.
 
 
-LaTeX Warning: Reference `fig:LBCvbwm' on page 65 undefined on input line 166.
+LaTeX Warning: Reference `fig:LBCvbwm' on page 71 undefined on input line 166.
 
 
-LaTeX Warning: Reference `fig:offsetvslope' on page 65 undefined on input line 
+LaTeX Warning: Reference `fig:offsetvslope' on page 71 undefined on input line 
 171.
 
-[65]) (./MaxHughesThesis.bbl [66] [67
+[71]) (./MaxHughesThesis.bbl [72] [73
 
 ]
 Missing character: There is no √ in font cmr12!
@@ -712,6 +748,9 @@ Missing character: There is no √ in font cmr12!
 Missing character: There is no º in font cmr12!
 Missing character: There is no Œ in font cmr12!
 Missing character: There is no ≤ in font cmr12!
+ [74
+
+]
 Missing character: There is no ∆ in font cmr12!
 Missing character: There is no í in font cmr12!
 Missing character: There is no Œ in font cmr12!
@@ -719,11 +758,9 @@ Missing character: There is no ≤ in font cmr12!
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no à in font cmr12!
 Missing character: There is no í in font cmr12!
- [68
-
-]
 Missing character: There is no Œ in font cmr12!
 Missing character: There is no ≤ in font cmr12!
+ [75]
 Missing character: There is no √ in font cmr12!
 Missing character: There is no ¢ in font cmr12!
 Missing character: There is no ‚ in font cmr12!
@@ -743,7 +780,7 @@ Missing character: There is no Ç in font cmr12!
 Missing character: There is no ¨ in font cmr12!
 Missing character: There is no ¬ in font cmr12!
 Missing character: There is no ê in font cmr12!
- [69]) [70] (./MaxHughesThesis.aux)
+) [76] (./MaxHughesThesis.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -752,13 +789,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4502 strings out of 494977
- 69221 string characters out of 6180182
- 131301 words of memory out of 5000000
- 7604 multiletter control sequences out of 15000+600000
+ 4545 strings out of 494977
+ 70393 string characters out of 6180182
+ 133452 words of memory out of 5000000
+ 7641 multiletter control sequences out of 15000+600000
  11130 words of font info for 40 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 51i,16n,44p,651b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 51i,16n,44p,651b,393s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
@@ -768,10 +805,10 @@ t/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmti12.pfb>
-Output written on MaxHughesThesis.pdf (79 pages, 2513941 bytes).
+Output written on MaxHughesThesis.pdf (87 pages, 5301512 bytes).
 PDF statistics:
- 617 PDF objects out of 1000 (max. 8388607)
- 339 compressed objects within 4 object streams
+ 656 PDF objects out of 1000 (max. 8388607)
+ 362 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
- 121 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 151 words of extra memory for PDF output out of 10000 (max. 10000000)
 

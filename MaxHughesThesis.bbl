@@ -50,6 +50,12 @@ Wolfgang Bühring.
   and its model dependence.
 \newblock {\em Nuclear Physics A}, 430(1):1 -- 20, 1984.
 
+\bibitem{Cal77}
+Frank~P. Calaprice, W.~Chung, and B.~H. Wildenthal.
+\newblock Calculation of recoil-order matrix elements for the beta decays of
+  $^{20}\mathrm{F}$ and $^{20}\mathrm{Na}$.
+\newblock {\em Phys. Rev. C}, 15:2178--2186, Jun 1977.
+
 \bibitem{Fay86}
 S.~A. Fayans.
 \newblock {Radiative Corrections and Recoil Effects in the Reaction
@@ -71,6 +77,12 @@ H.~Genz, A.~Richter, B.M. Schmitz, and H.~Behrens.
 S.~S. Glickstein and R.~G. Winter.
 \newblock Properties of ${\mathrm{f}}^{20}$.
 \newblock {\em Phys. Rev.}, 129:1281--1283, Feb 1963.
+
+\bibitem{Hol74}
+Barry~R. Holstein.
+\newblock Recoil effects in allowed beta decay: The elementary particle
+  approach.
+\newblock {\em Rev. Mod. Phys.}, 46:789--814, 1974.
 
 \bibitem{Huy18}
 X.~Huyan, O.~Naviliat-Cuncic, P.~Voytas, S.~Chandavar, M.~Hughes,
@@ -98,6 +110,15 @@ J.K. Knipp and G.E. Uhlenbeck.
 S~Malmskog and J~Konijn.
 \newblock Half-life measurements of 6he, 16n, 19o, 26f, 28al, 77senm and 110ag.
 \newblock {\em Nuclear Physics}, 38:196 -- 210, 1962.
+
+\bibitem{Min11}
+K.~Minamisono, T.~Nagatomo, K.~Matsuta, C.~D.~P. Levy, Y.~Tagishi, M.~Ogura,
+  M.~Yamaguchi, H.~Ota, J.~A. Behr, K.~P. Jackson, A.~Ozawa, M.~Fukuda,
+  T.~Sumikama, H.~Fujiwara, T.~Iwakoshi, R.~Matsumiya, M.~Mihara, A.~Chiba,
+  Y.~Hashizume, T.~Yasuno, and T.~Minamisono.
+\newblock Low-energy test of second-class current in $\ensuremath{\beta}$
+  decays of spin-aligned ${}^{20}$f and ${}^{20}$na.
+\newblock {\em Phys. Rev. C}, 84:055501, Nov 2011.
 
 \bibitem{Min87}
 Tadanori Minamisono.
@@ -154,6 +175,13 @@ D.H. Wilkinson.
 \newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
   Accelerators, Spectrometers, Detectors and Associated Equipment}, 275(2):378
   -- 386, 1989.
+
+\bibitem{WIL90}
+D.H. Wilkinson.
+\newblock Evaluation of beta-decay: Ii. finite mass and size effects.
+\newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
+  Accelerators, Spectrometers, Detectors and Associated Equipment}, 290(2):509
+  -- 515, 1990.
 
 \bibitem{Wil95}
 D.H. Wilkinson.

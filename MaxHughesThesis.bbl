@@ -38,17 +38,17 @@ I.~{Angeli} and K.~P. {Marinova}.
 \newblock {Table of experimental nuclear ground state charge radii: An update}.
 \newblock {\em Atomic Data and Nuclear Data Tables}, 99:69--95, January 2013.
 
+\bibitem{Buh84}
+Wolfgang Bühring.
+\newblock The screening correction to the fermi function of nuclear
+  $\beta$-decay and its model dependence.
+\newblock {\em Nuclear Physics A}, 430(1):1 -- 20, 1984.
+
 \bibitem{Bya56}
 William~J. Byatt.
 \newblock Analytical representation of hartree potentials and electron
   scattering.
 \newblock {\em Phys. Rev.}, 104:1298--1300, Dec 1956.
-
-\bibitem{Buh84}
-Wolfgang Bühring.
-\newblock The screening correction to the fermi function of nuclear β-decay
-  and its model dependence.
-\newblock {\em Nuclear Physics A}, 430(1):1 -- 20, 1984.
 
 \bibitem{Cal77}
 Frank~P. Calaprice, W.~Chung, and B.~H. Wildenthal.
@@ -67,10 +67,16 @@ S.~A. Fayans.
 Ron Fox.
 \newblock Nscl data acquisition documentation, 2017.
 
+\bibitem{Man58}
+Murray Gell-Mann.
+\newblock Test of the nature of the vector interaction in $\ensuremath{\beta}$
+  decay.
+\newblock {\em Phys. Rev.}, 111:362--365, Jul 1958.
+
 \bibitem{Gen76}
 H.~Genz, A.~Richter, B.M. Schmitz, and H.~Behrens.
-\newblock Half-life, endpoint energy, ƒt value and shape factor in the β−
-  decay of 20f.
+\newblock Half-life, endpoint energy, ft value and shape factor in the
+  $\beta$− decay of 20f.
 \newblock {\em Nuclear Physics A}, 267:13 -- 28, 1976.
 
 \bibitem{Gli63}
@@ -89,7 +95,7 @@ X.~Huyan, O.~Naviliat-Cuncic, P.~Voytas, S.~Chandavar, M.~Hughes,
   K.~Minamisono, and S.V. Paulauskas.
 \newblock Geant4 simulations of the absorption of photons in csi and nai
   produced by electrons with energies up to 4 mev and their application to
-  precision measurements of the β-energy spectrum with a calorimetric
+  precision measurements of the $\beta$-energy spectrum with a calorimetric
   technique.
 \newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
   Accelerators, Spectrometers, Detectors and Associated Equipment}, 879:134 --
@@ -147,6 +153,12 @@ John {von Neumann}.
 \newblock Various techniques used in connection with random digits.
 \newblock pages 36--38, 1951.
 
+\bibitem{Wan17}
+Meng Wang, G.~Audi, F.~G. Kondev, W.J. Huang, S.~Naimi, and Xing Xu.
+\newblock The {AME}2016 atomic mass evaluation ({II}). tables, graphs and
+  references.
+\newblock {\em Chinese Physics C}, 41(3):030003, mar 2017.
+
 \bibitem{Wan92}
 T.F. Wang, R.N. Boyd, G.J. Mathews, M.L. Roberts, K.E. Sale, M.M. Farrell, M.S.
   Islam, and G.W. Kolnicki.
@@ -157,8 +169,8 @@ T.F. Wang, R.N. Boyd, G.J. Mathews, M.L. Roberts, K.E. Sale, M.M. Farrell, M.S.
 D.~Weisshaar, A.~Gade, T.~Glasmacher, G.F. Grinyer, D.~Bazin, P.~Adrich,
   T.~Baugher, J.M. Cook, C.Aa. Diget, S.~McDaniel, A.~Ratkiewicz, K.P. Siwek,
   and K.A. Walsh.
-\newblock Caesarâ€”a high-efficiency csi(na) scintillator array for
-  in-beam Î³â€ray spectroscopy with fast rare-isotope beams.
+\newblock Ceasar: A high-efficiency csi(na) scintillator array for in-beam
+  gamma ray spectroscopy with fast rare-isotope beams.
 \newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
   Accelerators, Spectrometers, Detectors and Associated Equipment}, 624(3):615
   -- 623, 2010.

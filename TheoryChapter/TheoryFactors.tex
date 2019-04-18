@@ -16,23 +16,24 @@ The three terms are written out in equation \ref{eq:betaspectrum}
 where $Q(E)$ is the total beta decay energy spectrum, $PS(E)$ is the phase space of the electron, $C(E)$ are all the hadronic and electromagnetic corrections multiplied together, and $b_{gt}$ the Fierz term.
 This chapter will describe all that goes into the determining the beta decay spectrum.
 
-\section{Parameters to Describe Beta Decay}
+\section{Experimental Input to Describe Beta Decay}
 The corrections depend on several parameters of the decay. 
 Some of them are just numbers, such as the atomic number of the daughter or mother nucleus or the mass number of the system.
-However, there are two important parameters that are inexact.
-They are measured experimentally.
+However, there are two important parameters that are experimental measurements.
 
 One is the q-value of the decay, which is defined in equation \ref{eq:qval}.
 
 \begin{equation}
-	Q = m_{p} - (m_{d} + E_{level})
+	Q = m_{^{20}F} - (m_{^{20}Ne} + E_{level})
 	\label{eq:qval}
 \end{equation} 
 
-where $Q$ is the q-value, $m_{p}$ is the mass of the parent nucleus, $m_{d}$ is the mass of the daughter nucleus, and $E_{level}$ is the of the nuclear state populated by the decay. 
-For $^{20}$F, $m_{20Ne} = 19.9924401762 (17) amu$, $m_{20F} = 19.999981252 (31) amu$ \cite{Wan17} , and $E_{level} = 1.633674 (15) MeV $ \cite{Til98}    
+where $Q$ is the q-value, $m_{^{20}F}$ is the nuclear mass of $^{20}$F, $m_{^{20}Ne}$ is the nuclear mass of $^{20}$Ne, and $E_{level}$ is the energy of the 1.6 MeV nuclear state in $^{20}$Ne. 
+Since it is difficult to measure bear nuclei, the atomic masses are used. 
+For $^{20}$F, $m_{20Ne} = 19.9924401762 (17) amu$, $m_{20F} = 19.999981252 (31) amu$ \cite{Wan17} , and $E_{level} = 1.633674 (15) MeV $ \cite{Til98}   .
+However, to get the total energy, $m_{e}$ has to be added to the difference of atomic masses. 
 
-This value feeds into the maximum electron energy.
+This mass difference is not quite the maximum electron energy. 
 To get to the maximum electron energy, $E_{0}$, the energy of the recoiling nucleus has to be taken into account.
 The formula is shown in equation \ref{eq:recoilqval}
 
@@ -42,14 +43,10 @@ The formula is shown in equation \ref{eq:recoilqval}
 \end{equation} 
 
 with $m_{e}$ is the electron mass and $M$ is the average nuclear mass \cite{Hol74}.
-This is a shift of a 2 (ADD REAL NUMBER) keV, but still is important.
-For this measurement, the atomic mass of $^{20}$Ne and $^{20}$F were used \cite{Pfe12}.
-This means that the average mass needs to have the mass of the electrons subtracted off. 
-For the q-value, this means adding an energy of $m_{e}$ to get to the total energy difference.
 
 The other parameter is the charge radius of the daughter nucleus.
 There are several ways to calculate the charge radius.
-In this work, the charge radius was taken from the measured RMS charge radius and converted.
+In this work, the charge radius was taken from the measured root mean square (RMS) charge radius and converted.
 It was assumed that the $^{20}$Ne nucleus was a sphere. 
 From this, the radius was calculated using equation \ref{eq:sphereeq}
 
@@ -68,11 +65,11 @@ The main part of the beta decay spectrum is the phase space factor.
 It is shown in equation \ref{eq:phase_space}
 
 \begin{equation}
-	\frac{dN}{dE} = C * p_{\beta}W(Q - W)^{2}
+	\frac{dN}{dE} = C * p_{e}W(Q - W)^{2}
 	\label{eq:phase_space}
 \end{equation}
 
-were $C$ is a constant which includes the matrix element squared, $p_{\beta}$ is the beta momentum, $W$ the total electron energy, and $Q$ the q-value of the beta decay.
+were $C$ is a constant which includes the matrix element squared, $p_{e}$ is the electron momentum, $W$ the total electron energy, and $Q$ the q-value of the beta decay.
 This is derived from the density of states of the particle.
 The constant is where the Fierz term enters. 
 This comes in from Fermi's Golden Rule, which is shown in equation \ref{eq:fgr}.
@@ -87,17 +84,17 @@ The main effect on the spectrum shape originates from the density of states.
 The number of states for both the electron and the neutrino is show in equation \ref{eq:densityofstates}
 
 \begin{equation}
-	N = \frac{1}{(2\pi\hbar)^{6}}\int dr^{3}_{\beta} \int dp^{3}_{\beta}\int dr^{3}_{\nu_{e}} \int dp^{3}_{\nu_{e}} 
+	N = \frac{1}{(2\pi\hbar)^{6}}\int dr^{3}_{e} \int dp^{3}_{e}\int dr^{3}_{\nu_{e}} \int dp^{3}_{\nu_{e}} 
 	\label{eq:densityofstates}
 \end{equation}
 
-where $r$ and $p$ corresponds to the position and momentum of the electron ($\beta$) and the neutrino ($\nu_{e}$).
+where $r$ and $p$ corresponds to the position and momentum of the electron ($e$) and the neutrino ($\nu_{e}$).
 Doing the integral over both $r$'s give two factors of the volume, which disappear when the next factor is introduced.
 Since the neutrinos are unmeasured, the momentum of the neutrinos is integrated over. 
 Assuming spherical symmetry, the new integral is shown in equation \ref{eq:dosspherical}
 
 \begin{equation}
-	dN = \frac{V^{2}}{4\pi^{4}\hbar^{6}}p_{\beta}^{2}dp_{\beta}p_{\nu_{e}}^{2}dp_{\nu_{e}}
+	dN = \frac{V^{2}}{4\pi^{4}\hbar^{6}}p_{e}^{2}dp_{e}p_{\nu_{e}}^{2}dp_{\nu_{e}}
 	\label{eq:dosspherical}
 \end{equation}
 
@@ -107,28 +104,22 @@ Then, the total energy $E$ is written as a sum of the neutrino energy (or moment
 Plugging that in gives equation \ref{eq:dosintegral} after integrating over the neutrino degrees of freedom. 
 
 \begin{equation}
-	dN = \frac{V^{2}}{4\pi^{4}\hbar^{6}}(E - E_{beta})^{2}p_{\beta}^{2}dp_{\beta}
+	dN = \frac{V^{2}}{4\pi^{4}\hbar^{6}}(E - E_{e})^{2}p_{e}^{2}dp_{e}
 	\label{eq:dosintegral}
 \end{equation}
 
 Then, the only thing left to do to recover equation \ref{eq:phase_space} is to rewrite $dp$ in terms of $dE$. 
-The energy $E_{beta}$ has been replaced with $W$, which is the energy of the electron divided by the mass an electron, and $E$ has been replaced by the Q-value.
+The energy $E_{e}$ has been replaced with $W$, which is the energy of the electron divided by the mass an electron, and $E$ has been replaced by the Q-value.
 Since the measurement is not an absolute one, but only concerned with the shape of the spectrum, the normalization factor is arbitrary.
 
 This is the main factor in describing the beta decay energy spectrum.
-
-\begin{equation}
-	F(E) = 1 + b_{gt}\frac{m_{e}}{E}
-	\label{eq:fierzshape}
-\end{equation}
-
-with $b_{gt}$ being the Fierz term for axial decays.
 
 \section{Variables of Correction Formula}
 
 For the rest of the discussion on beta decay corrections, everything is given without units.
 These corrections are largely electromagnetic in origin.
-All of the energies are divided by the electron mass, i.e. 511 keV.
+All of the energies are divided by the electron mass.
+For this work, $m_{e} = 0.510998928 MeV$
 The other important variables are shown in table \ref{tab:vars}
 
 \begin{table}[!hbt]
@@ -144,22 +135,13 @@ The other important variables are shown in table \ref{tab:vars}
 		$W$ & Total energy of beta electron & $E/m_{e}$ \\
 		$p$ & Electron momentum & $\sqrt{W^{2} - 1}$ \\
 		$W_{0}$ & Maximum electron energy & $\frac{E_{0}}{m_{e}}$ \\
-		$M_{ave}$ & Average nuclear mass & $\frac{M_{20Ne} + M_{20F} - 19 m_{e}}{2 m_{e}}$
-		$\gamma$ & Factor that shows up in EM corrections & $\sqrt{1 - (\alpha Z)^{2}}$ 
+		$M_{ave}$ & Average nuclear mass & $\frac{M_{20Ne} + M_{20F} - 19 m_{e}}{2 m_{e}}$ \\
+		$\gamma$ & Special relativity $\gamma$ factor & $\sqrt{1 - (\alpha Z)^{2}}$ 
 		\end{tabular}}
 	\label{tab:vars}
 \end{table}
 
-To convert the RMS charge radius into the regular charge radius, it is assumed that the nucleus was a sphere. 
-This means multiplying the radius given in table \ref{tab:vars} by $\sqrt{\frac{3}{5}}$.
-Finally, in order to put it into natural units, the result was divided by the reduced Compton wavelength of the electron.
-
-The two factors that require experimental input were $R$ and $E_{0}$. 
-$R$ was given directly in data tables.
-For $E_{0}$, the mass of $^{20}$F and $^{20}$Ne were needed.
-The energy of the gamma ray photon was also needed.
-Each one of these had an uncertainty, which propagates through the various correction functions.
-Before the theoretical corrections were fed into a Monte Carlo simulation, the uncertainties were checked.
+Before the theoretical corrections were fed into a Monte Carlo simulation, the uncertainties from the experimentally determined quantities was checked.
 Theoretical spectra were  built with each value plus or minus it's uncertainty.
 Ratios between the spectra were taken and fit with a line.
 The results of those ratios are seen in figure \ref{fig:theoryuncer}.
@@ -176,8 +158,7 @@ Since the slopes of each line are much smaller than the shape factor values, the
 The various theoretical corrections that are needed are now discussed below.
 
 \section{Electromagnetic Corrections and Hardonic Corrections}
-A graph of the various hardonic and electromangetic corrections are shown in figure \ref{fig:corrections}.
-All but the shape factor are electromagnetic in origin. 
+A graph of the various electromagnetic corrections are shown in figure \ref{fig:corrections}, along with the hadronic shape factor. 
 
 \begin{figure}
     \centering
@@ -193,7 +174,7 @@ All but the shape factor are electromagnetic in origin.
 
 \subsection{Fermi Function}
 
-The largest correction. 
+The largest correction by over all size is the Fermi function.
 This accounts for the interaction of the charge of the outgoing electron and the charge of the nucleus.
 It is calculated by taking the Dirac equation wave functions and assuming the nucleus is a point charge of Ze.
 The Dirac wave functions are taken down to a nuclear radius R.
@@ -207,11 +188,10 @@ The Fermi function is printed in equation \ref{eq:fermifunc}
 \end{equation}
 
 While this is the largest correction, it is the most understood one.
-It also only depends on one parameter with experimental uncertainty, $R$. 
-
+The change of shape due the uncertainty in $R$ is very small due to the functional form of the Fermi function. 
 
 \subsection{Radiative Correction}
-The radiative correction was the next largest correction.
+The radiative correction was the next largest electromagnetic correction.
 For this measurement, the correction is only need to first order, which is on order $\alpha$.
 The correction is a QED correction that stems from photons emitted from the beta particle.
 This photon can be absorbed by the nucleus of the daughter, which makes it a virtual photon.
@@ -240,7 +220,7 @@ The Sirlin formula assumes that the inner bremsstrahlung photons are not detecte
 This is mostly true if the source of the beta decay is centered outside of a detector.
 However, if the source is implanted inside of the detector, such as it is in this experiment, some of the inner bremsstrahlung is absorbed.
 
-If it is all absorbed, a different form of the first order radiative correction is needed.
+If all the inner bremsstrahlung is absorbed, a different form of the first order radiative correction is needed.
 There are many equivalent forms of this, but the one that was used for this experiment was by Fayans \cite{Fay86}.
 The form of this radiative correction is shown in equation \ref{eq:fayansrad}
 
@@ -255,7 +235,7 @@ The form of this radiative correction is shown in equation \ref{eq:fayansrad}
 With all the functions and variables meaning the same as in equation \ref{eq:sirlinrad}.
 
 Unfortunately, the amount of inner bremssstrahlung absorbed depends on the geometry.
-A more careful treatment of the radiative correction was used.
+A more careful treatment of the radiative correction is needed.
 
 \subsubsection{Inner Bremmsstrahlung}
 
@@ -270,15 +250,15 @@ The spectrum is written out in equation{\ref{eq:KUB} \cite{Kni36}
 
 where $\Phi(k,W_{e})$ is the probability density of seeing a photon of energy $k$ from an electron of initial energy $W_{e}$.
 This equation was derived one way using outgoing waves from the Dirac equation in polar coordinates.
-The first order Born approximations was used.
+This was calculated with the first order Born approximation.
 This means that at low energies, equation \ref{eq:KUB} is inaccurate. 
 That can be seen, as the equation diverges as $k$ goes to zero.
 If more orders of the approximation are added, this divergence can be controlled.
 These higher orders would correspond to emitting multiple photons.
-Each of these orders would have a probablity reduced by a factor of $\alpha$ compared to equation \ref{eq:KUB}.
+Each of these orders would have a probability reduced by a factor of $\alpha$ compared to equation \ref{eq:KUB}.
 The higher orders would be less significant, expect for at low energies. 
-Since the probablity density diverges, the higher orders could contribute.
-This would make the probablity of emitting no photons finite.	 		
+Since the probability density diverges, the higher orders could contribute.
+This would make the probability of emitting no photons finite.	 		
 
 However, another possibility is to add a cutoff. 
 As long as the cutoff is high enough to be in the region where the first order Born approximation is valid, but low enough not to cut out gamma rays that are not full absorbed, equation \ref{eq:KUB} is usable.
@@ -297,7 +277,8 @@ Comparing all three radiative corrections can be seen in figure \ref{fig:rad}
 \begin{figure}[!htb]
 	\centerline{\includegraphics[width=0.78\textwidth]{RadCorrections_20F.pdf}}
 	\caption{Comparing three different radiative corrections.
-		 The green line depends strongly on the detector geometry}
+		 The green line depends strongly on the detector geometry.
+		 }
 	\label{fig:rad}
 \end{figure}
 
@@ -313,7 +294,7 @@ The effect of the inner bremsstrahlung is to put the radiative correction halfwa
 \end{figure}
 
 \subsection{Screening}
-The screening correction is the next largest correction.
+The screening correction is the next largest electromagnetic correction.
 It corresponds to the screening of the nuclear charge due to the electron cloud of the atom.
 The strongest effect of the screening correction is at low electron energies.
 This is a correction to the Fermi function.
@@ -407,7 +388,7 @@ The factor $X$ in equation \ref{eq:screeningX} is very close to 1.
 This correction matters most at low energy, and is very flat above 100 keV.
 
 \subsection{Finite Mass Correction}
-The finite mass correction corrects for the recoil of the $^{20}$F nucleus.
+The finite mass correction corrects for the recoil movement of the $^{20}$F nucleus.
 The form of finite mass corrections is given in equation \ref{eq:finitemass} \cite{WIL90}
 
 \begin{equation}
@@ -430,7 +411,7 @@ Since $^{20}$F is an axial decay, the form of the finite mass correction is show
 	\end{split}
 \end{equation}
 
-This effect is not a large effect.
+This effect is different that the hadronic shape factor. 
 
 \subsection{Finite Size Correction}
 The finite size correction originates from treating the nucleus as a sphere uniformly charged sphere instead of a point particle.
@@ -467,12 +448,15 @@ The $b_{x}$ coefficients are numbers shown in table \ref{tab:bcoef}
 	\label{tab:bcoef}
 \end{table}
 
+\subsection{Convolution Over Nuclear Size}
+%need to add this 
+
 This is the last of the relevant. electromagnetic corrections
 
-\subsection{Nuclear Corrections}
+\subsection{Hadronic Corrections}
 
 Nuclear form factors are one of the largest corrections to the beta spectrum.
-There are 4 form factors that come together into a correction called here the "Nuclear Shape Factor."
+There are four relevant form factors that come together into a correction called here the nuclear shape factor
 The form factors are described in table \ref{tab:formfact} \cite{Min11} \cite{Cal77}
 
 \begin{table}[!hbt]
@@ -565,7 +549,7 @@ This matrix element is shown in equation \ref{eq:dmatrix}
 
 where $\beta$ is the final state, $\tau^{+}$ the isospin raising operator, $\vec{\sigma}$ the spin operator, $\vec{l}$ the angular momentum operator, and $\alpha$ the initial state. \cite{Cal77}
 In order to get the initial and final states $\alpha$ and $\beta$, shell model calculations have to be used.
-Different calculations have found $d$ to equale 40.5 \cite{Cal77} and 20.5 \cite{Min77}.
+Different calculations have found $d$ to equale 40.5 \cite{Cal77} and 20.5 \cite{Min11}.
 Since $d$ is divided by the aveage nuclear mass, this uncertainty in the form factor will not cause a large systematic effect.
 %insert new cacluation here
 

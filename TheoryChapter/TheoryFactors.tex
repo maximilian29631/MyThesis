@@ -547,8 +547,30 @@ The second reason is more experimental.
 It gives a parameter with which to benchmark analysis techniques.
 If the analysis produces a reasonable value of $b_{wm}$, the same procedure should give a good value for $b_{gt}$.
 
-\subsubcestion{The Induced Tensor Form Factor}
+\subsubsection{The Induced Tensor Form Factor}
 From equation \ref{eq:sfcs}, the induced tensor form factor $d$ contributes to the corrections much in the same way as the Fierz term.
+The induced tensor form factor is calculated with theory.
+Equation \ref{eq:tensorformfactor} gives the the tensor form factor \cite{Cal77}
 
+\begin{equation}
+	d = A g_{A} M_{\sigma L}
+	\label{eq:tensorformfactor}
+\end{equation} 
 
+where $A$ is the mass number (20 in this case), $g_{A}$ the axial vector coupling constant, and $M_{\sigma L}$ a matrix element of the decay.
+This matrix element is shown in equation \ref{eq:dmatrix}
+\begin{equation}
+	M_{\sigma L} = < \beta || \tau^{+} i \vec{\sigma} \times \vec{l} || \alpha >
+	\label{eq:dmatrix}
+\end{equation}
+
+where $\beta$ is the final state, $\tau^{+}$ the isospin raising operator, $\vec{\sigma}$ the spin operator, $\vec{l}$ the angular momentum operator, and $\alpha$ the initial state. \cite{Cal77}
+In order to get the initial and final states $\alpha$ and $\beta$, shell model calculations have to be used.
+Different calculations have found $d$ to equale 40.5 \cite{Cal77} and 20.5 \cite{Min77}.
+Since $d$ is divided by the aveage nuclear mass, this uncertainty in the form factor will not cause a large systematic effect.
+%insert new cacluation here
+
+\section{Summary}
+With all these corrections, the experiment can be described to the required percision.
+The next chapter will describe details of the experimental set up and the detector configuration.
 \end{document}

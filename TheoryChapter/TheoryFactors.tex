@@ -10,11 +10,11 @@ The beta decay spectrum shape can be broken up in three different sections.
 The three terms are written out in equation \ref{eq:betaspectrum}
 
 \begin{equation}
-	Q(E) = PS(E) * C(E) * F(E)
+	Q(E) = PS(E) * C(E) * (1 + b_{gt}\frac{m_{e}}{E})
 	\label{eq:betaspectrum}
 \end{equation}
 
-where $Q(E)$ is the total beta decay energy spectrum, $PS(E)$ is the phase space of the electron, $C(E)$ are all the hadronic and electromagnetic corrections multiplied together, and $F(E)$ is the effect of the Fierz term on the beta decay spectrum shape.
+where $Q(E)$ is the total beta decay energy spectrum, $PS(E)$ is the phase space of the electron, $C(E)$ are all the hadronic and electromagnetic corrections multiplied together, and $b_{gt}$ the Fierz term.
 This chapter will describe all that goes into the determining the beta decay spectrum.
 
 \section{Parameters to Describe Beta Decay}
@@ -75,6 +75,7 @@ It is shown in equation \ref{eq:phase_space}
 
 were $C$ is a constant which includes the matrix element squared, $p_{\beta}$ is the beta momentum, $W$ the total electron energy, and $Q$ the q-value of the beta decay.
 This is derived from the density of states of the particle.
+The constant is where the Fierz term enters. 
 This comes in from Fermi's Golden Rule, which is shown in equation \ref{eq:fgr}.
 
 \begin{equation}
@@ -116,18 +117,6 @@ The energy $E_{beta}$ has been replaced with $W$, which is the energy of the ele
 Since the measurement is not an absolute one, but only concerned with the shape of the spectrum, the normalization factor is arbitrary.
 
 This is the main factor in describing the beta decay energy spectrum.
-
-\subsection{Matrix Elements}
-In the above discussion, the matrix elements of the beta decay was glossed over.
-The matrix elements are the nuclear matrix elements.
-$^{20}F$ decay is an allowed Gamow-Teller decay.
-This means that, to first order, is independent of energy under the standard model.
-This matrix element, $c_{1nuc}$, can be determined from experiment.
-This will be discussed in a section further down.
-
-\subsubsection{Fierz Term}
-This matrix element is where the Fierz term would arise inside of the spectrum shape.
-The factor is given in equation \ref{eq:fierzshape}
 
 \begin{equation}
 	F(E) = 1 + b_{gt}\frac{m_{e}}{E}
@@ -520,8 +509,7 @@ How the shape factor depends on the form factors is shown in equation \ref{eq:sf
 \end{equation}
 
 Two of the form factors, $b_{wm}$ and $c_{1nuc}$ are calculated from experimental data. 
-The other two are calculated from theory. 
-Different values of $d$, or instance, range from 20.5 \cite{Min11} to 40.5 \cite{Cal77}.  
+$d$ and $c_{2nuc}$ are calculated from nuclear theory. 
 The calculation of $c_{1nuc}$ depends on the $ft$ value. 
 The calculation is shown in equation \ref{eq:c1eq} \cite{Min11}
 
@@ -535,7 +523,6 @@ This gives a value of $0.254 \pm 0.004$ \cite{Min11}.
 The weak magnetism ,$b_{wm}$, is of special theoretical interest. 
 
 \subsubsection{The Weak Magnetism}
-
 The other form factor from the data is the weak magnetism form factor. 
 It can be calculated from a $M1$ analog gamma-ray decay strength.
 This decay strength is from the 10.275 MeV analog state to the 1.634 MeV first excited state in $^{20}$Ne.
@@ -559,5 +546,9 @@ This means the largest of the nuclear corrections can be determined from experim
 The second reason is more experimental.
 It gives a parameter with which to benchmark analysis techniques.
 If the analysis produces a reasonable value of $b_{wm}$, the same procedure should give a good value for $b_{gt}$.
+
+\subsubcestion{The Induced Tensor Form Factor}
+From equation \ref{eq:sfcs}, the induced tensor form factor $d$ contributes to the corrections much in the same way as the Fierz term.
+
 
 \end{document}

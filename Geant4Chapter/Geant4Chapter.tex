@@ -49,44 +49,6 @@ A visualization of the CsI crystals in GEANT4 is shown in figure \ref{fig:GEANT4
 	\label{fig:GEANT4Det}
 \end{figure}
 
-\subsubsection{Spacers in Implant Detector}
-The actual CsI(Na) implant detector had PTFE spacers between the crystal wrapping and the aluminum housing.
-A spacer would be 2.4 mm thick. 
-It was unknown if the spacer was in the path of the beam during an implant cycle. 
-A similar crystal was taken apart for a repair. 
-Pictures of that detector being taken apart showed where the spacer were on the side of the detector. 
-
-This is shown in figure \ref{fig:detpic}
-
-\begin{figure}[!htb]
-	\centerline{\includegraphics[width=0.78\textwidth]{PaulsSpacerImage.png}}
-	\caption{A CsI(Na) detector being taken apart.
-		 The red circle shows the side spacers}
-	\label{fig:detpic}
-\end{figure}
-
-To see if the spacer was located in the path of the beam, the data with the degrader in front of the beam was used.
-The rates inside the implant detector was compared to the effective thickness of aluminum. 
-It was found took 14 mm of aluminum to bring the rate down to zero.
-This is shown in figure \ref{fig:degraderdata}.
-If there were a PTFE spacer in the way of the beam, it would take 12 mm of aluminum to completely stop the beam.
-These results were calculated using LISE++ and are shown in figure \ref{fig:lisealcal}.
-
-\begin{figure}[!htb]
-	\centerline{\includegraphics[width=0.78\textwidth]{CsIRawRatevDegraderThicknessFixed.png}}
-	\caption{The experimental data from the degrader. 
-		 All the fluorine is blocked after 14 mm of degrader}
-	\label{fig:degraderdata}
-\end{figure}
-
-\begin{figure}[!htb]
-	\centerline{\includegraphics[width=0.78\textwidth]{degrad.pdf}}
-	\caption{Calculating how thick an Al degrader would have to be to block the beam.
-	 	 A model with no spacer matches the data better.}
-	\label{fig:lisealcalc}
-\end{figure}
-
-
 \subsection{Source Definition}
 The next step was to define a region inside the implant detector.
 This region was where the gamma and beta particles originated from.

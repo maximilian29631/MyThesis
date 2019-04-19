@@ -38,17 +38,17 @@ I.~{Angeli} and K.~P. {Marinova}.
 \newblock {Table of experimental nuclear ground state charge radii: An update}.
 \newblock {\em Atomic Data and Nuclear Data Tables}, 99:69--95, January 2013.
 
-\bibitem{Buh84}
-Wolfgang Bühring.
-\newblock The screening correction to the fermi function of nuclear
-  $\beta$-decay and its model dependence.
-\newblock {\em Nuclear Physics A}, 430(1):1 -- 20, 1984.
-
 \bibitem{Bya56}
 William~J. Byatt.
 \newblock Analytical representation of hartree potentials and electron
   scattering.
 \newblock {\em Phys. Rev.}, 104:1298--1300, Dec 1956.
+
+\bibitem{Buh84}
+Wolfgang Bühring.
+\newblock The screening correction to the fermi function of nuclear
+  $\beta$-decay and its model dependence.
+\newblock {\em Nuclear Physics A}, 430(1):1 -- 20, 1984.
 
 \bibitem{Cal77}
 Frank~P. Calaprice, W.~Chung, and B.~H. Wildenthal.
@@ -84,6 +84,11 @@ S.~S. Glickstein and R.~G. Winter.
 \newblock Properties of ${\mathrm{f}}^{20}$.
 \newblock {\em Phys. Rev.}, 129:1281--1283, Feb 1963.
 
+\bibitem{Gon19}
+M.~González-Alonso, O.~Naviliat-Cuncic, and N.~Severijns.
+\newblock New physics searches in nuclear and neutron β decay.
+\newblock {\em Progress in Particle and Nuclear Physics}, 104:165 -- 223, 2019.
+
 \bibitem{Hol74}
 Barry~R. Holstein.
 \newblock Recoil effects in allowed beta decay: The elementary particle
@@ -111,6 +116,11 @@ S.~Itoh, M.~Yasuda, H.~Yamamoto, T.~Iida, A.~Takahashi, and K.~Kawade.
 J.K. Knipp and G.E. Uhlenbeck.
 \newblock Emission of gamma radiation during the beta decay of nuclei.
 \newblock {\em Physica}, 3(6):425 -- 439, 1936.
+
+\bibitem{Lee56}
+T.~D. Lee and C.~N. Yang.
+\newblock Question of parity conservation in weak interactions.
+\newblock {\em Phys. Rev.}, 104:254--258, Oct 1956.
 
 \bibitem{Mal62}
 S~Malmskog and J~Konijn.

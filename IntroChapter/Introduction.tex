@@ -7,7 +7,40 @@ Precision measurements at low energy can compete with high energy measurements.
 \section{Beta Decay}
 \subsection{Types of Percision Measurements in Beta Decay}
 Beta decay is cool and good.
-\subsection{General Nuclear Matrix Elements for Beta Decay}
+\subsection{Matrix elements of Beta Decay}
+When the beta decay rate is calculated, there are several terms.
+There are phase space terms, which originate from the density of states.
+These and the electromagnetic interactions will be discussed further into the thesis. 
+The contribution to beta decay $M$ from the weak interaction, to first order, is shown in equation \ref{eq:decayrate} \cite{Gon19}
+
+\begin{equation}
+	M = \xi [1 + a \frac{\vec{p_{e}} \dot \vec{p_{\nu}}} {E_{e} E_{\nu}}  +  b \frac{m_{e}}{E_{e}} + \frac{\vec{<J>}}{J} \dot (A \frac{ \vec{p_{e}} }{E_{e}} + B \frac{\vec{p_{\nu}}}{E_{\nu}} + D \frac{\vec{p_{e}} \times \vec{p_{\nu}}}{E_{e} E_{\nu}})]
+	\label{eq:decayrate}
+\end{equation}
+where $\xi$ is a constant that depends, to first order, on the Lee-Yang coupling constants, $\vec{p}$  is the momentum of either the electron $e$ or the neutrino $\nu$, and $E$ the energy of the same particle.
+$<\vec{J}>$ is the average total angular momentum. 
+The constants $a$, $b$, $A$, $B$, and $D$ can be written in terms of the coupling constants as well.
+$a$ depends on the mixing of the Gamow-Teller and Fermi matrix elements.
+A polarized nucleus is need to extract $a$. 
+For an unpolarized beam where only the energy of the electron is measured, the momenta are averaged over and all terms disappear expect for $b$.
+This term is known as the Fierz term, and a measurement of the Fierz term was the ultimate goal of this experiment. 
+
+\section{Fierz Term}
+The Fierz term, $b$, in equation \ref{eq:decayrate}, can be rewritten in terms of effective couplings.
+This is shown in equation \ref{eq:bwrittenout}
+
+\begin{equation}
+	b =  \pm \sqrt{1 - \alpha^{2}{Z^{2}}}\frac{1}{1 + \rho}Re(\frac{C_{S} + C_{S}'}{C_{V} + C_{V}'} + |\rho|^{2}\frac{C_{T} + C_{T}'}{C_{A} + C_{A}'})
+	\label{eq:bwrittenout}
+\end{equation}
+
+where $\rho$ is the ratio of the Gamow-Teller matrix element to Fermi matrix element, $\alpha$ is the QED fine structure constant \cite{Gon19}
+The subscripts of $C$ indicate which object the coupling corresponds to. 
+Here, $A$ means axial vector, $V$ stands for polar vector, $S$ stands for scalar, and $T$ stands for tensor. 
+The $C$ coefficients correspond to parity conserving interactions, and the $C'$ coefficents correspond to parity non-conserving coefficents \cite{Lee56}
+This means, that in a pure Fermi decay, the Fierz term is sensitive to any non-standard scalar term, while in a pure Gamow-Teller decay, the Fierz term is sensitive to any non-standard Tensor terms. 
+The Fermi decays have been measured using super-allowed beta decays, where the spin change is $0^{+}$ to $0^{+}$. 
+In order to get a good measurement of any tensor couplings, an allowed Gamow-Teller decay must be used. 
  
 
 \end{document}

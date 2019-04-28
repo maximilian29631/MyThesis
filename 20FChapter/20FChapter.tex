@@ -86,21 +86,30 @@ A sample energy spectrum is shown in figure \ref{fig:elmspec}.
 \end{figure}
 
 An important consideration is the normalization of each point.
-For each spectrometer setting, the amount of measurement time, the acceptence of the spectrometer, and the source activity have to be accounted for.
+For each spectrometer setting, the amount of measurement time, the acceptance of the spectrometer, and the source activity have to be accounted for.
 To help with the normalization, a beta telescope near the target was used.
 This measures the activity of the source, and takes into account the degradation of the target.
-However, there are still issues with adjusting for the effieciency of the beta telescope.
+However, there are still issues with adjusting for the efficiency of the beta telescope.
 This efficiency changes as the spectrometer's field is changed.
-The location of the telescope was optimised to minimize this effect.
-Another way of normalization was to countinuesly adjust the spectrometer field so that a the entire energy range is sampled over each measurement cycle.
+The location of the telescope was optimized to minimize this effect.
+Another way of normalization was to continuously adjust the spectrometer field so that a the entire energy range is sampled over each measurement cycle.
 The issue there is that changing the magnetic fields induces currents, which are hard to correct for. 
 In this measurement, adjusting the spectrometer field was used as a benchmark for the beta telescope normalization method.
 
 Using a single scintillator would take care of the normalization automatically. 
-A shape measurement \cite{Het89} with a scintillator.
+A shape measurement of $^{20}$F was made with a scintillator \cite{Het89}.
+The linear term in the shape factor was measured just like in the previous measurement.
+A spectrometer was used with a high purity germanium detector
+The magnetic field was used to enhance the solid angle for the electrons compared to the gamma rays.
+The $^{20}$F was made with a deuteron beam on a natural LiF target. 
+An implant and decay cycle was used to measure the beta decay spectrum. 
+The resulting beta spectrum is shown in figure \ref{hethspec}.
+
 \begin{figure}[!htb]
 	\centerline{\includegraphics[width=0.78\textwidth]{fig_hethBetaSpec.png}}
-	\caption{A beta spectrum using a scintillator \cite{Het89}}
+	\caption{A beta spectrum using a scintillator \cite{Het89}
+		    The line shows the statistical beta spectrum.
+		    The crosses shows the measured beta spectrum.}
 	\label{fig:hethspec}
 \end{figure}
 

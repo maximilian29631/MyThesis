@@ -1,9 +1,10 @@
-\documentclass[main.tex]{subfiles}
+\documentclass[../main.tex]{subfiles}
 
 \begin{document}
 After the half-life measurement was completed, the next step was to use the shape of the spectrum to deduce Fierz term. 
 In order to get a measurement of the Fierz term, the spectrum shape needed to be carefully described.
 In addition to all the theoretical corrections, the effect of bremsstrahlung and the efficiency of the detectors needed to be accounted for.
+This is important to account for effect of the gamma ray after the filtering.
 The way this was done was with a GEANT4 simulation \cite{Ago03}.
 The most updated copy of the code can be found at https://github.com/maximilian29631/Geant4for20F/tree/RealDeadLayer. 
 
@@ -140,4 +141,14 @@ It was also assumed that the higher energy inner bremsstrahlung would not come i
 This would make the radiative correction in equation \ref{eq:fayansrad} adequate. 
 However, after explicitly generating the inner bremsstrahlung photons, this was found not to be true.
 Therefore, the entire simulation had to be rerun with the inner bremsstrahlung photons generated explicitly.
+
+Then, it was discovered that only running one simulation was not the correct way of fitting the data.
+Initially, the corrected phase space without the shape factor was fed into the GEANT4 monte carlo.
+Then, during the fitting, the shape factor multiplied the ouput. 
+This was found not to be correct, so four simulations were needed.
+The simulations were the phase space times the pieces of the shape factor.
+This was an issue, as the first version of the code took a week to run 2e9 events.
+To speed up the code, the code was modified to use MPI parrelization.
+The code was then run on the firesie cluster at the NSCL.
+After modification, it only took 6 hours to run 2e9 events.
 \end{document}

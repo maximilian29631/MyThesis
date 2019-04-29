@@ -27,9 +27,10 @@ As seen in the figure, $^{20}$F decays 99.999\% of the time to the first excited
 This decay is very clean, as there are very few contaminants from other decay branches. 
 The $2^{+}$ state seen in the decay scheme is not the isobaric analogue state to the ground state of $^{20}$F.
 That state is much higher in energy.
-The beta decay therefor has a isospin change of 1.
+The beta decay thereforie has a isospin change of 1.
 This means that the allowed Fermi matrix element is zero, and the decay is an allowed Gamow-Teller transition. 
-The forbidden transitions contribute <INSERT THEORY HERE> 
+%The forbidden transitions contribute <INSERT THEORY HERE> 
+The forbinnen transitions only contribute to higher order.
 The half-life of $^{20}$F is about 11 seconds. 
 This means waiting for the $^{20}$F to decay will take less than a minute to get good statistics.
 
@@ -65,7 +66,25 @@ Since this measurement  was an asymmetry measurement, the influence of the backg
 Different polarization were used to eliminate systematic effects.
 Double ratios were taken to account for difference in solid angle and detector effiency.
 The threshold was taken to be 2 MeV, as below that energy, the spectrum is distorted.
-A good limit on second class currents was found.
+
+There are several important systematic effects in this measurement.
+The two largest for the $^{20}$F measurement have to do with corrections for the solid angle and corrections for the 1.634 MeV gamma ray.
+The corrections for the solid angle has to do with estimates of the scattering of the electrons.
+This happens at the implantation target, and can happen on the walls of the spectrometer.
+To counteract this effect, a veto detector was included in the detector set up. 
+This veto detector was situated near the walls of the magnet, so any scattering off of the magnet could be vetoed. 
+The other large systematic effect has to do with gamma ray.
+Since the $^{20}$F is polarized, the direction of the emitted gamma rays is anisotropic.
+The gamma rays contribute and pile-up with the detected gamma spectrum in different ways.
+This has to be corrected for with the detector response.
+With all these effects, the second class current effects were found to be consistent with zero.   
+
+\subsection{Shape Measurements} 
+
+Several direct shape measurements have been made of $^{20}$F.
+These measurements do not need to be compared to the mirror nucleus.
+Two measurements with different systematics will be discussed.
+Both of them looked for the linear term in the hardonic correction to the beta decay spectrum shape. 
 
 A similar measurement of the $^{20}$F spectrum shape was done with a spectrometer \cite{Elm87}.
 The goal was to measure the nuclear shape factor and get a measurement of the linear term.
@@ -85,6 +104,7 @@ A sample energy spectrum is shown in figure \ref{fig:elmspec}.
 	\label{fig:elmspec}
 \end{figure}
 
+
 An important consideration is the normalization of each point.
 For each spectrometer setting, the amount of measurement time, the acceptance of the spectrometer, and the source activity have to be accounted for.
 To help with the normalization, a beta telescope near the target was used.
@@ -95,6 +115,13 @@ The location of the telescope was optimized to minimize this effect.
 Another way of normalization was to continuously adjust the spectrometer field so that a the entire energy range is sampled over each measurement cycle.
 The issue there is that changing the magnetic fields induces currents, which are hard to correct for. 
 In this measurement, adjusting the spectrometer field was used as a benchmark for the beta telescope normalization method.
+
+An issue with this measurement is that the shape factor is not just the linear term.
+The terms depend on the same nuclear form factors and are not independent.
+The other terms were cacluated and fixed.
+The shape factor will be discussed in detail in the next chapter.
+Ultimately the resutling measurement of the linear term matched the CVC prediction
+
 
 Using a single scintillator would take care of the normalization automatically. 
 A shape measurement of $^{20}$F was made with a scintillator \cite{Het89}.
@@ -130,11 +157,18 @@ The resulting energy spectrum and fit is shown in figure \ref{fig:heth20Fspec}.
 \end{figure}
 
 The beta spectrum is greatly distorted.
+Due to contamination, the shape measurement analysis was started at 1.5 MeV.
+For this measurement there were several systematic effects.
 The largest uncertainty is due to uncertainties in the response function.
 The paper refers this to "peak position." 
 This experiment used many different sources to get at calibration.
 They also had to take the bremsstrahlung of the electrons into account.
 That systematic effect was the limiting factor in their measurement
+
+Much like the spectrometer measurement, the other terms of the shape factor were fixed.
+Here however the other terms were calculated as a systematic error.
+It was found that the quadratic term had more of an effect in the measurement than the $\frac{1}{W}$ term.
+Ultimately, the measured linear term was consistent with the CVC hyptothesis. 
 %Spectrum is on page 168 in thesis. Put it here
 
 In order to get at the Fierz term, the beta decay spectrum shape must be described precisely.

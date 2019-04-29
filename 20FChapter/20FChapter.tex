@@ -103,17 +103,38 @@ A spectrometer was used with a high purity germanium detector
 The magnetic field was used to enhance the solid angle for the electrons compared to the gamma rays.
 The $^{20}$F was made with a deuteron beam on a natural LiF target. 
 An implant and decay cycle was used to measure the beta decay spectrum. 
-The resulting beta spectrum is shown in figure \ref{hethspec}.
+A calibration beta spectrum is shown in figure \ref{fig:hethspec}.
 
 \begin{figure}[!htb]
 	\centerline{\includegraphics[width=0.78\textwidth]{fig_hethBetaSpec.png}}
 	\caption{A beta spectrum using a scintillator \cite{Het89}
 		    The line shows the statistical beta spectrum.
-		    The crosses shows the measured beta spectrum.}
+		    The crosses shows the measured beta spectrum.
+		    This spectrum shows the back scattering effect}
 	\label{fig:hethspec}
 \end{figure}
 
+As seen from figure \ref{fig:hethspec}, there is a large distortion at low energies.
+This is due to back scattering inside the scintillator.
+What happened is that electrons entered the scintillator, deposited some of their energy, and bounced back out.
+This caused a large distortion at low energy.
+Another issue for this measurement was that energy calibration was non-linear.
+Below 1.5 MeV, there was a non-linearity up which caused a distortion up to 35 keV. 
+This all had to be accounted for and contributed to the uncertainty.
+The resulting energy spectrum and fit is shown in figure \ref{fig:heth20Fspec}.
 
+\begin{figure}[!htb]
+	\centerline{\includegraphics[width=0.78\textwidth]{fig_heth20f.png}}
+	\caption{The measured and fitting $^{20}$F spectrum \cite{Het89}}
+	\label{fig:heth20Fspec}
+\end{figure}
+
+The beta spectrum is greatly distorted.
+The largest uncertainty is due to uncertainties in the response function.
+The paper refers this to "peak position." 
+This experiment used many different sources to get at calibration.
+They also had to take the bremsstrahlung of the electrons into account.
+That systematic effect was the limiting factor in their measurement
 %Spectrum is on page 168 in thesis. Put it here
 
 In order to get at the Fierz term, the beta decay spectrum shape must be described precisely.

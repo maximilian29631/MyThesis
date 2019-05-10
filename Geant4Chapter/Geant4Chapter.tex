@@ -6,12 +6,12 @@ In order to get a measurement of the Fierz term, the spectrum shape needed to be
 In addition to all the theoretical corrections, the effect of bremsstrahlung and the efficiency of the detectors needed to be accounted for.
 This is important to account for effect of the gamma ray after the filtering.
 The way this was done was with a GEANT4 simulation \cite{Ago03}.
-The most updated copy of the code can be found at https://github.com/maximilian29631/Geant4for20F/tree/RealDeadLayer. 
+The most updated copy of the code can be found at https://github.com/maximilian29631/Geant4for20F/.
 
 
 \section{GEANT4 Monte Carlo}
 The corrected beta decay spectrum was fed as input to a Monte Carlo.
-The program used to model the detectors was GEANT4.
+The program used to model the detectors was GEANT4 version 10.04.02.
 In order to use the program, a model of the detector set-up and the initial energies of the primary particles need to be introduced.  
 
 \subsection{Detector Geometry}
@@ -28,15 +28,22 @@ A drawing of the CsI(Na) implant detector is shown in figure \ref{fig:ImplantTec
 The geometry of the detector set-up was programmed into the simulation.
 The implant detector was modeled as a square prism of CsI.
 The rectangular prism was 9.76 cm deep with a 5 cm square base.
+A dead layer of 2 mm was modelled around the center implant detector.
+This was a seperate crystal, and the energy depositted into the dead layer was not recorded.
+After the dead layer, there was a 2.5 mm vacuum layer, which matched the technicle drawing.
+After the empty layer, a 1 mm aluminum can surrounded the detector on all sides.  
 The front edge implant detector was put at the center of the simulation.
-The aluminum sheath and MgO layer was not simulated for the implant detector.
+
 
 The four large gamma detectors also square prisms.
-The active volume was 79.5 by 79.5 by 76.2 mm.
+The active volume was 79.5 mm by 79.5 mm by 76.2 mm.
 It was also made of CsI.
 There was a 2 mm dead layer of vacuum around the detector.
 Above this dead layer, a 1.5 mm layer of MgO was added.
-On top of this, the can of aluminum, 1 mm thick, was added into the simulation.
+On top of this, the can of aluminum, 1 mm thick on all sides of the detector was added.
+This is different than the acutal geometry of the large detectors.
+This geometry was tuned so that the gamma effieciency of the detectors in GEANT4 matched that of the experiment.
+According to the group in charge of the detectors, GEANT4 still over-estimates the gamma effieciency. 
 
 The four large gamma detectors were arranged into a square around the implant detector.
 Each square base of the gamma detectors was centered one inch upstream from the face of the implant detector.
@@ -57,6 +64,7 @@ The depth of the region was calculated using LISE++, a ion optics code.
 The vertical and horizontal size of the region was calculated by using the PPAC measurement and an ion optics simulation.
 This size was 0.4 mm deep, 3.5 mm wide, and 3.6 mm tall.
 The source was implanted 1.156 cm into the detector.
+This measures from the front edge of the detector including the dead layer.
 
 \subsection{Primary Particle Definitions}
 There were three primary particles generated.
@@ -75,6 +83,7 @@ The original function was fit to the generated beta energies, and no distortions
 
 The next photon was the 1.6336 MeV photon from the $^{20}$F decay.
 This initial photon is monochromatic and isotropic.
+The photon was generated from the same vertex as where the electron was generated.
 
 The last photon was to account for the inner bremsstrahlung.
 The radiative correction used to generate the electron energy was the formula that assumes all real photon energy is absorbed (equation \ref{eq:fayansrad}).
@@ -148,7 +157,20 @@ Then, during the fitting, the shape factor multiplied the ouput.
 This was found not to be correct, so four simulations were needed.
 The simulations were the phase space times the pieces of the shape factor.
 This was an issue, as the first version of the code took a week to run 2e9 events.
-To speed up the code, the code was modified to use MPI parrelization.
-The code was then run on the firesie cluster at the NSCL.
+To speed up the code, the code was modified to use GEANT4 MPI parrallization.
+The code was then run on the fireside cluster at the NSCL.
 After modification, it only took 6 hours to run 2e9 events.
+
+\subsection{Detector Geometry Changes}
+An effect due to the detector geometry was found.
+Initially, the implant detector was just left as a CsI crystal without any dead layer or cans.
+To match the real geometry better, the can and a layer of 1.5 mm of MgO was added.
+This MgO in the simulation was added to match the detector gamma efficency. 
+The Al can was also open on two sides.
+In the initial geometry that was obtained, the Al can was open on the top and bottom of the detector.
+This was corrected for, and the dead layer in the implant detector was added.
+The difference between a larger crystal and a seperate dead layer was investigated by fitting the data.
+Both of them induced a effect, and the geometry was tuned until the effect in the data was minimized.
+
+
 \end{document}

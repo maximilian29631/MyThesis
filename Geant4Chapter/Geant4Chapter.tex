@@ -17,6 +17,7 @@ In order to use the program, a model of the detector set-up and the initial ener
 \subsection{Detector Geometry}
 A source of the detector geometry were the technical drawings of detectors. 
 A drawing of the CsI(Na) implant detector is shown in figure \ref{fig:ImplantTech}
+This drawing was the basis of the detector geometry fed into the simulation.
 
 \begin{figure}[!htb]
 	\centerline{\includegraphics[width=0.78\textwidth]{ImplantDrawing.png}}
@@ -27,26 +28,23 @@ A drawing of the CsI(Na) implant detector is shown in figure \ref{fig:ImplantTec
 
 The geometry of the detector set-up was programmed into the simulation.
 The implant detector was modeled as a square prism of CsI.
-The rectangular prism was 9.76 cm deep with a 5 cm square base.
-A dead layer of 2 mm was modelled around the center implant detector.
-This was a seperate crystal, and the energy depositted into the dead layer was not recorded.
-After the dead layer, there was a 2.5 mm vacuum layer, which matched the technicle drawing.
+The square prism was 101.6 cm deep with a 5.4 cm square base.
+Around the square prism there was an empty layer.
+Along the sides, the empty layer was 1.5 mm thick.
+On the front and back of the detector, the empty layere was 3.64 mm thick.
 After the empty layer, a 1 mm aluminum can surrounded the detector on all sides.  
-The front edge implant detector was put at the center of the simulation.
-
+The center of this detector was placed at the center of the simulation.
 
 The four large gamma detectors also square prisms.
 The active volume was 79.5 mm by 79.5 mm by 76.2 mm.
 It was also made of CsI.
-There was a 2 mm dead layer of vacuum around the detector.
-Above this dead layer, a 1.5 mm layer of MgO was added.
+An empty layer was also added to the gamma detectors.
+The empty layer on the sides was also 1.5 mm thick, just like the implant detector.
+On the front, however, the empty layer was 2.92 mm thick.
 On top of this, the can of aluminum, 1 mm thick on all sides of the detector was added.
-This is different than the acutal geometry of the large detectors.
-This geometry was tuned so that the gamma effieciency of the detectors in GEANT4 matched that of the experiment.
-According to the group in charge of the detectors, GEANT4 still over-estimates the gamma effieciency. 
-
-The four large gamma detectors were arranged into a square around the implant detector.
-Each square base of the gamma detectors was centered one inch upstream from the face of the implant detector.
+The four detectors were arranged in a cross.
+The detectors were oriented in such a way that the square face of the CsI crystal faced the implant detector. 
+The edge of each of the large gamma detectors was placed 25.4 mm away from the front edge of the implant detector.
 This modeled how the implant detector was recessed in the experiment.
 
 A visualization of the CsI crystals in GEANT4 is shown in figure \ref{fig:GEANT4Det}
@@ -123,17 +121,17 @@ All the energies deposited into each of the detectors was summed up and saved as
 Then, the process was repeated.
 A new location inside the region was generated and another decay generated.
 
-In order to get to get the necessary statistics, 2 * 10$^{9}$ events had to be generated. 
-This initially took 7 days to run. 
+For the fit, four different simulations had to be run.
+Each of them needed $1.4 * 10^{10}$ events. 
 In order to decrease the time it took to run, the range cuts on the gamma rays were changed.
 The range cuts were changed from 5 $\mu$m to 5 mm for all gamma rays.
 The range cuts for other particles stayed at 5 $\mu$m.
 
 \section{Simulation Development}
 The GEANT4 simulation is based on the example TestEm5.
-The first changes were to add the proper detector geometry, as shown above.
+The first changes were to add the proper detector geometry, as described above.
 The next changes were to add a second primary particle, which was the gamma ray from the decay curve.
-The energies absorbed in all of the detectors was also added.
+The data structure that recorded all the data absorbed event by event was added, so that the gamma cuts could be changed after the fact.
 
 Initially, all energy absorbed by the implant was recorded, regardless of its origin.
 This was found not to be the correct way to fit the data.
@@ -162,15 +160,31 @@ The code was then run on the fireside cluster at the NSCL.
 After modification, it only took 6 hours to run 2e9 events.
 
 \subsection{Detector Geometry Changes}
-An effect due to the detector geometry was found.
+The detector geometry itself was adjusted several times.
 Initially, the implant detector was just left as a CsI crystal without any dead layer or cans.
-To match the real geometry better, the can and a layer of 1.5 mm of MgO was added.
-This MgO in the simulation was added to match the detector gamma efficency. 
-The Al can was also open on two sides.
-In the initial geometry that was obtained, the Al can was open on the top and bottom of the detector.
-This was corrected for, and the dead layer in the implant detector was added.
-The difference between a larger crystal and a seperate dead layer was investigated by fitting the data.
-Both of them induced a effect, and the geometry was tuned until the effect in the data was minimized.
+This crystal was 50 mm by 50 mm by 97.6 mm.
+This size was given from the group that uses the detectors for $\gamma$ spectroscopy.
+The four gamma detectors initially had CsI crystals that were 75.5 mm by 75.5 mm by 72.2 mm in size.
+These crystals were surrounded by 2 mm of vacumm, which was supposed to model a dead layer.
+After the dead layer, the crystal was surrounded by 1.5 mm of MgO on the sides.
+The two sides along the short dimension was left open.
+A 1 mm Al can surrounded the crystal, and was also open on the sides.
+Both the can and the Mgo layer were offset.
 
+After that geometry, the implant's geometry was updated to match the gamma detectors' geometries more closely.
+A 2 mm gap was added, and then surrounded by 1.5 mm of MgO. 
+On top of that, a 1 mm layer of Al was added.
+However, the top and bottom of the detector was left bare in the MgO powder and the Al layer.
+This was fixed, and the can and the MgO completely surrounded the detector.
+
+The detector geometry with the MgO is not what the actual detector geometry is.
+This geometry was tuned in order to match the efficiency of the data better.
+With this tuning, the efficiency is off about 4\% of the measured value. 
+
+It was found that the detector geometry in the simulation has a large effect on the results of the fit.
+The final detector geometry was that from technical drawings of the detectors.
+This geometry is the one described above. 
+With this geometry, there still need to be some parameters such as the calibration and the gamma-beta summing level to be fixed.
+The method of fixing them, and how the output of the simulation was processed, will be described in the next chapter.
 
 \end{document}

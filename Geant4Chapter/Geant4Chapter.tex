@@ -31,7 +31,7 @@ The implant detector was modeled as a square prism of CsI.
 The square prism was 101.6 cm deep with a 5.4 cm square base.
 Around the square prism there was an empty layer.
 Along the sides, the empty layer was 1.5 mm thick.
-On the front and back of the detector, the empty layere was 3.64 mm thick.
+On the front and back of the detector, the empty layer was 3.64 mm thick.
 After the empty layer, a 1 mm aluminum can surrounded the detector on all sides.  
 The center of this detector was placed at the center of the simulation.
 
@@ -73,7 +73,7 @@ The first particle was an electron.
 This selected the point in the source region.
 In order to generate the correct energy for this electron, the following process was used.
 First, all the corrections described in chapter \ref{ch:theory} were multiplied with equation \ref{eq:phase_space}.
-This resulting function was evaluated at 1024 evenly space points from 0 keV to the end point energy.
+This resulting function was evaluated at 1024 evenly space points from 8 keV to the end point energy.
 This list of 1024 points was fed into GEANT4 as a histogram, as GEANT4 can only take a histogram of up to 1024 bins. 
 Linear interpolation was used to make this histogram back into a smooth function.
 This is not exactly a histogram of the beta energy spectrum.
@@ -150,12 +150,12 @@ However, after explicitly generating the inner bremsstrahlung photons, this was 
 Therefore, the entire simulation had to be rerun with the inner bremsstrahlung photons generated explicitly.
 
 Then, it was discovered that only running one simulation was not the correct way of fitting the data.
-Initially, the corrected phase space without the shape factor was fed into the GEANT4 monte carlo.
-Then, during the fitting, the shape factor multiplied the ouput. 
+Initially, the corrected phase space without the shape factor was fed into the GEANT4 Monte Carlo.
+Then, during the fitting, the shape factor multiplied the output. 
 This was found not to be correct, so four simulations were needed.
 The simulations were the phase space times the pieces of the shape factor.
 This was an issue, as the first version of the code took a week to run 2e9 events.
-To speed up the code, the code was modified to use GEANT4 MPI parrallization.
+To speed up the code, the code was modified to use GEANT4 MPI parallelization.
 The code was then run on the fireside cluster at the NSCL.
 After modification, it only took 6 hours to run 2e9 events.
 
@@ -165,11 +165,11 @@ Initially, the implant detector was just left as a CsI crystal without any dead 
 This crystal was 50 mm by 50 mm by 97.6 mm.
 This size was given from the group that uses the detectors for $\gamma$ spectroscopy.
 The four gamma detectors initially had CsI crystals that were 75.5 mm by 75.5 mm by 72.2 mm in size.
-These crystals were surrounded by 2 mm of vacumm, which was supposed to model a dead layer.
+These crystals were surrounded by 2 mm of vacuum, which was supposed to model a dead layer.
 After the dead layer, the crystal was surrounded by 1.5 mm of MgO on the sides.
 The two sides along the short dimension was left open.
 A 1 mm Al can surrounded the crystal, and was also open on the sides.
-Both the can and the Mgo layer were offset.
+Both the can and the MgO layer were offset.
 
 After that geometry, the implant's geometry was updated to match the gamma detectors' geometries more closely.
 A 2 mm gap was added, and then surrounded by 1.5 mm of MgO. 

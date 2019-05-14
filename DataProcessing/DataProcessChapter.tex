@@ -5,7 +5,7 @@ The detectors were tested using an oscilloscope to check for their signals.
 The timing of each detector signal was recorded and used to tune the data acquisition. 
 The signals were then inserted into a digital data acquisition system.
 
-\section{Data acquisition}
+\section{Data Acquisition}
 
 All the signals for all the detectors were sent to digitizers.
 These digitizers were three 250 mega-samples per second 16 channel XIA PIXIE modules. 
@@ -129,8 +129,11 @@ These histograms could be put in coincidence.
 Displays of the implant detector energy and rate were displayed.
 The energy of the implant vs time was also displayed.
 Additionally, the implant energy vs time since last beam on was plotted as a 2-D spectra.
-The decay curves (time in implant minus last beam on) were also plotted.
+The decay curves were also plotted.
+These were created by histogram the time in the detector minus the time since the last beam on.
 These histograms were used as diagnostics. 
+The program allowed for gates to be drawn.
+
 
 \section{Data Taking and Processing}
 To take data, the ReadOutGUI program was activated. 
@@ -148,6 +151,7 @@ The information was saved event by event.
 It was formatted in a C++ class called DDASEvent. 
 This event class contained data for each channel from the data acquisition.
 The energy was given out in ADC units and was not calibrated.
+These units had a range from 0 to 32767.
 The time was given counts of DAQ clock.
 The digitized wave forms were also saved in this event. 
 

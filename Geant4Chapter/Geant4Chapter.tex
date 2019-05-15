@@ -117,7 +117,7 @@ The energies deposited into the implant detector was summed up into two categori
 The energy deposited from the initial gamma ray was one category.
 The other was the energy deposited from the initial electron.
 After the energies of the particles reached a certain threshold, the simulation of one decay was finished.
-All the energies deposited into each of the detectors was summed up and saved as an event in a ROOT tree.
+All the energies deposited into each of the detectors was summed up and saved as an event in a ROOT TTree.
 Then, the process was repeated.
 A new location inside the region was generated and another decay generated.
 
@@ -183,8 +183,31 @@ With this tuning, the efficiency is off about 4\% of the measured value.
 
 It was found that the detector geometry in the simulation has a large effect on the results of the fit.
 The final detector geometry was that from technical drawings of the detectors.
-This geometry is the one described above. 
-With this geometry, there still need to be some parameters such as the calibration and the gamma-beta summing level to be fixed.
-The method of fixing them, and how the output of the simulation was processed, will be described in the next chapter.
+This geometry ultimately used  is the one described above. 
+
+\section{Simulation Results Processing}
+In order to use simulations results for fitting histograms, further process had to be done in order to build the histograms for the fitting of the data. 
+The TTrees in the output of the simulation was used. 
+The energy absorbed in the implant detector was filtered by the energy absorbed in the outer four gamma detectors in the simulation.
+The energy gate matched that of the 
+
+The two different categories of energy absorbed in the implant detector were built into two histograms. 
+One histogram had a condition that the energy absorbed by the initial gamma ray had to be zero.
+This histogram was the energy absorbed without any summing.
+The second histogram was the energy absorbed where there was a contribution from the gamma ray in the implant detector.
+This histogram was known as the energy absorbed with summing.
+These two histograms can be seen in figure \ref{fig:GEANT4Hists}.
+
+\begin{figure}[!htb]
+	\centerline{\includegraphics[width=0.78\textwidth]{GEANT4OutputBetter.png}}
+	\caption{The shapes of the different histograms from the output of the GEANT4 simulation.
+		 The input beta spectrum is also plotted.
+		 The histograms are put to the same scale.}
+	\label{fig:GEANT4Hists}
+\end{figure}
+
+These two histograms were built for each of the four different inputs that were needed for the proper shape fit. 
+This structure was informed by testing the fit method.
+The details of the fit of the beta decay spectrum shape is in the next chapter. 
 
 \end{document}

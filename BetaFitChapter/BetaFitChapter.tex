@@ -203,8 +203,8 @@ The four histogram fit is the one described above.
 More pseudo-data was generated, along with four histograms to be used for fitting.
 This was largely done to get a handle of the normalization of the histograms.
 The normalization was obtained by taking the ratios of the histograms and fitting them with the functional forms. 
-After this was done, the fit obtained the value of $b_{wm}$ and $b_{gt}$ that was fed in.
-
+After the normalization, the fit was done.
+The output $b_{gt}$ and $b_{wm}$ obtained was the one put in.
 
 \section{Experimental Data Processing}
 After the fitting method was tested and verified, the data was ready to be fit 
@@ -242,7 +242,12 @@ The effect of the offset will be discussed in the next section.
 The calibrated end points were 250 keV to 7500 keV. 
 A sample fit is shown in figure \ref{fig:samplefit}, where the offset was fixed to 0.
 
-\section{Results of Fit}
+\begin{figure}[!htb]
+	\centerline{\includegraphics[width=0.78\textwidth]{CsIRun317FierzTermResids.png}}
+	\caption{A sample fit of the beta spectrum. 
+		 The residuals of the fit are shown below the graph}
+	\label{fig:samplefit}
+\end{figure}
 
 \section{Systematic effects}
 
@@ -259,52 +264,68 @@ There are several different inputs that can induce such an effect.
 Initially, the offset used was the offset from the calibration  in equation \label{eq:cal}.
 The offset used was 10.05 ADC units.
 This calibration was determined using photons instead of electrons.
-Electrons generate 2\% less light than photons \cite{REFHERE} % maybe knoll?
+%Electrons generate 2\% less light than photons \cite{REFHERE} % maybe knoll?
 This means that the offset found from this fit is suspect to apply to our electron shape measurement.
 
 When applying an offset of 10.05 in a fit of the data, it was found that the output varied greatly as a function of where the fit was started.
-This is seen in figure \ref{fig:LBCvbwm} with the $b_{wm}$ and in figure \ref{fig:LBCvbgt} for the $b_{gt}$.
+The effect in $b_{wm}$ and $b_{gt}$ is shown in figure \ref{fig:offset10LBCeffect}.
 
-%\begin{figure}[!htb]
-%ADD FIGURE OF LBC v bwm here
+\begin{figure}
+    \centering
+    \begin{minipage}{0.50\textwidth}
+        \centerline{\includegraphics[width=0.9\textwidth]{CsILBCvbwmOffsetis10p054histfit.png}}
+    \end{minipage}\hfill
+    \begin{minipage}{0.50\textwidth}
+        \centerline{\includegraphics[width=0.9\textwidth]{CsILBCvbgtOffsetis10p054histfit.png}}
+    \end{minipage}
+    \caption{The depedence of the parameters to the start of the fit.
+	     The offset here is 10.05.}
+    \label{fig:offset10LBCeffect}
+\end{figure}
 
-While investigating this effect, several different potential causes were investigated.
-The first is if the facator $A$ iin equation \ref{eq:convo} used in to convolute the detector simulation was not the same as the actual detector resolution.
-To test that, a Monte Carlo simulation was written.
-The space space in equation \ref{eq:phase_space} was multiplied by the shape factor in equation \ref{eq:shapefactor}.
-This function was sampled $10^{9}$ times twice to build two histograms. 
-Both histograms had a detector resolution applied as described in section \ref{sec:convolution}
-One histogram was sampled a turther $10^{6}$ times 10 times to build a sample data set.
-The other convoluted histogram was used to fit the generated data set.
-The first histogram's $A$ was fixed, while the second histogram's $A$ was adjusted.
-When the sample data's $A$ matched the $A$ that were used, no dependence of $b_{wm}$ on the start of the fit.
-When the $A$ of the data sample and the $A$, the first thing that happened was that the $b_{wm}$ changed.
-If the $A$ differ by a factor of 2 or more, a shift in $b_{wm}$ appears.
-However, $A$ was determined to 10\% (FIX)
-Having a wrong $A$ cannot explain the effect seen in \ref{fig:LBCvbwm}
-
-The largest effect comes from having the wrong offset in the calibration.
-A similar Monte Carlo was written where no convolution was applied.
-Sample histograms were generated directly from an analytic function instead of a histogram.
+To test the effect of the offset, a Monte Carlo was written.
+A sample histogram with only the phase space and the shape factor was generated. 
 These histograms were generated with an offset of 10 ADC units.
+A random gain was applied to the psuedo-data histogram. 
 Then, the fit function had a different offset applied to it.
 For example, fitting the histogram generated with an offset of 10, and fit with an offset of 20 gives an effect as seen in \ref{fig:MCoffset10applied20}.
-This is on the same order of magnitude as the effect we see in the data in figure \ref{fig:LBCvbwm}.
 
-This effect can be exploited to determine the offset using only electron data, 
+\begin{figure}
+	\centerline{\includegraphics[width=0.9\textwidth]{MCLBCvbwmOffsetis10Applied20.png}}
+	\caption{The effect of the lower beta cut in a simulation when the applied offset is 10 units higher than the real offset.}
+	\label{fig:MCoffset10applied20}
+\end{figure}
+
+This effect can be exploited to determine an offset using only the data. 
 The size of the slope induced is linear compared to the offset.
 By adjusting the offset and noting the slope of the $b_{wm}$ vs the lower beta cut and plotting against the offset, the location of zero slope can be calculated.
-This was done, and the result is seen in figure \ref{fig:offsetvslope} 
+This was done, and the result is seen in figure \ref{fig:offset0LBCeffect}.
+
+\begin{figure}
+    \centering
+    \begin{minipage}{0.50\textwidth}
+        \centerline{\includegraphics[width=0.9\textwidth]{CsIbwmvLBCDrawingGeo_OffsetisZero.png}}
+    \end{minipage}\hfill
+    \begin{minipage}{0.50\textwidth}
+        \centerline{\includegraphics[width=0.9\textwidth]{CsIbgtvLBCDrawingGeo_OffsetisZero.png}}
+    \end{minipage}
+    \caption{The depedence of the parameters to the start of the fit.
+	     The offset here is 0.
+	     The $b_{wm}$ is independent of the start of the fit, but the $b_{gt}$ still has a large effect}
+    \label{fig:offset10LBCeffect}
+\end{figure}
+
 
 Doing this procedure gives an offset that depends on the input geometry of the GEANT4 simulation.
+As seen in figure \ref{fig:offset0LBCeffect}, the $b_{gt}$ still depends greatly on where the fit starts.
+Other large effects are needed. 
 
 \subsubsection{The Relative Normalization of the Beta-gamma Sum Spectrum}
 
 
 \subsubsection{The Convolution}
 
-While investigating this effect, several different potential causes were investigated.
-The first is if the facator $A$ iin equation \ref{eq:convo} used in to convolute the detector simulation was not the same as the actual detector resolution.
+Another potential effect is if the detector resolution was applied incorrectly.
 To test that, a Monte Carlo simulation was written.
 The space space in equation \ref{eq:phase_space} was multiplied by the shape factor in equation \ref{eq:shapefactor}.
 This function was sampled $10^{9}$ times twice to build two histograms. 

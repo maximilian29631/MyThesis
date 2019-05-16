@@ -172,9 +172,15 @@ Then, it is multiplied by the shape factor, as shown in equation \ref{eq:hybridm
 
 with $A$ being a normalization constant, $f(E)$ being the simulation with the detector resolution applied, and $S(E)$ the shape factor. 
 This method of fitting is not completely correct, as the $E$ in $f(E)$ is not the same as the initial energy in the shape factor $S(E)$. 
-This was tested and verified.
 
-To test this method, simulated data was used. 
+The first test was done just with a linear term in the psuedo-data.
+An older version of the GEANT4 code had a phase space times corrections times a linear shape factor fed into it.
+This psuedo-data was fit with the hybrid model.
+Initially, the shape factor was applied to total energy inside the implant detector.
+This was found to induce a shift of the measured linear term.
+Applying the shape factor only to the beta only part of the spectrum solved this issue. 
+
+To further test this method, simulated data was used. 
 One had had the nuclear shape factor with $b_{wm} = 43.4$.  
 The other had no shape factor.
 After applying the coincidence condition to both of these simulations, the function with no shape factor was used to fit the function with the shape factor. 
@@ -312,16 +318,61 @@ This was done, and the result is seen in figure \ref{fig:offset0LBCeffect}.
     \caption{The depedence of the parameters to the start of the fit.
 	     The offset here is 0.
 	     The $b_{wm}$ is independent of the start of the fit, but the $b_{gt}$ still has a large effect}
-    \label{fig:offset10LBCeffect}
+    \label{fig:offset0LBCeffect}
 \end{figure}
 
 
 Doing this procedure gives an offset that depends on the input geometry of the GEANT4 simulation.
 As seen in figure \ref{fig:offset0LBCeffect}, the $b_{gt}$ still depends greatly on where the fit starts.
-Other large effects are needed. 
+Other effects are important. 
 
 \subsubsection{The Relative Normalization of the Beta-gamma Sum Spectrum}
 
+The output of the GEANT4 Monte Carlo was processed into two different parts.
+The two parts were summed with a factor of 1 in front of the beta-gamma sum spectrum in figure \ref{fig:offset0LBCeffect}.
+This relative normalization is given from GEANT4.
+Using the same Monte Carlo, this factor was adjusted in the psuedo-data and the fitting functions.
+It was found that an effect as seen in the data can be produced by multiplying the beta-gamma sum spectrum in both the data and the fit function induced a shift very similar to that in figure \ref{fig:offset0LBCeffect}.
+This is seen in figure \ref{fig:MCTimes5}.    
+
+\begin{figure}
+    \centering
+    \begin{minipage}{0.50\textwidth}
+        \centerline{\includegraphics[width=0.9\textwidth]{MCbwmvLBC_BGBothTimes5.png}}
+    \end{minipage}\hfill
+    \begin{minipage}{0.50\textwidth}
+        \centerline{\includegraphics[width=0.9\textwidth]{MCbgtvLBC_BGBothTimes5.png}}
+    \end{minipage}
+    \caption{Monte Carlo data with a LBC effect due to the beta-gamma sum spectrum}
+    \label{fig:MCTimes5}
+\end{figure}
+
+This is odd, as the fit function and the psuedo-data function have the same values.
+The input values of the $b_{wm}$ and $b_{gt}$ can be recovered by this fit.
+However, to do this, the offset in the fit function is set to 8.6 ADC units.
+The sum spectra in each of the 4 hists is increased to 3.8 times that of output of the Monte Carlo.
+These two parameters are unphysical.
+The input offset was 0 and the input background level was 5.
+
+Adjusting the level of the beta-gamma sum spectrum affects the $b_{gt}$ more than the $b_{wm}$.
+This parameter can be adjusted to make the $b_{gt}$ indepedent of the start of the fit in figure \ref{fig:offset0LBCeffect}. 
+This gives the results in figure \ref{fig:dataoffset0BG10per}. 
+
+\begin{figure}
+    \centering
+    \begin{minipage}{0.50\textwidth}
+        \centerline{\includegraphics[width=0.9\textwidth]{CsIbwmvLBCDrawingGeo_OffsetisZero_BGis10percent.png}
+    \end{minipage}\hfill
+    \begin{minipage}{0.50\textwidth}
+        \centerline{\includegraphics[width=0.9\textwidth]{CsIbgtvLBCDrawingGeo_OffsetisZero_BGis10percent.png}
+    \end{minipage}
+    \caption{Adjusting the beta-gamma sum spectrum level to flatten out the $b_{gt}$}
+    \label{fig:dataoffset0BG10per}
+\end{figure}
+
+However, to obtain these results, the level of the beta-gamma sum spectrum must be set to 0.096. 
+It is unlikely that the GEANT4 Monte Carlo is that far off, and that this number corresponds to anything physical.
+This effect needs further investigation. 
 
 \subsubsection{The Convolution}
 
@@ -341,8 +392,9 @@ The effect of a wrong detector resolution is negligible.
 
 \subsection{Other Systematic Effects}
 
-
-
+The lower beta cut effect is the largest of the systematic effects.
+A summary of the other systematic effects is shown in table \ref{tab:systeffects}.
+These are indepedent on the lower beta cut and other input parameters to the fit.
 
  
 

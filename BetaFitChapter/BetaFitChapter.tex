@@ -258,8 +258,12 @@ A sample fit is shown in figure \ref{fig:samplefit}, where the offset was fixed 
 \section{Systematic effects}
 
 After testing the fit and fitting the data, the systematic effects were investigated.
-These mostly stem from the inputs to the GEANT4 simulations or inputs to the fits.
-The largest effect had to do with where the fit was started.
+The systematic effect can be divided into three categories.
+The first set are the systematic effects that have to do with the inputs to the simulation.
+The second set has to do with the inputs to the fit.
+The final set has to do with the uncertianties in the shape factor. 
+One systematic effect, however, merits discussion on it's own.
+That is the largest systematic effect, which deals with where the fit was started.
 
 \subsection{Lower Beta Cut Effect}
 
@@ -393,9 +397,70 @@ The effect of a wrong detector resolution is negligible.
 \subsection{Other Systematic Effects}
 
 The lower beta cut effect is the largest of the systematic effects.
-A summary of the other systematic effects is shown in table \ref{tab:systeffects}.
-These are indepedent on the lower beta cut and other input parameters to the fit.
+Many of the other systematic effects are independent of the absolute value of $b_{gt}$.
+To calculate the other systematic effects, the lower beta cut was fixed to 250 keV.
+The offest was set to zero, and the level of the beta-gamma sum spectrum was set to 1.
+These parameters give the conditions in figure \ref{fig:offset0LBCeffect}.
+With these values, the value of $b_{gt}$ is $0.0338$ with a statistical error of $0.0043$.
 
- 
+To calculate the systematic effects, one parameter at a time was adjusted.
+The parameter was increased by one unit of the error on that parameter.
+The fit was redone with the different parameter values.
+The output $b_{gt}$ for the changes in the parameters was recorded.
+The parameter then was then descreaded by one unit of the error.
+Half the difference of the output $b_{gt}$ was then the systematic error.
 
+As stated above, the different systematic uncertainties can be divided into three different categories. 
+There are the systematic uncertainties due to the simulation inputs, which are summarized in table \ref{tab:simsyseffect}
+These were all calculated by running the four histograms with $2 * 10^{9}$ events each.
+
+\begin{table}[!hbt]
+	\centering
+	\caption{Systematic uncertainties due to simulation inputs}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{llll}
+		Parameter Name & Parameter Value & Parameter Uncertainty & Systematic Uncertainty \\
+		Electron end point energy & 5389.865 $keV$ & 0.081 $keV$ & \\
+		Charge radius & 3.0055 $fm$ & 0.0021 $fm$ & \\
+		Convolution & 1.112 & 0.008 & 0.004 	 
+		\end{tabular}}
+		\label{tab:simsyseffect}
+\end{table}
+
+The systematic effects due to the fit inputs are shown in table \ref{tab:fitsyseffect}.
+The effect of the offset and the background level are folded into the LBC systematic effect
+There is no systematic upper beta cut effect.
+
+\begin{table}[!hbt]
+	\centering
+	\caption{Systematic uncertainties due to fit inputs} 
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{llll}
+		Parameter Name & Parameter Value & Parameter Uncertainty  or Range & Systematic Uncertainty \\
+ 		Lower beta cut & 250 keV & 200 to 2000 keV & 0.0283 \\
+		Binning of data histogram & 64 & & \\
+		Binning of fitting histograms & 64 & &  		
+		\end{tabular}}
+		\label{tab:fitsyseffect}
+\end{table}
+
+Lastly, there are the systematic uncertianties due to the form factors inside the shape factor.
+These are summarized in table \ref{tab:formfactorsyseffect}
+
+\begin{table}[!hbt]
+	\centering
+	\caption{Systematic uncertainties due to nuclear form factors} 
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{lllll}
+		Parameter Name & Parameter Variable & Parameter Value & Parameter Uncertainty  or Range & Systematic Uncertainty \\
+		Weak magentism & $b_{wm}$ & 43.4 & 1.2 \cite{Min11} & 0.0028 \\
+		Induced tensor form factor & $d$ & 40.5 &  3.7 \cite{Min11} & 0.0004 \\
+		Fermi matrix element & $c_{1nuc}$ & 0.253 & 0.004 \cite{Min11} & 0.0017 \\
+		Second forbidden matrix element & $c_{2nuc}$  & 0.755 $fm^{2}$ & 0.257 $fm^{2}$ \cite{Elm87} & 0.0011
+		\end{tabular}}
+		\label{tab:formfactorsyseffect}
+\end{table}
+
+The largest uncertainty is due to the lower beta cut effect.
+The second largest uncertetainty is due to the weak magnetism. 
 \end{document}

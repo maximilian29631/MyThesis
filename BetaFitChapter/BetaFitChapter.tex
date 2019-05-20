@@ -418,11 +418,11 @@ These were all calculated by running the four histograms with $2 * 10^{9}$ event
 	\centering
 	\caption{Systematic uncertainties due to simulation inputs}
 	\resizebox{\textwidth}{!}{
-		\begin{tabular}{llll}
-		Parameter Name & Parameter Value & Parameter Uncertainty & Systematic Uncertainty \\
-		Electron end point energy & 5389.865 $keV$ & 0.081 $keV$ & \\
-		Charge radius & 3.0055 $fm$ & 0.0021 $fm$ & \\
-		Convolution & 1.112 & 0.008 & 0.004 	 
+		\begin{tabular}{lllll}
+		Parameter Name & Parameter Value & Parameter Uncertainty & Systematic Uncertainty $b_{wm}$ & Systematic Uncertainty $b_{gt}$ \\
+		Electron end point energy & 5389.865 $keV$ & 0.081 $keV$ & & \\
+		Charge radius & 3.0055 $fm$ & 0.0021 $fm$ & & \\
+		Convolution & 1.112 & 0.008 &  0.3 & 0.0004 	 
 		\end{tabular}}
 		\label{tab:simsyseffect}
 \end{table}
@@ -435,11 +435,11 @@ There is no systematic upper beta cut effect.
 	\centering
 	\caption{Systematic uncertainties due to fit inputs} 
 	\resizebox{\textwidth}{!}{
-		\begin{tabular}{llll}
-		Parameter Name & Parameter Value & Parameter Uncertainty  or Range & Systematic Uncertainty \\
- 		Lower beta cut & 250 keV & 200 to 2000 keV & 0.0283 \\
-		Binning of data histogram & 64 & & \\
-		Binning of fitting histograms & 64 & &  		
+		\begin{tabular}{lllll}
+		Parameter Name & Parameter Value & Parameter Range & Systematic Uncertainty on $b_{wm}$ & Systematic Uncertainty $b_{gt}$\\
+ 		Lower beta cut & 250 keV & 200 to 2000 keV & N/A & 0.0283 \\
+		Binning of data histogram & 32 & 16 to 64 & 0.6 & 0.0003\\
+		Binning of fitting histograms & 64 & 32 to 128 & 1.4 & 0.0028  
 		\end{tabular}}
 		\label{tab:fitsyseffect}
 \end{table}
@@ -451,16 +451,16 @@ These are summarized in table \ref{tab:formfactorsyseffect}
 	\centering
 	\caption{Systematic uncertainties due to nuclear form factors} 
 	\resizebox{\textwidth}{!}{
-		\begin{tabular}{lllll}
-		Parameter Name & Parameter Variable & Parameter Value & Parameter Uncertainty  or Range & Systematic Uncertainty \\
-		Weak magentism & $b_{wm}$ & 43.4 & 1.2 \cite{Min11} & 0.0028 \\
-		Induced tensor form factor & $d$ & 40.5 &  3.7 \cite{Min11} & 0.0004 \\
-		Fermi matrix element & $c_{1nuc}$ & 0.253 & 0.004 \cite{Min11} & 0.0017 \\
-		Second forbidden matrix element & $c_{2nuc}$  & 0.755 $fm^{2}$ & 0.257 $fm^{2}$ \cite{Elm87} & 0.0011
+		\begin{tabular}{llllll}
+		Parameter Name & Parameter Variable & Parameter Value & Parameter Uncertainty & Systematic Uncertainty $b_{wm}$ & Systematic Uncertainty $b_{gt}$ \\
+		Weak magentism & $b_{wm}$ & 43.4 & 1.2 \cite{Min11} & N/A & 0.0028 \\
+		Induced tensor form factor & $d$ & 40.5 &  3.7 \cite{Min11} & 0.2 & 0.0004 \\
+		Fermi matrix element & $c_{1nuc}$ & 0.253 & 0.004 \cite{Min11} & 0.5  & 0.0017 \\
+		Second forbidden matrix element & $c_{2nuc}$  & 0.755 $fm^{2}$ & 0.257 $fm^{2}$ \cite{Elm87} & 0.2 & 0.0011
 		\end{tabular}}
 		\label{tab:formfactorsyseffect}
 \end{table}
 
 The largest uncertainty is due to the lower beta cut effect.
-The second largest uncertetainty is due to the weak magnetism. 
+The second largest source of uncertainty is due to the binning of the fitting histograms.
 \end{document}

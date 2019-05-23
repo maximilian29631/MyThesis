@@ -1,19 +1,20 @@
 \documentclass[main.tex]{subfiles}
 
 \begin{document}
-Particle physics is analyzed under the framework of the standard model.
-This model has many parameters that could theorically be non-zero, but have been measured to be zero up to this point.
-Testing the standard model is done in many ways.
+The goal of precision nuclear measurements is a test of the standard model.
+If a parameter measured thus far to be zero is found to be non-zero, new physics would have been found. 
+The ussual window for low energy precision measurements is through beta decay.
+The various precision measurements of beta decay are not the only method to look for new physics.
 
-\section{New Physics Searches}
-Testing the standard model is important.
-There are generaly two ways to experimentally do this.
+The most direct way to look for new physics is to look for the new particles that generate that physics.
 One is to look for new particles with high energy experiments. 
-The other is to look at lower energy experiments very percisely.
 The direct detection of new particles is very general and a powerful technique.
-This is done with large colliders. 
-Precision measurements, on the other hand, are much more specialized.
+Precision measurements at high energies with colliders often done as well. 
+ 
+Low energy precision measurements, on the other hand, are much more specialized.
 Precision measurements are sensitive to only certain channels of new physics.
+Care must be taken that the channel of physics is not covered by collider experiments already.
+For nuclear physics searches, this is done by looking at beta decay, which provides a sensitive probe to several avenues of new physics.
 
 \section{Beta Decay}
 Beta decay is one of the processes by which unstable nuclei lose energy.
@@ -89,7 +90,7 @@ The constants $a$, $b$, $A$, $B$, and $D$ can be written in terms of the couplin
 $a$ depends on the ratio of the Fermi and Gamow-Teller matrix elements $\rho$.
 This form of the observables informs the experimental design. 
 
-\subsection{Types of Percision Measurements in Beta Decay}
+\section{Types of Percision Measurements in Beta Decay}
 Given the form of equation \ref{eq:decayrate}, to get at different terms, different types of experiments are needed.
 A polarized nucleus is need to extract $a$. 
 The nuclear spin points in one direction. 
@@ -98,9 +99,32 @@ Other correlations between energy and momenta have sensitivity to other terms in
 Equation \ref{eq:decayrate} is not complete, and many other terms exist. 
 
 For an unpolarized beam where only the energy of the electron is measured, the momenta are averaged over and all terms disappear expect for $b$.
-This term is known as the Fierz term, and a measurement of the Fierz term was the ultimate goal of this experiment. 
+There is also the phase space factor.
+There are two general kinds of unpolarized beta decay measurements.
+The first is where the differential energy spectrum is measured.
+There is a measurement of $b$ over the entire range of values, and the $\frac{1}{W}$ depedence of the matrix element is probed.
+To do this measurement, the beta decay in question must be available enough in order to get enough statistics for a good spectrum.
+Other requirements for a spectrum shape measurement are described in the next chapter.
 
-\subsubsection{Fierz Term}
+If the nucleus is rare, another way to get at the physics in equation \ref{eq:decayrate} is to measure an $ft$ value.
+The $f$ is the integral of the decay rate.
+The $t$ is the half-life of the nucleus times the branching ratio.
+These are both measured and multiplied together to get a quantity that is proportional to the matrix element.
+This can be done even if the nucleus in question is difficult to produce.
+For each measurement, $b$ is measured, but modulated by an average value of the energy dependence.
+Multiple measurements are needed to get good constriants on $b$.
+
+In both of these techniques, electromagnetic and hardonic corrections are needed.
+To measure the $ft$ values, the integral of these corrections are inportant.
+For the shape measurements, the energy dependence of the corrections are inportant.
+The systematic uncertainties for both of the techniques are different.
+These depend on the exact details of the experiment.
+
+The term $b$ is known and the Fierz interference term.
+A measurement of this term is the ultimate goal of the experiment described in this thesis.
+A more detailed disccusion of the term is needed.
+
+\subsection{Fierz Term}
 The Fierz term, $b$, in equation \ref{eq:decayrate}, can be rewritten in terms of effective couplings.
 This is shown in equation \ref{eq:bwrittenout}
 
@@ -122,7 +146,13 @@ $ft$ values give the value of the Fierz term averaged over the beta decay energy
 Several measurements of different decays are needed to get a good constraint.
 The other part of the Fierz term is the tensor coupling. 
 In order to get a good measurement of  tensor couplings, an allowed Gamow-Teller decay must be used. 
+The technique used was a shape measurement technique.
 In this measurement, the nucleus of interest was $^{20}$F.
- 
+
+\subsection{High Energy Probes of the Fierz Term}
+
+There have been probes sensitive to the Fierz term done with high energy techniques \cite{Gon19}.
+The percision of these measurements is important to keep in mind, as this is the percision goal of the beta decay measurement.
+Several channels are used, and the coupling chages are directly measured.
 
 \end{document}

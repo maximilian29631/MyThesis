@@ -245,7 +245,7 @@ The fit was done again and the $b_{gt}$ was recorded.
 
 The offset used for the fit was varied.
 The effect of the offset will be discussed in the next section. 
-The calibrated end points were 250 keV to 7500 keV. 
+The calibrated start and end of the fits were 250 keV to 7500 keV. 
 A sample fit is shown in figure \ref{fig:samplefit}, where the offset was fixed to 0.
 
 \begin{figure}[!htb]
@@ -278,6 +278,7 @@ This calibration was determined using photons instead of electrons.
 This means that the offset found from this fit is suspect to apply to our electron shape measurement.
 
 When applying an offset of 10.05 in a fit of the data, it was found that the output varied greatly as a function of where the fit was started.
+For these graphs, the end of the fit was set to 7500 keV.
 The effect in $b_{wm}$ and $b_{gt}$ is shown in figure \ref{fig:offset10LBCeffect}.
 
 \begin{figure}
@@ -394,6 +395,30 @@ If the $A$ differ by a factor of 2 or more, a shift in $b_{wm}$ appears.
 However, this is much larger than any uncertainty in detector resolution.
 The effect of a wrong detector resolution is negligible. 
 
+\subsection{Upper Beta Cut Effect}
+
+Changing where the fit ends has effectively no effect on the value either parameter.
+An issue is that at small enough upper beta cut, there is nothing to fix the pile-up parameter on. 
+This means that there could be correlations induced.
+To avoid this, the  pre-fit was done, and the level of pile-up recorded.
+The level of pile-up was fixed for the other fits across all upper beta cuts.
+The lower beta cut was fixed to 250 keV in the fits. 
+The effect is shown in figure \ref{fig:UBCEffect}.
+Both parameters are flat after 5500 keV.
+
+\begin{figure}
+    \centering
+    \begin{minipage}{0.50\textwidth}
+        \centerline{\includegraphics[width=0.9\textwidth]{CsIbwmvUBC4HistFit.png}}
+    \end{minipage}\hfill
+    \begin{minipage}{0.50\textwidth}
+        \centerline{\includegraphics[width=0.9\textwidth]{CsIbgtvUBC4HistFit.png}}
+    \end{minipage}
+    \caption{The effect of changing the upper beta cut}
+    \label{fig:UBCEffect}
+\end{figure}
+
+
 \subsection{Other Systematic Effects}
 
 The lower beta cut effect is the largest of the systematic effects.
@@ -421,15 +446,23 @@ These were all calculated by running the four histograms with $2 * 10^{9}$ event
 	\resizebox{\textwidth}{!}{
 		\begin{tabular}{lllll}
 		Parameter Name & Parameter Value & Parameter Uncertainty & Systematic Uncertainty $b_{wm}$ & Systematic Uncertainty $b_{gt}$ \\
-		Electron end point energy & 5389.865 $keV$ & 0.081 $keV$ & & \\
+		Electron end point energy & 5900.864 $keV$ & 0.081 $keV$ & & \\
 		Charge radius & 3.0055 $fm$ & 0.0021 $fm$ & & \\
 		Convolution & 1.112 & 0.008 &  0.3 & 0.0004 	 
 		\end{tabular}}
 		\label{tab:simsyseffect}
 \end{table}
 
+The uncertainty due to the average mass was ignored, as it is very small.
+The value of the average mass used is $18621497.033 \pm 0.040 keV$.
+Since this value appears in the denominator, and the uncertainty is so small, the effect of the uncertainty due to this average mass value is neglibable. 
+On the other hand, an uncertainty in the end point can have a larger effect.
+The endpoint energy of the electron is only around 5 MeV.  
+
 The systematic effects due to the fit inputs are shown in table \ref{tab:fitsyseffect}.
-The effect of the offset and the background level are folded into the LBC systematic effect
+The systematic effect on the offest is estimated by giving the offset a range of $\pm 1$.
+The normalization of the beta-gamma sum spectrum is not listed here. 
+It still needs to be investigated.
 There is no systematic upper beta cut effect.
 
 \begin{table}[!hbt]
@@ -440,7 +473,8 @@ There is no systematic upper beta cut effect.
 		Parameter Name & Parameter Value & Parameter Range & Systematic Uncertainty on $b_{wm}$ & Systematic Uncertainty $b_{gt}$\\
  		Lower beta cut & 250 keV & 200 to 2000 keV & N/A & 0.0283 \\
 		Binning of data histogram & 32 & 16 to 64 & 0.6 & 0.0003\\
-		Binning of fitting histograms & 32 & 16 to 64 & 0.2 & 0.0007  
+		Binning of fitting histograms & 32 & 16 to 64 & 0.2 & 0.0007 \\ 
+		Offset & 0 & -1 to 1 & 
 		\end{tabular}}
 		\label{tab:fitsyseffect}
 \end{table}

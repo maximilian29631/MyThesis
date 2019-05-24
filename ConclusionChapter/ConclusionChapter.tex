@@ -28,7 +28,7 @@ A similar measurement was done with ultra-cold neutrons \cite{Hic17}.
 The beta decay spectrum was measured using a magnetic spectrometer.
 The neutrons were confined in the cter with a magnetic field, and allowed to decay.
 A superratio was used to extract the Fierz term.
-With the systematic effects, the final results of the Fierz term was $0.067 \pm 0.005_{stat} ^{+0.090}_{-0.061 sys}$.
+With the systematic effects, the final results of the Fierz term was $0.067 \pm 0.005_{stat}  ^{+0.090}_{-0.061} sys$.
 Even with the lower beta cut effect, the systematic uncertainty of the Fierz term in the $^{20}$F measurement is much smaller.
 The statistical uncertainty is comparable. 
 Additionally, since the decay of a neutron is a mixed decay, this Fierz term is sensitive to both the tensor couplings and the scalar couplings.  
@@ -70,4 +70,44 @@ However, to reach this uncertaintly, all that would be needed would be to run th
 Then, the statistical uncertainty would be neglible, and the systematic uncertainty would be the limiting factor. 
 
 \section{Further Refinements to Technique}
+The first thing to do to improve the experiment is to run more events.
+Most of the events ran for this experiment were with the PVT detector.
+However, the shape of beta spectrum in that detector had an odd distortion in it.
+If that could be investigated and solved, using a plastic scintillator would be an ideal candidate for this measurement.
+Less of the gamma ray would be absorbed, and there would be less bremmstrahlung in the detector.
+
+The largest systematic effect right now is the lower beta cut effect. 
+This can probably be solved by adjusting the normalization of the gamma-beta sum spectrum compared to the implant detector. 
+This has to be seen that it works properly with Monte Carlo.
+Ultimately, the resulting offset and sum spectrum level probably are not the real, physical level.
+Tuning them on the stability of the results relative to the lower beta cut does give reasonable answers.
+Then, an estimate of the uncertainty to the offset and the level of the gamma-beta sum spectrum would have to be done.
+The offset is likely known to 0.5 and the level likely to 10\%.
+This would likely be the largest systematic uncertainties.
+As these uncertainties depend on the slopes of the lower beta cut curves, these should get more precise as more events are built.
+This can be seen in figure %insert figure here
+The slope can be seen more easily as there is the error bars get smaller.
+
+The gamma-beta sum spectrum is a trickier. 
+If the slope of the $b_{gt}$ is used, then at higher statistics, the same reduction could occur. 
+Another method would be to compare the output of GEANT4 to that of another simulation code.
+This was done with EGSnrc, and agreement was found to <AGREEMENT VALUE>.
+Other packages and processes would be good.
+
+In order to increase efficiency for the 1.6 MeV gamma ray, the implant detector could be more completely incased with gamma detectors.
+If these gamma detectors had a higher resolution, that would mean that the signal in the implant would be much cleaner.
+If that were coupled with a plastic detector, then the beta spectrum of the implant detector would be much cleaner.
+This would hopefully eliminate the amount of gamma-beta sum spectrum.
+
+If these systematic effects are reduced, the next largest one has to do with the uncertainty on the measurement of $b_{wm}$.
+There, a new and better measurement of the transition strength in $^{20}$Ne would have to be measured.
+Increasing the precision on the energy of the gamma rays would help both with the electron maximum energy and with the $b_{wm}$.
+This would require a different type of experiment.
+
+\section{Conclusion}
+With all this in place, this measurement of the Fierz term can be one of the more precise ones, if the issue with the lower beta cut can be figured out.
+Many of the systematic effects would be present in other such measurements.
+This measurement can be competitive with high energy measurements, but it took much less equipment.
+
+
 \end{document}

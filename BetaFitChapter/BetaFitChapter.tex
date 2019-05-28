@@ -278,7 +278,10 @@ This calibration was determined using photons instead of electrons.
 This means that the offset found from this fit is suspect to apply to our electron shape measurement.
 
 When applying an offset of 10.05 in a fit of the data, it was found that the output varied greatly as a function of where the fit was started.
-For these graphs, the end of the fit was set to 7500 keV.
+For these graphs, the end of the fit (or upper beta cut) was set to 7500 keV.
+The detector is known to be non-linear below 200 keV, so any fit starting below that point is suspect. 
+After 2000 keV, the shape of the beta spectrum makes getting a good fit unlikely.
+The lower beta cut was varied between these two end points.
 The effect in $b_{wm}$ and $b_{gt}$ is shown in figure \ref{fig:offset10LBCeffect}.
 
 \begin{figure}
@@ -330,6 +333,11 @@ This was done, and the result is seen in figure \ref{fig:offset0LBCeffect}.
 Doing this procedure gives an offset that depends on the input geometry of the GEANT4 simulation.
 As seen in figure \ref{fig:offset0LBCeffect}, the $b_{gt}$ still depends greatly on where the fit starts.
 Other effects are important. 
+Using this effect to tune the offset still gives an uncertainty. 
+To estimate this uncertainty, the statistical uncertainty of the slope of the lines fit to the $b_{gt}$  was taken.
+The offset was varied and how the slope of the line changed as the offset changed was recorded.
+Then, the uncertainty of the slope was changed into an uncertianty on the offset using this information.
+This gave an uncertainty of 0.8 on the offset.
 
 \subsubsection{The Relative Normalization of the Beta-gamma Sum Spectrum}
 
@@ -472,6 +480,7 @@ There is no systematic upper beta cut effect.
 		\begin{tabular}{lllll}
 		Parameter Name & Parameter Value & Parameter Range & Systematic Uncertainty on $b_{wm}$ & Systematic Uncertainty $b_{gt}$\\
  		Lower beta cut & 250 keV & 200 to 2000 keV & N/A & 0.0283 \\
+		Offset & 0 & -0.8 to 0.8 & 2.0 & 0.0055 \\
 		Binning of data histogram & 32 & 16 to 64 & 0.6 & 0.0003\\
 		Binning of fitting histograms & 32 & 16 to 64 & 0.2 & 0.0007 \\ 
 		\end{tabular}}

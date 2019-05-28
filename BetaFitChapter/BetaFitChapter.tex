@@ -1,4 +1,4 @@
-\documentclass[main.tex]{subfiles}
+\documentclass[../MaxHughesThesis.tex]{subfiles}
 
 \begin{document}
 With the pieces in place, the fitting of the data beta spectrum can take place.
@@ -62,7 +62,7 @@ The background varied from no background, a linear background, a quadratic backg
 For the $^{60}$Co, both peaks were fit at once.
 These different background gave slightly different results for the centroids and the widths of the Gaussian.
 The different widths and centroids were taken as a systematic error.
-From the centroids, the calibration for each detector was calculated and shown in equation \ref{eq:cal}
+From the centroids, the calibration for each detector was calculated with 
 
 \begin{equation}
 	C = G * E + b
@@ -136,7 +136,7 @@ With all the pieces in place, the fit function can be described.
 For the fit function, the convoluted histograms and pile-up were rebinned to a bin width of 64 keV.
 Then, each of the histograms were turned into a spline. 
 The five splines were fed into a fit function.
-The fit function is shown in equation \ref{eq:betafit}
+The fit function was
 
 \begin{equation}
 	H(E) = A * (( 1 + C_{0}) f(E) + C_{1}g(E) + C_{2} h(E) + (C_{-1} + b_{gt} m_{e}) j(E)) + B * pu(E)
@@ -163,7 +163,8 @@ In order to benchmark this fitting method, pseudo-data was generated and fit.
 Different methods of the fit function were tested. 
 The first is the so-called "hybrid method", where only one simulation is needed.
 The GEANT4 with only the phase space and corrections is generated. 
-Then, it is multiplied by the shape factor, as shown in equation \ref{eq:hybridmodel}
+Then, it is multiplied by the shape factor.
+This function was 
 
 \begin{equation}
 	H(E) = A * f(E) * S(E)
@@ -261,7 +262,7 @@ After testing the fit and fitting the data, the systematic effects were investig
 The systematic effect can be divided into three categories.
 The first set are the systematic effects that have to do with the inputs to the simulation.
 The second set has to do with the inputs to the fit.
-The final set has to do with the uncertianties in the shape factor. 
+The final set has to do with the uncertainties in the shape factor. 
 One systematic effect, however, merits discussion on it's own.
 That is the largest systematic effect, which deals with where the fit was started.
 
@@ -336,7 +337,7 @@ Other effects are important.
 Using this effect to tune the offset still gives an uncertainty. 
 To estimate this uncertainty, the statistical uncertainty of the slope of the lines fit to the $b_{gt}$  was taken.
 The offset was varied and how the slope of the line changed as the offset changed was recorded.
-Then, the uncertainty of the slope was changed into an uncertianty on the offset using this information.
+Then, the uncertainty of the slope was changed into an uncertainty on the offset using this information.
 This gave an uncertainty of 0.8 on the offset.
 
 \subsubsection{The Relative Normalization of the Beta-gamma Sum Spectrum}
@@ -344,7 +345,7 @@ This gave an uncertainty of 0.8 on the offset.
 The output of the GEANT4 Monte Carlo was processed into two different parts.
 The two parts were summed with a factor of 1 in front of the beta-gamma sum spectrum in figure \ref{fig:offset0LBCeffect}.
 This relative normalization is given from GEANT4.
-Using the same Monte Carlo, this factor was adjusted in the psuedo-data and the fitting functions.
+Using the same Monte Carlo, this factor was adjusted in the pseudo-data and the fitting functions.
 It was found that an effect as seen in the data can be produced by multiplying the beta-gamma sum spectrum in both the data and the fit function induced a shift very similar to that in figure \ref{fig:offset0LBCeffect}.
 This is seen in figure \ref{fig:MCTimes5}.    
 
@@ -360,15 +361,15 @@ This is seen in figure \ref{fig:MCTimes5}.
     \label{fig:MCTimes5}
 \end{figure}
 
-This is odd, as the fit function and the psuedo-data function have the same values.
+This is odd, as the fit function and the pseudo-data function have the same values.
 The input values of the $b_{wm}$ and $b_{gt}$ can be recovered by this fit.
 However, to do this, the offset in the fit function is set to 8.6 ADC units.
-The sum spectra in each of the 4 hists is increased to 3.8 times that of output of the Monte Carlo.
+The sum spectra in each of the 4 histograms is increased to 3.8 times that of output of the Monte Carlo.
 These two parameters are unphysical.
 The input offset was 0 and the input background level was 5.
 
 Adjusting the level of the beta-gamma sum spectrum affects the $b_{gt}$ more than the $b_{wm}$.
-This parameter can be adjusted to make the $b_{gt}$ indepedent of the start of the fit in figure \ref{fig:offset0LBCeffect}. 
+This parameter can be adjusted to make the $b_{gt}$ independent of the start of the fit in figure \ref{fig:offset0LBCeffect}. 
 This gives the results in figure \ref{fig:dataoffset0BG10per}. 
 
 \begin{figure}
@@ -432,7 +433,7 @@ Both parameters are flat after 5500 keV.
 The lower beta cut effect is the largest of the systematic effects.
 Many of the other systematic effects are independent of the absolute value of $b_{gt}$.
 To calculate the other systematic effects, the lower beta cut was fixed to 250 keV.
-The offest was set to zero, and the level of the beta-gamma sum spectrum was set to 1.
+The offset was set to zero, and the level of the beta-gamma sum spectrum was set to 1.
 These parameters give the conditions in figure \ref{fig:offset0LBCeffect}.
 With these values, the value of $b_{gt}$ is $0.0350$ with a statistical error of $0.0042$.
 The value of $b_{gt}$ is $28.3 \pm 1.7$, with $1.7$ being the statistical error.
@@ -440,9 +441,9 @@ The value of $b_{gt}$ is $28.3 \pm 1.7$, with $1.7$ being the statistical error.
 To calculate the systematic effects, one parameter at a time was adjusted.
 The parameter was increased by one unit of the error on that parameter.
 The fit was redone with the different parameter values.
-The output $b_{gt}$ for the changes in the parameters was recorded.
-The parameter then was then descreaded by one unit of the error.
-Half the difference of the output $b_{gt}$ was then the systematic error.
+The output $b_{wm}$ and $b_{gt}$ for the changes in the parameters were recorded.
+The parameter then was then decreased by one unit of the error.
+Half the difference of the output $b_{wm}$ and $b_{gt}$ were the systematic error.
 
 As stated above, the different systematic uncertainties can be divided into three different categories. 
 There are the systematic uncertainties due to the simulation inputs, which are summarized in table \ref{tab:simsyseffect}

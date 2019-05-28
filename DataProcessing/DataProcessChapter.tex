@@ -30,7 +30,7 @@ First, three sums of the digitize wave-forms were taken.
 The first sum was over a time known as $tPEAKING$.
 Then, a second sum was taken directly after the first over a time known as $tGAP$.
 Then, a third sum was taken directly after the the second with over a period of $tPEAKING$ again.
-These three sums were added with equation \ref{eq:ensum}
+These three sums were added with 
 
 \begin{equation}
 	E = C_{0} * S_{0} + C_{g} * S_{g} + C_{1} * S_{1} 
@@ -38,7 +38,7 @@ These three sums were added with equation \ref{eq:ensum}
 \end{equation} 
 
 with $S_{0}$ being the first sum over $tPEAKING$ described above, $S_{G}$ being the sum over $tGAP$, and $S_{1}$ being the second sum over $tPEAKING$.
-$C_{0}$ is described in equation \ref{eq:c0sum}
+$C_{0}$ is described as
 
 \begin{equation}
 	C_{0} = \frac{-(1 - e^{\frac{tSPL}{\tau}})e^{\frac{tPEAKING}{\tau}}}{1 - e^{\frac{tPEAKING}{\tau}}}
@@ -47,7 +47,7 @@ $C_{0}$ is described in equation \ref{eq:c0sum}
 
 where $tPEAKING$ is the time described above, $tSPL$ is the 8 ns sampling time, and $\tau$ an additional parameter.
 
-$C_{g}$ is described in \ref{eq:cgsum}
+$C_{g}$ is 
 
 \begin{equation}
 	C_{g} = 1 - e^{\frac{tSPL}{\tau}}
@@ -55,7 +55,7 @@ $C_{g}$ is described in \ref{eq:cgsum}
 \end{equation}
 
 with the same variables.
-Finally, $C_{1}$ is described in \ref{eq:c1sum}.
+Finally, $C_{1}$ is 
 
 \begin{equation}
 	C_{1} = \frac{1 - e^{\frac{tSPL}{\tau}}}{1 - e^{\frac{tPEAKING}{\tau}}}

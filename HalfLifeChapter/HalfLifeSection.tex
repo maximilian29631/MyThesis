@@ -1,14 +1,5 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\documentclass[a4paper,prc,unsortedaddress,superscriptaddress,showpacs,twocolumn,floatfix]{revtex4}
 
-%\pacs{21.10.-k, 21.10.Tg, 27.20.+n} 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\maketitle
-%\section{Experimental setup}
-%\label{sec:exp}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[main.tex]{subfiles}
+\documentclass[MaxHughesThesis.tex]{subfiles}
 
 \begin{document}
 \section{Motivation}
@@ -205,7 +196,7 @@ This was checked using the light pulser in the PVT detector.
 For each gamma detector, a histogram of the energy-filtered rate was built.
 The unfiltered implantation detector rate and gamma rate was built.
 Using the uncorrected rates as an input, the gamma detector rate was corrected for bin by bin.
-The correction used is shown in equation \ref{eq:dtc}
+The correction used is 
 %
 \begin{equation}
 r^{c}_{coincidence} = \frac{1}{1 - r_{\beta}\tau_{\beta}}\frac{1}{1 - r_{\gamma}\tau_{\gamma}}r^{m}_{coincidence} 
@@ -221,8 +212,7 @@ For high beam intensity runs (i.e. sets 4,5 and 7), the dead-time corrections ha
 For low beam intensity runs, (i.e. set 3) the dead-time correction changed the half-life by 6 to 8 ms. 
 The values shown in this chapter are those with the dead-time correction.
 
-Once the decay spectra were put in coincidence and stacked up, it was fit with equation \ref{eq:fit-function}
-
+Once the decay spectra were put in coincidence and stacked up, it was fit with 
 %
 \begin{equation}
 	f(t) = a\exp{(-t*ln2/T_{\frac{1}{2}})}
@@ -301,7 +291,7 @@ Several techniques were used to estimate the background.
 
 \subsubsection{Simultaneous vs Seperate Fitting}
 The first attempt was by simultaneously fitting each run with a different fitting function.
-The equation used was equation \ref{eq:fit-bg}. 
+The equation used was 
 %
 \begin{equation}
 	f(t) = a(\exp{-t*ln2/T_{\frac{1}{2}}} + b)

@@ -50,6 +50,7 @@ It was impinged on a 188 mg/cm$^{2}$ Be target and sent through the A1900 fragme
 The resulting $^{20}$F beam was at an energy of 130 MeV/A. 
 The intensity of the $^{20}$F was about $2 * 10^{-5}$ pnA.
 The beam was sent to the experimental vault were the detectors were sitting.
+
 \subsection{Beam Purity}
 
 The purity measured was at 99.4\%, with the main contaminates being  $^{19}$O. 
@@ -68,6 +69,15 @@ A horizontal and vertical grid was in the detector.
 Depending on where on each of the grids the particles hit, different charges were sent to either end of the PPAC.
 The signals were fed into a digital data acquisition system, and read out as an energy.
 The difference of the two signals divided by the sum was interpreted as a position.
+The location of the PPAC and other detectors are shown in figure \ref{fig:BeamSetUp}.
+
+\begin{figure}
+	\centerline{\includegraphics[width=0.88\textwidth]{ScaleofBeamLine.png}}
+	\caption{A sketch of the location of the detectors upstream of the implant detector.
+		    The detectors are to scale.
+			}
+	\label{fig:BeamSetUp}
+\end{figure}  
 
 To calibrate the PPAC , a mask with several holes was used. 
 This mask covered the front of the detector, and an alpha decay source in the vacuum was placed in front of the PPAC.
@@ -112,6 +122,7 @@ The range of the depth was 1.2 mm in the PVT detector and 0.4 mm in the CsI(Na) 
 
 In order to verify the simulations for the beam implantation depth, a degrader was inserted into the beam for a beam depth measurement.
 The degrader was made of aluminum and had two different thicknesses: 7.89 mm and 11.38 mm. 
+The location can be seen in figure \ref{fig:BeamSetUp}.
 The beam was caught by a CsI(Na) scintillator of a similar design to the one used during the main measurement.
 The angle of the degrader was changed to change the effective thickness of aluminum that the beam had to travel through. 
 By comparing the measurement to the one predicted to stop the beam out side of the detector, the depth of implantation could be verified. 
@@ -170,7 +181,15 @@ These two pulses had different amplitudes, so that the gain drift could be monit
 The box was made light-tight with electrical tape and black paint.
 An additional optical fiber fed the light to a Si PIN diode.
 This was to monitor the light output of the LED.
+A sketch of the PVT crystal and the gain monitoring system is shown in figure \ref{fig:PVTDetSketch}.
 
+\begin{figure}
+	\centerline{\includegraphics[width=0.58\textwidth]{PVTDetectorSketch.png}}
+	\caption{A sketch of the PVT implant detector.
+		    The plastic disk is seen along as PVT scintillator. 
+		   }
+	\label{fig:PVTDetSketch}
+\end{figure}
 To help check for systematics effects, another implant detector was used.
 It was a 2" x 2" x 4"  CsI(Na) detector. 
 This detector was a module from the CAESAR array \cite{Wei10}.
@@ -186,8 +205,7 @@ A sketch of the PVT detector configuration is shown in figure \ref{fig:detsketch
 	\centerline{\includegraphics[width=0.68\textwidth]{fig_setup.pdf}}
 	\caption{A sketch of the detector set up. 
 	Shown here is with the PVT detector implant.
-	The CsI (Na) detector was centered in the middle of the the four gamma detectors and recessed by 1 inch.
-	The bottom image shows a side of the detector set-up.}
+	The bottom image shows a side of the PVT detector set-up.}
 	\label{fig:detsketch}
 \end{figure}
 
@@ -227,8 +245,9 @@ For the PPAC,
 The voltage for the four gamma detectors was chosen so that they had roughly the same gain.
 The voltages of the detectors is shown in table \ref{tab:detvolt}.
 \begin{table}[!hbt]
+	\caption{Detector power}
 	\centering
-		\begin{tabular}{l|r}
+		\begin{tabular}{lr}
 		Detector & Power Supply Setting (V) \\ \hline
 		PVT Implant (Sets 1-4) & -975 \\
 		PVT Implant (Set 5) & -856 \\
@@ -241,9 +260,8 @@ The voltages of the detectors is shown in table \ref{tab:detvolt}.
 		Si Pin & 20 \\
 		Pin diode & 15 \\
 		PPAC & 560  
-		
-		\label{tab:detvolt}
 		\end{tabular}
+	\label{tab:detvolt}
 \end{table}
 
 During the implantation cycle, a large amount of current was generated in the implant detectors.
@@ -274,5 +292,6 @@ The output of these two modules created a signal with one voltage level during t
 This signal was fed into a box.
 The voltage level during the quad scaler's time dephased the cyclotron RF, turning the beam off.
 When the dual timer voltage level occurred, the RF returned to the tuned value, turning the beam on.  
+%ADD FIGURE
 
 \end{document}

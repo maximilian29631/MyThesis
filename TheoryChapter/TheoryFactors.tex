@@ -113,8 +113,7 @@ The other important variables are shown in table \ref{tab:vars}
 \begin{table}[!hbt]
 	\centering
 	\caption{Variables used in the corrections}
-	\resizebox{\textwidth}{!}{
-		\begin{tabular}{r|l|l}
+		\begin{tabular}{lrr}
 		Variable & Description & Equation or Value \\ \hline		
 		$A$ & Mass number & 20 \\ 
 		$Z$ & Atomic number of daughter & 10 \\
@@ -125,7 +124,7 @@ The other important variables are shown in table \ref{tab:vars}
 		$W_{0}$ & Maximum electron energy & $\frac{E_{0}}{m_{e}}$ \\
 		$M_{ave}$ & Average nuclear mass & $\frac{M_{20Ne} + M_{20F} - 19 m_{e}}{2 m_{e}}$ \\
 		$\gamma$ & Special relativity $\gamma$ factor & $\sqrt{1 - (\alpha Z)^{2}}$ 
-		\end{tabular}}
+		\end{tabular}
 	\label{tab:vars}
 \end{table}
 
@@ -377,8 +376,8 @@ The $b_{x}$ coefficients are numbers shown in table \ref{tab:bcoef}
 \begin{table}[!hbt]
 	\centering
 	\caption{Coefficients for finite mass correction}
-		\begin{tabular}{lllllll}
-		         & $b_{1}$ & $b_{2}$ & $b_{3}$ & $b_{4}$ & $b_{5}$ & $b_{6}$ \\
+		\begin{tabular}{lrrrrrr}
+		         & $b_{1}$ & $b_{2}$ & $b_{3}$ & $b_{4}$ & $b_{5}$ & $b_{6}$ \\ \hline
 		$a_{-1}$ & 0.115 & -1.8123 & 8.2498 & -11.223 & -14.854 & 32.086 \\
 		$a_{0}$  & -0.00062 & 0.007165 & 0.01841 & -0.053736 & 1.12691 & -1.5467 \\
 		$a_{1}$  & 0.02482 & -0.05975 & 4.84199 & -15.3374 & 23.9774 & -12.6534 \\
@@ -425,14 +424,13 @@ The form factors are described in table \ref{tab:formfact} \cite{Min11} \cite{Ca
 \begin{table}[!hbt]
 	\centering
 	\caption{Nuclear Form Factors}
-	\resizebox{\textwidth}{!}{
-		\begin{tabular}{lll}
-		Form Factor & Name & Value \\
+		\begin{tabular}{lrr}
+		Form Factor & Name & Value \\ \hline
 		$c_{1h}$ & Fermi matrix element & 0.253  \\
 		$c_{2h}$ & Matrix element momentum transfer factor & 0.755 fm$^{2}$  \\
 		$b_{WM}$ & Weak magnetism & 43.4   \\
 		$d$ & Induced tensor term & 40.5 
-		\end{tabular}}
+		\end{tabular}
 	\label{tab:formfact}
 \end{table}
 

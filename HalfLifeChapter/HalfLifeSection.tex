@@ -37,7 +37,7 @@ As shown in the table, the major conditions were the PVT high voltage, the inhib
 \begin{table}[!hbt]
 	\centering
 	\caption{The PVT runs}
-			\begin{tabularx}{\textwidth}{CCCCCCC}
+			\begin{tabularx}{\textwidth}{LRRRRRR}
 			Set & Beam on Time [s] & Measuring Time [s] & PVT HV [v] & HV Inhibit Installed& Beam intensity [nA] & Runs \\ \hline
 			1 & 1.67 & 30 & -975  & No & 30 & 9 \\		
 			2 & 1.67 & 30 & -975  & No & 93 & 2 \\		
@@ -79,8 +79,8 @@ A sample spectrum of the gamma and beta energies is shown in figure \ref{fig:2DG
 \begin{table}[!htb]
 	\centering
 	\caption{The Cuts for the Gamma Detectors}
-	\begin{tabular}{ccc}
-	Detector & Lower Cut [ADC units] & Upper Cut [ADC units] \\
+	\begin{tabular}{lrr}
+	Detector & Lower Cut [ADC units] & Upper Cut [ADC units] \\ \hline
 	Up & 1350 & 1650 \\
 	Left & 1280 & 1600\\
 	Down & 1440 & 1800 \\
@@ -386,7 +386,8 @@ The results  are shown in  in table \ref{tab:PVTTable}.
 			Up & 11.0195 & 0.0088 \\
 			Left & 10.9944 & 0.0087 \\
 			Down & 10.9980 & 0.0085 \\
-			Right & 10.9987 & 0.0095 \\ \hline
+			Right & 10.9987 & 0.0095 \\ 
+			      &		& 	 \\
 			Mean & 10.9999 & 0.0044
 			\end{tabular}
 			\label{tab:PVTTable}
@@ -400,7 +401,7 @@ The size of the systematic errors investigated are shown in table \ref{tab:SysTa
 	\caption{Systematics}
 	\centering
 	\label{tab:err-budget}
-		\begin{tabular}{l|r|r}
+		\begin{tabular}{lrr}
 		Source & Correction [ms] & Uncertainty [ms] \\ \hline
 		Dead-time & 0.00 & 0.24 \\
 		Oscillator stability & 0.00 & 0.80 \\
@@ -408,7 +409,8 @@ The size of the systematic errors investigated are shown in table \ref{tab:SysTa
 		Lower gamma cut & 0.00 &  0.15\\
 		Upper gamma cut  & 0.00 & 0.05 \\ 
 		Uncorrelated events & 1.47 & 1.47 \\
-		Binning & -0.30 & 0.30 \\ \hline
+		Binning & -0.30 & 0.30 \\
+			&	&	\\
 		Total systematic & 1.17 & 2.89
 		\end{tabular}
 	\label{tab:SysTable}

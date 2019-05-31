@@ -72,7 +72,7 @@ The difference of the two signals divided by the sum was interpreted as a positi
 The location of the PPAC and other detectors are shown in figure \ref{fig:BeamSetUp}.
 
 \begin{figure}
-	\centerline{\includegraphics[width=0.88\textwidth]{ScaleofBeamLine.png}}
+	\centerline{\includegraphics[width=0.88\textwidth]{ScaleOfBeamLine.png}}
 	\caption{A sketch of the location of the detectors upstream of the implant detector.
 		    The detectors are to scale.
 			}
@@ -257,9 +257,9 @@ The voltages of the detectors is shown in table \ref{tab:detvolt}.
 	\centering
 		\begin{tabular}{lr}
 		Detector & Power Supply Setting (V) \\ \hline
-		PVT Implant (Sets 1-4) & -975 \\
-		PVT Implant (Set 5) & -856 \\
-		PVT Implant (Set 6) & -780 \\
+		PVT Implant Setting 1 & -975 \\
+		PVT Implant Setting 2 & -856 \\
+		PVT Implant Setting 3 & -780 \\
 		CsI (Na) Implant & 780 \\ 
 		CsI (Na) Gamma 1 & 930 \\
 		CsI (Na) Gamma 2 & 1000 \\
@@ -300,6 +300,12 @@ The output of these two modules created a signal with one voltage level during t
 This signal was fed into a box.
 The voltage level during the quad scaler's time dephased the cyclotron RF, turning the beam off.
 When the dual timer voltage level occurred, the RF returned to the tuned value, turning the beam on.  
-%ADD FIGURE
-
+A flowchart showing the timing circuit is shown in figure \ref{fig:TimingFig} 
+\begin{figure}
+	\centerline{\includegraphics[width=0.68\textwidth]{BeamOnBeamOffFigure.png}}
+	\caption{The modules used for the timing.
+		 "Desc" stands for descriminators.
+		 }
+	\label{fig:TimingFig}
+\end{figure}
 \end{document}

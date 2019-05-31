@@ -8,14 +8,11 @@ The signals were then inserted into a digital data acquisition system.
 
 \section{Data Acquisition}
 
-All the signals for all the detectors were sent to digitizers.
-These digitizers were three 250 mega-samples per second 16 channel XIA PIXIE modules. 
-They were run with the NSCL firmware.
-The first module had the implant detectors and the four gamma detectors. 
-The second module had five signals from the PPAC and one signal for the Si detector. 
-Both of these had the beam on signal, beam off signal, a 100 Hz pulser, and the signal from the light pulser. 
-The third module only recorded the digitized wave-forms from the PVT detector.
-A list of the three modules and which channel had which detector is seen in table \ref{tab:cablingscheme}.
+All the signals for all the detectors were sent to 16 channel XIA PIXE modules. 
+Each channel had a 250 mega-channel per second digitizer attached.
+The incoming signal was first digitized, and then process by the module. 
+The modules were run with the NSCL firmware.
+A list of the three modules and which channel processed the signals from which detector is seen in table \ref{tab:cablingscheme}.
 %
 \begin{table}[!hbt]
 	\centering
@@ -28,41 +25,37 @@ A list of the three modules and which channel had which detector is seen in tabl
 		0 & 5 & Large CsI(Na) Left \\
 		0 & 6 & Large CsI(Na) Down \\
 		0 & 7 & Large CsI(Na) Right \\
-		0 & 8 & Beam On \\
-		0 & 9 & Beam Off \\
-		0 & 10 & Pulser \\
-		0 & 11 & Light Pulser \\
+		0 & 8 & Beam On Signal \\
+		0 & 9 & Beam Off Signal \\
+		0 & 10 & 100 Hz Pulser \\
+		0 & 11 & PVT Gain Monitoring Pulser \\
 		1 & 0 & PPAC Up \\ 
 		1 & 1 & PPAC Down \\ 
 		1 & 2 & PPAC Left \\ 
 		1 & 3 & PPAC Right \\ 
-		1 & 8 & Beam On \\
-		1 & 9 & Beam Off \\
-		1 & 11 & Pulser \\
-		1 & 11 & Light Pulser \\
+		1 & 8 & Beam On Signal\\
+		1 & 9 & Beam Off Signal\\
+		1 & 11 & 100 Hz Pulser \\
+		1 & 11 & PVT Gain Monitoring Pulser \\
 		2 & 0 & PVT Implant (With Digitized Wave Forms)
 		\end{tabular}	
 		\label{tab:cablingscheme}
 \end{table}
 %
-
-
-Each of the channels on each of those modules outputted a time stamp and an energy calculated from a trapezoidal filter.
-The third module output the digitized waveform over 400 ns.
-The digitizers took samples every 8 ns.
-The clock used was a stable EPSON SGR-8002JC programmable crystal oscillator.
-%Maybe table?
+For module 2 channel 0, the digitized wave-form was recorded over 400 ns.
+The clock used for the digitizers was a stable EPSON SGR-8002JC programmable crystal oscillator.
 The first thing the PIXIE modules did was to digitize the wave forms of the signals.
 The digital wave forms of the signals were only saved for the PVT implant detector.
 The PIXIE modules' software applied a trapezoidal energy filter to the digital wave-forms.
+Each of the channels gave a time stamp and an energy calculated from a trapezoidal filter.
 
 \subsection{Trapezoidal Filter Description}
-The parameters of the trapezoidal filter needed to be set by hand.
+After the parameters of the filter were set, the filter was taken on the digitized detector signals.
 First, three sums of the digitize wave-forms were taken.
 The first sum was over a time known as $tPEAKING$.
 Then, a second sum was taken directly after the first over a time known as $tGAP$.
 Then, a third sum was taken directly after the the second with over a period of $tPEAKING$ again.
-These three sums were added with 
+These three sums were added weight given as  
 
 \begin{equation}
 	E = C_{0} * S_{0} + C_{g} * S_{g} + C_{1} * S_{1} 
@@ -99,7 +92,7 @@ This filter averaged the background before a pulse in $C_{0}$ over $tPEAKING$.
 It took a sample of the pulse, averaged over $tPEAKING$ again in $C_{1}$.
 Then, it subtracted off $C_{0}$ from $C_{1}$, after adjusting for the exponential decay of the pulse.
 The time constant of that decay is the $\tau$ parameter.
-When tuning the PIXIE system, the $\tau$ parameter has the most effect on the output energy.
+When tuning the filter, the $\tau$ parameter had the largest effect.
 
 For this experiment, the various filter parameters are summarized in table \ref{tab:pixieparams}  
 %
@@ -117,7 +110,8 @@ For this experiment, the various filter parameters are summarized in table \ref{
 %
 
 There was also a trigger filter in the PIXIE system.
-The filter was the same, but the times were much shorter, so that the trigger filter could work quicker. 
+The sum in equation \ref{eq:ensum} is the same, but the parameters are shorter.
+The parameters in the trigger filter are half of the parameters in the trigger filter.
 There was a threshold that the output of the trigger filter had to be above in order to be recorded.
 These values are shown in table \ref{tab:trigfilter}
 
@@ -163,7 +157,7 @@ The decay curves were also plotted.
 These were created by histogram the time in the detector minus the time since the last beam on.
 These histograms were used as diagnostics. 
 The program allowed for gates to be drawn.
-
+%Sample spectcl plot?
 
 \section{Data Taking and Processing}
 To take data, the ReadOutGUI program was activated. 
@@ -175,9 +169,9 @@ The events built by Readout had a time interval of 8000 ns.
 Each run generated one or more .evt files. 
 The resulting .evt files of ReadOut were processed using a program called DDAS dumper.
 This converted the .evt files to ROOT files.
-One .evt was dumped to .root file. 
+One .evt was dumped to one .root file. 
 These ROOT files contained a TTree that had the energy and time stamps of each detector.
-The information was saved event by event. 
+The information was saved event by event and sorted by time. 
 It was formatted in a C++ class called DDASEvent. 
 This event class contained data for each channel from the data acquisition.
 The energy was given out in ADC units and was not calibrated.
@@ -187,7 +181,7 @@ The digitized wave forms were also saved in this event.
 
 From the ROOT files from the ddasdumper, another ROOT file was built.
 All the ROOT files from one run was built into one new ROOT file. 
-These files were processed with a modified version of a program called $scan$.
+These files were processed with a modified version of a program called scan.
 The original version was written by Stan Paulauskas.
 The TTree was looped over event by event.
 For each event, each channel was looped over. 

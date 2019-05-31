@@ -2,7 +2,7 @@
 
 \begin{document}
 A digitial data acquisition (DAQ) system was used to record the data for this experiment.
-In order to tune the 
+To configure the DAQ, the detector signals were looked at using an oscilloscope.
 The timing of each detector signal was recorded and used to tune the data acquisition. 
 The signals were then inserted into a digital data acquisition system.
 
@@ -10,17 +10,48 @@ The signals were then inserted into a digital data acquisition system.
 
 All the signals for all the detectors were sent to digitizers.
 These digitizers were three 250 mega-samples per second 16 channel XIA PIXIE modules. 
-They were run with the digital NSCL system.
+They were run with the NSCL firmware.
 The first module had the implant detectors and the four gamma detectors. 
 The second module had five signals from the PPAC and one signal for the Si detector. 
-Both of these had the beam on signal, beam off signal, a 100 Hz pulser, and the signal from the PIN photo-diode. 
+Both of these had the beam on signal, beam off signal, a 100 Hz pulser, and the signal from the light pulser. 
 The third module only recorded the digitized wave-forms from the PVT detector.
+A list of the three modules and which channel had which detector is seen in table \ref{tab:cablingscheme}.
+%
+\begin{table}[!hbt]
+	\centering
+	\caption{DAQ Cabling Scheme}
+		\begin{tabular}{llr}
+		Module & Channel & Detector \\ \hline
+		0 & 0 & PVT Implant \\
+		0 & 1 & CsI(Na) Implant \\
+		0 & 4 & Large CsI(Na) Up \\
+		0 & 5 & Large CsI(Na) Left \\
+		0 & 6 & Large CsI(Na) Down \\
+		0 & 7 & Large CsI(Na) Right \\
+		0 & 8 & Beam On \\
+		0 & 9 & Beam Off \\
+		0 & 10 & Pulser \\
+		0 & 11 & Light Pulser \\
+		1 & 0 & PPAC Up \\ 
+		1 & 1 & PPAC Down \\ 
+		1 & 2 & PPAC Left \\ 
+		1 & 3 & PPAC Right \\ 
+		1 & 8 & Beam On \\
+		1 & 9 & Beam Off \\
+		1 & 11 & Pulser \\
+		1 & 11 & Light Pulser \\
+		2 & 0 & PVT Implant (With Digitized Wave Forms)
+		\end{tabular}	
+		\label{tab:cablingscheme}
+\end{table}
+%
+
 
 Each of the channels on each of those modules outputted a time stamp and an energy calculated from a trapezoidal filter.
 The third module output the digitized waveform over 400 ns.
 The digitizers took samples every 8 ns.
 The clock used was a stable EPSON SGR-8002JC programmable crystal oscillator.
-
+%Maybe table?
 The first thing the PIXIE modules did was to digitize the wave forms of the signals.
 The digital wave forms of the signals were only saved for the PVT implant detector.
 The PIXIE modules' software applied a trapezoidal energy filter to the digital wave-forms.

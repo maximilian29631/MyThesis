@@ -38,17 +38,17 @@ I.~{Angeli} and K.~P. {Marinova}.
 \newblock {Table of experimental nuclear ground state charge radii: An update}.
 \newblock {\em Atomic Data and Nuclear Data Tables}, 99:69--95, January 2013.
 
-\bibitem{Bya56}
-William~J. Byatt.
-\newblock Analytical representation of hartree potentials and electron
-  scattering.
-\newblock {\em Phys. Rev.}, 104:1298--1300, Dec 1956.
-
 \bibitem{Buh84}
 Wolfgang Bühring.
 \newblock The screening correction to the fermi function of nuclear
   $\beta$-decay and its model dependence.
 \newblock {\em Nuclear Physics A}, 430(1):1 -- 20, 1984.
+
+\bibitem{Bya56}
+William~J. Byatt.
+\newblock Analytical representation of hartree potentials and electron
+  scattering.
+\newblock {\em Phys. Rev.}, 104:1298--1300, Dec 1956.
 
 \bibitem{Cal77}
 Frank~P. Calaprice, W.~Chung, and B.~H. Wildenthal.
@@ -92,7 +92,8 @@ S.~S. Glickstein and R.~G. Winter.
 
 \bibitem{Gon19}
 M.~González-Alonso, O.~Naviliat-Cuncic, and N.~Severijns.
-\newblock New physics searches in nuclear and neutron β decay.
+\newblock New physics searches in nuclear and neutron $\ensuremath{\beta}$
+  decay.
 \newblock {\em Progress in Particle and Nuclear Physics}, 104:165 -- 223, 2019.
 
 \bibitem{Har17}

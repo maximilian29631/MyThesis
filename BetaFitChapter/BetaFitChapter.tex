@@ -40,7 +40,6 @@ The convolution function was
 	\sigma = A\sqrt{E}
 	\label{eq:convo}
 \end{equation}
-
 where $\sigma$ was the energy resolution, $E$ the energy, and $A$ a constant found through a calibration.
 This was done by looping through each of the histograms bin by bin and reading the number of counts in each bin.
 For each bin a Gaussian function was built.
@@ -67,7 +66,6 @@ From the centroids, the calibration for each detector was calculated with
 	C = G * E + b
 	\label{eq:cal}
 \end{equation}
-
 where $C$ is the location of the peak in ADC channels, $G$ the gain in channels/keV, and b the offset in channels.
 This calibration curve was only used for the resolution determination.
 The widths of the peaks were calibrated with the gain and plotted vs energy.
@@ -140,7 +138,6 @@ The fit function was
 	H(E) = A * (( 1 + C_{0}) f(E) + C_{1}g(E) + C_{2} h(E) + (C_{-1} + b_{gt} m_{e}) j(E)) + B * pu(E)
 	\label{eq:betafit}
 \end{equation}
-    
 where $A$ is the normalization, $B$ the level of pile-up, $pu(E)$ is the generated pileup spectrum, $E$ the kinetic energy of the electron, the $C$s are the piece of the shape factor as defined in equation \ref{eq:shapefactor},  $b_{gt}$ is the Fierz term, $m_{e}$ the electron mass, and $f(E),g(E),h(E),$ and $j(E)$ the different simulation results as shown in table \ref{tab:4histfit}.
 In order to change the units of the x-axis in the data to energy in keV, a calibration was needed.
 For this calibration, the offset was fixed in the fit function.
@@ -168,7 +165,6 @@ This function was
 	H(E) = A * f(E) * S(E)
 	\label{eq:hybridmodel}
 \end{equation}
-
 with $A$ being a normalization constant, $f(E)$ being the simulation with the detector resolution applied, and $S(E)$ the shape factor. 
 This method of fitting is not completely correct, as the $E$ in $f(E)$ is not the same as the initial energy in the shape factor $S(E)$. 
 
@@ -270,7 +266,7 @@ The lower beta cut effect is the systematic shift of both the $b_{wm}$ and $b_{g
 There are several different inputs that can induce such an effect.
 
 \subsubsection{The Offset}
-Initially, the offset used was the offset from the calibration  in equation \label{eq:cal}.
+Initially, the offset used was the offset from the calibration  in equation \ref{eq:cal}.
 The offset used was 10.05 ADC units.
 This calibration was determined using photons instead of electrons.
 %Electrons generate 2\% less light than photons \cite{REFHERE} % maybe knoll?

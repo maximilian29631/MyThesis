@@ -1,18 +1,18 @@
 \documentclass[../MaxHughesThesis.tex]{subfiles}
 
 \begin{document}
-After the half-life measurement was completed, the next step was to use the shape of the spectrum to deduce Fierz term. 
-In order to get a measurement of the Fierz term, the spectrum shape needed to be carefully described.
-In addition to all the theoretical corrections, the effect of bremsstrahlung and the efficiency of the detectors needed to be accounted for.
-This is important to account for effect of the gamma ray after the filtering.
+After the half-life measurement was completed, the next step was to fit the energy spectrum for the Fierz term. 
+The corrections to the phase space were the first part of describing the energy spectrum.  
+The effect of bremsstrahlung and the efficiency of the detectors needed to be accounted for.
+The absorption of the 1.6 MeV gamma ray needed to be accounted for. 
 The way this was done was with a GEANT4 simulation \cite{Ago03}.
 The most updated copy of the code can be found at https://github.com/maximilian29631/Geant4for20F/.
 
 
 \section{GEANT4 Monte Carlo}
-The corrected beta energy spectrum was fed as input to a Monte Carlo.
+The phase space energy spectrum multiplied by the corrections was fed as input to a Monte Carlo.
 The program used to model the detectors was GEANT4 version 10.04.02.
-In order to use the program, a model of the detector set-up and the initial energies of the primary particles need to be introduced.  
+In order to use the program,the detector geometries where needed.
 
 \subsection{Detector Geometry}
 A source of the detector geometry were the technical drawings of detectors. 
@@ -25,9 +25,9 @@ This drawing was the basis of the detector geometry fed into the simulation.
 	\label{fig:ImplantTech}
 \end{figure}
 
-The geometry of the detector set-up was programmed into the simulation.
+The geometry of the detectors was programmed into the simulation.
 The implant detector was modeled as a square prism of CsI.
-The square prism was 101.6 cm deep with a 5.4 cm square base.
+The square prism was 54 x 54 x 101.6 mm.
 Around the square prism there was an empty layer.
 Along the sides, the empty layer was 1.5 mm thick.
 On the front and back of the detector, the empty layer was 3.64 mm thick.
@@ -35,7 +35,7 @@ After the empty layer, a 1 mm aluminum can surrounded the detector on all sides.
 The center of this detector was placed at the center of the simulation.
 
 The four large gamma detectors also square prisms.
-The active volume was 79.5 mm by 79.5 mm by 76.2 mm.
+The active volume was 79.5 x 79.5 x 76.2 mm.
 It was also made of CsI.
 An empty layer was also added to the gamma detectors.
 The empty layer on the sides was also 1.5 mm thick, just like the implant detector.
@@ -59,14 +59,14 @@ The next step was to define a region inside the implant detector.
 This region was where the gamma and beta particles originated from.
 The depth of the region was calculated using LISE++, a ion optics code.
 The vertical and horizontal size of the region was calculated by using the PPAC measurement and an ion optics simulation.
-This size was 0.4 mm deep, 3.5 mm wide, and 3.6 mm tall.
-The source was implanted 1.156 cm into the detector.
+This size was 0.4 x 3.5 x 3.6 mm.
+The source was implanted 11.56 mm into the detector.
 This measures from the front edge of the detector including the dead layer.
 
 \subsection{Primary Particle Definitions}
 There were three primary particles generated.
 Two were photons and one was an electron.
-All three particles had an isotropic angular distribution, and would propagate in different directions.
+All three particles had an isotropic angular distribution.
 
 The first particle was an electron. 
 This selected the point in the source region.
@@ -74,11 +74,10 @@ In order to generate the correct energy for this electron, the following process
 First, all the corrections described in chapter \ref{ch:theory} were multiplied with equation \ref{eq:phase_space}.
 This resulting function was evaluated at 1024 evenly space points from 8 keV to the end point energy.
 This list of 1024 points was fed into GEANT4 as a histogram, as GEANT4 can only take a histogram of up to 1024 bins. 
-Linear interpolation was used to make this histogram back into a smooth function.
-This is not exactly a histogram of the beta energy spectrum.
-The original function was fit to the generated beta energies, and no distortions were generated using this procedure.
+Linear interpolation was used to sample this histogram.
+The interpolation was tested and was found to reproduce the beta spectrum.
 
-The next photon was the 1.6336 MeV photon from the $^{20}$F decay.
+The next particle was the 1.6336 MeV photon from the $^{20}$F decay.
 This initial photon is monochromatic and isotropic.
 The photon was generated from the same vertex as where the electron was generated.
 
@@ -107,7 +106,7 @@ During or after each step, different physics processes are carried out.
 The physics process may create secondary particles.
 If these secondary particles cannot make it the length of the range cut, they will not be created.
 These cuts can be set differently for different particles.
-For this experiment, the range cut corresponds to about 15 keV in aluminum.
+The range cuts correspond to a threshold of 15 keV in aluminum.
 These steps happen until the primary particle runs out of energy.
 
 \section{MC Output}
@@ -121,7 +120,8 @@ Then, the process was repeated.
 A new location inside the region was generated and another decay generated.
 
 For the fit, four different simulations had to be run.
-Each of them needed $1.4 * 10^{10}$ events. 
+Each of them needed $1.4 * 10^{10}$ events in order to have 100 times the total in the data.
+To test the systematic effects, only $2 * 10^{9}$ events were run.
 In order to decrease the time it took to run, the range cuts on the gamma rays were changed.
 The range cuts were changed from 5 $\mu$m to 5 mm for all gamma rays.
 The range cuts for other particles stayed at 5 $\mu$m.
@@ -137,20 +137,20 @@ The two different categories of energy absorbed in the implant detector were bui
 One histogram had a condition that the energy absorbed by the initial gamma ray had to be zero.
 This histogram was the energy absorbed without any summing.
 The second histogram was the energy absorbed where there was a contribution from the gamma ray in the implant detector.
-This histogram was known as the energy absorbed with summing.
+This histogram was known as the beta-gamma sum spectrum.
 These two histograms can be seen in figure \ref{fig:GEANT4Hists}.
 
 \begin{figure}[!htb]
 	\centerline{\includegraphics[width=0.78\textwidth]{GEANT4OutputBetter.png}}
 	\caption{The shapes of the different histograms from the output of the GEANT4 simulation.
 		 The input beta spectrum is also plotted.
-		 The histograms are put to the same scale.}
+		 The histograms are scaled to the same maximum.}
 	\label{fig:GEANT4Hists}
 \end{figure}
 
 These two histograms were built for each of the four different inputs that were needed for the proper shape fit. 
 This structure was informed by testing the fit method.
-The details of the fit of the beta energy spectrum shape is in the next chapter. 
+The details of the fit of the beta spectrum shape is in the next chapter. 
 
 \section{Simulation Development}
 The GEANT4 simulation is based on the example TestEm5.
@@ -179,20 +179,21 @@ Initially, the corrected phase space without the shape factor was fed into the G
 Then, during the fitting, the shape factor multiplied the output. 
 This was found not to be correct, so four simulations were needed.
 The simulations were the phase space times the pieces of the shape factor.
-This was an issue, as the first version of the code took a week to run 2e9 events.
+The first version of the code took a week to run $2 * 10^{9}$ events.
+This was an issue if four simulations would be needed.
 To speed up the code, the code was modified to use GEANT4 MPI parallelization.
 The code was then run on the fireside cluster at the NSCL.
-After modification, it only took 6 hours to run 2e9 events.
+After modification, it only took 6 hours to run $2 * 10^{9}$ events.
 
 \subsection{Detector Geometry Changes}
 The detector geometry itself was adjusted several times.
 Initially, the implant detector was just left as a CsI crystal without any dead layer or cans.
-This crystal was 50 mm by 50 mm by 97.6 mm.
+This crystal was 50 x 50 x 97.6 mm.
 This size was given from the group that uses the detectors for $\gamma$ spectroscopy.
-The four gamma detectors initially had CsI crystals that were 75.5 mm by 75.5 mm by 72.2 mm in size.
+The four gamma detectors initially had CsI crystals that were 75.5 x 75.5 x 72.2 mm in size.
 These crystals were surrounded by 2 mm of vacuum, which was supposed to model a dead layer.
 After the dead layer, the crystal was surrounded by 1.5 mm of MgO on the sides.
-The two sides along the short dimension was left open.
+The two sides ends of the crystal the short dimension was left open.
 A 1 mm Al can surrounded the crystal, and was also open on the sides.
 Both the can and the MgO layer were offset.
 
@@ -218,11 +219,11 @@ To reduce this space requirement, first only events were any gamma detector had 
 This cut down the space required by 1/3 to 20 GB.
 This was not enough, however, as each fit needed four histograms.
 A requirement that only one detector fired in order to get the event recorded in the TTree was imposed. 
-This cut down the space to 16 GB for 2e9 events.
-As the final simulation needed 1.4e10 events, this still was not enough.
-However, this last configuration was used to calcuated most of the systematic effects.
+This cut down the space to 16 GB for $2 * 10^{9}$ events.
+As the final simulation needed $1.4 * 10^{10}$ events, this still was not enough.
+The lesser amount of events was used to test the fit method and calculate systematic effects.
 
-Since there is a requirement for only one gamma detector to fire, the gamma-beta coincidences are indepedent detector to detector.
+Since there is a requirement for only one gamma detector to absorb energy, the gamma-beta coincidences are independent detector to detector.
 To save space, it is then possible to build 2-D histograms for each of the four gamma detectors.
 The energy of the gamma ray was plotted on the x-axis, and the energy absorbed in the implant detector on the y-axis. 
 For each detector, two of these histograms were built.

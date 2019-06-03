@@ -243,7 +243,7 @@ The calibrated start and end of the fits were 250 keV to 7500 keV.
 A sample fit is shown in figure \ref{fig:samplefit}, where the offset was fixed to 0.
 
 \begin{figure}[!htb]
-	\centerline{\includegraphics[width=0.78\textwidth]{CsIRun317FierzTermResids.png}}
+	\centerline{\includegraphics[width=0.70\textwidth]{CsIRun317FierzTermResids.png}}
 	\caption{A sample fit of the beta spectrum. 
 		 The residuals of the fit are shown below the graph}
 	\label{fig:samplefit}
@@ -298,7 +298,7 @@ Then, the fit function had a different offset applied to it.
 For example, fitting the histogram generated with an offset of 10, and fit with an offset of 20 gives an effect as seen in \ref{fig:MCoffset10applied20}.
 
 \begin{figure}
-	\centerline{\includegraphics[width=0.9\textwidth]{MCLBCvbwmOffsetis10Applied20.png}}
+	\centerline{\includegraphics[width=0.7\textwidth]{MCLBCvbwmOffsetis10Applied20.png}}
 	\caption{The effect of the lower beta cut in a simulation when the applied offset is 10 units higher than the real offset.}
 	\label{fig:MCoffset10applied20}
 \end{figure}
@@ -306,7 +306,14 @@ For example, fitting the histogram generated with an offset of 10, and fit with 
 This effect can be exploited to determine an offset using only the data. 
 The size of the slope induced is linear compared to the offset. %Add figure here
 By adjusting the offset and noting the slope of the $b_{WM}$ vs the lower beta cut and plotting against the offset, the location of zero slope can be calculated.
-This was done, and the result is seen in figure \ref{fig:offset0LBCeffect}.
+This graph is shown in figure \ref{fig:slopevoffset}.
+\begin{figure}[!htb]
+	\centerline{\includegraphics[width=0.70\textwidth]{fig_offsetvslopecurve.pdf}}
+	\caption{How the slope of the $b_{WM}$ v LBC curve changes with offset.
+		 A slope of 0 corresponds to an offset of -0.87}
+	\label{fig:slopevoffset}
+\end{figure}
+The resulting $b_{WM}$ and $b_{GT}$ curves are seen in figure \ref{fig:offset0LBCeffect}.
 
 \begin{figure}
     \centering

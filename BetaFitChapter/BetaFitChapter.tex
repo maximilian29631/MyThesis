@@ -1,34 +1,40 @@
 \documentclass[../MaxHughesThesis.tex]{subfiles}
 
 \begin{document}
-With the pieces in place, the fitting of the data beta spectrum can take place.
-The output of the GEANT4 simulation was used for this fitting.  
+The output of the GEANT4 simulations was used to fit the beta spectrum for $b_{GT}$.
+The simulations had to be processed further first.  
 
 \section{Fitting Method}
-Four GEANT4 simulations were needed for the fit.
-The simulations differed by what was given as the input spectrum for the electrons.
+Four GEANT4 simulations were used for the fit.
+The phase space, corrections, shape factor, and Fierz term can be written as
+\begin{equation}
+	\frac{dN}{dE}= PS(E) * C(E) (1 + c_{0} + c_{1} E + c_{2} E^{2} + \frac{c_{-1}}{E}) * (1 + b_{GT}\frac{m_{e}}{E})
+	\label{eq:betaspecwshape}
+\end{equation}
+with $PS(E)$ being the phase space, $C(E)$ the corrections, the $c_{i}$ the terms of the shape factor, and $E$ the total electron energy. 
+The $PS(E)*C(E)$ can be distributed to the shape factor, and four terms appear.
+Since the $c_{i}$ and $b_{GT}$ are small, $b_{GT}*m_{e}$ can be, to first order, added to $c_{-1}$. 
+These four terms are the inputs to the GEANT4 simulation.
 These are summarized in table \ref{tab:4histfit}
 
 \begin{table}[!hbt]
 	\centering
 	\caption{The four histograms used for the fit}
 		\begin{tabular}{lrr}
-		Name & Formula & Normalization (in keV) \\ \hline
-		f(E) & PS(E) * Corrections & 1 \\
-		g(E) & PS(E) * E * Corrections & 3.35e-4 \\
-		h(E) & PS(E)  * E * E * Corrections & 9.89e-8 \\
-		j(E) & PS(E)/E * Corrections & 2494 
+		Name & Formula & Normalization (when $E$ is in keV) \\ \hline
+		$f(E)$ & $PS(E) * C(E)$ & 1 \\
+		$g(E)$ & $PS(E) * E * C(E)$ & 3.35e-4 \\
+		$h(E)$ &  $PS(E)  * E * E * C(E)$ & 9.89e-8 \\
+		$j(E)$ &  $PS(E)/E * C(E)$ & 2494 
 		\end{tabular}
 		\label{tab:4histfit}
 \end{table}
 
-The $E$ is the total electron energy in this case.
-These pieces came from the nuclear shape factor and the Fierz term. 
-The normalization is relative to f(E) before each piece was fed into GEANT4. 
-Each of these pieces was generated with the same number of events in GEANT4.
-Each of them was filtered as described in the previous chapter.
-However, the simulations needed further processing before being used in the fit function. 
-The first was applying the detector resolution
+Each of these pieces was generated with the same number of events.
+Due to the different shapes of the spectra, a relative normalization was required.
+The normalization was determined by taking the ratio of each the input spectrum of each piece compared to $f(E)$ and fitting it with the relevant power of $E$. 
+Each of them was filtered with respect to the energy absorbed in the gamma detectors as described in the previous chapter.
+Then, the detector resolution was applied to each piece.
 
 \subsection{Detector Resolution}
 \label{sec:convolution}
@@ -40,15 +46,15 @@ The convolution function was
 	\sigma = A\sqrt{E}
 	\label{eq:convo}
 \end{equation}
-where $\sigma$ was the energy resolution, $E$ the energy, and $A$ a constant found through a calibration.
-This was done by looping through each of the histograms bin by bin and reading the number of counts in each bin.
-For each bin a Gaussian function was built.
-The centroid of the Gaussian was the center of each bin in keV.
+where $\sigma$ was the energy resolution and $A$ a constant found through a calibration.
+This was done by looping through each of the histograms' bins and reading the number of counts in each.
+Then, a Gaussian distribution was built for each bin.
+The center of the Gaussian was the center of each bin in keV.
 The $\sigma$ of the Gaussian was calculated by using equation \ref{eq:convo}.
-This Gaussian function was sampled as many times as there were counts in the bin.
+This Gaussian distribution was sampled as many times as there were counts in the bin.
 These samples were filled into a new histogram.
-This was repeated bin by bin until all bins were distributed.
-This was done separately for the beta-only spectrum and the beta-gamma sum spectrum. 
+This was repeated until all bins were distributed.
+This was done separately for each spectrum. 
 
 \subsubsection{Determining Detector Resolution}
 In order to properly fit the energy spectrum, a calibration of the CsI(Na) detector had to be done.
@@ -59,7 +65,7 @@ These gamma rays were fitting with a Gaussian and a background.
 The background varied from no background, a linear background, a quadratic background, and an error function background.
 For the $^{60}$Co, both peaks were fit at once.
 These different background gave slightly different results for the centroids and the widths of the Gaussian.
-The different widths and centroids were taken as a systematic error.
+The range of the centroids and widths was taken as a systematic error.
 From the centroids, the calibration for each detector was calculated with 
 
 \begin{equation}
@@ -74,19 +80,18 @@ The value of $A$ used for this procedure was 1.112 with an uncertainty of 0.008.
 
 After applying the detector resolution, the pile-up in the detector had to be modeled.
 
-\subsubsection{Pile-up Modeling}
-Modeling the pile-up was important for the fit. 
+\subsection{Pile-up Modeling}
 In order to model the pile-up properly, a model of the detector pulses was needed. 
 For the CsI(Na) signals, a linear rise and then an exponential decay was used.
 The linear part went from 0 to 1 over 100 ns. 
-The exponential piece started at 100 ns at 1 and decayed with a $\tau$ of 760 ns.
+The exponential piece started at 100 ns at 1 and decayed with a decay constant of 760 ns.
 This analytic equation was scaled up or down to whatever energy was sampled.
 It was then fed into a model of trapezoidal filter of PIXIE. 
-The math was the same as described in the chapter on data acquisition.
+The sums shown in equation \ref{eq:ensum} were done and the energy calculated.
 
 This model was tuned on calibration data. 
-A run was taken of $^{137}$Cs at 25000 counts per second.
-A 2000 counts per second $^{137}$Cs run was used as a background and subtracted off.
+A spectrum was taken of $^{137}$Cs at 25000 counts per second.
+A  $^{137}$Cs spectrum taken at 2000 counts per second was used as a background and subtracted off.
 Then, samples of the background-subtracted spectrum were taken up to the end of the 661 keV peak.
 Monte Carlo methods were used to model the time difference between two samples.
 If the two samples fell within the pile-up window, then the piled-up signal models were fed into the trapezoidal filter.
@@ -103,7 +108,6 @@ The results of the tuning is seen in figure \ref{fig:pileuptune}
 		 The generated spectrum is in red.}
 	\label{fig:pileuptune}
 \end{figure}
-
 For the pile-up model, the resulting times are shown in table \ref{tab:tunepileupmodel}.
 In addition, the parameters of the actual energy for the CsI(Na) implant detector are shown.
 
@@ -118,13 +122,13 @@ In addition, the parameters of the actual energy for the CsI(Na) implant detecto
 		\end{tabular}
 		\label{tab:tunepileupmodel}
 \end{table}
-
 The $\tau$ value in the pile-up tuning is very similar to that of the energy filter.
 The other parameters are roughly double in the pile-up model compared to that in the PIXIE energy filter.
 
 The pile-up model was applied to the simulation after the detector convolution was applied. 
-Of the four different simulations needed for a fit, only the one with the phase space times corrections was fed into the pile-up model.
-Due to the nuclear shape factor, applying the pile-up to the other terms would be a correction to a correction. 
+Of the four different simulations needed for a fit, only $f(E)$ was fed into the pile-up model.
+The amount of pile-up is small. 
+Applying the pile-up to the other terms of the shape factor gives a negligible contribution.
 The beta only spectrum and the beta-gamma sum spectrum of this simulation was added together and fed through the pile-up model.
 With all the pieces in place, the fit function can be described. 
 
@@ -135,10 +139,10 @@ The five splines were fed into a fit function.
 The fit function was
 
 \begin{equation}
-	H(E) = A * (( 1 + C_{0}) f(E) + C_{1}g(E) + C_{2} h(E) + (C_{-1} + b_{GT} m_{e}) j(E)) + B * pu(E)
+	H(E) = A * (( 1 + c_{0}) f(E) + c_{1}g(E) + c_{2} h(E) + (c_{-1} + b_{GT} m_{e}) j(E)) + B * pu(E)
 	\label{eq:betafit}
 \end{equation}
-where $A$ is the normalization, $B$ the level of pile-up, $pu(E)$ is the generated pileup spectrum, $E$ the kinetic energy of the electron, the $C$s are the piece of the shape factor as defined in equation \ref{eq:shapefactor},  $b_{GT}$ is the Fierz term, $m_{e}$ the electron mass, and $f(E),g(E),h(E),$ and $j(E)$ the different simulation results as shown in table \ref{tab:4histfit}.
+where $A$ is the normalization, $B$ the level of pile-up, $pu(E)$ is the generated pileup spectrum, , and $f(E),g(E),h(E),$ and $j(E)$ the different simulation results as shown in table \ref{tab:4histfit} after the convolution was applied.
 In order to change the units of the x-axis in the data to energy in keV, a calibration was needed.
 For this calibration, the offset was fixed in the fit function.
 However, the gain of the calibration was left as a free parameter.
@@ -153,7 +157,6 @@ $A$, $B$, the gain, and either $b_{WM}$ or $b_{GT}$.
 
 In order to benchmark this fitting method, pseudo-data was generated and fit.
 
-
 \subsection{Fit Method Characterization}
 Different methods of the fit function were tested. 
 The first is the so-called "hybrid method", where only one simulation is needed.
@@ -162,10 +165,10 @@ Then, it is multiplied by the shape factor.
 This function was 
 
 \begin{equation}
-	H(E) = A * f(E) * S(E)
+	H(E) = A * f(E) * S(E) + B*pu(E)
 	\label{eq:hybridmodel}
 \end{equation}
-with $A$ being a normalization constant, $f(E)$ being the simulation with the detector resolution applied, and $S(E)$ the shape factor. 
+with $A$ being a normalization constant and $S(E)$ the shape factor. 
 This method of fitting is not completely correct, as the $E$ in $f(E)$ is not the same as the initial energy in the shape factor $S(E)$. 
 
 The first test was done just with a linear term in the psuedo-data.
@@ -175,12 +178,11 @@ Initially, the shape factor was applied to total energy inside the implant detec
 This was found to induce a shift of the measured linear term.
 Applying the shape factor only to the beta only part of the spectrum solved this issue. 
 
-To further test this method, simulated data was used. 
-One had had the nuclear shape factor with $b_{WM} = 43.4$.  
+To further test the fitting method, two more spectra were generated.
+One had had the nuclear shape factor with $b_{WM} = 43.4$, which was the new pseudo-data spectrum.  
 The other had no shape factor.
 After applying the coincidence condition to both of these simulations, the function with no shape factor was used to fit the function with the shape factor. 
 The gain in these fits was left as a free parameter, and the offset was fixed to a value of 0. 
-The spectrum with the shape factor became the pseudo-data spectrum.
 To manually check the statistical uncertainty, the pseudo-data spectrum was fluctuated.
 Each bin had its content and error read. 
 That bin error and content was used to build a Gaussian random number distribution.
@@ -205,16 +207,14 @@ More pseudo-data was generated, along with four histograms to be used for fittin
 This was largely done to get a handle of the normalization of the histograms.
 The normalization was obtained by taking the ratios of the histograms and fitting them with the functional forms. 
 After the normalization, the fit was done.
-The output $b_{GT}$ and $b_{WM}$ obtained was the one put in.
+The output $b_{GT}$ and $b_{WM}$ obtained of the pseudo-data was the one put in.
 
 \section{Experimental Data Processing}
 After the fitting method was tested and verified, the data was ready to be fit 
 For the fit, the experimental data had to be processed as well. 
-The data was put in coincidence much like in the half-life measurement.
 The energy spectrum of the implant detector was put in coincidence with the 4 gamma detectors.
-The energy cuts of the gamma detectors were the same as in the life-time measurement.
-An additional condition was that only one of the gamma detectors could have fired for each event.
-This conditions was mirrored in the GEANT4 as well.
+The energy cuts of the gamma detectors were the same as in the life-time measurement, as seen in table \ref{tab:GammaCuts}.
+An additional condition was that only one of the gamma detectors could have fired for each event, much like the processing for the GEANT4 events.
 
 An additional condition in the data was a time difference condition.
 For this measurement, the time difference between a beta event and a gamma event had to be between -300 and 24 ns.
@@ -222,8 +222,7 @@ This captures the entire spectrum, as the time stamps show a large energy depend
 Then, a 2-D histogram was built, with energy on one axis and time since last beam on on there other.
 The decay cycles were 22 seconds long for the CsI(Na) implant data. 
 The decay cycles were split up into 3 segments with equal number of counts.
-To do this, it was assumed that the rate depended on the time as an exponential.
-This exponential had a half-life of 11 seconds.
+To do this, it was assumed that the rate depended on the time as an exponential with a half-life of 11 seconds.
 The time interval was split in such a way that the integral of the exponential was equal over 3 different segments.
 The total time interval was from 1.5 to 22 seconds.
 These splits worked out to be at 5.89 s and at 11.98 seconds. 
@@ -250,27 +249,26 @@ A sample fit is shown in figure \ref{fig:samplefit}, where the offset was fixed 
 	\label{fig:samplefit}
 \end{figure}
 
-\section{Systematic effects}
+\section{Systematic Uncertainties}
 
 After testing the fit and fitting the data, the systematic effects were investigated.
-The systematic effect can be divided into three categories.
-The first set are the systematic effects that have to do with the inputs to the simulation.
+The systematic uncertainties can be divided into three categories.
+The first set are the uncertainties that have to do with the inputs to the simulation.
 The second set has to do with the inputs to the fit.
-The final set has to do with the uncertainties in the shape factor. 
-One systematic effect, however, merits discussion on it's own.
-That is the largest systematic effect, which deals with where the fit was started.
+The final set has to do with the uncertainties of the nuclear form factors in the shape factor. 
+One of the largest systematic uncertainty has to do with the were the fit is started. 
 
 \subsection{Lower Beta Cut Effect}
 
 The lower beta cut effect is the systematic shift of both the $b_{WM}$ and $b_{GT}$ as a function of where the fit started.
-There are several different inputs that can induce such an effect.
+There are several different input factors that can induce such an effect.
 
 \subsubsection{The Offset}
-Initially, the offset used was the offset from the calibration  in equation \ref{eq:cal}.
+Initially, the offset used was the offset from the calibration in equation \ref{eq:cal}.
 The offset used was 10.05 ADC units.
 This calibration was determined using photons instead of electrons.
 %Electrons generate 2\% less light than photons \cite{REFHERE} % maybe knoll?
-This means that the offset found from this fit is suspect to apply to our electron shape measurement.
+It also doesn't probe the same location as where the beta electrons are.
 
 When applying an offset of 10.05 in a fit of the data, it was found that the output varied greatly as a function of where the fit was started.
 For these graphs, the end of the fit (or upper beta cut) was set to 7500 keV.
@@ -287,7 +285,7 @@ The effect in $b_{WM}$ and $b_{GT}$ is shown in figure \ref{fig:offset10LBCeffec
     \begin{minipage}{0.50\textwidth}
         \centerline{\includegraphics[width=0.9\textwidth]{CsILBCvbgtOffsetis10p054histfit.png}}
     \end{minipage}
-    \caption{The depedence of the parameters to the start of the fit.
+    \caption{The dependence of the parameters to the start of the fit.
 	     The offset here is 10.05.}
     \label{fig:offset10LBCeffect}
 \end{figure}
@@ -306,7 +304,7 @@ For example, fitting the histogram generated with an offset of 10, and fit with 
 \end{figure}
 
 This effect can be exploited to determine an offset using only the data. 
-The size of the slope induced is linear compared to the offset.
+The size of the slope induced is linear compared to the offset. %Add figure here
 By adjusting the offset and noting the slope of the $b_{WM}$ vs the lower beta cut and plotting against the offset, the location of zero slope can be calculated.
 This was done, and the result is seen in figure \ref{fig:offset0LBCeffect}.
 
@@ -324,15 +322,13 @@ This was done, and the result is seen in figure \ref{fig:offset0LBCeffect}.
     \label{fig:offset0LBCeffect}
 \end{figure}
 
-
-Doing this procedure gives an offset that depends on the input geometry of the GEANT4 simulation.
-As seen in figure \ref{fig:offset0LBCeffect}, the $b_{GT}$ still depends greatly on where the fit starts.
-Other effects are important. 
-Using this effect to tune the offset still gives an uncertainty. 
-To estimate this uncertainty, the statistical uncertainty of the slope of the lines fit to the $b_{GT}$  was taken.
+To estimate the uncertainty on the offset, the statistical uncertainty of the slope of the lines fit to the $b_{GT}$  was taken.
 The offset was varied and how the slope of the line changed as the offset changed was recorded.
 Then, the uncertainty of the slope was changed into an uncertainty on the offset using this information.
 This gave an uncertainty of 0.8 on the offset.
+As seen in figure \ref{fig:offset0LBCeffect}, the $b_{GT}$ still depends greatly on where the fit starts.
+Other effects are important. 
+
 
 \subsubsection{The Relative Normalization of the Beta-gamma Sum Spectrum}
 
@@ -355,11 +351,11 @@ This is seen in figure \ref{fig:MCTimes5}.
     \label{fig:MCTimes5}
 \end{figure}
 
-This is odd, as the fit function and the pseudo-data function have the same values.
+Here both the pseudo-data and the fitting functions had their background multiplied by five. 
 The input values of the $b_{WM}$ and $b_{GT}$ can be recovered by this fit.
 However, to do this, the offset in the fit function is set to 8.6 ADC units.
 The sum spectra in each of the 4 histograms is increased to 3.8 times that of output of the Monte Carlo.
-These two parameters are unphysical.
+These two parameters are not the input parameters.
 The input offset was 0 and the input background level was 5.
 
 Adjusting the level of the beta-gamma sum spectrum affects the $b_{GT}$ more than the $b_{WM}$.
@@ -381,6 +377,7 @@ This gives the results in figure \ref{fig:dataoffset0BG10per}.
 However, to obtain these results, the level of the beta-gamma sum spectrum must be set to 0.096. 
 It is unlikely that the GEANT4 Monte Carlo is that far off, and that this number corresponds to anything physical.
 It is unclear if this procedure is a valid one to take.
+This has to be investigated further and solved.
 
 \subsubsection{The Convolution}
 
@@ -422,17 +419,17 @@ Both parameters are flat after 5500 keV.
 \end{figure}
 
 
-\subsection{Other Systematic Effects}
+\subsection{Other Systematic Uncertainties}
 
-The lower beta cut effect is the largest of the systematic effects.
-Many of the other systematic effects are independent of the absolute value of $b_{GT}$.
-To calculate the other systematic effects, the lower beta cut was fixed to 250 keV.
-The offset was set to zero, and the level of the beta-gamma sum spectrum was set to 1.
+The lower beta cut effect is the largest of the systematic uncertainties.
+Many of the other systematic uncertainties are independent of the absolute value of $b_{GT}$.
+To calculate these uncertainties, the lower beta cut was fixed to 250 keV.
+The offset was set to 0, and the level of the beta-gamma sum spectrum was set to 1.
 These parameters give the conditions in figure \ref{fig:offset0LBCeffect}.
-With these values, the value of $b_{GT}$ is $0.0350$ with a statistical error of $0.0042$.
-The value of $b_{GT}$ is $28.3 \pm 1.7$, with $1.7$ being the statistical error.
+With these values, the value of $b_{GT}$ is $0.0350 (42)_{stat}$.
+The value of $b_{GT}$ is $28.3 (1.7)_{stat}$.
 
-To calculate the systematic effects, one parameter at a time was adjusted.
+For the calculation of the systematic uncertainties, one parameter at a time was adjusted.
 The parameter was increased by one unit of the error on that parameter.
 The fit was redone with the different parameter values.
 The output $b_{WM}$ and $b_{GT}$ for the changes in the parameters were recorded.
@@ -455,9 +452,9 @@ These were all calculated by running the four histograms with $2 * 10^{9}$ event
 		\label{tab:simsyseffect}
 \end{table}
 
-The uncertainty due to the average mass was ignored, as it is very small.
+The uncertainty due to the average mass $M_{ave}$ was ignored, as it is very small.
 The value of the average mass used is $18621497.033 \pm 0.040 keV$.
-Since this value appears in the denominator, and the uncertainty is so small, the effect of the uncertainty due to this average mass value is neglibable. 
+Since this value appears in the denominator, and the uncertainty is so small, the effect of the uncertainty due to this average mass value is negligible. 
 On the other hand, an uncertainty in the end point can have a larger effect.
 The endpoint energy of the electron is only around 5 MeV.  
 
@@ -480,7 +477,7 @@ There is no systematic upper beta cut effect.
 		\label{tab:fitsyseffect}
 \end{table}
 
-Lastly, there are the systematic uncertianties due to the form factors inside the shape factor.
+Lastly, there are the systematic uncertainties due to the form factors inside the shape factor.
 These are summarized in table \ref{tab:formfactorsyseffect}
 
 \begin{table}[!hbt]
@@ -497,5 +494,5 @@ These are summarized in table \ref{tab:formfactorsyseffect}
 \end{table}
 
 The largest uncertainty is due to the lower beta cut effect.
-The second largest source of uncertainty is due to the binning of the fitting histograms.
+The second largest uncertainty is ude to the uncertainty of the offset.
 \end{document}

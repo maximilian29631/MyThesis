@@ -38,17 +38,25 @@ I.~{Angeli} and K.~P. {Marinova}.
 \newblock {Table of experimental nuclear ground state charge radii: An update}.
 \newblock {\em Atomic Data and Nuclear Data Tables}, 99:69--95, January 2013.
 
-\bibitem{Buh84}
-Wolfgang Bühring.
-\newblock The screening correction to the fermi function of nuclear
-  $\beta$-decay and its model dependence.
-\newblock {\em Nuclear Physics A}, 430(1):1 -- 20, 1984.
+\bibitem{Bur19}
+D.~P. Burdette, M.~Brodeur, T.~Ahn, J.~Allen, D.~W. Bardayan, F.~D. Becchetti,
+  D.~Blankstein, G.~Brown, B.~Frentz, M.~R. Hall, S.~King, J.~J. Kolata,
+  J.~Long, K.~T. Macon, A.~Nelson, P.~D. O'Malley, C.~Seymour, M.~Skulski,
+  S.~Y. Strauss, and A.~A. Valverde.
+\newblock Resolving the discrepancy in the half-life of $^{20}\mathrm{F}$.
+\newblock {\em Phys. Rev. C}, 99:015501, Jan 2019.
 
 \bibitem{Bya56}
 William~J. Byatt.
 \newblock Analytical representation of hartree potentials and electron
   scattering.
 \newblock {\em Phys. Rev.}, 104:1298--1300, Dec 1956.
+
+\bibitem{Buh84}
+Wolfgang Bühring.
+\newblock The screening correction to the fermi function of nuclear
+  $\beta$-decay and its model dependence.
+\newblock {\em Nuclear Physics A}, 430(1):1 -- 20, 1984.
 
 \bibitem{Cal77}
 Frank~P. Calaprice, W.~Chung, and B.~H. Wildenthal.

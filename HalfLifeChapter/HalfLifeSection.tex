@@ -23,20 +23,20 @@ The sigmas are the errors, and each Gaussian is weighted by $\frac{1}{\sigma^{2}
 This is to see that there are two different values that the half-lives are converging to.
 
 
-\section{Half life data analysis}
+\section{Half life Data Analysis}
 \label{sec:analysis}
 First, the data was processed as described in the previous chapter.
 
 \subsection{Data Selection}
 Only the data from the PVT implantation set was used for the half-life analysis.
 The PVT data was separated into 7 sets.
-A summary of the set conditions is shown in Table \ref{tab:ExpConditions}
+A summary of the set conditions is shown in table \ref{tab:ExpConditions}
 As shown in the table, the major conditions were the PVT high voltage, the inhibitor box, and the beam current. 
 
 %
 \begin{table}[!hbt]
 	\centering
-	\caption{The PVT runs}
+	\caption{Settings for the PVT runs}
 			\begin{tabularx}{\textwidth}{LRRRRRR}
 			Set & Beam on Time [s] & Measuring Time [s] & PVT HV [v] & HV Inhibit Installed& Beam intensity [nA] & Runs \\ \hline
 			1 & 1.67 & 30 & -975  & No & 30 & 9 \\		
@@ -78,7 +78,7 @@ A sample spectrum of the gamma and beta energies is shown in figure \ref{fig:2DG
 
 \begin{table}[!htb]
 	\centering
-	\caption{The Cuts for the Gamma Detectors}
+	\caption{Energy cuts for the gamma detectors}
 	\begin{tabular}{lrr}
 	Detector & Lower Cut [ADC units] & Upper Cut [ADC units] \\ \hline
 	Up & 1350 & 1650 \\
@@ -119,12 +119,29 @@ A sample spectrum of the gamma and beta energies is shown in figure \ref{fig:2DG
 Fixed energy gates were used to select in the beta window for the PVT run sets.
 Each different data set had a different energy window due to the gain shifts.
 A sample spectrum with the gates can be seen in figure \ref{fig:BetaGraph}.
+These cuts varied from set to set.
+A summary of the PVT energy cuts can be seen in table \ref{tab:PVTCuts}.
 This spectrum was put in coincidence with the gamma spectra. 
 The lower beta cut was selected to cut out the 511 beta spectrum as seen in figure \ref{fig:2DGraph}.
 When gated around that energies, the resulting gammas measured by the large CsI(Na) detectors are consistent with $^{10}$C and $^{11}$C.
 This comes from the break-up of the $^{12}$C in the plastic scintillator. 
 
+\begin{table}[!htb]
+	\centering
+	\caption{Energy cuts for the PVT detector}
+	\begin{tabular}{lrr}
+	Set & Lower Cut [ADC units] & Upper Cut [ADC units] \\ \hline
+	1-2 & 2000 & 14400 \\
+	3 & 1500 & 12000\\
+	4 & 1700 & 13800 \\
+	5 & 800 & 6200 \\
+	6 & 480 & 4200 \\
+	7 & 400 & 3600
+	\end{tabular}
+	\label{tab:PVTCuts}
+\end{table}
 As described above, only the runs after the installation of the limiter box were used for the half-life analysis. 
+This would be sets 3-7.
 
 A time difference condition was set by building a spectrum of the time differences between the implant detector's event and one of the four gamma detector's events. 
 The peak of this time difference spectrum was found, and an interval of $\pm$24 ns  was use for this gate.
@@ -362,7 +379,7 @@ This was done with two different packages which gave identical results.
 This was compared to analytic results, which gave the same results, so the half life is insensitive to the fitting method.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Result and discussion}
+\section{Result and Discussion}
 \label{sec:result}
 
 The half-lives obtained for all runs and all four detectors are shown in figure \ref{fig:PVT2by2}
@@ -380,7 +397,7 @@ The results  are shown in  in table \ref{tab:PVTTable}.
 %\begin{center}
 	\begin{table}[!hbt]
 			\centering
-			\caption{The PVT runs}
+			\caption{Half-life results}
 			\begin{tabular}{lrr}
 			Detector & Half-Life & Error \\ \hline
 			Up & 11.0195 & 0.0088 \\
@@ -434,6 +451,10 @@ This measurement disagrees with the most recent measurements.
 	Min \cite{Min87}, Wan~\cite{Wan92} and Ito~\cite{Ito95}.}
 \label{fig:ideogramfinal}
 \end{figure}
+
+Motivated by this measurement, another measure of the $^{20}$F half-life has been done. 
+The outcome of the measurements was a half-life of 11.0160 (41)$_{stat}$(155)$_{sys}$ s \cite{Bur19}.
+This confirms the result obtained in this measurement.
 
 Several things about the data set were discovered.
 It was learned that there were contaminates coming from the fragmentation of the $^{12}$C in the plastic scintillator.

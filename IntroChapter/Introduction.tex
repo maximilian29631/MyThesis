@@ -1,15 +1,16 @@
 \documentclass[../MaxHughesThesis.tex]{subfiles}
 
 \begin{document}
-The goal of this measurement is to test the standard model.
-For precision measurements, careful measurement of a parameter thought to be zero is done.
+
+The standard model of particle physics can be tested in several ways.
+For precision measurements, a careful measurement of a parameter thought to be zero is done.
 If a non-zero result is found, new physics is discovered.
 The usual window for low energy precision measurements is through beta decay.
 These measurements are not the only method to look for new physics.
 
-The most direct way to look for new physics is to look for the new particles that generate that physics.
-One is to look for new particles with high energy experiments. 
-The direct detection of new particles is very general and a powerful technique.
+The most direct way to look for new physics is to detect new particles.
+This is done with high energy experiments. 
+The direct detection of new particles is very general and a powerful technique, as any avenue with a new particle can be probed.
 Precision measurements at high energies with colliders often done as well. 
  
 Low energy precision measurements, on the other hand, are much more specialized.
@@ -23,15 +24,15 @@ The general process is %shown in equation \ref{eq:betadecay}
 
 \begin{equation}
 	\label{eq:betadecay}
-	^{A}_{Z}P \rightarrow ^{A}_{Z\pm 1}D + e^{\pm} + \nu_{e}
+	^{A}_{Z}P \rightarrow ^{A}_{Z\pm 1}D + e^{\mp} + \nu_{e}
 \end{equation}
-with $^{A}_{Z}P$ being the parent nucleus, $^{A}_{Z \pm 1}D$ being the daughter nucleus, $e^{\pm}$ is the outgoing electron or positron, and $\nu$ is an outgoing neutrino.
+with $^{A}_{Z}P$ being the parent nucleus, $^{A}_{Z \pm 1}D$ being the daughter nucleus, $e^{\mp}$ is the outgoing electron or positron, and $\nu$ is an outgoing neutrino.
 The neutrino is an anti-electron neutrino in the case of beta$^{-}$ decay, and an electron neutrino in the case of beta$^{+}$ decay. 
 A related process is electron capture, where a proton in the nucleus captures an inner electron and turns into a neutron.
 
 The simplest type of nuclear beta decay is allowed beta decay.
 There are two types of allowed beta decay, which differ in angular momentum $J$ and isospin $T$ selection rules.
-The two types are called Fermi and Gamow-Teller beta decay. 
+The two types are called Fermi and Gamow-Teller transitions. 
 For a Fermi transition, the change of the angular momentum $J$ and the change of the isospin $T$ is both zero.
 For a Gamow-Teller transition, the change in the angular moment $J$ is $0$ or $\pm1$ and the change of the isospin $T$ is $0$ or $\pm 1$.
 However, a Gamow-Teller transition cannot cause a transition between two states of $J = 0$. 
@@ -51,8 +52,8 @@ The microscopic view of beta decay (for the beta$^{-}$ case) is shown in figure 
 \end{figure}
 A down quark in a neutron goest to an up quark.
 This process emits a $W^{-}$ boson that decays into an electron and an anti-electron neutrino.
-This means that any beta decay measurements are probing the weak sector. 
-These measurements are complimentary to high energy measurements of weak interactions.
+The process is mediated by the weak interaction.
+Measurements of beta decay are complimentary to high energy measurements of weak interactions.
 For this work, a nucleon level treatment of beta decay will suffice.  
 
 \subsection{Matrix Elements of Beta Decay}
@@ -70,33 +71,34 @@ This matrix element $M$, to first order, is \cite{Gon19} %shown in equation \ref
 	|M|^{2} = \xi [1 + a \frac{\vec{p_{e}} \cdot \vec{p_{\nu}}} {E_{e} E_{\nu}}  +  b \frac{m_{e}}{E_{e}} + \frac{\vec{<J>}}{J} \cdot (A \frac{ \vec{p_{e}} }{E_{e}} + B \frac{\vec{p_{\nu}}}{E_{\nu}} + D \frac{\vec{p_{e}} \times \vec{p_{\nu}}}{E_{e} E_{\nu}})]
 	\label{eq:matrixelement}
 \end{equation}
+
+
 $\xi$ is written out to linear order is %in equation \ref{eq:xiwrittenout}. 
  
 \begin{equation}
 	\xi = \frac{1}{2} |M_{F}|^{2} |C_{V} + C'_{V}|^{2} (1 + |\rho|^{2})
 	\label{eq:xiwrittenout}
 \end{equation}
-For equation \ref{eq:xiwrittenout}, $M_{F}$ is the Fermi matrix element, $C_{V}$ and $C_{V}$ are vector coupling constants, and $|\rho|$ is the ratio of the Gamow-Teller matrix element to the Fermi matrix element.
-\cite{Gon19}
-
-Going back to equation \ref{eq:matrixelement}, $<\vec{J}>$ is the average total angular momentum. 
-The constants $a$, $b$, $A$, $B$, and $D$ can be written in terms of the coupling constants as well.
+with \ref{eq:xiwrittenout}, $M_{F}$ is the Fermi matrix element, $C_{V}$ and $C_{V}$ are vector coupling constants, and $|\rho|$ is the ratio of the Gamow-Teller matrix element to the Fermi matrix element times $g_{A}/g_{V}$ \cite{Gon19}.
+In equation \ref{eq:matrixelement}, $<\vec{J}>$ is the average total angular momentum. 
+The constants $a$, $b$, $A$, $B$, and $D$ can be written in terms of the coupling constants.
+The $\vec{p_{i}}$ are the momenta of the particles, and the $E_{i}$ the energies of those particles.
 $a$ depends on the ratio of the Fermi and Gamow-Teller matrix elements $\rho$.
-This form of the observables informs the experimental design. 
+The functional form of equation \ref{eq:matrixelement} informs the experimental design.
 
 \section{Types of Precision Measurements in Beta Decay}
-Given the form of equation \ref{eq:matrixelement}, to get at different terms, different types of experiments are needed.
+To measure the different terms in equation \ref{eq:matrixelement}, different types of experiments are needed.
 A polarized nucleus is need to extract $a$. 
 The nuclear spin points in one direction. 
 Then, by angular momentum conservation, $\vec{p_{e}} \cdot \vec{p_{\nu}}$ can be found.
-Other correlations between energy and momenta have sensitivity to other terms in equation \ref{eq:matrixelement}.
-Equation \ref{eq:matrixelement} is not complete, and many other terms exist. 
+Other correlations between energy and momenta have sensitivity to other terms.
+Many more correlations exist at higher orders.
 
 For an unpolarized beam where only the energy of the electron is measured, the momenta are averaged over and all terms disappear expect for $b$.
 There is also the phase space factor.
 There are two general kinds of unpolarized beta decay measurements.
 The first is where the differential energy spectrum is measured.
-There is a measurement of $b$ over the entire range of values, and the $\frac{1}{W}$ dependence of the matrix element is probed.
+There is a measurement of $b$ over the entire range of values, and the $1/W$ dependence of the matrix element is probed.
 To do this measurement, the beta decay in question must be available enough in order to get enough statistics for a good spectrum.
 Other requirements for a spectrum shape measurement are described in the next chapter.
 
@@ -123,10 +125,10 @@ The Fierz term, $b$, in equation \ref{eq:matrixelement}, can be rewritten in ter
 This is %shown in equation \ref{eq:bwrittenout}
 
 \begin{equation}
-	b =  \pm \sqrt{1 - \alpha^{2}{Z^{2}}}\frac{1}{1 + \rho}Re(\frac{C_{S} + C_{S}'}{C_{V} + C_{V}'} + |\rho|^{2}\frac{C_{T} + C_{T}'}{C_{A} + C_{A}'})
+	b =  \pm 2 \sqrt{1 - \alpha^{2}{Z^{2}}}\frac{1}{1 + |\rho|^{2}}Re(\frac{C_{S} + C_{S}'}{C_{V} + C_{V}'} + |\rho|^{2}\frac{C_{T} + C_{T}'}{C_{A} + C_{A}'})
 	\label{eq:bwrittenout}
 \end{equation}
-where $\rho$ is the ratio of the Gamow-Teller matrix element to Fermi matrix element, $\alpha$ is the QED fine structure constant \cite{Gon19}
+where $\alpha$ is the fine structure constant \cite{Gon19}.
 The subscripts of $C$ indicate which object the coupling corresponds to. 
 Here, $A$ means axial vector, $V$ stands for polar vector, $S$ stands for scalar, and $T$ stands for tensor. 
 The $C$ coefficients correspond to parity conserving interactions, and the $C'$ coefficients correspond to parity non-conserving coefficients \cite{Lee56}
@@ -144,7 +146,7 @@ This measurement was done carefully to compete with high energy probes.
 
 \subsection{High Energy Probes of the Fierz Term}
 
-There have been probes sensitive to the Fierz term done with high energy techniques \cite{Gon19}.
+There have been probes sensitive to the same physics as in Fierz term done with high energy techniques \cite{Gon19}.
 The precision of these measurements is important to keep in mind, as this is the precision goal of the beta decay measurement.
 Several high-energy channels are used, and the coupling chagres are directly measured.
 To compare the results of the channels to a precision beta decay measurement, the Fierz terms needs to be rewritten.
@@ -175,7 +177,7 @@ For the high energy probes, the Large Hardon Collider collides two protons and l
 The experimental signature for the LHC is missing transverse energy.
 The energy of the output particles is compared to that of the standard model background, and the difference recorded.
 To probe the same physics as beta decay, one or more of the outgoing particles are electrons or positrons.
-For events with one electron and other particles, the constraint on $\epsilon_{t}$ is $|\epsilon_{t}| < 1.3 \times 10^{-3}$.
+For events with one electron and other particles, the constraint is $|\epsilon_{t}| < 1.3 \times 10^{-3}$.
 Looking at neutral currents, where the output particles include an electron and a positron, gives stronger constraints.
 There, the constraint is $|\epsilon_{t}| < 0.6 \times 10^{-3}$.
 To be competitive with the stronger constraint from high energy experiments, the Fierz term $b_{GT}$ should be measured to better than $3.7 \times 10^{-3}$. 

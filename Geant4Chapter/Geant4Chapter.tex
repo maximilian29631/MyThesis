@@ -3,13 +3,13 @@
 \begin{document}
 After the half-life measurement was completed, the next step was to fit the energy spectrum for the Fierz term. 
 The corrections to the phase space were the first part of describing the energy spectrum.  
-The effect of bremsstrahlung and the efficiency of the detectors needed to be accounted for.
+The effect of bremsstrahlung and the efficiency of the detectors needed to be simulated.
 The absorption of the 1.6 MeV gamma ray needed to be accounted for. 
 The way this was done was with a GEANT4 simulation \cite{Ago03}.
 The most updated copy of the code can be found at https://github.com/maximilian29631/Geant4for20F/.
 
 
-\section{GEANT4 Monte Carlo}
+\section{GEANT4 Inputs}
 The phase space energy spectrum multiplied by the corrections was fed as input to a Monte Carlo.
 The program used to model the detectors was GEANT4 version 10.04.02.
 In order to use the program,the detector geometries where needed.
@@ -26,8 +26,7 @@ This drawing was the basis of the detector geometry fed into the simulation.
 \end{figure}
 
 The geometry of the detectors was programmed into the simulation.
-The implant detector was modeled as a square prism of CsI.
-The square prism was 54 x 54 x 101.6 mm.
+The implant detector was a 54 x 54 x 101.6 mm square prism of CsI.
 Around the square prism there was an empty layer.
 Along the sides, the empty layer was 1.5 mm thick.
 On the front and back of the detector, the empty layer was 3.64 mm thick.
@@ -35,10 +34,9 @@ After the empty layer, a 1 mm aluminum can surrounded the detector on all sides.
 The center of this detector was placed at the center of the simulation.
 
 The four large gamma detectors also square prisms.
-The active volume was 79.5 x 79.5 x 76.2 mm.
-It was also made of CsI.
-An empty layer was also added to the gamma detectors.
-The empty layer on the sides was also 1.5 mm thick, just like the implant detector.
+The active volume was 79.5 x 79.5 x 76.2 mm of CsI.
+An empty layer was  added to the gamma detectors.
+The empty layer on the sides was 1.5 mm thick.
 On the front, however, the empty layer was 2.92 mm thick.
 On top of this, the can of aluminum, 1 mm thick on all sides of the detector was added.
 The four detectors were arranged in a cross.
@@ -56,12 +54,11 @@ A visualization of the CsI crystals in GEANT4 is shown in figure \ref{fig:GEANT4
 
 \subsection{Source Definition}
 The next step was to define a region inside the implant detector.
-This region was where the gamma and beta particles originated from.
+This region was where the primary particles originated from.
 The depth of the region was calculated using LISE++, a ion optics code.
 The vertical and horizontal size of the region was calculated by using the PPAC measurement and an ion optics simulation.
 This size was 0.4 x 3.5 x 3.6 mm.
-The source was implanted 11.56 mm into the detector.
-This measures from the front edge of the detector including the dead layer.
+The source was implanted 11.56 mm from the front edge of the detector.
 
 \subsection{Primary Particle Definitions}
 There were three primary particles generated.
@@ -78,8 +75,8 @@ Linear interpolation was used to sample this histogram.
 The interpolation was tested and was found to reproduce the beta spectrum.
 
 The next particle was the 1.6336 MeV photon from the $^{20}$F decay.
-This initial photon is monochromatic and isotropic.
-The photon was generated from the same vertex as where the electron was generated.
+This initial photon was monochromatic and isotropic.
+The photon started from the same vertex as where the electron was generated.
 
 The last photon was to account for the inner bremsstrahlung.
 The radiative correction used to generate the electron energy was the formula that assumes all real photon energy is absorbed (equation \ref{eq:fayansrad}).
@@ -109,7 +106,7 @@ These cuts can be set differently for different particles.
 The range cuts correspond to a threshold of 15 keV in aluminum.
 These steps happen until the primary particle runs out of energy.
 
-\section{MC Output}
+\section{Output Data}
 The particles were tracked and the energy deposited in each detector summed up.
 The energies deposited into the implant detector was summed up into two categories.
 The energy deposited from the initial gamma ray was one category.

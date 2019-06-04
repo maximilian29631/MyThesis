@@ -79,7 +79,6 @@ $C_{g}$ is
 	\label{eq:cgsum}
 \end{equation}
 %
-with the same variables.
 Finally, $C_{1}$ is 
 
 \begin{equation}
@@ -87,7 +86,6 @@ Finally, $C_{1}$ is
 	\label{eq:c1sum}
 \end{equation}
 %
-With the same variables.
 This filter averaged the background before a pulse in $C_{0}$ over $tPEAKING$.
 It took a sample of the pulse, averaged over $tPEAKING$ again in $C_{1}$.
 Then, it subtracted off $C_{0}$ from $C_{1}$, after adjusting for the exponential decay of the pulse.
@@ -128,8 +126,7 @@ These values are shown in table \ref{tab:trigfilter}
 		\label{tab:trigfilter}
 \end{table}
 %
-
-The peak of the trigger filter was used to calculate the time stamps of the events.  
+The trigger filter was used to calculate the time stamps of the events.  
 
 \subsection{Data Acquisition Software}
 In order to set the parameters of the various filters, a program called NSCOPE was used \cite{DAQ17}.
@@ -148,7 +145,7 @@ It gave an input rate to each channel, the recorded rate, and the total over eac
 This was to check how each channel in each module was doing.
 
 For online analysis, a program called SpecTcl was used.
-It took the evt files and processed them into histograms.
+It took the .evt files and processed them into histograms.
 These histograms could be put in coincidence.
 Displays of the implant detector energy and rate were displayed.
 The energy of the implant vs time was also displayed.

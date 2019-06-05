@@ -33,8 +33,56 @@ These are summarized in table \ref{tab:4histfit}
 Each of these pieces was generated with the same number of events.
 Due to the different shapes of the spectra, a relative normalization was required.
 The normalization was determined by taking the ratio of each the input spectrum of each piece compared to $f(E)$ and fitting it with the relevant power of $E$. 
-Each of them was filtered with respect to the energy absorbed in the gamma detectors as described in the previous chapter.
-Then, the detector resolution was applied to each piece.
+
+
+\section{Simulation Results Processing}
+In order to use simulations results for fitting histograms, further process had to be done in order to build the histograms for the fitting of the data.
+The TTrees in the output of the simulation was used.
+The energy absorbed in the implant detector was filtered by the energy absorbed in the outer four gamma detectors in the simulation.
+The energy gate was adjusted to match the energy gates of the data, which was the same as in the half-life measurement in table \ref{tab:GammaCuts}.
+The energy gates were converted to keV using equation
+\begin{equation}
+        C = G * E + b
+        \label{eq:cal}
+\end{equation}
+where $C$ is the location of the peak in ADC channels, $G$ the gain in channels/keV, and $b$ the offset in channels.
+The values of the parameters for detector calibrations are summarized in table \ref{tab:gammadetcal}.
+No time information was recorded from the GEANT4 simulation, so no time difference condition was imposed on the simulation.
+
+\begin{table}[!hbt]
+        \centering
+        \caption{The values of the gamma calibration}
+                \begin{tabular}{lrr}
+                Detector & Gain (ADC Units/keV) & Offset (ADC Units) \\ \hline
+                Up & 0.90 & 28 \\
+                Left & 0.86 & 20 \\
+                Down & 0.96 & 27 \\
+                Right & 0.97 & 23
+                \end{tabular}
+                \label{tab:gammadetcal}
+\end{table}
+The two different categories of energy absorbed in the implant detector were built into two histograms.
+One histogram had a condition that the energy absorbed by the initial gamma ray had to be zero.
+This histogram was the energy absorbed without any summing.
+The second histogram was the energy absorbed where there was a contribution from the gamma ray in the implant detector.
+This histogram was known as the beta-gamma sum spectrum.
+These two histograms can be seen in figure \ref{fig:GEANT4Hists}.
+
+\begin{figure}[!htb]
+        \centerline{\includegraphics[width=0.78\textwidth]{GEANT4OutputBetter.png}}
+        \caption{The shapes of the different histograms from the output of the GEANT4 simulation.
+                 The input beta spectrum is also plotted.
+                 The histograms are scaled to the same maximum.}
+        \label{fig:GEANT4Hists}
+\end{figure}
+
+Another set of histograms were built with different gamma conditions.
+To build the new gamma conditions, the ADC unit difference between the upper and lower gamma cuts was taken.
+This was added to the old upper and lower gamma cuts to get the new gamma cuts.
+Then, the simulation was filtered through these new cuts to build a background spectrum.
+This background GEANT4 spectrum was subtracted off of the signal spectrum.
+This was procedure was done for all four histograms needed for the fitting procedure.
+The next thing to do was to apply the detector resolution.
 
 \subsection{Detector Resolution}
 \label{sec:convolution}
@@ -151,7 +199,7 @@ $A$, $B$, the gain, and either $b_{WM}$ or $b_{GT}$.
 
 In order to benchmark this fitting method, pseudo-data was generated and fit.
 
-\subsection{Fit Method Characterization}
+\subsubsection{Fit Function Characterization}
 Different methods of the fit function were tested. 
 The first is the so-called "hybrid method", where only one simulation is needed.
 The GEANT4 with only the phase space and corrections is generated. 

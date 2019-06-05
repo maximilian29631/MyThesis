@@ -66,13 +66,7 @@ The background varied from no background, a linear background, a quadratic backg
 For the $^{60}$Co, both peaks were fit at once.
 These different background gave slightly different results for the centroids and the widths of the Gaussian.
 The range of the centroids and widths was taken as a systematic error.
-From the centroids, the calibration for each detector was calculated with 
-
-\begin{equation}
-	C = G * E + b
-	\label{eq:cal}
-\end{equation}
-where $C$ is the location of the peak in ADC channels, $G$ the gain in channels/keV, and $b$ the offset in channels.
+From the centroids, the calibration for each detector was calculated with equation \ref{eq:cal}. 
 This calibration curve was only used for the resolution determination.
 The widths of the peaks were calibrated with the gain and plotted vs energy.
 Then, equation \ref{eq:convo} was fit to the results in order to determine $A$.
@@ -228,7 +222,29 @@ The total time interval was from 1.5 to 22 seconds.
 These splits worked out to be at 5.89 s and at 11.98 seconds. 
 This 2-D histogram was projected onto the time axis between the splits in order to build the energy spectrum of the fit. 
 
-After processing the data, the fit was done run by run.
+\subsection{Background Subtraction}
+
+A background subraction of the data was required.
+To build the background, cuts above the regular gamma cuts in tiable \ref{tab:GammaCuts} were used.
+Much like in the process of the simulation spectra, the difference between the upper and lower gamma cuts were taken.
+These differences were added to the original upper and lower gamma cuts to get new gamma cuts.
+A beta spectrum was with a time difference condition and these new gamma cuts.
+This was the background spectrum.
+It was then subtracted off of the signal spectrum. 
+The position of the gamma cuts on a sample spectrum is shown in figure \ref{fig:backgroundsubbeta}.
+
+\begin{figure}[!htb]
+        \centerline{\includegraphics[width=0.78\textwidth]{BackgroundFigureUp.png}}
+        \caption{A sample gamma spectrum showing the position of the gamma cuts used to build the beta spectrum.
+		 The blue lines show the cuts used to build the signal spectrum.
+		 The red lines show the cuts used to build the background spectrum.
+                   }
+        \label{fig:backgroundsubbeta}
+\end{figure}
+
+
+\section{Beta Spectrum Fit Procedure}
+After the data was processed, the fit was done run by run.
 First a prefit for each section was done to calibrate the energy from 500 channels to 6000 channels.
 This was done to obtain a calibration of the data.
 Then, two endpoints fixed in keV were used for the actual fit.

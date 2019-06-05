@@ -142,7 +142,7 @@ The fit function was
 	H(E) = A * (( 1 + c_{0}) f(E) + c_{1}g(E) + c_{2} h(E) + (c_{-1} + b_{GT} m_{e}) j(E)) + B * pu(E)
 	\label{eq:betafit}
 \end{equation}
-where $A$ is the normalization, $B$ the level of pile-up, $pu(E)$ is the generated pileup spectrum, , and $f(E),g(E),h(E),$ and $j(E)$ the different simulation results as shown in table \ref{tab:4histfit} after the convolution was applied.
+where $A$ is the normalization, $B$ the level of pile-up, $pu(E)$ is the generated pile-up spectrum, and $f(E),g(E),h(E),$ and $j(E)$ the different simulation results as shown in table \ref{tab:4histfit} after the convolution was applied.
 In order to change the units of the x-axis in the data to energy in keV, a calibration was needed.
 For this calibration, the offset was fixed in the fit function.
 However, the gain of the calibration was left as a free parameter.
@@ -450,7 +450,7 @@ These were all calculated by running the four histograms with $2 * 10^{9}$ event
 \begin{table}[!hbt]
 	\centering
 	\caption{Systematic uncertainties due to simulation inputs}
-		\begin{tabularx}{\textwidth}{LRRRR}
+		\begin{tabularx}{\textwidth}{RLLLL}
 		Parameter Name & Parameter Value & Parameter Uncertainty & Systematic Uncertainty $b_{WM}$ & Systematic Uncertainty $b_{GT}$ \\ \hline
 		Electron end point energy & 5900.864 $keV$ & 0.081 $keV$ & 0.2 & 0.0012\\
 		Charge radius & 3.0055 $fm$ & 0.0021 $fm$  & 0.2 & 0.0003 \\
@@ -460,7 +460,7 @@ These were all calculated by running the four histograms with $2 * 10^{9}$ event
 \end{table}
 
 The uncertainty due to the average mass $M_{ave}$ was ignored, as it is very small.
-The value of the average mass used is $18621497.033 \pm 0.040 keV$.
+The value of the average mass used is $18621497.033 \pm 0.040$ keV.
 Since this value appears in the denominator, and the uncertainty is so small, the effect of the uncertainty due to this average mass value is negligible. 
 On the other hand, an uncertainty in the end point can have a larger effect.
 The endpoint energy of the electron is only around 5 MeV.  
@@ -474,7 +474,7 @@ There is no systematic upper beta cut effect.
 \begin{table}[!hbt]
 	\centering
 	\caption{Systematic uncertainties due to fit inputs} 
-		\begin{tabularx}{\textwidth}{LRRRR}
+		\begin{tabularx}{\textwidth}{RLLLL}
 		Parameter Name & Parameter Value & Parameter Range & Systematic Uncertainty on $b_{WM}$ & Systematic Uncertainty $b_{GT}$\\ \hline
  		Lower beta cut & 250 keV & 200 to 2000 keV & N/A & 0.0283 \\
 		Offset & 0 & -0.8 to 0.8 & 2.0 & 0.0055 \\
@@ -490,7 +490,7 @@ These are summarized in table \ref{tab:formfactorsyseffect}
 \begin{table}[!hbt]
 	\centering
 	\caption{Systematic uncertainties due to nuclear form factors} 
-		\begin{tabularx}{\textwidth}{LRRRRR}
+		\begin{tabularx}{\textwidth}{RLLLLL}
 		Parameter Name & Parameter Variable & Parameter Value & Parameter Uncertainty & Systematic Uncertainty $b_{WM}$ & Systematic Uncertainty $b_{GT}$ \\ \hline
 		Weak magentism & $b_{WM}$ & 43.4 & 1.2 \cite{Min11} & N/A & 0.0028 \\
 		Induced tensor form factor & $d$ & 40.5 &  3.7 \cite{Min11} & 0.2 & 0.0004 \\

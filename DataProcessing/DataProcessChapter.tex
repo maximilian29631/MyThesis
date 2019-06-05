@@ -71,7 +71,6 @@ $C_{0}$ is described as
 \end{equation}
 %
 where $tPEAKING$ is the time described above, $tSPL$ is the 8 ns sampling time, and $\tau$ an additional parameter.
-
 $C_{g}$ is 
 
 \begin{equation}
@@ -91,7 +90,6 @@ It took a sample of the pulse, averaged over $tPEAKING$ again in $C_{1}$.
 Then, it subtracted off $C_{0}$ from $C_{1}$, after adjusting for the exponential decay of the pulse.
 The time constant of that decay is the $\tau$ parameter.
 When tuning the filter, the $\tau$ parameter had the largest effect.
-
 For this experiment, the various filter parameters are summarized in table \ref{tab:pixieparams}  
 %
 \begin{table}[!hbt]
@@ -112,6 +110,7 @@ The sum in equation \ref{eq:ensum} is the same, but the parameters are shorter.
 The parameters in the trigger filter are half of the parameters in the trigger filter.
 There was a threshold that the output of the trigger filter had to be above in order to be recorded.
 These values are shown in table \ref{tab:trigfilter}
+The trigger filter was used to calculate the time stamps of the events.  
 
 %
 \begin{table}[!hbt]
@@ -126,7 +125,6 @@ These values are shown in table \ref{tab:trigfilter}
 		\label{tab:trigfilter}
 \end{table}
 %
-The trigger filter was used to calculate the time stamps of the events.  
 
 \subsection{Data Acquisition Software}
 In order to set the parameters of the various filters, a program called NSCOPE was used \cite{DAQ17}.

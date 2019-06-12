@@ -450,27 +450,33 @@ It gives a parameter with which to benchmark the measuring techniques and the an
 If the analysis produces the excepted value of $b_{WM}$, the same procedure should give a reliable value for $b_{GT}$.
 
 \subsubsection{The Induced Tensor Form Factor}
+
 From equation \ref{eq:sfcs}, the induced tensor form factor $d$ contributes to the corrections much in the same way as the Fierz term.
 This form factor was measured in a beta decay correlation measurement \cite{Min11}.
-
+Both the decay of $^{20}$F and $^{20}$Ne were used to measure $d$.
+The alignment of out-going electrons was measured, which is a higher order polarization.
+To describe the alignment, the nuclear form factors are needed.  
+The measurement was done with both nuclei and added to eliminate some of the form factors such as the dependence of the alignment on $b_{WM}$. 
+To eliminate the remaining form factors, the alignment measurement added to exisiting gamma-beta angular correlation data.
+The remaining form factors change sign in the angular data.
+This gave a value of $d/Ac_{1h} = 8.00 \pm 0.73$.
+Using $A = 20$ and $c_{1h} = 0.253$, this gives $d = 40.5 \pm 3.7$. 
 
 \section{Summary}
 
 Before the theoretical corrections were fed into a Monte Carlo simulation, the uncertainties from the experimentally determined quantities was checked.
 Theoretical spectra were  built with each value plus or minus it's uncertainty.
-Ratios between the spectra were taken and fit with a line.
-The results of those ratios are seen in figure \ref{fig:theoryuncer}.
+Ratios between the spectra were taken.
+From these ratios, numerical derivatives were taken and weighted with the phase space spectrum.
+These results are shown in figure \ref{fig:theoryuncer}.
 
-\begin{figure}[!htb]
-	\centerline{\includegraphics[width=0.78\textwidth]{RatioPlot_2.pdf}}
-	\caption{Estimate of the theory uncertainty due to the experimental parameter uncertainty.	
-		 Shown are the slopes for each experimental parameter. 
-		 They are orders of magnitude smaller than the $10^{-2}$/MeV of the $c_{1}$ of the shape factor.}
-	\label{fig:theoryuncer}
-\end{figure}
+%\begin{figure}[!htb]
+%	\centerline{\includegraphics[width=0.78\textwidth]{RatioPlot_2.pdf}}
+%	\caption{Estimate of the theory uncertainty due to the experimental parameter uncertainty.	
+%		 Shown are the slopes for each experimental parameter. 
+%		 They are orders of magnitude smaller than the $10^{-2}$/MeV of the $c_{1}$ of the shape factor.}
+%	\label{fig:theoryuncer}
+%\end{figure}
 
-Since the slopes of each line are much smaller than the shape factor values, the experimental uncertainties are negligible. 
-The various theoretical corrections that are needed are now discussed below.
 With all these corrections, the experiment can be described to the required precision.
-The next chapter will describe details of the experimental set up and the detector configuration.
 \end{document}

@@ -5,41 +5,40 @@ To obtain a measure of the Fierz term, the beta energy spectrum must be precisel
 The description of the beta energy spectrum is written as a series of corrections multiplying the main phase space factor.  
 Through out this chapter, $\hbar = c = 1$.
 
-The beta energy spectrum shape can be broken up in three different sections.
+The beta energy spectrum shape can be broken up in three different factors. 
 The three terms are written out as  %in equation \ref{eq:betaspectrum}
 
 \begin{equation}
 	Q(E) = PS(E) * C(E) * (1 + b_{GT}\frac{m_{e}}{E})
 	\label{eq:betaspectrum}
 \end{equation}
-where $Q(E)$ is the total beta decay energy spectrum, $PS(E)$ is the phase space of the electron, $C(E)$ are all the hadronic and electromagnetic corrections multiplied together, and $b_{GT}$ the Fierz term.
+$PS(E)$ is the phase space of the electron, $C(E)$ are all the hadronic and electromagnetic corrections multiplied together, and $b_{GT}$ the Fierz term.
 This chapter will describe all that goes into the determining the beta energy spectrum.
 
 \section{Experimental Inputs to Describe the Beta Spectrum}
 The corrections depend on several parameters of the decay. 
 Some of them are just numbers, such as the atomic number of the daughter or mother nucleus or the mass number of the system.
 However, there are two important parameters that are experimental measurements.
-
 One is the Q-value of the decay, which is defined as %in equation \ref{eq:qval}.
 
 \begin{equation}
 	Q = m_{^{20}F} - (m_{^{20}Ne} + E_{level})
 	\label{eq:qval}
 \end{equation} 
-where $Q$ is the q-value, $m_{^{20}F}$ is the nuclear mass of $^{20}$F, $m_{^{20}Ne}$ is the nuclear mass of $^{20}$Ne, and $E_{level}$ is the energy of the 1.6 MeV nuclear state in $^{20}$Ne. 
+where $m_{^{20}F}$ is the nuclear mass of $^{20}$F, $m_{^{20}Ne}$ is the nuclear mass of $^{20}$Ne, and $E_{level}$ is the energy of the 1.6 MeV nuclear state in $^{20}$Ne. 
 The tabulated masses for these nuclei are the atomic mass, $M$, which differ from the nuclear masses by the electron mass and the binding energy of the electrons.
 The electron masses are subtracted off, since the binding energy of the electrons is too small to be significant.
-For $^{20}$F, $M_{20Ne} = 19.9924401762 (17) amu$, $M_{20F} = 19.999981252 (31) amu$ \cite{Wan17} , and $E_{level} = 1.633674 (15) MeV $ \cite{Til98}   .
+For $^{20}$F, $M_{20Ne} = 19.9924401762 (17)$ amu, $M_{20F} = 19.999981252 (31) $ amu \cite{Wan17} , and $E_{level} = 1.633674 (15)$ MeV  \cite{Til98}   .
 
 This mass difference is not quite the maximum electron energy. 
 To get to the maximum electron energy, $E_{0}$, the energy of the recoiling nucleus has to be taken into account.
-The formula is %shown in equation \ref{eq:recoilqval}
+The formula is \cite{Hol74}%shown in equation \ref{eq:recoilqval}
 
 \begin{equation}
 	E_{0} = Q\frac{1 + \frac{m_{e}^{2}}{2MQ}}{1 + \frac{Q}{2M}} 
 	\label{eq:recoilqval}
 \end{equation} 
-with $m_{e}$ is the electron mass and $M$ is the average nuclear mass \cite{Hol74}.
+with $m_{e}$ is the electron mass and $M$ is the average nuclear mass. 
 
 The other parameter is the charge radius of the daughter nucleus.
 There are several ways to calculate the charge radius.
@@ -51,9 +50,7 @@ From this, the radius was calculated using %equation \ref{eq:sphereeq}
 	\label{eq:sphereeq}
 \end{equation}
 where $r_{rms}$ is the root mean square charge radius, and $r$ the charge radius.
-For this work, $r_{rms} = 3.0055 (21)$ \cite{Ang13}
-
-With the two parameters, the q-value and the phase space, the shape of all beta decay spectra can be described.
+For this work, $r_{rms} = 3.0055 (21)$ \cite{Ang13}.
 
 \section{Phase Space Factor}
 The main part of the beta energy spectrum is the phase space factor.
@@ -64,46 +61,12 @@ It is %shown in equation \ref{eq:phase_space}
 	\label{eq:phase_space}
 \end{equation}
 were $C$ is a constant, $p_{e}$ is the electron momentum, $W$ the total electron energy, and $W_{0}$ the maximum electron energy.
-This is derived from the density of states of the particle.
-The constant has factors that come from the integration
-This comes in from Fermi's Golden Rule, which is shown in equation \ref{eq:fgr}.
-
-The matrix element is shown in equation \ref{eq:matrixelement}.
-The main effect on the spectrum shape originates from the density of states.
-The number of states for both the electron and the neutrino is %show in equation \ref{eq:densityofstates}
-
-\begin{equation}
-	N = \frac{1}{(2\pi\hbar)^{6}}\int dr^{3}_{e} \int dp^{3}_{e}\int dr^{3}_{\nu_{e}} \int dp^{3}_{\nu_{e}} 
-	\label{eq:densityofstates}
-\end{equation}
-where $r$ and $p$ correspond to the position and momentum of the electron ($e$) and the neutrino ($\nu_{e}$).
-Doing the integral over both $r$'s give two factors of the volume, which disappear when the next factor is introduced.
-Since the neutrinos are unmeasured, the momentum of the neutrinos is integrated over. 
-Assuming spherical symmetry, the new integral is %shown in equation \ref{eq:dosspherical}
-
-\begin{equation}
-	dN = \frac{V^{2}}{4\pi^{4}\hbar^{6}}p_{e}^{2}dp_{e}p_{\nu_{e}}^{2}dp_{\nu_{e}}
-	\label{eq:dosspherical}
-\end{equation}
-This is simplified by approximating the neutrino as mass-less.
-The momentum of the neutrino is then equal to the energy of the neutrino.
-Then, the total energy $E$ is written as a sum of the neutrino energy (or momentum) and the beta energy.
-Plugging that in gives %equation \ref{eq:dosintegral} 
-
-\begin{equation}
-	dN = \frac{V^{2}}{4\pi^{4}\hbar^{6}}(E - E_{e})^{2}p_{e}^{2}dp_{e}
-	\label{eq:dosintegral}
-\end{equation}
-after integrating over the neutrino degrees of freedom. 
-Then, the only thing left to do to recover equation \ref{eq:phase_space} is to rewrite $dp$ in terms of $dE$. 
-The energy $E_{e}$ has been replaced with $W$, which is the energy of the electron divided by the electron mass, and $E$ has been replaced by the Q-value.
-Since the measurement is not an absolute one, but only concerned with the shape of the spectrum, the normalization factor is arbitrary.
-
-This is the main factor in describing the beta decay energy spectrum.
+This is derived from the density of states of the particle when the neutrino degrees of freedom are integrated over.
+The constant has factors that come from the integration.
 
 \section{Variables of the Correction Factors}
 
-For the rest of the discussion of the beta decay corrections, everything is given without units.
+For the rest of the discussion of the corrections to the energy spectrum, everything is given without units.
 These corrections are largely electromagnetic in origin.
 All of the energies are divided by the electron mass.
 For this work, $m_{e} = 0.510998928$ MeV
@@ -120,9 +83,9 @@ The other important variables are shown in table \ref{tab:vars}
 		$R$ & Root mean square charge radius of daughter & 3.055 fm \cite{Ang13} \\
 		$W$ & Total energy of the electron & $E/m_{e}$ \\
 		$p$ & Electron momentum & $\sqrt{W^{2} - 1}$ \\
-		$W_{0}$ & Maximum electron energy & $\frac{E_{0}}{m_{e}}$ \\
-		$M_{ave}$ & Average nuclear mass & $\frac{M_{20Ne} + M_{20F} - 19 m_{e}}{2 m_{e}}$ \\
-		$\gamma$ & Special relativity $\gamma$ factor & $\sqrt{1 - (\alpha Z)^{2}}$ 
+		$W_{0}$ & Maximum electron energy &  5.900864 (82) MeV \\ 
+		$M_{ave}$ & Average nuclear mass &  18621.497033 (40) MeV  \\
+		$\gamma = \sqrt{1 - (\alpha Z)^{2}} $ & $\gamma$ factor & 0.9973 
 		\end{tabular}
 	\label{tab:vars}
 \end{table}
@@ -130,7 +93,7 @@ The other important variables are shown in table \ref{tab:vars}
 
 
 \section{Electromagnetic Corrections and Hardonic Corrections}
-A graph of the various electromagnetic corrections are shown in figure \ref{fig:corrections}, along with the hadronic shape factor. 
+A graph of the various electromagnetic corrections is shown in figure \ref{fig:corrections}, along with the hadronic shape factor. 
 
 \begin{figure}
     \centering
@@ -140,7 +103,7 @@ A graph of the various electromagnetic corrections are shown in figure \ref{fig:
     \begin{minipage}{0.35\textwidth}
         \centerline{\includegraphics[width=0.9\textwidth]{Corrections_F20Key.png}}
     \end{minipage}
-    \caption{Electromagnetic and hardonic corrections for $^{20}$F}
+    \caption{Electromagnetic and hardonic corrections for $^{20}$F.}
     \label{fig:corrections}
 \end{figure}
 
@@ -148,8 +111,8 @@ A graph of the various electromagnetic corrections are shown in figure \ref{fig:
 
 The largest correction by over all size is the Fermi function.
 This accounts for the interaction of the charge of the outgoing electron and the charge of the nucleus.
-It is calculated by taking the Dirac equation wave functions and assuming the nucleus is a point charge of Ze.
-The Dirac wave functions are taken down to a nuclear radius R.
+It is calculated by taking the Dirac equation wave functions and assuming the nucleus is a point charge of $Ze$.
+The Dirac wave functions are taken down to a nuclear radius $R$.
 This is since the wave functions diverge \cite{Wil89}.
 
 The Fermi function is %printed in equation \ref{eq:fermifunc}
@@ -169,23 +132,23 @@ The photon can also be a real photon that propagates out off to infinity.
 The real photons are known as inner bremsstrahlung.
 
 There are different descriptions of the radiative correction.  
-The first is by Sirlin \cite{Sir67} and is %shown in equation \ref{eq:sirlinrad}.
+The standard is by Sirlin \cite{Sir67} and is %shown in equation \ref{eq:sirlinrad}.
 
 \begin{equation}
 	\label{eq:sirlinrad}
 	\begin{split}
 	R(W,W_{0}) = & 1 + \frac{\alpha}{2\pi}[3\ln(M) - \frac{3}{4} + 4(\frac{\arctanh(\beta)}{\beta} - 1)*(\frac{W_{0} - W}{3W} - \frac{3}{2} + \ln(2(W_{0} - W))) \\
-	 & + \frac{4}{\beta}L(\frac{2\beta}{1 + \beta}) + \frac{\arctanh(\beta)}{\beta}*(2*(1 + \beta^{2}) + \frac{(W_{0} - W)^{2}}{6W^{2}} - 4 \arctanh(\beta)]
+	 & + \frac{4}{\beta}L(\frac{2\beta}{1 + \beta}) + \frac{\arctanh(\beta)}{\beta}*(2*(1 + \beta^{2}) + \frac{(W_{0} - W)^{2}}{6W^{2}} - 4 \arctanh(\beta))]
 	\end{split}
 \end{equation} 
-with $\beta = \frac{p}{W}$, $M$ the proton mass, and $L(\frac{2\beta}{1+\beta})$ referening to the Spence function, which is \cite{Wil95} %as seen in equation \ref{eq:spence} \cite{Wil95}
+with $\beta = \frac{p}{W}$, $M$ the proton mass, and $L(\frac{2\beta}{1+\beta})$ referring to the Spence function, which is \cite{Wil95} %as seen in equation \ref{eq:spence} \cite{Wil95}
 
 \begin{equation}
 	L(x) = \int_{0}^{x} \frac{\ln(1 - t)}{t}dt
 	\label{eq:spence}
 \end{equation}
 The Sirlin formula assumes that the inner bremsstrahlung photons are not detected at all.
-This is mostly true if the source of the beta decay is centered outside of a detector.
+This is mostly true if the source of the beta decay is outside of a detector.
 However, if the source is implanted inside of the detector, such as it is in this experiment, some of the inner bremsstrahlung is absorbed.
 
 If all the inner bremsstrahlung is absorbed, a different form of the first order radiative correction is needed.
@@ -198,17 +161,17 @@ The form of this radiative correction is %shown in equation \ref{eq:fayansrad}
 	& - 2\ln(\frac{4\beta^{2}}{1 - \beta^{2}}) + \frac{4}{\beta}L(\frac{2\beta}{1+\beta}) + \frac{23}{8} + \frac{3}{2}\ln(M)]
 	\end{split}
 \end{equation}
-Unfortunately, the amount of inner bremssstrahlung absorbed depends on the geometry.
+The amount of inner bremssstrahlung absorbed depends obviously on the geometry.
 A more careful treatment of the radiative correction is needed.
 
 \subsubsection{Inner Bremsstrahlung}
 
-To first order, the energy spectrum of the inner bremsstrahlung photons is independent of Z.
+To first order, the energy spectrum of the inner bremsstrahlung photons is independent of $Z$.
 This is exactly like the two radiative corrections shown in equations \ref{eq:sirlinrad} and \ref{eq:fayansrad}. 
-The spectrum is written out as \cite{Kni36}%in equation {\ref{eq:KUB} \cite{Kni36}
+The spectrum is written as \cite{Kni36}%in equation {\ref{eq:KUB} \cite{Kni36}
 
 \begin{equation}
-	\Phi(k,W_{e}) = \frac{ \alpha p}{ \pi p_{e} k} ( \frac{W_{e}^{2} + W^{2}}{W_{e}p}log(W + p) - 2 )
+	\Phi(k,W_{e}) = \frac{ \alpha p}{ \pi p_{e} k} [\frac{W_{e}^{2} + W^{2}}{W_{e}p}log(W + p) - 2]
 	\label{eq:KUB}
 \end{equation}
 where $\Phi(k,W_{e})$ is the probability density of seeing a photon of energy $k$ from an electron of initial energy $W_{e}$.
@@ -219,12 +182,12 @@ That can be seen, as the equation diverges as $k$ goes to zero.
 If more orders of the approximation are added, this divergence can be controlled.
 These higher orders would correspond to emitting multiple photons.
 Each of these orders would have a probability reduced by a factor of $\alpha$ compared to equation \ref{eq:KUB}.
-The higher orders would be less significant, expect at low energies. 
+The higher orders would be less significant, except at low energies. 
 Since the probability density diverges, the higher orders could contribute.
 This would make the probability of emitting no photons finite.	 		
 
 However, another possibility is to add a cutoff. 
-As long as the cutoff is high enough to be in the region where the first order Born approximation is valid, but low enough not to cut out gamma rays that are not full absorbed, equation \ref{eq:KUB} is usable.
+As long as the cutoff is high enough to be in the region where the first order Born approximation is valid, but low enough not to cut out gamma rays that are not fully absorbed, equation \ref{eq:KUB} is vaild.
 The cutoff used was 50 keV.
 This cutoff was checked using Monte Carlo simulation, and is within the region where the detector and the source geometry absorbs all gamma rays.
 
@@ -235,10 +198,10 @@ No other physics process was looked at in this simulation.
 The ratio consisting of the energy absorbed over the initial energy was the output of the simulation.
 That ratio is the effective efficiency of absorbing the inner bremsstrahlung photons.
 Multiplying that ratio by equation \ref{eq:fayansrad} gives the effective radiative correction.
-Comparing all three radiative corrections can be seen in figure \ref{fig:rad}
+The comparison of all three radiative corrections is shown in figure \ref{fig:rad}
 
 \begin{figure}[!htb]
-	\centerline{\includegraphics[width=0.78\textwidth]{RadCorrections_20F.pdf}}
+	\centerline{\includegraphics[width=0.68\textwidth]{RadCorrections_20F.pdf}}
 	\caption{Comparison of three different radiative corrections.
 		 The green line depends strongly on the detector geometry.
 		 }
@@ -255,7 +218,7 @@ The strongest effect of the screening correction is at low electron energies and
 
 \subsubsection{Potentials Used in Screening Derivation}
 To calculate this correction, the Coulomb potential used to calculate the Fermi function is replaced with a Hulth\'en potential.
-This is potential is %shown in equation \ref{eq:hulth}
+This potential is %shown in equation \ref{eq:hulth}
 
 \begin{equation}
 	V(r) = -\frac{\alpha Z \beta}{e^{\beta r} - 1}
@@ -264,7 +227,7 @@ This is potential is %shown in equation \ref{eq:hulth}
 where $r$ is the distance away from the center and $\beta$ is a parameter characterizing the diffuseness of the electron cloud.
 The ratio of this new Fermi function to the old Fermi function is the screening correction which multiplies the phase space. 
 
-The screening correction is negligible except for near the origin, while near the origin, equation \ref{eq:hulth} behaves as %equation \ref{eq:hulthorg}
+The screening correction is negligible except near the origin, while near the origin, equation \ref{eq:hulth} behaves as %equation \ref{eq:hulthorg}
 
 \begin{equation}
 	V(r) = -\frac{\alpha Z}{r} + \frac{1}{2}\alpha Z \beta
@@ -273,7 +236,7 @@ The screening correction is negligible except for near the origin, while near th
 and $\beta$ is given by \cite{Buh84} %equation \ref{eq:screenbeta} \cite{Buh84}. 
 	
 \begin{equation}
-	\beta = 2C(Z)\alpha Z^{\frac{1}{3}} m_{e}
+	\beta = 2C(Z)\alpha Z^{1/3} m_{e}
 	\label{eq:screenbeta}
 \end{equation}
 Here, the $Z$ is number the electrons of the daughter atom because the assumption is that beta decay is occurring from neutral atoms.
@@ -292,22 +255,23 @@ The sum of all the $c_{n}$ adds up to one.
 The value of $x$ is \cite{Bya56} %shown in equation \ref{eq:screeningx} \cite{Bya56}
 
 \begin{equation}
-	x = 1.13 \alpha Z^{\frac{1}{3}} r m_{e}
+	x = 1.13 \alpha Z^{1/3} r m_{e}
 	\label{eq:screeningx}
 \end{equation}
 When equation \ref{eq:hart} is expanded near the origin, the result is %equation \ref{eq:hartorg}
 
 \begin{equation}
-	V(r) = - \frac{\alpha Z}{r} + \alpha Z 1.13 \alpha Z^{\frac{1}{3}} m_{e} \sum_{n} b_{n} c_{n}
+	V(r) = - \frac{\alpha Z}{r} + \frac{1}{2} \alpha Z \times 2 (1.13 \sum_{n} b_{n} c_{n}) \alpha Z^{1/3} m_{e} 
 	\label{eq:hartorg}
 \end{equation}
-By comparing equations \ref{eq:hulthorg}, \ref{eq:screenbeta} and \ref{eq:hartorg}, the results obtained are %in equation \ref{eq:betaanswer} are obtained.
+By comparing equations \ref{eq:hulthorg}, \ref{eq:screenbeta} and \ref{eq:hartorg}, the result obtained is %in equation \ref{eq:betaanswer} are obtained.
 
 \begin{equation}
 	C(Z) = 1.13 \sum_{n} c_{n} b_{n}
 	\label{eq:betaanswer}
 \end{equation} 
-For fluorine, $n = 1$, $c = 1$, and $b = 0.907$ \cite{Bya56}.
+There is only one term in $^{20}$F. 
+The parameters in equation \ref{eq:betaanswer} are $c_{1} = 1$, and $b_{1} = 0.907$ \cite{Bya56}.
 
 \subsubsection{Screening Correction Formula}
 From equation \ref{eq:betaanswer}, the factor $C(Z)$ in equation \ref{eq:screenbeta} is evaluated $0.907 * 1.13 = 1.02491$.
@@ -322,24 +286,24 @@ with $y = \frac{\alpha Z W}{p}$, $y' = \frac{\alpha Z W'}{p'}$,$ \gamma$ is in t
 
 $X(\frac{W'}{W})$ is %in equation \ref{eq:screeningX}
 \begin{equation}
-	X = \frac{1 + \frac{W' + \gamma m}{W'} \frac{\beta}{p}^{2} + \frac{1}{2}\gamma^{2}[1 + (1 - \frac{\alpha Z}{\beta(W + m)})^{\frac{1}{2}}]^{-2}\frac{W - m}{W'} \frac{\beta}{p}^{2}[1 - \frac{1 - \gamma}{8\gamma}\frac{\beta}{p}^{2}]}{(1 + \frac{\beta}{4p}^{2})}
+	X = \frac{1 + \frac{W' + \gamma m}{8 W'} (\frac{\beta}{p})^{2} + \frac{1}{2}\gamma^{2}[1 + (1 - \frac{\alpha Z \beta}{(W + m)})^{1/2}]^{-2} \frac{W - m}{W'} \frac{\beta}{p}^{2}[1 - \frac{1 - \gamma}{8\gamma}(\frac{\beta}{p})^{2}]}{(1 + \frac{\beta}{4p}^{2})}
 	\label{eq:screeningX}
 \end{equation}
 The factor $X$ in equation \ref{eq:screeningX} is very close to 1.
 This correction matters mostly at low energy, and is very flat above 100 keV.
 
 \subsection{Finite Mass Correction}
-The finite mass correction corrects for the recoil motion of the $^{20}$Ne nucleus.
+The finite mass correction accounts for the recoil motion of the $^{20}$Ne nucleus.
 The form of finite mass corrections is given as \cite{WIL90} %in equation \ref{eq:finitemass} \cite{WIL90}
 
 \begin{equation}
 	R(W,W_{0},M) = 1 + r_{0} + \frac{r_{1}}{W} + r_{2}W + r_{3}W^{2}
 	\label{eq:finitemass}
 \end{equation}
-with $M$ the nuclear mass of $^{20}$Ne.
+with $M$ is here the nuclear mass of $^{20}$Ne.
 The forms of the $r_{i}$ depend on if the decay is a vector decay or an axial decay. 
 This is due to angular momentum conservation.
-Since $^{20}$F is an axial decay, the form of the finite mass correction is %shown in equations \ref{eq:finitemassrs} 
+Since $^{20}$F is an axial decay, the finite mass correction coefficients are %shown in equations \ref{eq:finitemassrs} 
 
 \begin{equation}
 	\label{eq:finitemassrs}
@@ -350,7 +314,7 @@ Since $^{20}$F is an axial decay, the form of the finite mass correction is %sho
 	r_{3} & = \frac{88}{9M}
 	\end{split}
 \end{equation}
-This effect is different that the hadronic shape factor described later. 
+This effect is different than the hadronic shape factor described later. 
 
 \subsection{Finite Size Correction}
 The finite size correction originates from treating the nucleus as a uniformly charged sphere instead of a point particle.
@@ -373,7 +337,7 @@ The $b_{x}$ coefficients are numbers shown in table \ref{tab:bcoef}
 
 \begin{table}[!hbt]
 	\centering
-	\caption{Coefficients for finite mass correction}
+	\caption{Coefficients for finite mass correction.}
 		\begin{tabular}{lrrrrrr}
 		         & $b_{1}$ & $b_{2}$ & $b_{3}$ & $b_{4}$ & $b_{5}$ & $b_{6}$ \\ \hline
 		$a_{-1}$ & 0.115 & -1.8123 & 8.2498 & -11.223 & -14.854 & 32.086 \\
@@ -392,8 +356,7 @@ The $b_{x}$ coefficients are numbers shown in table \ref{tab:bcoef}
 This is the last of the relevant electromagnetic corrections.
 In figure \ref{fig:corrections}, the name given is, "convolution PS."
 This correction $C(Z,W)$ accounts for the interaction of the lepton and nucleon wavefunctions. 
-The radial part of the nucleon wavefunctions are modeled as a rectangle with width R.
-This is adequate for a shape measurement. 
+The radial part of the nucleon wavefunctions is  modeled as a rectangle with width $R$.
 Much like the finite size and mass corrections, this correction depends on the type of $\beta$ decay.
 Since the decay of interest is an axial vector decay, the form of this correction is %shown in equation \ref{eq:nucandlepconv}
 \begin{equation}
@@ -411,13 +374,13 @@ where the $C_{i}$ coefficients are defined as \cite{WIL90} %in equation \ref{eq:
 	\end{split}
 \end{equation}
 This correction depends on both the maximum energy of the outgoing electron and the charge radius.
-The shape contribution from this correction is minimal. 
+The contribution from this correction to the shape is minimal. 
 
 \subsection{Hadronic Corrections}
 
 Nuclear form factors are one of the largest corrections to the beta spectrum.
 There are four relevant form factors that come together into a correction called here the nuclear shape factor
-The form factors are described in table \ref{tab:formfact} \cite{Min11} \cite{Cal77}
+The form factors are described in table \ref{tab:formfact} \cite{Min11} \cite{Cal77}.
 
 \begin{table}[!hbt]
 	\centering
@@ -438,20 +401,20 @@ The shape factor is written as
 	\label{eq:shapefactor}
 	S(E) = 1 + c_{0} + c_{1} + \frac{c_{-1}}{E} + c_{2}E^{2}	
 \end{equation}
-where the $C$ terms depend on the form factors and nuclear decay variables.
+where the terms depend on the form factors and nuclear decay variables.
 The dependence of the coefficeints $c_{i}$ is given by\cite{Cal77}
 
 \begin{equation}
 	\label{eq:sfcs}
 	\begin{split}
-	c_{0} & = -\frac{2 E_{0}}{M_{ave}}(1 + \frac{d}{c_{1h}} + \frac{b_{WM}}{c_{1h}})  + \frac{2 c_{2nuc}}{9 c_{2nuc}} 11 m_{e}^{2} \\
-	c_{-1} & = -\frac{m_{e}^{2}}{3M_{ave}} (2 + \frac{2b_{WM}}{c_{1h}} + \frac{d}{c_{1h}})  - \frac{2 c_{2nuc}}{9 c_{1h}} 2 m_{e}^{2} E_{0}\\
-	c_{1} & =  \frac{2}{3M_{ave}} (5 + \frac{b_{WM}}{c_{1h}}) + \frac{2 c_{2nuc}}{9 c_{1h}} 20 E_{0} \\
-	c_{2} & = -\frac{40 c_{2nuc}}{9 c_{1h}} 
+	c_{0} & = -\frac{2 E_{0}}{M_{ave}}(1 + \frac{d}{c_{1h}} + \frac{b_{WM}}{c_{1h}})  + \frac{2 c_{2h}}{9 c_{2h}} 11 m_{e}^{2} \\
+	c_{-1} & = -\frac{m_{e}^{2}}{3M_{ave}} (2 + \frac{2b_{WM}}{c_{1h}} + \frac{d}{c_{1h}})  - \frac{2 c_{2h}}{9 c_{1h}} 2 m_{e}^{2} E_{0}\\
+	c_{1} & =  \frac{2}{3M_{ave}} (5 + \frac{b_{WM}}{c_{1h}}) + \frac{2 c_{2h}}{9 c_{1h}} 20 E_{0} \\
+	c_{2} & = -\frac{40 c_{2h}}{9 c_{1h}} 
 	\end{split}
 \end{equation}
-Two of the form factors, $b_{WM}$ and $c_{1h}$ are calculated from experimental data. 
-$d$ and $c_{2nuc}$ are calculated from nuclear theory. 
+Three of the form factors, $b_{WM}$, $d$ and $c_{1h}$ are calculated from experimental data. 
+$c_{2h}$ is calculated from nuclear theory. 
 The calculation of $c_{1h}$ depends on the $ft$ value and is \cite{Min11}
 
 \begin{equation}
@@ -460,11 +423,11 @@ The calculation of $c_{1h}$ depends on the $ft$ value and is \cite{Min11}
 \end{equation}
 where $ft_{0}$ is the $ft$ value of the Fermi superallowed $\beta$ decays, and $ft_{20}$ the average of the $ft$ values of the decays of $^{20}F$ and $^{20}$Ne.
 This gives a value of $0.254 \pm 0.004$ \cite{Min11}.
-The weak magnetism ,$b_{WM}$, is of special theoretical interest. 
+The weak magnetism, $b_{WM}$, is of special theoretical interest. 
 
 \subsubsection{The Weak Magnetism}
 The form factor having the largest effect is the weak magnetism form factor. 
-It can be calculated from a $M1$ analog gamma-ray decay strength.
+It can be calculated from the $M1$ analog gamma-ray decay strength.
 This decay strength is from the 10.275 MeV analog state to the 1.634 MeV first excited state in $^{20}$Ne.
 This is a $2^{+}$ to $2^{+}$ angular momentum transition, and a $1$ to $0$ isospin transition.
 The decay strength, $\Gamma_{M1}$, can be used to calculate $b_{WM}$.
@@ -474,40 +437,22 @@ This calculation is
 	b_{WM} = \sqrt{\frac{6\Gamma_{M1}M^{2}}{\alpha E_{\gamma}^{3}}}
 	\label{eq:bwmcal}
 \end{equation}
-where $M$ is the nuclear mass and $E_{\gamma}$ the energy of that gamma ray.
+where $M$ is the nuclear mass and $E_{\gamma}$ the energy of the gamma ray.
 This gives a value of $43.4 \pm$ 1.2 \cite{Min11}.
 
 Getting a measurement of this value is of interest for two reasons.
 One, it tests the Conserved Vector Current (CVC) hypothesis.
 This hypothesis states that the weak interaction possesses a universal strength and a universal $V-A$ form \cite{Man58}.
-This means that the quantity $b_{WM}$ relates to difference of the magnetic moments of the neutron and the proton.
 In decays involving a $T = 1$ multiplet, the equation \ref{eq:bwmcal} is valid. 
 This means the largest of the nuclear corrections can be determined from experimental data, which has a much smaller uncertainty than any theory calculations.
 The second reason is more experimental.
 It gives a parameter with which to benchmark the measuring techniques and the analysis.
-If the analysis produces the expected value of $b_{WM}$, the same procedure should give a good value for $b_{GT}$.
+If the analysis produces the excepted value of $b_{WM}$, the same procedure should give a reliable value for $b_{GT}$.
 
 \subsubsection{The Induced Tensor Form Factor}
 From equation \ref{eq:sfcs}, the induced tensor form factor $d$ contributes to the corrections much in the same way as the Fierz term.
-The induced tensor form factor is calculated with theory.
-The form factor is given by \cite{Cal77}
+This form factor was measured in a beta decay correlation measurement \cite{Min11}.
 
-\begin{equation}
-	d = A g_{A} M_{\sigma L}
-	\label{eq:tensorformfactor}
-\end{equation} 
-where $A$ is the mass number (20 in this case), $g_{A}$ the axial vector coupling constant, and $M_{\sigma L}$ a matrix element of the decay.
-This matrix element is 
-
-\begin{equation}
-	M_{\sigma L} = < \beta || \tau^{+} i \vec{\sigma} \times \vec{l} || \alpha >
-	\label{eq:dmatrix}
-\end{equation}
-where $\beta$ is the final state, $\tau^{+}$ the isospin raising operator, $\vec{\sigma}$ the spin operator, $\vec{l}$ the angular momentum operator, and $\alpha$ the initial state \cite{Cal77}.
-In order to get the initial and final states $\alpha$ and $\beta$, shell model calculations have to be used.
-Different calculations have found $d$ of 40.5 \cite{Cal77} and 20.5 \cite{Min11}.
-Since $d$ is divided by the average nuclear mass, the uncertainty in this form factor will not cause a large systematic effect.
-%insert new cacluation here
 
 \section{Summary}
 

@@ -465,18 +465,20 @@ Using $A = 20$ and $c_{1h} = 0.253$, this gives $d = 40.5 \pm 3.7$.
 \section{Summary}
 
 Before the theoretical corrections were fed into a Monte Carlo simulation, the uncertainties from the experimentally determined quantities was checked.
-Theoretical spectra were  built with each value plus or minus it's uncertainty.
+Theoretical spectra were built with each value plus or minus it's uncertainty.
 Ratios between the spectra were taken.
-From these ratios, numerical derivatives were taken and weighted with the phase space spectrum.
+From these ratios, numerical derivatives were taken and weighted with the normalized phase space.
 These results are shown in figure \ref{fig:theoryuncer}.
+These results were futher verified by generating a spectrum with a $b_{WM}$ and a $b_{GT}$.
+This spectrum was fit with an additional generated spectrum with $R$ or $Q$ adjusted by one unit of uncertainty.
+The change in the fitted parameter was found to be smaller than the expected statistical uncertainty.
 
-%\begin{figure}[!htb]
-%	\centerline{\includegraphics[width=0.78\textwidth]{RatioPlot_2.pdf}}
-%	\caption{Estimate of the theory uncertainty due to the experimental parameter uncertainty.	
-%		 Shown are the slopes for each experimental parameter. 
-%		 They are orders of magnitude smaller than the $10^{-2}$/MeV of the $c_{1}$ of the shape factor.}
-%	\label{fig:theoryuncer}
-%\end{figure}
+\begin{figure}[!htb]
+	\centerline{\includegraphics[width=0.78\textwidth]{DerivPlot.pdf}}
+	\caption{The weighted numerical derivative.
+		 These derivatives are order of magnitude smaller than the 10$^{-2}$/MeV of the $c_{1}$ of the shape factor.}
+	\label{fig:theoryuncer}
+\end{figure}
 
 With all these corrections, the experiment can be described to the required precision.
 \end{document}

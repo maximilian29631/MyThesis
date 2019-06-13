@@ -11,9 +11,9 @@ The fitting function includes the phase space, corrections, shape factor, and Fi
 	\label{eq:betaspecwshape}
 \end{equation}
 with $PS(E)$ being the phase space, $C(E)$ the corrections, the $c_{i}$ the terms of the shape factor, and $E$ the total electron energy. 
-The $PS(E)\timesC(E)$ can be distributed to the shape factor, and four terms appear.
-Since the $c_{i}$ and $b_{GT}$ are small, $b_{GT}\timesm_{e}$ can be, to first order, added to $c_{-1}$. 
-These four terms are the inputs to the GEANT4 simulation.
+The $PS(E)\times C(E)$ can be distributed to the shape factor, and four terms appear.
+Since the $c_{i}$ and $b_{GT}$ are small, $b_{GT} \times m_{e}$ can be, to first order, added to $c_{-1}$. 
+These four terms are the inputs to the GEANT4 simulaion.
 These are summarized in table \ref{tab:4histfit}
 
 \begin{table}[!hbt]
@@ -214,7 +214,7 @@ Then, it is multiplied by the shape factor.
 This function was 
 
 \begin{equation}
-	H^{*}(E) = A \times f^{*}(E) \times S(E) + B\timespu^{*}(E)
+	H^{*}(E) = A \times f^{*}(E) \times S(E) + B \times pu^{*}(E)
 	\label{eq:hybridmodel}
 \end{equation}
 with $A$ being a normalization constant and $S(E)$ the shape factor. 
@@ -321,7 +321,8 @@ One of the largest systematic uncertainty has to do with the position where the 
 
 \subsection{Lower Beta Cut Effect}
 
-The lower beta cut effect is the systematic shift of both the $b_{WM}$ and $b_{GT}$ as a function of where the fit started.
+The lower beta cut effect is the systematic shift of the fitted gain $G$ as a function of where the fit started.
+The $b_{WM}$ and $b_{GT}$ are correlated with $G$ and shift as well.
 There are several different input factors that can induce such an effect.
 
 \subsubsection{The Offset}
@@ -333,20 +334,20 @@ It also doesn't probe the same location as where the beta electrons are.
 
 When applying an offset of 10.05 in a fit of the data, it was found that the output varied greatly as a function of where the fit was started.
 For these graphs, the end of the fit (or upper beta cut) was set to 7500 keV.
-The detector is known to be non-linear below 200 keV, so any fit starting below that point is suspect. 
+The detector is known to be non-linear below 200 keV \cite{Kno10}, so any fit starting below that point is suspect. 
 After 2000 keV, the shape of the beta spectrum makes getting a good fit unlikely.
 The lower beta cut was varied between these two end points.
-The effect in $b_{WM}$ and $b_{GT}$ is shown in figure \ref{fig:offset10LBCeffect}.
+The effect in the average gains is shown in figure \ref{fig:offset10LBCeffect}.
 
 \begin{figure}
     \centering
     \begin{minipage}{0.50\textwidth}
-        \centerline{\includegraphics[width=0.9\textwidth]{CsILBCvbwmOffsetis10p054histfit.png}}
+        \centerline{\includegraphics[width=0.9\textwidth]{CsILBCvGainSMOffsetis10p054histfit.png}}
     \end{minipage}\hfill
     \begin{minipage}{0.50\textwidth}
-        \centerline{\includegraphics[width=0.9\textwidth]{CsILBCvbgtOffsetis10p054histfit.png}}
+        \centerline{\includegraphics[width=0.9\textwidth]{CsILBCvGainBSMOffsetis10p054histfit.png}}
     \end{minipage}
-    \caption{The dependence of the parameters to the start of the fit.
+    \caption{For the standard model fit, there is a large dependence of the gain on the start of the fit.
 	     The offset here is 10.05.}
     \label{fig:offset10LBCeffect}
 \end{figure}
@@ -359,19 +360,19 @@ Then, the fit function had a different offset applied to it.
 For example, fitting the histogram generated with an offset of 10, and fit with an offset of 20 gives an effect as seen in \ref{fig:MCoffset10applied20}.
 
 \begin{figure}
-	\centerline{\includegraphics[width=0.7\textwidth]{MCLBCvbwmOffsetis10Applied20.png}}
+	\centerline{\includegraphics[width=0.7\textwidth]{MCLBCvbwmOffsetis10Applied20_gain.png}}
 	\caption{The effect of the lower beta cut in a simulation when the applied offset is 10 units higher than the real offset.}
 	\label{fig:MCoffset10applied20}
 \end{figure}
 
 This effect can be exploited to determine an offset using only the data. 
 The size of the slope induced is linear compared to the offset. %Add figure here
-By adjusting the offset and noting the slope of the $b_{WM}$ vs the lower beta cut and plotting against the offset, the location of zero slope can be calculated.
+By adjusting the offset and noting the slope of the $G_{SM}$ vs the lower beta cut and plotting against the offset, the location of zero slope can be calculated.
 This graph is shown in figure \ref{fig:slopevoffset}.
 \begin{figure}[!htb]
-	\centerline{\includegraphics[width=0.70\textwidth]{fig_offsetvslopecurve.pdf}}
-	\caption{How the slope of the $b_{WM}$ v LBC curve changes with offset.
-		 A slope of 0 corresponds to an offset of -0.87}
+	\centerline{\includegraphics[width=0.70\textwidth]{fig_offsetvslopecurve_gain.pdf}}
+	\caption{How the slope of the $G_{SM}$ vs LBC curve changes with offset.
+		 A slope of 0 corresponds to an offset of -6.6}
 	\label{fig:slopevoffset}
 \end{figure}
 The resulting $b_{WM}$ and $b_{GT}$ curves are seen in figure \ref{fig:offset0LBCeffect}.
@@ -379,84 +380,38 @@ The resulting $b_{WM}$ and $b_{GT}$ curves are seen in figure \ref{fig:offset0LB
 \begin{figure}
     \centering
     \begin{minipage}{0.50\textwidth}
-        \centerline{\includegraphics[width=0.9\textwidth]{CsIbwmvLBCDrawingGeo_OffsetisZero.png}}
+        \centerline{\includegraphics[width=0.9\textwidth]{CsILBCvGainSMOffsetism6p64histfit.png}}
     \end{minipage}\hfill
     \begin{minipage}{0.50\textwidth}
-        \centerline{\includegraphics[width=0.9\textwidth]{CsIbgtvLBCDrawingGeo_OffsetisZero.png}}
+        \centerline{\includegraphics[width=0.9\textwidth]{CsILBCvGainBSMOffsetism6p64histfit.png}}
     \end{minipage}
     \caption{The depedence of the parameters to the start of the fit.
-	     The offset here is 0.
-	     The $b_{WM}$ is independent of the start of the fit, but the $b_{GT}$ still has a large effect}
+	     The offset here is -6.6.
+    	     Both gains are indepedent of the start of the fit.}
     \label{fig:offset0LBCeffect}
 \end{figure}
 
 To estimate the uncertainty on the offset, the statistical uncertainty of the slope of the lines fit to the $b_{GT}$  was taken.
 The offset was varied and how the slope of the line changed as the offset changed was recorded.
 Then, the uncertainty of the slope was changed into an uncertainty on the offset using this information.
-This gave an uncertainty of 0.8 on the offset.
-As seen in figure \ref{fig:offset0LBCeffect}, the $b_{GT}$ still depends greatly on where the fit starts.
+This gave an uncertainty of 0.1 on the offset.
+
+The gain used in the fit is an average over the full run.
+This gain shifts as 
 Other effects are important. 
 
-\subsubsection{The Relative Normalization of the Beta-gamma Sum Spectrum}
-
-The output of the GEANT4 Monte Carlo was processed into two different parts.
-The two parts were summed with a factor of 1 in front of the beta-gamma sum spectrum in figure \ref{fig:offset0LBCeffect}.
-This relative normalization is given from GEANT4.
-Using the same Monte Carlo, this factor was adjusted in the pseudo-data and the fitting functions.
-It was found that an effect as seen in the data can be produced by multiplying the beta-gamma sum spectrum in both the data and the fit function induced a shift very similar to that in figure \ref{fig:offset0LBCeffect}.
-This is seen in figure \ref{fig:MCTimes5}.    
-
-\begin{figure}
-    \centering
-    \begin{minipage}{0.50\textwidth}
-        \centerline{\includegraphics[width=0.9\textwidth]{MCbwmvLBC_BGBothTimes5.png}}
-    \end{minipage}\hfill
-    \begin{minipage}{0.50\textwidth}
-        \centerline{\includegraphics[width=0.9\textwidth]{MCbgtvLBC_BGBothTimes5.png}}
-    \end{minipage}
-    \caption{Monte Carlo data with a LBC effect due to the beta-gamma sum spectrum}
-    \label{fig:MCTimes5}
-\end{figure}
-
-Here both the pseudo-data and the fitting functions had their background multiplied by five. 
-The input values of the $b_{WM}$ and $b_{GT}$ can be recovered by this fit.
-However, to do this, the offset in the fit function is set to 8.6 ADC units.
-The sum spectra in each of the 4 histograms is increased to 3.8 times that of output of the Monte Carlo.
-These two parameters are not the input parameters.
-The input offset was 0 and the input background level was 5.
-
-Adjusting the level of the beta-gamma sum spectrum affects the $b_{GT}$ more than the $b_{WM}$.
-This parameter can be adjusted to make the $b_{GT}$ independent of the start of the fit.
-Doing this for the data gives the results in figure \ref{fig:dataoffset0BG10per}. 
-
-\begin{figure}
-    \centering
-    \begin{minipage}{0.50\textwidth}
-        \centerline{\includegraphics[width=0.9\textwidth]{CsIbwmvLBCDrawingGeo_OffsetisZero_BGis10percent.png}}
-    \end{minipage}\hfill
-    \begin{minipage}{0.50\textwidth}
-        \centerline{\includegraphics[width=0.9\textwidth]{CsIbgtvLBCDrawingGeo_OffsetisZero_BGis10percent.png}}
-    \end{minipage}
-    \caption{Adjusting the beta-gamma sum spectrum level in the datato flatten out the $b_{GT}$}
-    \label{fig:dataoffset0BG10per}
-\end{figure}
-
-However, to obtain these results, the level of the beta-gamma sum spectrum must be set to 0.096. 
-It is unlikely that the GEANT4 Monte Carlo is that far off, and that this number corresponds to anything physical.
-It is unclear if this procedure is a valid one to take.
-This has to be investigated further and solved.
 
 \subsubsection{The Convolution}
 
 Another potential effect is if the detector resolution was applied incorrectly.
 To test that, a Monte Carlo simulation was written.
-The space space in equation \ref{eq:phase_space} was multiplied by the shape factor in equation \ref{eq:shapefactor}.
+The phase space in equation \ref{eq:phase_space} was multiplied by the shape factor in equation \ref{eq:shapefactor}.
 This function was sampled $10^{9}$ times twice to build two histograms. 
 Both histograms had a detector resolution applied as described in section \ref{sec:convolution}
 One histogram was sampled a further $10^{6}$ times 10 times to build a sample data set.
 The other convoluted histogram was used to fit the generated data set.
 The first histogram's $A$ was fixed, while the second histogram's $A$ was adjusted.
-When the sample data's $A$ matched the $A$ that were used, no dependence of $b_{WM}$ on the start of the fit.
+When the sample data's $A$ matched the $A$ that were used, no dependence of $b_{WM}$ on the start of the fit was found.
 When the $A$ of the data sample and the $A$, the first thing that happened was that the $b_{WM}$ changed.
 If the $A$ differ by a factor of 2 or more, a shift in $b_{WM}$ appears.
 However, this is much larger than any uncertainty in detector resolution.
@@ -476,25 +431,22 @@ Both parameters are flat after 5500 keV.
 \begin{figure}
     \centering
     \begin{minipage}{0.50\textwidth}
-        \centerline{\includegraphics[width=0.9\textwidth]{CsIbwmvUBC4HistFit.png}}
+        \centerline{\includegraphics[width=0.9\textwidth]{CsIGSMvUBC4HistFit.png}}
     \end{minipage}\hfill
     \begin{minipage}{0.50\textwidth}
-        \centerline{\includegraphics[width=0.9\textwidth]{CsIbgtvUBC4HistFit.png}}
+        \centerline{\includegraphics[width=0.9\textwidth]{CsIGBSMvUBC4HistFit.png}}
     \end{minipage}
-    \caption{The effect of changing the upper beta cut}
+    \caption{The effect of changing the upper beta cut.}
     \label{fig:UBCEffect}
 \end{figure}
-
 
 \subsection{Other Systematic Uncertainties}
 
 The lower beta cut effect is the largest of the systematic uncertainties.
 Many of the other systematic uncertainties are independent of the absolute value of $b_{GT}$.
 To calculate these uncertainties, the lower beta cut was fixed to 250 keV.
-The offset was set to 0, and the level of the beta-gamma sum spectrum was set to 1.
+The offset was set to -6.5, and the level of the beta-gamma sum spectrum was set to 1.
 These parameters give the conditions in figure \ref{fig:offset0LBCeffect}.
-With these values, the value of $b_{GT}$ is $0.0350 (42)_{stat}$.
-The value of $b_{GT}$ is $28.3 (1.7)_{stat}$.
 
 For the calculation of the systematic uncertainties, one parameter at a time was adjusted.
 The parameter was increased by one unit of the error on that parameter.
@@ -509,12 +461,11 @@ These were all calculated by running the four histograms with $2 \times 10^{9}$ 
 
 \begin{table}[!hbt]
 	\centering
-	\caption{Systematic uncertainties due to simulation inputs}
+	\caption{Systematic uncertainties due to simulation inputs.}
 		\begin{tabularx}{\textwidth}{RLLLL}
 		Parameter Name & Parameter Value & Parameter Uncertainty & Systematic Uncertainty $b_{WM}$ & Systematic Uncertainty $b_{GT}$ \\ \hline
-		Electron end point energy & 5900.864 $keV$ & 0.081 $keV$ & 0.2 & 0.0012\\
+		Electron maximum total energy & 5900.864 $keV$ & 0.081 $keV$ & 0.2 & 0.0012\\
 		Charge radius & 3.0055 $fm$ & 0.0021 $fm$  & 0.2 & 0.0003 \\
-		Convolution & 1.112 & 0.008 &  0.3 & 0.0004 	 
 		\end{tabularx}
 		\label{tab:simsyseffect}
 \end{table}
@@ -533,33 +484,41 @@ There is no systematic upper beta cut effect.
 
 \begin{table}[!hbt]
 	\centering
-	\caption{Systematic uncertainties due to fit inputs} 
+	\caption{Systematic uncertainties due to fit inputs.} 
 		\begin{tabularx}{\textwidth}{RLLLL}
-		Parameter Name & Parameter Value & Parameter Range & Systematic Uncertainty on $b_{WM}$ & Systematic Uncertainty $b_{GT}$\\ \hline
- 		Lower beta cut & 250 keV & 200 to 2000 keV & N/A & 0.0283 \\
-		Offset & 0 & -0.8 to 0.8 & 2.0 & 0.0055 \\
+		Parameter Name & Parameter Value & Parameter Range or Uncertainty & Systematic Uncertainty on $b_{WM}$ & Systematic Uncertainty $b_{GT}$\\ \hline
+ 		Lower beta cut & 250 keV & 200 to 2000 keV & 5.5 & 0.0235 \\
+		Offset & -6.5 & -6.6 to -6.4 & 0.3 & 0.0008 \\
 		Binning of data histogram & 32 & 16 to 64 & 0.6 & 0.0003\\
 		Binning of fitting histograms & 32 & 16 to 64 & 0.2 & 0.0007 \\ 
+		Convolution & 1.112 & 0.008 &  0.3 & 0.0004 	 
 		\end{tabularx}
 		\label{tab:fitsyseffect}
 \end{table}
 
 Lastly, there are the systematic uncertainties due to the form factors inside the shape factor.
+To calculate the systematic uncertainty on $b_{WM}$ due to $b_{GT}$, two fits one after another were done.
+First, $b_{GT}$ was fit with the central value of $b_{WM}$
+The resulting gain was recorded.
+This gain was fixed, and the altered value of $b_{WM}$ applied and $b_{GT}$ was fit again.
+The difference between the fitted values of $b_{GT}$ was recorded as a systematic uncertainty.
+It was found that the systematic uncertainty of $b_{GT}$ depended on where the fit was started. 
+This is another reason to start the fit as low as possible. 
 These are summarized in table \ref{tab:formfactorsyseffect}
 
 \begin{table}[!hbt]
 	\centering
-	\caption{Systematic uncertainties due to nuclear form factors} 
+	\caption{Systematic uncertainties due to nuclear form factors.} 
 		\begin{tabularx}{\textwidth}{RLLLLL}
 		Parameter Name & Parameter Variable & Parameter Value & Parameter Uncertainty & Systematic Uncertainty $b_{WM}$ & Systematic Uncertainty $b_{GT}$ \\ \hline
-		Weak magentism & $b_{WM}$ & 43.4 & 1.2 \cite{Min11} & N/A & 0.0028 \\
+		Weak magentism & $b_{WM}$ & 43.4 & 1.2 \cite{Min11} & N/A & 0.0034 \\
 		Induced tensor form factor & $d$ & 40.5 &  3.7 \cite{Min11} & 0.2 & 0.0004 \\
-		Fermi matrix element & $c_{1nuc}$ & 0.253 & 0.004 \cite{Min11} & 0.5  & 0.0017 \\
-		Second forbidden matrix element & $c_{2nuc}$  & 0.755 $fm^{2}$ & 0.257 $fm^{2}$ \cite{Elm87} & 0.2 & 0.0011
+		Fermi matrix element & $c_{1h}$ & 0.253 & 0.004 \cite{Min11} & 0.5  & 0.0017 \\
+		Second forbidden matrix element & $c_{2h}$  & 0.755 $fm^{2}$ & 0.257 $fm^{2}$ \cite{Elm87} & 0.2 & 0.0011
 		\end{tabularx}
 		\label{tab:formfactorsyseffect}
 \end{table}
 
 The largest uncertainty is due to the lower beta cut effect.
-The second largest uncertainty is due to the uncertainty of the offset.
+The second largest uncertainty is due to the uncertainty of the weak magnetism.
 \end{document}

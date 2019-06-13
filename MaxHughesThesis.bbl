@@ -1,5 +1,18 @@
 \begin{thebibliography}{10}
 
+\bibitem{Hic17}
+K.~P. Hickerson, X.~Sun, Y.~Bagdasarova, D.~Bravo-Bergu\~no, L.~J. Broussard,
+  M.~A.-P. Brown, R.~Carr, S.~Currie, X.~Ding, B.~W. Filippone, A.~Garc\'{\i}a,
+  P.~Geltenbort, J.~Hoagland, A.~T. Holley, R.~Hong, T.~M. Ito, A.~Knecht,
+  C.-Y. Liu, J.~L. Liu, M.~Makela, R.~R. Mammei, J.~W. Martin, D.~Melconian,
+  M.~P. Mendenhall, S.~D. Moore, C.~L. Morris, R.~W. Pattie,
+  A.~P\'erez~Galv\'an, R.~Picker, M.~L. Pitt, B.~Plaster, J.~C. Ramsey,
+  R.~Rios, A.~Saunders, S.~J. Seestrom, E.~I. Sharapov, W.~E. Sondheim,
+  E.~Tatar, R.~B. Vogelaar, B.~VornDick, C.~Wrede, A.~R. Young, and B.~A. Zeck.
+\newblock First direct constraints on fierz interference in free-neutron
+  $\ensuremath{\beta}$ decay.
+\newblock {\em Phys. Rev. C}, 96:042501, Oct 2017.
+
 \bibitem{Min11}
 K.~Minamisono, T.~Nagatomo, K.~Matsuta, C.~D.~P. Levy, Y.~Tagishi, M.~Ogura,
   M.~Yamaguchi, H.~Ota, J.~A. Behr, K.~P. Jackson, A.~Ozawa, M.~Fukuda,
@@ -70,29 +83,22 @@ S.~Itoh, M.~Yasuda, H.~Yamamoto, T.~Iida, A.~Takahashi, and K.~Kawade.
   High-rate Spectroscopy Amplifier}.
 \newblock In {\em {1994 Symposium on Nuclear Data}}, Tokai, Japan, March 1995.
 
-\bibitem{Hic17}
-K.~P. Hickerson, X.~Sun, Y.~Bagdasarova, D.~Bravo-Bergu\~no, L.~J. Broussard,
-  M.~A.-P. Brown, R.~Carr, S.~Currie, X.~Ding, B.~W. Filippone, A.~Garc\'{\i}a,
-  P.~Geltenbort, J.~Hoagland, A.~T. Holley, R.~Hong, T.~M. Ito, A.~Knecht,
-  C.-Y. Liu, J.~L. Liu, M.~Makela, R.~R. Mammei, J.~W. Martin, D.~Melconian,
-  M.~P. Mendenhall, S.~D. Moore, C.~L. Morris, R.~W. Pattie,
-  A.~P\'erez~Galv\'an, R.~Picker, M.~L. Pitt, B.~Plaster, J.~C. Ramsey,
-  R.~Rios, A.~Saunders, S.~J. Seestrom, E.~I. Sharapov, W.~E. Sondheim,
-  E.~Tatar, R.~B. Vogelaar, B.~VornDick, C.~Wrede, A.~R. Young, and B.~A. Zeck.
-\newblock First direct constraints on fierz interference in free-neutron
-  $\ensuremath{\beta}$ decay.
-\newblock {\em Phys. Rev. C}, 96:042501, Oct 2017.
-
-\bibitem{Gon19}
-M.~González-Alonso, O.~Naviliat-Cuncic, and N.~Severijns.
-\newblock New physics searches in nuclear and neutron $\ensuremath{\beta}$
-  decay.
-\newblock {\em Progress in Particle and Nuclear Physics}, 104:165 -- 223, 2019.
+\bibitem{Jac57}
+J.D. Jackson, S.B. Treiman, and H.W.~Wyld Jr.
+\newblock Coulomb corrections in allowed beta transitions.
+\newblock {\em Nuclear Physics}, 4:206 -- 212, 1957.
 
 \bibitem{Lee56}
 T.~D. Lee and C.~N. Yang.
 \newblock Question of parity conservation in weak interactions.
 \newblock {\em Phys. Rev.}, 104:254--258, Oct 1956.
+
+\bibitem{Har17}
+J.~C. Hardy and I.~S. Towner.
+\newblock Superallowed ${0}^{+}\ensuremath{\rightarrow}{0}^{+}$ nuclear
+  $\ensuremath{\beta}$ decays: 2014 critical survey, with precise results for
+  ${V}_{ud}$ and ckm unitarity.
+\newblock {\em Phys. Rev. C}, 91:025501, Feb 2015.
 
 \bibitem{Wan17}
 Meng Wang, G.~Audi, F.~G. Kondev, W.J. Huang, S.~Naimi, and Xing Xu.
@@ -180,17 +186,6 @@ Murray Gell-Mann.
   decay.
 \newblock {\em Phys. Rev.}, 111:362--365, Jul 1958.
 
-\bibitem{Huy18}
-X.~Huyan, O.~Naviliat-Cuncic, P.~Voytas, S.~Chandavar, M.~Hughes,
-  K.~Minamisono, and S.V. Paulauskas.
-\newblock Geant4 simulations of the absorption of photons in csi and nai
-  produced by electrons with energies up to 4 mev and their application to
-  precision measurements of the $\beta$-energy spectrum with a calorimetric
-  technique.
-\newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
-  Accelerators, Spectrometers, Detectors and Associated Equipment}, 879:134 --
-  140, 2018.
-
 \bibitem{Wei10}
 D.~Weisshaar, A.~Gade, T.~Glasmacher, G.F. Grinyer, D.~Bazin, P.~Adrich,
   T.~Baugher, J.M. Cook, C.Aa. Diget, S.~McDaniel, A.~Ratkiewicz, K.P. Siwek,
@@ -201,9 +196,23 @@ D.~Weisshaar, A.~Gade, T.~Glasmacher, G.F. Grinyer, D.~Bazin, P.~Adrich,
   Accelerators, Spectrometers, Detectors and Associated Equipment}, 624(3):615
   -- 623, 2010.
 
+\bibitem{Tan03}
+H.~{Tan}, M.~{Momayezi}, A.~{Fallu-Labruyere}, Y.~{Chu}, and W.~K. {Warburton}.
+\newblock A fast digital filter algorithm for gamma-ray spectroscopy of
+  double-exponential decaying scintillators.
+\newblock In {\em 2003 IEEE Nuclear Science Symposium. Conference Record (IEEE
+  Cat. No.03CH37515)}, volume~2, pages 784--788 Vol.2, Oct 2003.
+
 \bibitem{DAQ17}
 Ron Fox.
 \newblock Nscl data acquisition documentation, 2017.
+
+\bibitem{Hug18}
+M.~Hughes, E.~A. George, O.~Naviliat-Cuncic, P.~A. Voytas, S.~Chandavar,
+  A.~Gade, X.~Huyan, S.~N. Liddick, K.~Minamisono, S.~V. Paulauskas, and
+  D.~Weisshaar.
+\newblock Measurement of the $^{20}\mathrm{F}$ half-life.
+\newblock {\em Phys. Rev. C}, 97:054328, May 2018.
 
 \bibitem{Bur19}
 D.~P. Burdette, M.~Brodeur, T.~Ahn, J.~Allen, D.~W. Bardayan, F.~D. Becchetti,
@@ -246,20 +255,9 @@ John {von Neumann}.
 \newblock Various techniques used in connection with random digits.
 \newblock pages 36--38, 1951.
 
-\bibitem{Har17}
-J.~C. Hardy and I.~S. Towner.
-\newblock Superallowed ${0}^{+}\ensuremath{\rightarrow}{0}^{+}$ nuclear
-  $\ensuremath{\beta}$ decays: 2014 critical survey, with precise results for
-  ${V}_{ud}$ and ckm unitarity.
-\newblock {\em Phys. Rev. C}, 91:025501, Feb 2015.
-
-\bibitem{Wau10}
-F.~Wauters, I.~Kraev, D.~Z\'akouck\'y, M.~Beck, M.~Breitenfeldt,
-  V.~De~Leebeeck, V.~V. Golovko, V.~Yu. Kozlov, T.~Phalet, S.~Roccia, G.~Soti,
-  M.~Tandecki, I.~S. Towner, E.~Traykov, S.~Van~Gorp, and N.~Severijns.
-\newblock Precision measurements of the $^{60}\mathrm{Co}$
-  $\ensuremath{\beta}$-asymmetry parameter in search for tensor currents in
-  weak interactions.
-\newblock {\em Phys. Rev. C}, 82:055502, Nov 2010.
+\bibitem{Kno10}
+Glenn~F Knoll.
+\newblock {\em {Radiation detection and measurement; 4th ed.}}
+\newblock Wiley, New York, NY, 2010.
 
 \end{thebibliography}

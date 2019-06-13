@@ -1,7 +1,7 @@
 \documentclass[../MaxHughesThesis.tex]{subfiles}
 
 \begin{document}
-After the half-life measurement was completed, the next step was to fit the energy spectrum for the Fierz term. 
+After the half-life measurement was completed, the next step was to fit the beta energy spectrum for the Fierz term. 
 The corrections to the phase space were the first part of describing the energy spectrum.  
 The effect of bremsstrahlung and the efficiency of the detectors needed to be simulated.
 The absorption of the 1.6 MeV gamma ray needed to be accounted for. 
@@ -12,7 +12,7 @@ The most updated copy of the code can be found at https://github.com/maximilian2
 \section{GEANT4 Inputs}
 The phase space energy spectrum multiplied by the corrections was fed as input to a Monte Carlo.
 The program used to model the detectors was GEANT4 version 10.04.02.
-In order to use the program,the detector geometries where needed.
+In order to use the program, the detector geometries where needed.
 
 \subsection{Detector Geometry}
 A source of the detector geometry were the technical drawings of detectors. 
@@ -21,7 +21,7 @@ This drawing was the basis of the detector geometry fed into the simulation.
 
 \begin{figure}[!htb]
 	\centerline{\includegraphics[width=0.78\textwidth]{ImplantDrawing.png}}
-	\caption{A techincal drawing of the CsI(Na) implant detector}
+	\caption{A technical drawing of the CsI(Na) implant detector.}
 	\label{fig:ImplantTech}
 \end{figure}
 
@@ -33,7 +33,7 @@ On the front and back of the detector, the empty layer was 3.64 mm thick.
 After the empty layer, a 1 mm aluminum can surrounded the detector on all sides.  
 The center of this detector was placed at the center of the simulation.
 
-The four large gamma detectors also square prisms.
+The four large gamma detectors are also square prisms.
 The active volume was 79.5 x 79.5 x 76.2 mm of CsI.
 An empty layer was  added to the gamma detectors.
 The empty layer on the sides was 1.5 mm thick.
@@ -48,7 +48,7 @@ A visualization of the CsI crystals in GEANT4 is shown in figure \ref{fig:GEANT4
 
 \begin{figure}[!htb]
 	\centerline{\includegraphics[width=0.78\textwidth]{GEANT4WithoutAl.png}}
-	\caption{The detector geometry inside GEANT4}
+	\caption{The detector geometry inside GEANT4.}
 	\label{fig:GEANT4Det}
 \end{figure}
 
@@ -84,7 +84,7 @@ After the electron energy is generated, the formula describing the energy spectr
 This spectrum is written out in equation \ref{eq:KUB}. % Add KUB again here? Probably.
 Further discussion of this formula is found in the theory chapter.
 A cutoff of 50 keV is imposed to the formula, as it has a singularity at zero photon energy.
-In addition, with this geometry, all photon energies below 100 keV and absorbed.
+In addition, with this geometry, all photon energies below 100 keV are absorbed.
 Then, the formula is numerical integrated from 50 keV to the electron energy over 1000 steps using the trapezoidal rule.
 This is the total probability that an electron emits a KUB photon.
 This number is compared to a random number from 0 to 1.
@@ -126,12 +126,12 @@ The range cuts for other particles stayed at 5 $\mu$m.
 \section{Simulation Development}
 The GEANT4 simulation is based on the example TestEm5.
 The first changes were to add the proper detector geometry, as described above.
-The next changes were to add a second primary particle, which was the gamma ray from the decay curve.
+The next changes were to add a second primary particle, which was the gamma ray from the decay.
 The data structure that recorded all the data absorbed event by event was added, so that the gamma cuts could be changed after the fact.
 
 Initially, all energy absorbed by the implant was recorded, regardless of its origin.
 This was found not to be the correct way to fit the data, so the class G4VUserTrackInformation was implemented.
-This gave the each track the information about the primary particle.
+This gave to each track the information about the primary particle.
 To split the energies from different detectors, the initial energy and charge of each primary particle was checked.
 Since the gamma rays are mono-chromatic, the energy of the primary particle was compared to 1.6336 MeV.
 If the primary particle had charge or it was a photon without an initial energy of 1.6336 MeV, it was put in the category of energy from the initial electron. 
@@ -170,12 +170,8 @@ Both the can and the MgO layer were offset.
 After that geometry, the implant's geometry was updated to match the gamma detectors' geometries more closely.
 A 2 mm gap was added, and then surrounded by 1.5 mm of MgO. 
 On top of that, a 1 mm layer of Al was added.
-However, the top and bottom of the detector was left bare in the MgO powder and the Al layer.
+However, the top and bottom of the detector was left bare in the MgO and the Al layer.
 This was fixed, and the can and the MgO completely surrounded the detector.
-
-The detector geometry with the MgO is not what the actual detector geometry is.
-This geometry was tuned in order to match the efficiency of the data better.
-With this tuning, the efficiency is off about 4\% of the measured value. 
 
 It was found that the detector geometry in the simulation has a large effect on the results of the fit.
 The final detector geometry was that from technical drawings of the detectors.
@@ -185,7 +181,7 @@ This geometry ultimately used  is the one described above.
 Another change that was made is in how the simulation results were built.
 Initially, all the energy absorbed in each detector was put into a TTree.
 This meant that 2e9 events generated 60 GB of output files.
-To reduce this space requirement, first only events were any gamma detector had a non-zero input were recorded.
+To reduce this space requirement, only events were any gamma detector had a non-zero input were first recorded.
 This cut down the space required by 1/3 to 20 GB.
 This was not enough, however, as each fit needed four histograms.
 A requirement that only one detector fired in order to get the event recorded in the TTree was imposed. 
@@ -202,20 +198,17 @@ The other had the information about the beta-gamma sum spectra.
 Then, when it came time to apply the beta cuts, the 2-D histogram was projected onto the x-axis and the spectra built.
 To check if the binning applied to the histogram distorted the output spectra at all, ratios were of the two output spectra were taken.
 The results of the ratios can be seen in figure \ref{fig:histogramtottreeratio}.
-The difference is very small.
+The red line fits the ratio very well.
+The relative normalization $p0$ is unimportant in the analysis.
+The slope $p1$ is consistent with zero to $10^{-7}$.
+This is much smaller than the linear term in the shape factor.
+From this, it is seen that processing the data differently has no effect on the outcome.
 This method of processing the data was used to test the sensitivity of the fit to the charge radius and the beta end point.
 
 \begin{figure}
-    \centering
-    \begin{minipage}{0.50\textwidth}
-        \centerline{\includegraphics[width=0.9\textwidth]{GEANT42DHistogramsvTTreeFilteredRatio.png}}
-    \end{minipage}\hfill
-    \begin{minipage}{0.50\textwidth}
-        \centerline{\includegraphics[width=0.9\textwidth]{GEANT42DHistogramsvTTreeFilteredRatio_WithGamma.png}}
-    \end{minipage}
+    \centerline{\includegraphics[width=0.78\textwidth]{GEANT42DhistvTTreeFilteredRatioSum.png}}
     \caption{Ratio of processing data two different ways.
-	     Left shows the beta only spectrum ratio.
-	     Right shows the sum spectrum.}
+    	     This is all the energy absorbed in the implant detector.}
     \label{fig:histogramtottreeratio}
 \end{figure}
 

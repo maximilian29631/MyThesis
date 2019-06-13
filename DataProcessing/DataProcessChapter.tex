@@ -1,15 +1,14 @@
 \documentclass[../MaxHughesThesis.tex]{subfiles}
 
 \begin{document}
-A digitial data acquisition (DAQ) system was used to record the data for this experiment.
+A digital data acquisition (DAQ) system was used to record the data for this experiment.
 To configure the DAQ, the detector signals were looked at using an oscilloscope.
-The timing of each detector signal was recorded and used to tune the data acquisition. 
-The signals were then inserted into a digital data acquisition system.
+The input parameters were tuned from the decay time of the signals.
 
 \section{Data Acquisition}
 
-All the signals for all the detectors were sent to 16 channel XIA PIXE modules. 
-Each channel had a 250 mega-channel per second digitizer attached.
+All the signals for all the detectors were sent to 16 channel XIA PIXIE modules. 
+Each channel had a 250 mega-sample per second digitizer. 
 The incoming signal was first digitized, and then process by the module. 
 The modules were run with the NSCL firmware.
 A list of the three modules and which channel processed the signals from which detector is seen in table \ref{tab:cablingscheme}.
@@ -51,26 +50,26 @@ Each of the channels gave a time stamp and an energy calculated from a trapezoid
 
 \subsection{Trapezoidal Filter Description}
 After the parameters of the filter were set, the filter was taken on the digitized detector signals.
-First, three sums of the digitize wave-forms were taken.
-The first sum was over a time known as $tPEAKING$.
-Then, a second sum was taken directly after the first over a time known as $tGAP$.
-Then, a third sum was taken directly after the the second with over a period of $tPEAKING$ again.
-These three sums were added weight given as  
+First, three sums of the digitized wave-forms were taken.
+The first sum was over a time known as $t_{PEAKING}$.
+Then, a second sum was taken directly after the first over a time known as $t_{GAP}$.
+Then, a third sum was taken directly after the the second with over a period of $t_{PEAKING}$ again.
+These three sums were added weight given as \cite{Tan03} 
 
 \begin{equation}
 	E = C_{0} * S_{0} + C_{g} * S_{g} + C_{1} * S_{1} 
 	\label{eq:ensum}
 \end{equation} 
 %
-with $S_{0}$ being the first sum over $tPEAKING$ described above, $S_{G}$ being the sum over $tGAP$, and $S_{1}$ being the second sum over $tPEAKING$.
+with $S_{0}$ being the first sum over $t_{PEAKING}$ described above, $S_{G}$ being the sum over $t_{GAP}$, and $S_{1}$ being the second sum over $t_{PEAKING}$.
 $C_{0}$ is described as
 
 \begin{equation}
-	C_{0} = \frac{-(1 - e^{\frac{tSPL}{\tau}})e^{\frac{tPEAKING}{\tau}}}{1 - e^{\frac{tPEAKING}{\tau}}}
+	C_{0} = \frac{-(1 - e^{\frac{tSPL}{\tau}})e^{\frac{t_{PEAKING}}{\tau}}}{1 - e^{\frac{t_{PEAKING}}{\tau}}}
 	\label{eq:c0sum}
 \end{equation}
 %
-where $tPEAKING$ is the time described above, $tSPL$ is the 8 ns sampling time, and $\tau$ an additional parameter.
+where $t_{PEAKING}$ is the time described above, $tSPL$ is the 8 ns sampling time, and $\tau$ an additional parameter.
 $C_{g}$ is 
 
 \begin{equation}
@@ -81,12 +80,12 @@ $C_{g}$ is
 Finally, $C_{1}$ is 
 
 \begin{equation}
-	C_{1} = \frac{1 - e^{\frac{tSPL}{\tau}}}{1 - e^{\frac{tPEAKING}{\tau}}}
+	C_{1} = \frac{1 - e^{\frac{tSPL}{\tau}}}{1 - e^{\frac{t_{PEAKING}}{\tau}}}
 	\label{eq:c1sum}
 \end{equation}
 %
-This filter averaged the background before a pulse in $C_{0}$ over $tPEAKING$.
-It took a sample of the pulse, averaged over $tPEAKING$ again in $C_{1}$.
+This filter averaged the background before a pulse in $C_{0}$ over $t_{PEAKING}$.
+It took a sample of the pulse, averaged over $t_{PEAKING}$ again in $C_{1}$.
 Then, it subtracted off $C_{0}$ from $C_{1}$, after adjusting for the exponential decay of the pulse.
 The time constant of that decay is the $\tau$ parameter.
 When tuning the filter, the $\tau$ parameter had the largest effect.
@@ -96,7 +95,7 @@ For this experiment, the various filter parameters are summarized in table \ref{
 	\centering
 	\caption{Energy filter parameters}
 			\begin{tabular}{lrrr}
-			Detector & $\tau$ & $tPEAKING$ & $tGAP$ \\ \hline
+			Detector & $\tau$ & $t_{PEAKING}$ & $t_{GAP}$ \\ \hline
 			PVT implant & 60 ns & 208 ns & 128 ns \\
 			All CsI (Na) Detectors & 900 ns & 480 ns & 48 ns \\
 			PPAC Channels & 300000 ns & 1200 ns & 96 ns  
@@ -107,7 +106,7 @@ For this experiment, the various filter parameters are summarized in table \ref{
 
 There was also a trigger filter in the PIXIE system.
 The sum in equation \ref{eq:ensum} is the same, but the parameters are shorter.
-The parameters in the trigger filter are half of the parameters in the trigger filter.
+The parameters in the trigger filter are half of the parameters in the energy filter.
 There was a threshold that the output of the trigger filter had to be above in order to be recorded.
 These values are shown in table \ref{tab:trigfilter}
 The trigger filter was used to calculate the time stamps of the events.  
@@ -117,7 +116,7 @@ The trigger filter was used to calculate the time stamps of the events.
 	\centering
 	\caption{Trigger filter parameters}
 		\begin{tabular}{lrrr}
-		Detector & $tPEAKING$ & $tGAP$ & Threshold\\ \hline
+		Detector & $t_{PEAKING}$ & $t_{GAP}$ & Threshold\\ \hline
 		PVT implant & 104 ns & 104 ns & 30 \\ 
 		All CsI (Na) Detectors & 200 ns & 72 ns & 20 \\
 		PPAC Channels & 904 & 104 & 200 
@@ -128,7 +127,7 @@ The trigger filter was used to calculate the time stamps of the events.
 
 \subsection{Data Acquisition Software}
 In order to set the parameters of the various filters, a program called NSCOPE was used \cite{DAQ17}.
-The program GUI was used to set the rise time, the gap, and the threshold for both the energy filter and the trigger filter.
+The program was used to set the rise time, the gap, and the threshold for both the energy filter and the trigger filter.
 These parameters were set differently for each detector type.
 The CsI(Na) detectors (the implant and the 4 gamma detectors) shared the rise time and gap time, while other detectors had different parameters.
 Sample spectra were taken with NSCOPE, and the parameters saved to a file.
@@ -145,18 +144,18 @@ This was to check how each channel in each module was doing.
 For online analysis, a program called SpecTcl was used.
 It took the .evt files and processed them into histograms.
 These histograms could be put in coincidence.
-Displays of the implant detector energy and rate were displayed.
+The implant detector energy and rate were displayed.
 The energy of the implant vs time was also displayed.
 Additionally, the implant energy vs time since last beam on was plotted as a 2-D spectra.
 The decay curves were also plotted.
-These were created by histogram the time in the detector minus the time since the last beam on.
+These were built by histogramming the time stamp in the detector relative the time since the last beam on.
 These histograms were used as diagnostics. 
 The program allowed for gates to be drawn.
 %Sample spectcl plot?
 
 \section{Data Taking and Processing}
 To take data, the ReadOutGUI program was activated. 
-Data was taken in one hour intervals called runs, unless one of the detectors stopped counting early
+Data was taken in one hour intervals called runs.
 If a detector stopped early, it was the up detector.
 When that happened, the run was ended before one hour was up. 
 The events built by Readout had a time interval of 8000 ns.
@@ -171,10 +170,10 @@ It was formatted in a C++ class called DDASEvent.
 This event class contained data for each channel from the data acquisition.
 The energy was given out in ADC units and was not calibrated.
 These units had a range from 0 to 32767.
-The time was given counts of DAQ clock.
+The time was given in counts of DAQ clock.
 The digitized wave forms were also saved in this event. 
 
-From the ROOT files from the ddasdumper, another ROOT file was built.
+From the ROOT files produced by the ddasdumper, another ROOT file was built.
 All the ROOT files from one run was built into one new ROOT file. 
 These files were processed with a modified version of a program called scan.
 The original version was written by Stan Paulauskas.
@@ -190,5 +189,5 @@ This information was used to build new events for a new TTree.
 Each event started with a non-zero energy reading in any of the five detectors.
 Then, a 400 ns long time gate opened, during which all energies and times were saved into the event.
 The time signatures of the last beam on and beam off signals were also saved into each event.
-The energies of the beam on or beam off signals were 0 or 1.
+The beam on and beam off signals were logic NIM signals.
 \end{document}

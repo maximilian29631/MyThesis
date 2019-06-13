@@ -3,9 +3,9 @@
 
 \begin{document}
 \section{Motivation}
-During the experiment, it was noticed that there was a disagreement between different values of the half-life.
+During the experiment, it was noticed that there was a disagreement between the value of the half-life and the value in the literature.
 As a side project and as a first chance to thoroughly investigate the data, a half-life analysis was made. 
-These results have been published. % Give citation 
+These results have been published \cite{Hug18}. % Give citation 
 The previous measurements of the half-life of $^{20}$F are shown in figure \ref{fig:IDBefore}.
 
 \begin{figure}[!htb]
@@ -20,7 +20,7 @@ The previous measurements of the half-life of $^{20}$F are shown in figure \ref{
 This ideogram has a red line which is a sum of Gaussian functions.
 The centroids of the Gaussians are the central values of the measurements.
 The sigmas are the errors, and each Gaussian is weighted by $1/\sigma^{2}$.
-This is to see that there are two different values that the half-lives are converging to.
+It is seen that there are two different values that the half-lives are converging to.
 
 
 \section{Half life Data Analysis}
@@ -61,7 +61,7 @@ These gain shifts can be seen in figure \ref{fig:pulserfig}.
 
 
 \begin{figure}[!htb]
-	\centerline{\includegraphics[width=0.78\textwidth]{fig_pulserVsTime.pdf}}
+	\centerline{\includegraphics[width=0.68\textwidth]{fig_pulserVsTime.pdf}}
 	\caption{The light pulse as a function of time for set 1.
 		 The gain changes smoothly over time.
 		 This causes a large change in the half-life as the beta cuts are moved.}
@@ -90,7 +90,7 @@ A sample spectrum of the gamma and beta energies is shown in figure \ref{fig:2DG
 \end{table}
 
 \begin{figure}[!htb]
-	\centerline{\includegraphics[width=0.78\textwidth]{fig_2Dh.pdf}}
+	\centerline{\includegraphics[width=0.68\textwidth]{fig_2Dh.pdf}}
 	\caption{The $y$ axis shows the gamma detector energy.
 		   The $x$ axis is the implant detector energy.
 		   The $^{20}$F coincidence region can be seen towards the top of the spectrum.
@@ -100,7 +100,7 @@ A sample spectrum of the gamma and beta energies is shown in figure \ref{fig:2DG
 \end{figure}
 
 \begin{figure}[!htb]
-	\centerline{\includegraphics[width=0.78\textwidth]{fig_betaSpec.pdf}}
+	\centerline{\includegraphics[width=0.68\textwidth]{fig_betaSpec.pdf}}
 	\caption{
 		 A beta spectrum built by applying the gamma cuts and time difference cuts. 
 		 The beta cuts for the half-life analysis are shown as the red lines.
@@ -111,7 +111,13 @@ A sample spectrum of the gamma and beta energies is shown in figure \ref{fig:2DG
 \end{figure}
 
 \begin{figure}[!htb]
-	\centerline{\includegraphics[width=0.78\textwidth]{fig_gammaSpec.pdf}}
+        \centering
+        \begin{minipage}{0.50\textwidth}
+            \centerline{\includegraphics[width=0.9\textwidth]{fig_gammaSpec_Lin.pdf}}
+        \end{minipage}\hfill
+        \begin{minipage}{0.50\textwidth}
+            \centerline{\includegraphics[width=0.9\textwidth]{fig_gammaSpec.pdf}}
+        \end{minipage}
 	\caption{The wide cuts are to reduce the effect of the rate dependent gain.}
 	\label{fig:GammaGraph}
 \end{figure}
@@ -143,16 +149,15 @@ This comes from the break-up of the $^{12}$C in the plastic scintillator.
 As described above, only the runs after the installation of the limiter box were used for the half-life analysis. 
 This would be sets 3-7.
 
-A time difference condition was set by building a spectrum of the time differences between the implant detector's event and one of the four gamma detector's events. 
-The peak of this time difference spectrum was found, and an interval of $\pm$24 ns  was use for this gate.
+A condition was set by building a spectrum of the time differences between the implant detector's event and one of the four gamma detector's events. 
+The peak of this time difference spectrum was found, and an interval of $\pm$24 ns was used for this gate.
 A sample time difference spectrum can be seen in figure \ref{fig:timediff}
 
 \begin{figure}
-	\centerline{\includegraphics[width = 0.88\textwidth]{fig_tbgSpec1.pdf}}	
+	\centerline{\includegraphics[width = 0.68\textwidth]{fig_tbgSpec1.pdf}}	
 	\caption{The time difference between the up detector and the PVT implant detector.
 		The tail on the right side of the large peak is due to pile-up.
-		The narrow time cuts are shown with a dotted line.
-		The wide time cuts are shown with a solid line.}
+		The time cuts are shown with a line.}
 	\label{fig:timediff}
 \end{figure}
 
@@ -167,26 +172,26 @@ The implant detector is dead and does not record the second time stamp.
 Due to pile-up, the time stamp of the second beta event is not recorded.
 The gamma ray is then detected at a later time compared to the first event.
 An cartoon sketch of this effect is shown in figure \ref{fig:PileUp}.
-The pedistal can be seen in full in figure \ref{fig:timediff2}.
+The pedestal can be seen in full in figure \ref{fig:timediff2}.
 
 \begin{figure}
 	\centerline{\includegraphics[width = 0.5\textwidth]{PileUpSketch.png}}
 	\caption{A sketch of the pile-up events.
 		 A $^{20}$F decay happens at time = t1.
 		 The green electron is detected in the implant detector.
-		 The black arrow (the gamma raw) is not.
+		 The black arrow (the gamma ray) is not.
 		 Then, later at time = t2, another $^{20}$F decays.
 		 t2 is within the pile-up window of t1.
 		 Both electrons energies pile-up and are added together.
 		 However, the time stamp recorded by the DAQ is still t1.
 		 The gamma ray from event t2 can be detected in a gamma detector at time t2.
-		 This creates the uncorrelated event pedistal in the time difference graph.
+		 This creates the uncorrelated event pedestal in the time difference graph.
 		 }
 	\label{fig:PileUp}
 \end{figure}
 
 \begin{figure}
-	\centerline{\includegraphics[width = 0.88\textwidth]{fig_tbgSpec2.pdf}}	
+	\centerline{\includegraphics[width = 0.68\textwidth]{fig_tbgSpec2.pdf}}	
 	\caption{The time difference spectrum zoomed out.
 		 This figure is built from with energy coincidences with energy cuts.}
 	\label{fig:timediff2}
@@ -225,20 +230,19 @@ The values shown in this chapter are those with the dead time correction.
 Once the decay spectra were put in coincidence and stacked up, it was fit with the function
 %
 \begin{equation}
-	f(t) = a\exp{(-t*ln2/T_{\frac{1}{2}})}
+	f(t) = a\exp{(-t*ln2/T_{1/2})}
 	\label{eq:fit-function}
 \end{equation}
 %
-where $a$ and $T_{\frac{1}{2}}$ are free parameters.
-$a$ is the initial rate and $T_{\frac{1}{2}}$ the half-life.
+where $a$ and $T_{1/2}$ are free parameters.
+$a$ is the initial rate and $T_{1/2}$ the half-life.
 The decay curves were fit from 1.5 seconds past the beam on time to 1.5 second from the end of the decay time. 
 The fitting method used was the log likelihood method. 
 The 60 second decay run up detector result is shown in figure \ref{fig:60secdecay}.
 From this run, it is seen that the spectra does not decay back down to the background. 
-The lack of background parameter in equation \ref{eq:fit-function} comes from this observation. 
 
 \begin{figure}[!htb]
-\centerline{\includegraphics[width=0.88\textwidth]{fig_decaySpec.pdf}}
+\centerline{\includegraphics[width=0.68\textwidth]{fig_decaySpec.pdf}}
 \caption{The decay spectrum from the up gamma detector is shown on the top graph.
 	The red line is the exponential fit. 
 	The bottom graph shows the residuals from the fit. 
@@ -256,7 +260,7 @@ Several systematic effects were looked at.
 The dead time correction was applied before any other systematics were investigated. 
 
 \subsection{Dead Time}
-The timing resultion of the clock is 8 ns.
+The timing resolution of the clock is 8 ns.
 Due to this, there is an uncertainty on the dead times of at least 8 ns.
 The dead times were varied $\pm$4 ns and the half lives calculated.
 Half the difference of those half lives is the systematic uncertainty.
@@ -295,7 +299,7 @@ The difference between this extrapolated value and the previously measured value
 \subsection{Background}
 
 The first systematic effect is the effect of background.
-Due to the low decay time, directly fitting a background is impossible.
+Due to the short measuring window, directly fitting a background is impossible.
 There is no background region for the fitting function to anchor to, which induces a large correlation between the background and the half life.
 Several techniques were used to estimate the background.
 
@@ -304,14 +308,14 @@ The first attempt was by simultaneously fitting each run with a different fittin
 The equation used was 
 %
 \begin{equation}
-	f(t) = a(\exp{-t*ln2/T_{\frac{1}{2}}} + b)
+	f(t) = a(\exp{-t*ln2/T_{1/2} + b)
 	\label{eq:fit-bg}
 \end{equation}
 %
 with $b$ the relative background level.
 The half-life of the four detectors was set to be a common parameter. 
 The relative background level and initial rate, however, were assumed to be independent for each spectrum.
-The resulting half life was compared to the value found with fitting each detector seperately without a background.
+The resulting half life was compared to the value found with fitting each detector separately without a background.
 
 The effect of adding a background was investigated using Monte Carlo.
 Exponential functions were generated and an amount of background added.
@@ -342,7 +346,7 @@ The time spectrum changes if the beta spectrum is cut in different ways.
 
 In the gamma beta 2D plot (figure \ref{fig:2DGraph}), it can be seen that there is no background events aside from the 511 region.
 This is due to the presence of $^{10}$C and $^{11}$C.
-When the detectors are put into tripple and quadruple coincidence, the gamma rays of those isotopes appear.
+When the detectors are put into triple and quadruple coincidence, the gamma rays of those isotopes appear.
 There are no gamma rays in the 1620 keV window which was filtered on..
 The only coincidence possible is if there is pile-up into that window along with a beta event.
 The estimate of those events is shown on the left side of the peak in the time difference figure shown in figure \ref{fig:timediff}  
@@ -366,9 +370,9 @@ The end of the fit was varied the other way to cut out the end of the decay spec
 Since there was no noticeable systematic effect, there was no increase in error associated with this effect.
 
 \subsection{Oscillator Stability}
-The oscillator of the PIXE board has a stability of $\pm 5 * 10^{-5}$.
+The oscillator of the PIXIE board has a stability of $\pm 5 * 10^{-5}$.
 All times in the analysis were stretched by this value, and the half life calculated.
-Have the difference between the stretched value and the original value is another systematic error.
+Half the difference between the stretched value and the original value was taken as the systematic error. 
 
 \subsection{Binning and Fitting}
 In order to check the sensitivity of the result to binning, the decay curves were rebinned by a factor of two.
@@ -436,7 +440,7 @@ After the dead time correction, the value of the half-life was found to be 11.00
 \section{Conclusion}
 \label{sec:conclusion}
 
-The half-life measured is most consistent with some previous measurements of a half-life of about 11 s. 
+The half-life measured is most consistent with some previous measurements of about 11 s. 
 This can be seen in figure \ref{fig:ideogramfinal}.
 This measurement disagrees with the most recent measurements.
 
@@ -449,15 +453,15 @@ This measurement disagrees with the most recent measurements.
 \label{fig:ideogramfinal}
 \end{figure}
 
-Motivated by this measurement, another measure of the $^{20}$F half-life has been done. 
-The outcome of the measurements was a half-life of 11.0160 (41)$_{stat}$(155)$_{sys}$ s \cite{Bur19}.
+Motivated by this measurement, another measure of the $^{20}$F half-life has been done by a group at Notre Dame. 
+The outcome of the measurements was 11.0160 (41)$_{stat}$(155)$_{sys}$ s \cite{Bur19}.
 This confirms the result obtained in this measurement.
 
 Several things about the data set were discovered.
-It was learned that there were contaminates coming from the fragmentation of the $^{12}$C in the plastic scintillator.
+It was learned that there were contaminants coming from the fragmentation of the $^{12}$C in the plastic scintillator.
 It was also discovered that the rate dependent gain effect in the CsI(Na) implant detector is significant.
 Before doing this measurement, it was assumed that the low rates would make that effect negligible.
-It was learned that after the coincidence, the amount of background left in the spectrum is negligible, and that we have no contaminates in the beam.
+It was learned that after the coincidence, the amount of background left in the spectrum is negligible, and that we have no contaminants in the beam.
 
 \end{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -5,27 +5,26 @@ The output of the GEANT4 simulations was used to fit the beta spectrum for $b_{W
 
 \section{Fitting Method}
 Four GEANT4 simulations were used for the fit.
-To describe the fitting function, the theory has to be re-written.
-The phase space, corrections, shape factor, and Fierz term can be written as
+The fitting function includes the phase space, corrections, shape factor, and Fierz term and can be written as
 \begin{equation}
-	\frac{dN}{dE}= PS(E) * C(E) (1 + c_{0} + c_{1} E + c_{2} E^{2} + \frac{c_{-1}}{E}) * (1 + b_{GT}\frac{m_{e}}{E})
+	\frac{dN}{dE}= PS(E) \times C(E) (1 + c_{0} + c_{1} E + c_{2} E^{2} + \frac{c_{-1}}{E}) \times (1 + b_{GT}\frac{m_{e}}{E})
 	\label{eq:betaspecwshape}
 \end{equation}
 with $PS(E)$ being the phase space, $C(E)$ the corrections, the $c_{i}$ the terms of the shape factor, and $E$ the total electron energy. 
-The $PS(E)*C(E)$ can be distributed to the shape factor, and four terms appear.
-Since the $c_{i}$ and $b_{GT}$ are small, $b_{GT}*m_{e}$ can be, to first order, added to $c_{-1}$. 
+The $PS(E)\timesC(E)$ can be distributed to the shape factor, and four terms appear.
+Since the $c_{i}$ and $b_{GT}$ are small, $b_{GT}\timesm_{e}$ can be, to first order, added to $c_{-1}$. 
 These four terms are the inputs to the GEANT4 simulation.
 These are summarized in table \ref{tab:4histfit}
 
 \begin{table}[!hbt]
 	\centering
-	\caption{The four histograms used for the fit}
+	\caption{The four histograms used for the fits.}
 		\begin{tabular}{lrr}
 		Name & Formula & Normalization (when $E$ is in keV) \\ \hline
-		$f(E)$ & $PS(E) * C(E)$ & 1 \\
-		$g(E)$ & $PS(E) * E * C(E)$ & 3.35e-4 \\
-		$h(E)$ &  $PS(E)  * E * E * C(E)$ & 9.89e-8 \\
-		$j(E)$ &  $PS(E)/E * C(E)$ & 2494 
+		$f(E)$ & $PS(E) \times C(E)$ & 1 \\
+		$g(E)$ & $PS(E) \times E \times C(E)$ & 3.35e-4 \\
+		$h(E)$ &  $PS(E)  \times E \times E \times C(E)$ & 9.89e-8 \\
+		$j(E)$ &  $PS(E)/E \times C(E)$ & 2494 
 		\end{tabular}
 		\label{tab:4histfit}
 \end{table}
@@ -36,18 +35,17 @@ The normalization was determined by taking the ratio of each the input spectrum 
 These four pieces were the inputs to the GEANT4 simulation.
 
 \section{Simulation Results Processing}
-In order to use simulations results for fitting, further process had to be done in order to build the histograms for the fitting of the data.
+In order to use simulations results for fitting, further process had to be done in order to build the histograms for the fitting of data.
 The TTrees or histograms in the output of the simulation was used.
 The energy absorbed in the implant detector was filtered by the energy absorbed in the outer four gamma detectors in the simulation.
 The energy gate was adjusted to match the energy gates of the data, which was the same as in the half-life measurement in table \ref{tab:GammaCuts}.
 The energy gates were converted to keV using equation
 \begin{equation}
-        C = G * E + b
+        C = G \times E + b
         \label{eq:cal}
 \end{equation}
 where $C$ is the location of the peak in ADC channels, $G$ the gain in channels/keV, and $b$ the offset in channels.
 The values of the parameters for detector calibrations are summarized in table \ref{tab:gammadetcal}.
-There was no time difference condition applied, as no time information was recorded.
 
 \begin{table}[!hbt]
         \centering
@@ -79,21 +77,31 @@ These two histograms can be seen in figure \ref{fig:GEANT4Hists}.
 Another set of histograms were built with different gamma conditions.
 To build the new gamma conditions, the ADC unit difference between the upper and lower gamma cuts was taken.
 This was added to the old upper and lower gamma cuts to get the new gamma cuts.
+The new gamma cuts were to match the data background cuts, where are shown as the red lines in figure \ref{fig:backgroundsubbeta}. 
 Then, the simulation was filtered through these new cuts to build a background spectrum.
 This background GEANT4 spectrum was subtracted off of the signal spectrum.
-This was procedure was done for all four histograms needed for the fitting procedure.
-The next thing to do was to apply the detector resolution.
+This procedure was done for all four histograms needed for the fitting procedure.
+The next thing to do was to apply the detector response. 
 
-\subsection{Detector Resolution}
+\begin{figure}[!htb]
+        \centerline{\includegraphics[width=0.78\textwidth]{BackgroundFigureUp.png}}
+        \caption{A sample gamma spectrum showing the position of the gamma cuts used to build the beta spectrum.
+		 The blue lines show the cuts used to build the signal spectrum.
+		 The red lines show the cuts used to build the background spectrum.
+                   }
+        \label{fig:backgroundsubbeta}
+\end{figure}
+\subsection{Detector Response}
 \label{sec:convolution}
 Accounting for the detector resolution was done by applying a convolution function to the histograms built from the GEANT4 output files.
-The convolution function was
+The convolution function was a Gaussian function. 
+The $\sigma$ of that Gaussian function depended on the energy as
 
 \begin{equation}
-	\sigma = A\sqrt{E}
+	\sigma(E) = A\sqrt{E}
 	\label{eq:convo}
 \end{equation}
-where $\sigma$ was the energy resolution and $A$ a constant found through a calibration.
+where $\sigma$ was the standard deviation and $A$ a constant found through a calibration.
 This was done by looping through each of the histograms' bins and reading the number of counts in each.
 Then, a Gaussian distribution was built for each bin.
 The center of the Gaussian was the center of each bin in keV.
@@ -103,12 +111,12 @@ These samples were filled into a new histogram.
 This was repeated until all bins were distributed.
 This was done separately for each spectrum. 
 
-\subsubsection{Determining Detector Resolution}
+\subsubsection{Determining Detector Response}
 In order to properly fit the energy spectrum, a calibration of the CsI(Na) detector had to be done.
 The calibration was used to find what the detector resolution was.
 Several different energy lines were used to find the calibration and the energy resolution function.
 The lines were the 1.173 MeV and 1.332 MeV gammas from a $^{60}$Co source, the 0.662 MeV gamma ray from a$^{137}$Cs source, and the 0.511 MeV and 1.274 MeV gamma rays from a $^{22}$Na source.
-These gamma rays were fitting with a Gaussian and a background.
+These gamma rays were fitted with a Gaussian and a background.
 The background varied from no background, a linear background, a quadratic background, and an error function background.
 For the $^{60}$Co, both peaks were fit at once.
 These different background gave slightly different results for the centroids and the widths of the Gaussian.
@@ -142,7 +150,7 @@ The parameters were adjusted until the generated pile-up matched the measured pi
 The results of the tuning is seen in figure \ref{fig:pileuptune}
 
 \begin{figure}[!htb]
-	\centerline{\includegraphics[width=0.78\textwidth]{PileUpTuningThesis.png}}
+	\centerline{\includegraphics[width=0.78\textwidth]{PileUpTuningThesis_v2.png}}
 	\caption{The tuning of the pile-up.
 		 The input spectrum is in blue.
 		 The generated spectrum is in red.
@@ -167,8 +175,8 @@ In addition, the parameters of the actual energy for the CsI(Na) implant detecto
 The $\tau$ value in the pile-up tuning is very similar to that of the energy filter.
 The other parameters are roughly double in the pile-up model compared to that in the PIXIE energy filter.
 
-The pile-up model was applied to the simulation after the detector convolution was applied. 
-Of the four different simulations needed for a fit, only $f(E)$ was fed into the pile-up model.
+The pile-up model was applied to the simulation after the detector response was applied. 
+Of the four different simulations needed for a fit, only $f^{*}(E)$, $f(E)$ after applying the detector response, was fed into the pile-up model.
 The amount of pile-up is small. 
 Applying the pile-up to the other terms of the shape factor gives a negligible contribution.
 The beta only spectrum and the beta-gamma sum spectrum of this simulation was added together and fed through the pile-up model.
@@ -181,37 +189,36 @@ The five splines were fed into a fit function.
 The fit function was
 
 \begin{equation}
-	H(E) = A * (( 1 + c_{0}) f(E) + c_{1}g(E) + c_{2} h(E) + (c_{-1} + b_{GT} m_{e}) j(E)) + B * pu(E)
+	H(E) = A \times [( 1 + c_{0}) f^{*}(E) + c_{1}g^{*}(E) + c_{2} h^{*}(E) + (c_{-1} + b_{GT} m_{e}) j^{*}(E)] + B \times pu^{*}(E)
 	\label{eq:betafit}
 \end{equation}
-where $A$ is the normalization, $B$ the level of pile-up, $pu(E)$ is the generated pile-up spectrum, and $f(E),g(E),h(E),$ and $j(E)$ the different simulation results as shown in table \ref{tab:4histfit} after the convolution was applied.
+where $A$ is the normalization, $B$ the level of pile-up, $pu^{*}(E)$ is the generated pile-up spectrum, and $f^{*}(E),g^{*}(E),h^{*}(E),$ and $j^{*}(E)$ the different simulation results as shown in table \ref{tab:4histfit} after the convolution was applied.
 In order to change the units of the x-axis in the data to energy in keV, a calibration was needed.
 For this calibration, the offset was fixed in the fit function.
 However, the gain of the calibration was left as a free parameter.
 This was to account for gain shifts, such as an apparent rate-dependent gain shift due to the afterglow in the crystal.
 
-In the fit, each of the $C$s were written out in terms of the nuclear form factors.
+In the fit, each of the $c$s were written out in terms of the nuclear form factors.
 In these form factors, $b_{WM}$ was left as a potential free parameter. 
 If $b_{WM}$ was fit with the fit function, $b_{GT}$ was fixed to be 0. 
 If $b_{GT}$ was fit, then $b_{WM}$ was fixed to be 43.4. 
 In total, the fit function had four free parameters:
 $A$, $B$, the gain $G$, and either $b_{WM}$ or $b_{GT}$. 
-
-In order to benchmark this fitting method, pseudo-data was generated and fit.
+In order to benchmark this fitting method, pseudo-data was generated and fitted.
 
 \subsubsection{Fit Function Characterization}
 Different methods of the fit function were tested. 
-The first is the so-called "hybrid method", where only one simulation is needed.
+The first is the so-called ``hybrid method'', where only one simulation is needed.
 The GEANT4 with only the phase space and corrections is generated. 
 Then, it is multiplied by the shape factor.
 This function was 
 
 \begin{equation}
-	H(E) = A * f(E) * S(E) + B*pu(E)
+	H^{*}(E) = A \times f^{*}(E) \times S(E) + B\timespu^{*}(E)
 	\label{eq:hybridmodel}
 \end{equation}
 with $A$ being a normalization constant and $S(E)$ the shape factor. 
-This method of fitting is not completely correct, as the $E$ in $f(E)$ is not the same as the initial energy in the shape factor $S(E)$. 
+This method of fitting is not correct, as the $E$ in $f(E)$ is not the same as the initial energy in the analytical shape factor $S(E)$. 
 
 The first test was done just with a linear term in the psuedo-data.
 An older version of the GEANT4 code had a phase space times corrections times a linear shape factor fed into it.
@@ -221,7 +228,7 @@ This was found to induce a shift of the measured linear term.
 Applying the shape factor only to the beta only part of the spectrum solved this issue. 
 
 To further test the fitting method, two more spectra were generated.
-One had had the nuclear shape factor with $b_{WM} = 43.4$, which was the new pseudo-data spectrum.  
+One had the nuclear shape factor with $b_{WM} = 43.4$, which was the new pseudo-data spectrum.  
 The other had no shape factor.
 After applying the coincidence condition to both of these simulations, the function with no shape factor was used to fit the function with the shape factor. 
 The gain in these fits was left as a free parameter, and the offset was fixed to a value of 0. 
@@ -252,7 +259,7 @@ After the normalization, the fit was done.
 The output $b_{GT}$ and $b_{WM}$ obtained of the pseudo-data was the one put in.
 
 \section{Experimental Data Processing}
-After the fit function was tested and verified, the data was ready to be fit 
+After the fit function was tested and verified, the data was ready to be fit. 
 For the fit, the experimental data had to be processed as well. 
 The energy spectrum of the implant detector was put in coincidence with the 4 gamma detectors.
 The energy cuts of the gamma detectors were the same as in the life-time measurement, as seen in table \ref{tab:GammaCuts}.
@@ -260,7 +267,7 @@ An additional condition was that only one of the gamma detectors could have fire
 
 An additional condition in the data was a time difference condition.
 For this measurement, the time difference between a beta event and a gamma event had to be between -300 and 24 ns.
-This captures the entire spectrum, as the time stamps show a large energy dependence. 
+This captures the entire spectrum, as the time stamps are largely dependent on energy. 
 Then, a 2-D histogram was built, with energy on one axis and time since last beam on on there other.
 The decay cycles were 22 seconds long for the CsI(Na) implant data. 
 The decay cycles were split up into 3 segments with equal number of counts.
@@ -281,15 +288,6 @@ This was the background spectrum.
 It was then subtracted off of the signal spectrum. 
 The position of the gamma cuts on a sample spectrum is shown in figure \ref{fig:backgroundsubbeta}.
 
-\begin{figure}[!htb]
-        \centerline{\includegraphics[width=0.78\textwidth]{BackgroundFigureUp.png}}
-        \caption{A sample gamma spectrum showing the position of the gamma cuts used to build the beta spectrum.
-		 The blue lines show the cuts used to build the signal spectrum.
-		 The red lines show the cuts used to build the background spectrum.
-                   }
-        \label{fig:backgroundsubbeta}
-\end{figure}
-
 
 \section{Beta Spectrum Fit Procedure}
 After the data was processed, the fit was done run by run.
@@ -298,8 +296,7 @@ This was done to obtain a calibration of the data.
 Then, two endpoints fixed in keV were used for the actual fit.
 The fitting function with a fixed offset was fit using a maximum likelihood method.
 The resulting $b_{WM}$ was recorded.
-For the Fierz term fit, the $b_{WM}$ of $^{20}$F decay (43.4) was applied to the shape factor.
-The fit was done again and the $b_{GT}$ was recorded.
+For the Fierz term fit, the $b_{WM} = 43.4$ was applied to the shape factor and the $b_{GT}$ was recorded.
 
 The offset used for the fit was varied.
 The effect of the offset will be discussed in the next section. 
@@ -320,7 +317,7 @@ The systematic uncertainties can be divided into three categories.
 The first set are the uncertainties that have to do with the inputs to the simulation.
 The second set has to do with the inputs to the fit.
 The final set has to do with the uncertainties of the nuclear form factors in the shape factor. 
-One of the largest systematic uncertainty has to do with the were the fit is started. 
+One of the largest systematic uncertainty has to do with the position where the fit is started. 
 
 \subsection{Lower Beta Cut Effect}
 
@@ -508,7 +505,7 @@ Half the difference of the output $b_{WM}$ and $b_{GT}$ were the systematic erro
 
 As stated above, the different systematic uncertainties can be divided into three different categories. 
 There are the systematic uncertainties due to the simulation inputs, which are summarized in table \ref{tab:simsyseffect}
-These were all calculated by running the four histograms with $2 * 10^{9}$ events each.
+These were all calculated by running the four histograms with $2 \times 10^{9}$ events each.
 
 \begin{table}[!hbt]
 	\centering

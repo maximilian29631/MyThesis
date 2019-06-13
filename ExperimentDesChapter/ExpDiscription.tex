@@ -8,14 +8,6 @@ The experimental technique avoids many of the systematic effects that were impor
 \section{Experimental Technique}
 The technique used was a calorimetric technique, where the isotope of interest is implanted inside a detector.
 This reduced several effects that could otherwise distort the beta energy spectrum.
-The largest of these is backscattering.
-If a beta decay source is placed outside a scintillator, there is a chance that the electrons will go into the detector material and bounce back out.
-This happens in the surface of the detector, and therefor the electron deposits part of its energy into the detector. 
-Backscattering causes the largest distortion at low energies.
-However, the description of backscattering using detector simulations varies too much to get a sufficient description for a precision shape measurement \cite{Huy18}.
-Beta decay electrons cans scatter out of the sides of the detectors as well. 
-This also distorts the beta spectrum in a similar way. 
-Lastly if there is a dead layer at the surface of the crystal, the energy deposited in that layer will not be absorbed.
 
 With the calorimetric technique, the radioactive nucleus is surrounded by detector material.
 As long as the nuclei are implanted deep enough, the electrons will not have enough energy to escape the detector.
@@ -27,9 +19,9 @@ A $4\pi$ angular coverage is also obtained, as the detector material surrounds t
 There are some caveats for a calorimetric technique. 
 The first is that a large enough detector is needed, otherwise the electrons could escape at high energies.
 A large effect is that electrons moving through the detector material will emit a lot of bremsstrahlung.
-Using a low-Z detector material will lessen this effect.
+Using a low-$Z$ detector material will lessen this effect.
 However, Monte Carlo detector simulations can describe the production and absorption of bremsstrahlung to enough precision to allow for a precision beta energy measurement. 
-Another issue is that accelerators used to generate the isotope of interest must be able to create them at high enough energy in order to implant the isotopes deep enough into your detector.
+Another issue is that accelerators used to generate the isotope of interest must be able to create them at high enough energy in order to implant the isotopes deep enough into the detector.
 This limits what nuclei can be used for this technique.
 The act of implanting the nuclei gives the detector a lot of energy. 
 This means that an implant and decay cycle is needed for this experimental technique.
@@ -50,16 +42,6 @@ The resulting $^{20}$F beam was at an energy of 130 MeV/A.
 The intensity of the $^{20}$F was about $2 * 10^{-5}$ pnA.
 The beam was sent to the experimental vault were the detectors were sitting.
 
-\subsection{Beam Purity}
-
-The purity measured was at 99.4\%, with the main contaminates being  $^{19}$O. 
-To double check the beam purity, two detectors were used. 
-One was a thin Si PIN detector that was used as a delta E detector upstream of the main detector set-up. 
-The other detector was a small CsI(Na) detector similar to the implant detector that was used during the steering and during the beam size measurement. 
-It had a much lower voltage than the one used for the implantation measurement. 
-Both of these in tandem were used to build a particle identification plot.
-From this, it was found that the beam is very clean.
-
 \subsection{Beam Size and Location}
 To test the size of the beam, a parallel plate avalanche counter (PPAC) was used.
 The size of the detector was 10 cm by 10 cm square. 
@@ -71,9 +53,9 @@ The difference of the two signals divided by the sum was interpreted as a positi
 The location of the PPAC and other detectors are shown in figure \ref{fig:BeamSetUp}.
 
 \begin{figure}
-	\centerline{\includegraphics[width=0.88\textwidth]{ScaleOfBeamLine.png}}
+	\centerline{\includegraphics[width=0.88\textwidth]{ScaleOfBeamLine_v2.png}}
 	\caption{A sketch of the location of the detectors upstream of the implant detector.
-		    The detectors are to scale.
+		    The detectors are not to scale. 
 			}
 	\label{fig:BeamSetUp}
 \end{figure}  
@@ -88,12 +70,16 @@ With this, the PPAC could be calibrated.
 Before taking data for the beta energy spectrum measurement, the PPAC was inserted into the beam.
 After adjusting the parameters of the upstream beam optics, the final beam size at the PPAC was measured.
 The calibrated data of the signals was built into a 2-D histogram.
-There was some ringing in the PPAC, so the peak of the beam spot was fitted with a 2-D gaussian function.
-The average of the Gaussian and the sigma in the x and y direction was taken. 
+There was some ringing in the PPAC.
+To suppress this ringing, a threshold for the PPAC was applied. 
+The peak of the beam spot was fitted with a 2-D gaussian function
+The average of the Gaussian and the sigma in the $x$ and $y$ direction was taken. 
 From the standard deviations, the half widths at half maximum (HWHM) in both directions were calculated. 
-The distribution of the locations were sampled at eight different points. 
-The points are shown as the black dots in Fig: \ref{fig:PPACSpotch}.
-They are one HWHM away from the center. 
+Using the HWHM and the center of the Gaussian, 8 points were selected.
+These eight points are the black dots in figure \ref{fig:PPACSpotch}.
+The $z$ values of the distribution at each of those points was averaged.
+This value was the threshold above which the PPAC distribution was plotted.  
+The resulting width was read off to be 8 mm wide by 6 mm high.
 
 \begin{figure}
 	\centerline{\includegraphics[width=0.88\textwidth]{PPACFitted.png}}
@@ -102,9 +88,6 @@ They are one HWHM away from the center.
 		 The center of the fit is not shown.}
 	\label{fig:PPACSpotch}
 \end{figure}  
-
-After averaging the 8 points, the range on the $z$ axis was taken from the average of those points to the top.
-The resulting beam was measured to be 8 mm wide by 6 mm high.
 
 This is the size of the spot at the PPAC. 
 Ion optics simulations were used to build the envelope of the beam at the PPAC and at the target.
@@ -115,40 +98,16 @@ For the depth of the implantation of the beam, ion simulations were used.
 The LISE++ program was fed the beam magnets. It was given the energy of the beam and the detector set up. 
 It then calculated the depth of the implantation of the detector and the range of the depth inside the detector. 
 This gave a depth of 3.02 cm in side the PVT detector and a depth of 1.156 cm in the CsI(Na) detector. 
-The range of the depth was 1.2 mm in the PVT detector and 0.4 mm in the CsI(Na) detector.
+The ranges straggling was 1.2 mm in the PVT detector and 0.4 mm in the CsI(Na) detector.
 
 \subsubsection{Verification of Implantation Depth}
 
-In order to verify the simulations for the beam implantation depth, a degrader was inserted into the beam for a beam depth measurement.
+In order to verify the simulations for the beam implantation depth, a degrader was inserted into the beam for a beam depth measurement, which is shown in figure \ref{fig:degraderdata}.
 The degrader was made of aluminum and had two different thicknesses: 7.89 mm and 11.38 mm. 
-The location can be seen in figure \ref{fig:BeamSetUp}.
 The beam was caught by a CsI(Na) scintillator of a similar design to the one used during the main measurement.
 The angle of the degrader was changed to change the effective thickness of aluminum that the beam had to travel through. 
 By comparing the measurement to the one predicted to stop the beam out side of the detector, the depth of implantation could be verified. 
-This was done after the main run, and the simulations proved to be correct.
-
-\subsubsection{Spacers in Implant Detector}
-The actual CsI(Na) implant detector had PTFE spacers between the reflector and the aluminum housing.
-A spacer would be 1.5 mm thick. 
-It was unknown if the spacer was in the path of the beam during an implant cycle. 
-A similar crystal was taken apart for a repair. 
-Pictures of that detector being taken apart showed where the spacer were on the side of the detector. 
-
-%This is shown in figure \ref{fig:detpic}
-
-%\begin{figure}[!htb]
-%	\centerline{\includegraphics[width=0.78\textwidth]{PaulsSpacerImage.png}}
-%	\caption{A CsI(Na) detector being taken apart.
-%		 The red circle shows the side spacers}
-%	\label{fig:detpic}
-%\end{figure}
-
-To see if the spacer was located in the path of the beam, the data with the degrader in front of the beam was used.
-The rates inside the implant detector was compared to the effective thickness of aluminum. 
-It was found took 14 mm of aluminum to bring the rate down to zero.
-This is shown in figure \ref{fig:degraderdata}.
-If there were a PTFE spacer in the way of the beam, it would take 12 mm of aluminum to completely stop the beam.
-These results were calculated using LISE++ and are shown in figure \ref{fig:lisealcalc}.
+This was done after the main run, and the simulation in figure \ref{fig:lisealcalc} matched the measurement in figure \ref{fig:degraderdata}.
 
 \begin{figure}[!htb]
 	\centerline{\includegraphics[width=0.78\textwidth]{CsIRawRatevDegraderThicknessFixed.png}}
@@ -166,45 +125,44 @@ These results were calculated using LISE++ and are shown in figure \ref{fig:lise
 
 \section{Detector Configuration}
 
-\subsection{$^{20}$F Decay Detectors}
+\subsection{Detectors}
 One implant detector was a scintillator 3"\diameter x  3 " cylinder of EJ-200 polyvinyltoluene (PVT).
-It was glued to a clear plastic disk glued to a photomultiplier tube.
+It was glued to a clear acrylic disk glued to a photomultiplier tube.
 The plastic detector signal is fast (around 10 ns wide) which makes pile-up a lesser concern.
 This detector was built by collaborators from Wittenburg University.
 During the experiment the voltage on the PMT of this scintillator was varied and a gain monitoring system was installed.
 
-To monitor the gain of the plastic detector, a plastic disk containing an optical fiber was placed between the crystal and the photomultiplier tube. 
+To monitor the gain of the plastic detector, an acrylic disk containing an optical fiber was placed between the crystal and the photomultiplier tube. 
 The other end of the fiber was fed into a box with an LED driven by a function generator, which ran at a trigger rate of 500 counts per second. 
 The function generator produced two pulses separated by 136 $\mu$s.
 These two pulses had different amplitudes, so that the gain drift could be monitored by observing the drift from two different energies.
 The box was made light-tight with electrical tape and black paint.
 An additional optical fiber fed the light to a Si PIN diode.
 This was to monitor the light output of the LED.
-A sketch of the PVT crystal and the gain monitoring system is shown in figure \ref{fig:PVTDetSketch}.
+A sketch of the PVT crystal including the acrylic disk is shown in figure \ref{fig:PVTDetSketch}.
 
 \begin{figure}
-	\centerline{\includegraphics[width=0.58\textwidth]{PVTDetectorSketch.png}}
+	\centerline{\includegraphics[width=0.68\textwidth]{PVTDetectorSketch.png}}
 	\caption{A sketch of the PVT implant detector.
-		    The plastic disk is seen along as PVT scintillator. 
+		    The acrylic disk is seen along as PVT scintillator. 
 		   }
 	\label{fig:PVTDetSketch}
 \end{figure}
-To help check for systematics effects, another implant detector was used.
+To check for systematics effects, another implant detector was used.
 It was a 2" x 2" x 4"  CsI(Na) detector. 
 This detector was a module from the CAESAR array \cite{Wei10}.
 It does not have any gain monitoring like the PVT detector.
 
 In order to measure the gamma ray from the $^{20}$F decay, a frame was built to hold four 3" x 3" x 3" CsI(Na) detectors.  
 These were also part of the CAESAR array.
-The frame to hold the four detectors was designed to be able to move the four outer detectors around in various configurations.
-However, no other configurations were used during the experiment. 
+The frame to hold the four detectors was designed to be able to adjust the four outer detectors around.
 A sketch of the PVT implant detector configuration is shown in figure \ref{fig:detsketch}.
 A sketch of the CsI Implant detector configuration is shown in figure \ref{fig:csiimdetsketch}.
 
 \begin{figure}
 	\centerline{\includegraphics[width=0.68\textwidth]{fig_setup.pdf}}
 	\caption{A sketch of the PVT implant detector set up. 
-		 Notice that the PVT detector crystal fills up the space between the gamma detectors.
+		 Notice that the PVT detector fills up the space between the gamma detectors.
 		 }
 	\label{fig:detsketch}
 \end{figure}
@@ -220,6 +178,7 @@ To switch between different implant detectors, the central detector in the frame
 The other detector was placed in the center of the four gamma detectors.
 The PVT detector was supported on a metal rail, while the CsI (Na) detector was supported on pile of scrap aluminum.
 The rail for the PVT detector, along with the four gamma detectors,  can be see in figure \ref{fig:PVTPicture}.
+A better view of the gamma detector cross can be seen in figure \ref{fig:CsIPicture}.
 
 \begin{figure}
 	\centerline{\includegraphics[width=0.58\textwidth]{fig_PVTSetupPicture.png}}
@@ -229,10 +188,10 @@ The rail for the PVT detector, along with the four gamma detectors,  can be see 
 		 }
 	\label{fig:PVTPicture}
 \end{figure}
-A better view of the gamma detector cross can be seen in figure \ref{fig:CsIPicture}.
+
 
 \begin{figure}
-	\centerline{\includegraphics[width=0.58\textwidth]{fig_CsISetupPicture.png}}
+	\centerline{\includegraphics[width=0.48\textwidth]{fig_CsISetupPicture.png}}
 	\caption{A picture of the CsI setup.
 		 The active crystal of the implant detector can been seen. 
 		 }
@@ -252,7 +211,7 @@ For the PPAC, the voltage setting was adjusted to get a large enough signal.
 The voltage for the four gamma detectors was chosen so that they had roughly the same gain.
 The voltages of the detectors is shown in table \ref{tab:detvolt}.
 \begin{table}[!hbt]
-	\caption{Detector power}
+	\caption{Detector voltages.}
 	\centering
 		\begin{tabular}{lr}
 		Detector & Power Supply Setting (V) \\ \hline
@@ -293,7 +252,7 @@ A CAEN N1145 quad scaler module was used to control the beam off time.
 This module had a digital control of time down to 1 ms.
 Once the the time finished counting down, a signal was sent to a second module. 
 A CAEN N93B dual timer used the signal from the quad scaler as a start signal.
-The time period was set using a dial, which was less precise. 
+The time period was set with an oscilloscope, which was less precise. 
 Once the dual timer finished its time, it sent a signal back to the quad scaler to restart the cycle.
 The output of these two modules created a signal with one voltage level during the dual timer's time and another voltage condition during the quad scaler's time.
 This signal was fed into a box.
@@ -301,9 +260,9 @@ The voltage level during the quad scaler's time dephased the cyclotron RF, turni
 When the dual timer voltage level occurred, the RF returned to the tuned value, turning the beam on.  
 A flowchart showing the timing circuit is shown in figure \ref{fig:TimingFig} 
 \begin{figure}
-	\centerline{\includegraphics[width=0.68\textwidth]{BeamOnBeamOffFigure.png}}
+	\centerline{\includegraphics[width=0.68\textwidth]{BeamOnBeamOffFigure_v2.png}}
 	\caption{The modules used for the timing.
-		 "Desc" stands for descriminators.
+		 "Disc" stands for discriminators.
 		 }
 	\label{fig:TimingFig}
 \end{figure}

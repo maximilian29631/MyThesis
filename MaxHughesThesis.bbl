@@ -83,10 +83,10 @@ S.~Itoh, M.~Yasuda, H.~Yamamoto, T.~Iida, A.~Takahashi, and K.~Kawade.
   High-rate Spectroscopy Amplifier}.
 \newblock In {\em {1994 Symposium on Nuclear Data}}, Tokai, Japan, March 1995.
 
-\bibitem{Jac57}
-J.D. Jackson, S.B. Treiman, and H.W.~Wyld Jr.
-\newblock Coulomb corrections in allowed beta transitions.
-\newblock {\em Nuclear Physics}, 4:206 -- 212, 1957.
+\bibitem{Jack57}
+J.~D. Jackson, S.~B. Treiman, and H.~W. Wyld.
+\newblock Possible tests of time reversal invariance in beta decay.
+\newblock {\em Phys. Rev.}, 106:517--521, May 1957.
 
 \bibitem{Lee56}
 T.~D. Lee and C.~N. Yang.
@@ -99,6 +99,12 @@ J.~C. Hardy and I.~S. Towner.
   $\ensuremath{\beta}$ decays: 2014 critical survey, with precise results for
   ${V}_{ud}$ and ckm unitarity.
 \newblock {\em Phys. Rev. C}, 91:025501, Feb 2015.
+
+\bibitem{Gon19}
+M.~González-Alonso, O.~Naviliat-Cuncic, and N.~Severijns.
+\newblock New physics searches in nuclear and neutron $\ensuremath{\beta}$
+  decay.
+\newblock {\em Progress in Particle and Nuclear Physics}, 104:165 -- 223, 2019.
 
 \bibitem{Wan17}
 Meng Wang, G.~Audi, F.~G. Kondev, W.J. Huang, S.~Naimi, and Xing Xu.

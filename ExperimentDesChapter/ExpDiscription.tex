@@ -107,21 +107,22 @@ The degrader was made of aluminum and had two different thicknesses: 7.89 mm and
 The beam was caught by a CsI(Na) scintillator of a similar design to the one used during the main measurement.
 The angle of the degrader was changed to change the effective thickness of aluminum that the beam had to travel through. 
 By comparing the measurement to the one predicted to stop the beam out side of the detector, the depth of implantation could be verified. 
-This was done after the main run, and the simulation in figure \ref{fig:lisealcalc} matched the measurement in figure \ref{fig:degraderdata}.
+This was done after the main run, and the simulation matched the measurement in figure \ref{fig:degraderdata}.
 
-\begin{figure}[!htb]
-	\centerline{\includegraphics[width=0.78\textwidth]{CsIRawRatevDegraderThicknessFixed.png}}
-	\caption{The experimental data from the degrader. 
-		 All the fluorine is blocked after 14 mm of degrader}
+\begin{figure}
+    \centering
+    \begin{minipage}{0.50\textwidth}
+	\centerline{\includegraphics[width=0.78\textwidth]{degrad.pdf}}
+    \end{minipage}
+    \begin{minipage}{0.50\textwidth}
+	\centerline{\includegraphics[width=0.78\textwidth]{CsIRawRatevDegraderThicknessOnePass.png}}
+    \end{minipage}\hfill
+	\caption{The simulation is on the left.
+		 The data is on the right.
+		 All the fluorine is blocked after 14 mm of degrader.}
 	\label{fig:degraderdata}
 \end{figure}
 
-\begin{figure}[!htb]
-	\centerline{\includegraphics[width=0.78\textwidth]{degrad.pdf}}
-	\caption{Calculating how thick an Al degrader would have to be to block the beam.
-	 	 A model with no spacer matches the data better.}
-	\label{fig:lisealcalc}
-\end{figure}
 
 \section{Detector Configuration}
 

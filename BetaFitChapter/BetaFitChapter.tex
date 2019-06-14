@@ -13,7 +13,7 @@ The fitting function includes the phase space, corrections, shape factor, and Fi
 with $PS(E)$ being the phase space, $C(E)$ the corrections, the $c_{i}$ the terms of the shape factor, and $E$ the total electron energy. 
 The $PS(E)\times C(E)$ can be distributed to the shape factor, and four terms appear.
 Since the $c_{i}$ and $b_{GT}$ are small, $b_{GT} \times m_{e}$ can be, to first order, added to $c_{-1}$. 
-These four terms are the inputs to the GEANT4 simulaion.
+These four terms are the inputs to the GEANT4 simulation.
 These are summarized in table \ref{tab:4histfit}
 
 \begin{table}[!hbt]
@@ -220,9 +220,9 @@ This function was
 with $A$ being a normalization constant and $S(E)$ the shape factor. 
 This method of fitting is not correct, as the $E$ in $f(E)$ is not the same as the initial energy in the analytical shape factor $S(E)$. 
 
-The first test was done just with a linear term in the psuedo-data.
+The first test was done just with a linear term in the pseudo-data.
 An older version of the GEANT4 code had a phase space times corrections times a linear shape factor fed into it.
-This psuedo-data was fit with the hybrid model.
+This pseudo-data was fit with the hybrid model.
 Initially, the shape factor was applied to total energy inside the implant detector.
 This was found to induce a shift of the measured linear term.
 Applying the shape factor only to the beta only part of the spectrum solved this issue. 
@@ -355,7 +355,7 @@ The effect in the average gains is shown in figure \ref{fig:offset10LBCeffect}.
 To test the effect of the offset, a Monte Carlo was written.
 A sample histogram with only the phase space and the shape factor was generated. 
 These histograms were generated with an offset of 10 ADC units.
-A random gain was applied to the psuedo-data histogram. 
+A random gain was applied to the pseudo-data histogram. 
 Then, the fit function had a different offset applied to it.
 For example, fitting the histogram generated with an offset of 10, and fit with an offset of 20 gives an effect as seen in \ref{fig:MCoffset10applied20}.
 
@@ -385,9 +385,9 @@ The resulting $b_{WM}$ and $b_{GT}$ curves are seen in figure \ref{fig:offset0LB
     \begin{minipage}{0.50\textwidth}
         \centerline{\includegraphics[width=0.9\textwidth]{CsILBCvGainBSMOffsetism6p64histfit.png}}
     \end{minipage}
-    \caption{The depedence of the parameters to the start of the fit.
+    \caption{The dependence of the parameters to the start of the fit.
 	     The offset here is -6.6.
-    	     Both gains are indepedent of the start of the fit.}
+    	     Both gains are independent of the start of the fit.}
     \label{fig:offset0LBCeffect}
 \end{figure}
 
@@ -422,7 +422,7 @@ The effect of a wrong detector resolution is negligible.
 Changing where the fit ends has effectively no effect on the value either parameter.
 An issue is that at small enough upper beta cut, there is nothing to fix the pile-up parameter on. 
 This means that there could be correlations induced.
-To avoid this, the  pre-fit was done, and the level of pile-up recorded.
+To avoid this, the  prefit was done, and the level of pile-up recorded.
 The level of pile-up was fixed for the other fits across all upper beta cuts.
 The lower beta cut was fixed to 250 keV in the fits. 
 The effect is shown in figure \ref{fig:UBCEffect}.
@@ -511,7 +511,7 @@ These are summarized in table \ref{tab:formfactorsyseffect}
 	\caption{Systematic uncertainties due to nuclear form factors.} 
 		\begin{tabularx}{\textwidth}{RLLLLL}
 		Parameter Name & Parameter Variable & Parameter Value & Parameter Uncertainty & Systematic Uncertainty $b_{WM}$ & Systematic Uncertainty $b_{GT}$ \\ \hline
-		Weak magentism & $b_{WM}$ & 43.4 & 1.2 \cite{Min11} & N/A & 0.0034 \\
+		Weak magnetism & $b_{WM}$ & 43.4 & 1.2 \cite{Min11} & N/A & 0.0034 \\
 		Induced tensor form factor & $d$ & 40.5 &  3.7 \cite{Min11} & 0.2 & 0.0004 \\
 		Fermi matrix element & $c_{1h}$ & 0.253 & 0.004 \cite{Min11} & 0.5  & 0.0017 \\
 		Second forbidden matrix element & $c_{2h}$  & 0.755 $fm^{2}$ & 0.257 $fm^{2}$ \cite{Elm87} & 0.2 & 0.0011

@@ -60,7 +60,7 @@ Double ratios were taken to account for difference in solid angle and detector e
 The threshold was taken to be 2 MeV, as below that energy, the spectrum is distorted.
 
 \begin{figure}[!htb]
-	\centerline{\includegraphics[width=0.78\textwidth]{Kei1120FSpectrum.png}}
+	\centerline{\includegraphics[width=0.75\textwidth]{Kei1120FSpectrum.png}}
 	\caption{A sample beta energy spectrum using a plastic scintillator detector \cite{Min11}.}
 	\label{fig:keispec}
 \end{figure}
@@ -109,7 +109,7 @@ This efficiency changes as the spectrometer's field is changed.
 The location of the telescope was optimized to minimize this effect.
 Another way of normalization was to continuously adjust the spectrometer field so that a the entire energy range is sampled over each measurement cycle.
 The issue there is that changing the magnetic fields induces currents, which are hard to correct for. 
-In this measurement, adjusting the spectrometer field was used as a benchmark for the beta telescope normalization method.
+In that measurement, adjusting the spectrometer field was used as a benchmark for the beta telescope normalization method.
 
 An issue with this measurement is that the shape factor is not just the linear term.
 The shape factor depend on the other nuclear form factors and are not independent.
@@ -137,7 +137,8 @@ A calibration beta spectrum is shown in figure \ref{fig:hethspec}.
 As seen from figure \ref{fig:hethspec}, there is a large distortion at low energies.
 This is due to back scattering inside the germanium detector.
 What happens is that electrons enter the detector, deposit some of their energy, and bounce back out.
-This caused a large distortion at low energy.
+This causes events that should be at higher energies to be instead read at very low energies.
+This creates the low energy peak seen in figure \ref{fig:hethspec}.
 Another issue for this measurement was that energy calibration was non-linear.
 Below 1.5 MeV, there was a non-linearity which caused a distortion down to 35 keV. 
 This all had to be accounted for and contributed to the uncertainty.
@@ -153,14 +154,14 @@ The beta spectrum is greatly distorted.
 The effective shape measurement analysis was started at 1.5 MeV.
 For this measurement there were several systematic effects.
 The largest uncertainty was due to the response function.
-The paper refers this to "peak position." 
+The paper refers this to ``peak position.'' 
 This experiment used many different sources to get a calibration.
 They also had to take the bremsstrahlung of the electrons into account.
 That systematic effect was the limiting factor in their measurement
 
 Much like the spectrometer measurement, the other terms of the shape factor were fixed.
 Here however the other terms were calculated as a systematic error.
-It was found that the quadratic term had more of an effect in the measurement than the $1/W$ term.
+It was found that the $W^{2}$ term had more of an effect in the measurement than the $1/W$ term.
 Ultimately, the measured linear term was consistent with the CVC hypothesis. 
 %Spectrum is on page 168 in thesis. Put it here
 

@@ -9,7 +9,7 @@ The beta energy spectrum shape can be broken up in three different factors.
 The three terms are written out as  %in equation \ref{eq:betaspectrum}
 
 \begin{equation}
-	Q(E) = PS(E) * C(E) * (1 + b_{GT}\frac{m_{e}}{E})
+	\frac{dN}{dE} = PS(E) * C(E) * (1 + b_{GT}\frac{m_{e}}{E})
 	\label{eq:betaspectrum}
 \end{equation}
 $PS(E)$ is the phase space of the electron, $C(E)$ are all the hadronic and electromagnetic corrections multiplied together, and $b_{GT}$ the Fierz term.
@@ -62,7 +62,7 @@ It is %shown in equation \ref{eq:phase_space}
 \end{equation}
 were $C$ is a constant, $p_{e}$ is the electron momentum, $W$ the total electron energy, and $W_{0}$ the maximum electron energy.
 This is derived from the density of states of the particle when the neutrino degrees of freedom are integrated over.
-The constant has factors that come from the integration.
+The constant has factors that come from that integration.
 
 \section{Variables of the Correction Factors}
 
@@ -128,7 +128,7 @@ The radiative correction is the next largest electromagnetic correction.
 For this measurement, the correction is only needed to first order, which is on order $\alpha$.
 The correction is a QED correction that stems from photons emitted from the beta particle.
 This photon can be absorbed by the nucleus of the daughter, which makes it a virtual photon.
-The photon can also be a real photon that propagates out off to infinity.
+The photon can also be a real photon that propagates off to infinity.
 The real photons are known as inner bremsstrahlung.
 
 There are different descriptions of the radiative correction.  
@@ -151,7 +151,7 @@ The Sirlin formula assumes that the inner bremsstrahlung photons are not detecte
 This is mostly true if the source of the beta decay is outside of a detector.
 However, if the source is implanted inside of the detector, such as it is in this experiment, some of the inner bremsstrahlung is absorbed.
 
-If all the inner bremsstrahlung is absorbed, a different form of the first order radiative correction is needed.
+If all of the inner bremsstrahlung is absorbed, a different form of the first order radiative correction is needed.
 There are many equivalent forms of this, but the one that was used for this experiment was by Fayans \cite{Fay86}.
 The form of this radiative correction is %shown in equation \ref{eq:fayansrad}
 \begin{equation}	
@@ -201,7 +201,7 @@ Multiplying that ratio by equation \ref{eq:fayansrad} gives the effective radiat
 The comparison of all three radiative corrections is shown in figure \ref{fig:rad}
 
 \begin{figure}[!htb]
-	\centerline{\includegraphics[width=0.68\textwidth]{RadCorrections_20F.pdf}}
+	\centerline{\includegraphics[width=0.65\textwidth]{RadCorrections_20F.pdf}}
 	\caption{Comparison of three different radiative corrections.
 		 The green line depends strongly on the detector geometry.
 		 }
@@ -388,7 +388,7 @@ The form factors are described in table \ref{tab:formfact} \cite{Min11} \cite{Ca
 		\begin{tabular}{lrr}
 		Form Factor & Name & Value \\ \hline
 		$c_{1h}$ & Fermi matrix element & 0.253  \\
-		$c_{2h}$ & Matrix element momentum transfer factor & 0.755 fm$^{2}$  \\
+		$c_{2h}$ & Second forbidden matrix element & 0.755 fm$^{2}$  \\
 		$b_{WM}$ & Weak magnetism & 43.4   \\
 		$d$ & Induced tensor term & 40.5 
 		\end{tabular}
@@ -443,8 +443,9 @@ This gives a value of $43.4 \pm$ 1.2 \cite{Min11}.
 Getting a measurement of this value is of interest for two reasons.
 One, it tests the Conserved Vector Current (CVC) hypothesis.
 This hypothesis states that the weak interaction possesses a universal strength and a universal $V-A$ form \cite{Man58}.
-In decays involving a $T = 1$ multiplet, the equation \ref{eq:bwmcal} is valid. 
-This means the largest of the nuclear corrections can be determined from experimental data, which has a much smaller uncertainty than any theory calculations.
+This means the weak magnetism can be determined from experimental data involving mirror transitions.
+In decays involving a $T = 1$ multiplet, the form of the calculation is equation \ref{eq:bwmcal}. 
+This is the largest of the nuclear corrections, and can be determined from experimental data, which has a much smaller uncertainty than any theory calculations.
 The second reason is more experimental.
 It gives a parameter with which to benchmark the measuring techniques and the analysis.
 If the analysis produces the excepted value of $b_{WM}$, the same procedure should give a reliable value for $b_{GT}$.
@@ -452,29 +453,32 @@ If the analysis produces the excepted value of $b_{WM}$, the same procedure shou
 \subsubsection{The Induced Tensor Form Factor}
 
 From equation \ref{eq:sfcs}, the induced tensor form factor $d$ contributes to the corrections much in the same way as the Fierz term.
-This form factor was measured in a beta decay correlation measurement \cite{Min11}.
+This form factor was measured by combining two data sets \cite{Min11}.
 Both the decay of $^{20}$F and $^{20}$Ne were used to measure $d$.
-The alignment of out-going electrons was measured, which is a higher order polarization.
+One data set was the alignment of out-going electrons, which is a higher order polarization.
 To describe the alignment, the nuclear form factors are needed.  
-The measurement was done with both nuclei and added to eliminate some of the form factors such as the dependence of the alignment on $b_{WM}$. 
-To eliminate the remaining form factors, the alignment measurement added to existing gamma-beta angular correlation data.
+The measured alignments of both $^{20}$F and $^{20}$Ne were added to eliminate the form factors that changed sign between the two nuclei.
+To eliminate the remaining form factors, an existing gamma-beta angular correlation measurement of both nuclei was added. 
 The remaining form factors change sign in the angular data.
 This gave a value of $d/Ac_{1h} = 8.00 \pm 0.73$.
 Using $A = 20$ and $c_{1h} = 0.253$, this gives $d = 40.5 \pm 3.7$. 
 
 \section{Summary}
 
-Before the theoretical corrections were fed into a Monte Carlo simulation, the uncertainties from the experimentally determined quantities was checked.
-Theoretical spectra were built with each value plus or minus it's uncertainty.
-Ratios between the spectra were taken.
-From these ratios, numerical derivatives were taken and weighted with the normalized phase space.
-These results are shown in figure \ref{fig:theoryuncer}.
+Before the theoretical corrections were fed into a Monte Carlo simulation, the uncertainties from the experimentally determined quantities $R$ and $Q$ was checked.
+The corrections and phase space were calcuated with the central value of both parameters.
+Then, two more spectra were calculated.
+One was calculated with $R + eR$ instead of $R$, and the other was calculated with $Q + eQ$ instead of $Q$.
+Here, $eR$ is the uncertainty of $R$ and $eQ$ the uncertainty of $Q$.
+Two ratios were taken, which were $Y(E,R+eR,Q)/Y(E,R,Q)$ and $Y(E,R,Q+eQ)/Y(E,R,Q)$, where $Y(E)$ is $dN/dE$ in equation \ref{eq:betaspectrum}.
+From these ratios, numerical derivatives were taken and weighted with the phase space normalized to 1.
+These results are shown in figure \ref{fig:theoryuncer}, where it is seen the change of shape induced is small.
 These results were futher verified by generating a spectrum with a $b_{WM}$ and a $b_{GT}$.
 This spectrum was fit with an additional generated spectrum with $R$ or $Q$ adjusted by one unit of uncertainty.
 The change in the fitted parameter was found to be smaller than the expected statistical uncertainty.
 
 \begin{figure}[!htb]
-	\centerline{\includegraphics[width=0.78\textwidth]{DerivPlot.pdf}}
+	\centerline{\includegraphics[width=0.58\textwidth]{DerivPlot.png}}
 	\caption{The weighted numerical derivative.
 		 These derivatives are order of magnitude smaller than the 10$^{-2}$/MeV of the $c_{1}$ of the shape factor.}
 	\label{fig:theoryuncer}

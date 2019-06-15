@@ -65,22 +65,22 @@ with $S_{0}$ being the first sum over $t_{PEAKING}$ described above, $S_{G}$ bei
 $C_{0}$ is described as
 
 \begin{equation}
-	C_{0} = \frac{-(1 - e^{\frac{tSPL}{\tau}})e^{\frac{t_{PEAKING}}{\tau}}}{1 - e^{\frac{t_{PEAKING}}{\tau}}}
+	C_{0} = \frac{-(1 - e^{\frac{t_{SPL}}{\tau}})e^{\frac{t_{PEAKING}}{\tau}}}{1 - e^{\frac{t_{PEAKING}}{\tau}}}
 	\label{eq:c0sum}
 \end{equation}
 %
-where $t_{PEAKING}$ is the time described above, $tSPL$ is the 8 ns sampling time, and $\tau$ an additional parameter.
+where $t_{PEAKING}$ is the time described above, $t_{SPL}$ is the 8 ns sampling time, and $\tau$ an additional parameter.
 $C_{g}$ is 
 
 \begin{equation}
-	C_{g} = 1 - e^{\frac{tSPL}{\tau}}
+	C_{g} = 1 - e^{\frac{t_{SPL}}{\tau}}
 	\label{eq:cgsum}
 \end{equation}
 %
 Finally, $C_{1}$ is 
 
 \begin{equation}
-	C_{1} = \frac{1 - e^{\frac{tSPL}{\tau}}}{1 - e^{\frac{t_{PEAKING}}{\tau}}}
+	C_{1} = \frac{1 - e^{\frac{t_{SPL}}{\tau}}}{1 - e^{\frac{t_{PEAKING}}{\tau}}}
 	\label{eq:c1sum}
 \end{equation}
 %
@@ -89,18 +89,23 @@ It took a sample of the pulse, averaged over $t_{PEAKING}$ again in $C_{1}$.
 Then, it subtracted off $C_{0}$ from $C_{1}$, after adjusting for the exponential decay of the pulse.
 The time constant of that decay is the $\tau$ parameter.
 When tuning the filter, the $\tau$ parameter had the largest effect.
+For logic signals which do not decay, the $\tau$ parameter was very large.
 For this experiment, the various filter parameters are summarized in table \ref{tab:pixieparams}  
 %
 \begin{table}[!hbt]
 	\centering
-	\caption{Energy filter parameters}
-			\begin{tabular}{lrrr}
+	\caption{Energy filter parameters.}
+		\begin{tabular}{lrrr}
 			Detector & $\tau$ & $t_{PEAKING}$ & $t_{GAP}$ \\ \hline
 			PVT implant & 60 ns & 208 ns & 128 ns \\
-			All CsI (Na) Detectors & 900 ns & 480 ns & 48 ns \\
-			PPAC Channels & 300000 ns & 1200 ns & 96 ns  
-			\end{tabular}	
-			\label{tab:pixieparams}
+			All CsI (Na) detectors & 900 ns & 480 ns & 48 ns \\
+			PPAC channels & 300000 ns & 1200 ns & 96 ns \\ 
+			Si PIN & 50000 ns & 1744 ns & 96 ns \\
+			Beam on/beam off signals & 1000000 ns & 400 ns & 96 ns \\
+			Pulser & 5000000 ns & 400 ns & 96 ns \\
+			Light pulser & 150 ns & 608 ns & 96 
+		\end{tabular}	
+		\label{tab:pixieparams}
 \end{table}
 %
 
@@ -114,12 +119,16 @@ The trigger filter was used to calculate the time stamps of the events.
 %
 \begin{table}[!hbt]
 	\centering
-	\caption{Trigger filter parameters}
+	\caption{Trigger filter parameters.}
 		\begin{tabular}{lrrr}
-		Detector & $t_{PEAKING}$ & $t_{GAP}$ & Threshold\\ \hline
-		PVT implant & 104 ns & 104 ns & 30 \\ 
-		All CsI (Na) Detectors & 200 ns & 72 ns & 20 \\
-		PPAC Channels & 904 & 104 & 200 
+			Detector & $t_{PEAKING}$ & $t_{GAP}$ & Threshold\\ \hline
+			PVT implant & 104 ns & 104 ns & 30 \\ 
+			All CsI (Na) Detectors & 200 ns & 72 ns & 20 \\
+			PPAC Channels & 904 & 104 & 200 \\ 
+			Si PIN & 400 ns & 80 ns & 100 \\
+			Beam on/beam off signals & 104 ns & 40 ns & 20 \\
+			Pulser & 104 ns & 40 ns & 20 \\
+			Light pulser & 104 ns & 72 ns & 35
 		\end{tabular}	
 		\label{tab:trigfilter}
 \end{table}

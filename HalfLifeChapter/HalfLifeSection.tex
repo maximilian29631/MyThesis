@@ -3,7 +3,7 @@
 
 \begin{document}
 \section{Motivation}
-During the experiment, it was noticed that there was a disagreement between the value of the half-life and the value in the literature.
+During the experiment, it was noticed that there was a disagreement between the value of the half-life measured and the value in the literature.
 As a side project and as a first chance to thoroughly investigate the data, a half-life analysis was made. 
 These results have been published \cite{Hug18}. % Give citation 
 The previous measurements of the half-life of $^{20}$F are shown in figure \ref{fig:IDBefore}.
@@ -73,7 +73,7 @@ In order to do the half-life analysis, software coincidences were imposed.
 Three conditions were set in total.
 Two conditions were on the energy in the implantation detector and one of the four CsI(Na) detectors.
 The gamma cuts are summarized in table \ref{tab:GammaCuts}.
-An additional condition on the time difference between the events recorded in the two detectors. 
+An additional condition ws imposed on the time difference between the events recorded in the two detectors. 
 A sample spectrum of the gamma and beta energies is shown in figure \ref{fig:2DGraph}  
 
 \begin{table}[!htb]
@@ -118,7 +118,9 @@ A sample spectrum of the gamma and beta energies is shown in figure \ref{fig:2DG
         \begin{minipage}{0.50\textwidth}
             \centerline{\includegraphics[width=0.9\textwidth]{fig_gammaSpec.pdf}}
         \end{minipage}
-	\caption{The wide cuts are to reduce the effect of the rate dependent gain.}
+	\caption{The red lines show the gamma cuts, which were chosen to reduce the effect of the rate dependent gain. 
+		 On the left the spectrum is seen in a linear scale.
+		 On the right the spectrum is seen on a log scale.}
 	\label{fig:GammaGraph}
 \end{figure}
 
@@ -308,7 +310,7 @@ The first attempt was by simultaneously fitting each run with a different fittin
 The equation used was 
 %
 \begin{equation}
-	f(t) = a(\exp{-t*ln2/T_{1/2}} + b)
+	f(t) = a(\exp(-t*ln2/T_{1/2}) + b)
 	\label{eq:fit-bg}
 \end{equation}
 %
@@ -387,7 +389,8 @@ This was compared to analytic results, which gave the same results, so the half 
 \label{sec:result}
 
 The half-lives obtained for all runs and all four detectors are shown in figure \ref{fig:PVT2by2}
-
+The results  are shown in  in table \ref{tab:PVTTable}.
+The size of the systematic uncertainties investigated are shown in table \ref{tab:SysTable} 
 \begin{figure}[!htb]
 	\centerline{\includegraphics[width=0.88\textwidth]{fig_halfLives.pdf}}
 	\caption{The red lines show the results of the fits over the runs that were used.
@@ -395,8 +398,6 @@ The half-lives obtained for all runs and all four detectors are shown in figure 
 		}
 	\label{fig:PVT2by2}
 \end{figure}
-
-The results  are shown in  in table \ref{tab:PVTTable}.
 %\begin{center}
 	\begin{table}[!hbt]
 			\centering
@@ -413,7 +414,6 @@ The results  are shown in  in table \ref{tab:PVTTable}.
 			\label{tab:PVTTable}
 	\end{table}
 %\end{center}
-The size of the systematic uncertainties investigated are shown in table \ref{tab:SysTable} 
 %\begin{center}
 \begin{table}[!hbt]
 	\caption{Systematics}

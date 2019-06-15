@@ -17,15 +17,12 @@ In order to use the program, the detector geometries where needed.
 \subsection{Detector Geometry}
 A source of the detector geometry were the technical drawings of detectors. 
 A drawing of the CsI(Na) implant detector is shown in figure \ref{fig:ImplantTech}
-This drawing was the basis of the detector geometry fed into the simulation.
-
 \begin{figure}[!htb]
 	\centerline{\includegraphics[width=0.78\textwidth]{ImplantDrawing.png}}
 	\caption{A technical drawing of the CsI(Na) implant detector.}
 	\label{fig:ImplantTech}
 \end{figure}
-
-The geometry of the detectors was programmed into the simulation.
+Based on this figure, the geometry of the detectors was programmed into the simulation.
 The implant detector was a 54 x 54 x 101.6 mm square prism of CsI.
 Around the square prism there was an empty layer.
 Along the sides, the empty layer was 1.5 mm thick.
@@ -83,8 +80,7 @@ The radiative correction used to generate the electron energy was the formula th
 After the electron energy is generated, the formula describing the energy spectrum of the inner bremsstrahlung photons is generated. 
 This spectrum is written out in equation \ref{eq:KUB}. % Add KUB again here? Probably.
 Further discussion of this formula is found in the theory chapter.
-A cutoff of 50 keV is imposed to the formula, as it has a singularity at zero photon energy.
-In addition, with this geometry, all photon energies below 100 keV are absorbed.
+A cutoff of 50 keV is imposed to the formula.
 Then, the formula is numerical integrated from 50 keV to the electron energy over 1000 steps using the trapezoidal rule.
 This is the total probability that an electron emits a KUB photon.
 This number is compared to a random number from 0 to 1.
@@ -125,7 +121,7 @@ The range cuts for other particles stayed at 5 $\mu$m.
 
 \section{Simulation Development}
 The GEANT4 simulation is based on the example TestEm5.
-The first changes were to add the proper detector geometry, as described above.
+The first changes were to change the detector geometry. 
 The next changes were to add a second primary particle, which was the gamma ray from the decay.
 The data structure that recorded all the data absorbed event by event was added, so that the gamma cuts could be changed after the fact.
 
@@ -199,8 +195,8 @@ Then, when it came time to apply the beta cuts, the 2-D histogram was projected 
 To check if the binning applied to the histogram distorted the output spectra at all, ratios were of the two output spectra were taken.
 The results of the ratios can be seen in figure \ref{fig:histogramtottreeratio}.
 The red line fits the ratio very well.
-The relative normalization $p0$ is unimportant in the analysis.
-The slope $p1$ is consistent with zero to $10^{-7}$.
+The relative normalization $\mathit{p0}$ is unimportant in the analysis.
+The slope $\mathit{p1}$ is consistent with zero to $10^{-7}$.
 This is much smaller than the linear term in the shape factor.
 From this, it is seen that processing the data differently has no effect on the outcome.
 This method of processing the data was used to test the sensitivity of the fit to the charge radius and the beta end point.

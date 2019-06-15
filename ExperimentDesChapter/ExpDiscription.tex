@@ -14,13 +14,13 @@ As long as the nuclei are implanted deep enough, the electrons will not have eno
 Even if the electron scatters several times, it still deposits all it's energy.
 This range depends on the detector material.
 Since any dead layers are at the surface, the decays inside the detector do not see them.
-A $4\pi$ angular coverage is also obtained, as the detector material surrounds the source.
+A $4\pi$ angular coverage is also obtained, as the detector material surrounds the source completely.
 
 There are some caveats for a calorimetric technique. 
-The first is that a large enough detector is needed, otherwise the electrons could escape at high energies.
+The first is that a large enough detector is needed, since otherwise the electrons could escape at high energies.
 A large effect is that electrons moving through the detector material will emit a lot of bremsstrahlung.
 Using a low-$Z$ detector material will lessen this effect.
-However, Monte Carlo detector simulations can describe the production and absorption of bremsstrahlung to enough precision to allow for a precision beta energy measurement. 
+However, Monte Carlo detector simulations can describe the production and absorption of bremsstrahlung well enough to allow for a precision beta spectrum measurement. 
 Another issue is that accelerators used to generate the isotope of interest must be able to create them at high enough energy in order to implant the isotopes deep enough into the detector.
 This limits what nuclei can be used for this technique.
 The act of implanting the nuclei gives the detector a lot of energy. 
@@ -60,7 +60,7 @@ The location of the PPAC and other detectors are shown in figure \ref{fig:BeamSe
 	\label{fig:BeamSetUp}
 \end{figure}  
 
-To calibrate the PPAC , a mask with several holes was used. 
+To calibrate the PPAC, a mask with several holes was used. 
 This mask covered the front of the detector, and an alpha decay source in the vacuum was placed in front of the PPAC.
 Then, everything was left to run until an image of the mask was formed.
 The mask had holes in it every 1 cm. 
@@ -72,7 +72,7 @@ After adjusting the parameters of the upstream beam optics, the final beam size 
 The calibrated data of the signals was built into a 2-D histogram.
 There was some ringing in the PPAC.
 To suppress this ringing, a threshold for the PPAC was applied. 
-The peak of the beam spot was fitted with a 2-D Gaussian function
+To calculate the threshold, the peak of the beam spot was fitted with a 2-D Gaussian function
 The average of the Gaussian and the sigma in the $x$ and $y$ direction was taken. 
 From the standard deviations, the half widths at half maximum (HWHM) in both directions were calculated. 
 Using the HWHM and the center of the Gaussian, 8 points were selected.
@@ -89,13 +89,14 @@ The resulting width was read off to be 8 mm wide by 6 mm high.
 	\label{fig:PPACSpotch}
 \end{figure}  
 
-This is the size of the spot at the PPAC. 
+This is the size of the spot at the location of the PPAC. 
 Ion optics simulations were used to build the envelope of the beam at the PPAC and at the target.
 Using these cross sections, the magnification between the two locations was calculated.
 The magnification was different for the $x$ and $y$ directions.
 
 For the depth of the implantation of the beam, ion simulations were used. 
-The LISE++ program was fed the beam magnets. It was given the energy of the beam and the detector set up. 
+The LISE++ program was fed the geometry and the settings of the beam magnets. 
+It was given the energy of the beam and the location of the implant detector. 
 It then calculated the depth of the implantation of the detector and the range of the depth inside the detector. 
 This gave a depth of 3.02 cm in side the PVT detector and a depth of 1.156 cm in the CsI(Na) detector. 
 The ranges straggling was 1.2 mm in the PVT detector and 0.4 mm in the CsI(Na) detector.
@@ -112,10 +113,10 @@ This was done after the main run, and the simulation matched the measurement in 
 \begin{figure}
     \centering
     \begin{minipage}{0.50\textwidth}
-	\centerline{\includegraphics[width=0.90\textwidth]{degrad.pdf}}
+	\centerline{\includegraphics[width=0.90\textwidth, height = 4 cm]{degrad.png}}
     \end{minipage}\hfill
     \begin{minipage}{0.50\textwidth}
-	\centerline{\includegraphics[width=0.70\textwidth]{CsIRawRatevDegraderThicknessOnePass.png}}
+	\centerline{\includegraphics[width=0.90\textwidth, height = 4 cm]{CsIRawRatevDegraderThicknessOnePass.png}}
     \end{minipage}
 	\caption{The simulation is on the left.
 		 The data is on the right.
@@ -143,7 +144,7 @@ This was to monitor the light output of the LED.
 A sketch of the PVT crystal including the acrylic disk is shown in figure \ref{fig:PVTDetSketch}.
 
 \begin{figure}
-	\centerline{\includegraphics[width=0.78\textwidth]{PVTDetectorSketch.png}}
+	\centerline{\includegraphics[width=0.83\textwidth]{PVTDetectorSketch.png}}
 	\caption{A sketch of the PVT implant detector.
 		    The acrylic disk is seen along as PVT scintillator. 
 		   }

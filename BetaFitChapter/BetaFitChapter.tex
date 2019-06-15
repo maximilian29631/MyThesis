@@ -49,7 +49,7 @@ The values of the parameters for detector calibrations are summarized in table \
 
 \begin{table}[!hbt]
         \centering
-        \caption{The values of the gamma calibration}
+        \caption{The values of the gamma calibration.}
                 \begin{tabular}{lrr}
                 Detector & Gain (ADC Units/keV) & Offset (ADC Units) \\ \hline
                 Up & 0.90 & 28 \\
@@ -162,7 +162,7 @@ In addition, the parameters of the actual energy for the CsI(Na) implant detecto
 
 \begin{table}[!hbt]
 	\centering
-	\caption{Pile-up model parameters compared to the energy filter parameters}
+	\caption{Pile-up model parameters compared to the energy filter parameters.}
 		\begin{tabular}{lrr}
 		Parameter & Pile-up model value & Energy filter value \\ \hline
 		$\tau$ & 880 ns & 900 ns \\
@@ -382,7 +382,7 @@ This graph is shown in figure \ref{fig:slopevoffset}.
 \begin{figure}[!htb]
 	\centerline{\includegraphics[width=0.70\textwidth]{fig_offsetvslopecurve_gain.pdf}}
 	\caption{How the slope of the $G_{SM}$ vs LBC curve changes with offset.
-		 A slope of 0 corresponds to an offset of -6.6}
+		 A slope of 0 corresponds to an offset of -6.6.}
 	\label{fig:slopevoffset}
 \end{figure}
 The resulting $G_{SM}$ and $G_{BSM}$ curves are seen in figure \ref{fig:offset0LBCeffect}.
@@ -425,7 +425,7 @@ If the $A$ differ by a factor of 2 or more, a shift in $b_{WM}$ appears.
 However, this is much larger than any uncertainty in detector resolution.
 The effect of a wrong detector resolution is negligible. 
 
-\subsection{The Relative Normalization of the Beta-gamma Sum Spectrum}
+\subsubsection{The Relative Normalization of the Beta-gamma Sum Spectrum}
 
 The realtive normalization of the beta-gamma sum spectrum can induce an effect in the fitted gain.
 This was checked with the same Monte Carlo used to test the effect of the offset.
@@ -464,7 +464,7 @@ Both parameters are flat after 5500 keV.
 The lower beta cut effect is the largest of the systematic uncertainties.
 Many of the other systematic uncertainties are independent of the absolute value of $b_{GT}$.
 To calculate these uncertainties, the lower beta cut was fixed to 250 keV.
-The offset was set to -6.5.
+The offset was set to -6.6.
 These parameters give the conditions in figure \ref{fig:offset0LBCeffect}.
 
 For the calculation of the systematic uncertainties, one parameter at a time was adjusted.
@@ -506,7 +506,7 @@ There is no systematic upper beta cut effect.
 		\begin{tabularx}{\textwidth}{RLLLL}
 		Parameter Name & Parameter Value & Parameter Range or Uncertainty & Systematic Uncertainty on $b_{WM}$ & Systematic Uncertainty $b_{GT}$\\ \hline
  		Lower beta cut & 250 keV & 200 to 2000 keV & 5.5 & 0.0235 \\
-		Offset & -6.5 & -6.6 to -6.4 & 0.3 & 0.0008 \\
+		Offset & -6.6 & -6.7 to -6.4 & 0.3 & 0.0008 \\
 		Binning of data histogram & 32 & 16 to 64 & 0.6 & 0.0003\\
 		Binning of fitting histograms & 32 & 16 to 64 & 0.2 & 0.0007 \\ 
 		Convolution & 1.112 & 0.008 &  0.3 & 0.0004 	 

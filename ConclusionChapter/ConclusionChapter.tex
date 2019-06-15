@@ -3,8 +3,7 @@
 \begin{document}
 Due to uncertainties in how to deal with the gamma-beta sum spectrum, the central value of the Fierz term could not be produced. 
 However, most of the systematic effects can still be calculated.
-The effect with the lower beta cut is likely due to the normalization of the beta-gamma sum spectrum.
-The issue is a solvable one. 
+The effect with the lower beta cut is likely due to a mismatch between the shape of the spectra used to fit the data and the shape of the data spectrum.
 
 \section{Discussion of Results}
 
@@ -12,7 +11,7 @@ The statistical uncertainty of $b_{GT}$ is 0.0042.
 This is with $7 \times 10^{6}$ events that pass the gamma coincidence.
 If the lower beta cut uncertainty is excluded, the total systematic uncertainty is 0.0043.
 If the lower beta cut uncertainty can be resolved, the total systematic uncertainty should only be a touch higher than 0.0043.
-This is larger than the statistical uncertainty.
+This is a similar size to the statistical uncertainty.
 The largest systematic effect is the uncertainty on the $b_{WM}$.
 Increasing the number of counts will not decrease the uncertainty of $b_{GT}$ below 0.0034.
 
@@ -28,15 +27,16 @@ This measurement is already systematics limited, so running more events would no
 However, other steps could be taken to improve the technique.
 
 The largest systematic effect right now is the sensitivity to the lower beta cut. 
-A likely way to solve this issue is to adjust the level of the gamma-beta sum spectrum.
-This still to be confirmed with Monte Carlo.
-Ultimately, the resulting offset and sum spectrum level probably are not the real, physical level.
-An estimate of the systematic uncertainty due to the sum spectrum level would then have to be done, much like with the offset.
-As these uncertainties depend on the slopes of the lower beta cut curves, these should get more precise as more events are built.
-The slope can be seen more easily as there is the error bars get smaller.
-Another method would be to compare the output of GEANT4 to that of another simulation code.
+A likely way to solve this issue is to verify the shape of the fitting functions. 
+A method would be to compare the output of GEANT4 to that of another simulation code.
 EGSnrc is being used by the collaborators from Wittenburg University. 
 These results will be added to the systematic uncertainty.
+
+Ideally, the lowest lower beta cut should be used for the fit.
+This both increases the statistics in the spectrum and decreases the uncertainty due to the uncertainty in $b_{WM}$.
+Going below $200$ keV for this measurement is not possible due to the non-linearities in the detector.
+If <INSERT DETECTOR HERE> were used instead, where the non-linearities are much less \cite{Kno10}, more of the spectrum could be measured. 
+There would be an increased sensitivity to the Fierz term due to the $1/W$ functional depedence of that term.
 
 In order to increase the efficiency for the 1.6 MeV gamma ray, the implant detector could be more completely encased with gamma detectors.
 If these gamma detectors had a higher resolution, that would mean that the signal in the implant would be much cleaner.

@@ -28,7 +28,7 @@ One is the Q-value of the decay, which is defined as %in equation \ref{eq:qval}.
 where $m_{^{20}F}$ is the nuclear mass of $^{20}$F, $m_{^{20}Ne}$ is the nuclear mass of $^{20}$Ne, and $E_{level}$ is the energy of the 1.6 MeV nuclear state in $^{20}$Ne. 
 The tabulated masses for these nuclei are the atomic mass, $M$, which differ from the nuclear masses by the electron mass and the binding energy of the electrons.
 The electron masses are subtracted off, since the binding energy of the electrons is too small to be significant.
-For $^{20}$F, $M_{20Ne} = 19.9924401762 (17)$ amu, $M_{20F} = 19.999981252 (31) $ amu \cite{Wan17} , and $E_{level} = 1.633674 (15)$ MeV  \cite{Til98}   .
+For $^{20}$F, $M_{20Ne} = 19.9924401762 (17)$ amu, $M_{20F} = 19.999981252 (31) $ amu \cite{Wan17} , and $E_{level} = 1.633674 (15)$ MeV  \cite{Til98} .
 
 This mass difference is not quite the maximum electron energy. 
 To get to the maximum electron energy, $E_{0}$, the energy of the recoiling nucleus has to be taken into account.
@@ -69,8 +69,8 @@ The constant has factors that come from that integration.
 For the rest of the discussion of the corrections to the energy spectrum, everything is given without units.
 These corrections are largely electromagnetic in origin.
 All of the energies are divided by the electron mass.
-For this work, $m_{e} = 0.510998928$ MeV
-The other important variables are shown in table \ref{tab:vars}
+For this work, $m_{e} = 0.510998928$ MeV.
+The other important variables are shown in table \ref{tab:vars}.
 
 \begin{table}[!hbt]
 	\centering
@@ -185,7 +185,6 @@ Each of these orders would have a probability reduced by a factor of $\alpha$ co
 The higher orders would be less significant, except at low energies. 
 Since the probability density diverges, the higher orders could contribute.
 This would make the probability of emitting no photons finite.	 		
-
 However, another possibility is to add a cutoff. 
 As long as the cutoff is high enough to be in the region where the first order Born approximation is valid, but low enough not to cut out gamma rays that are not fully absorbed, equation \ref{eq:KUB} is valid.
 The cutoff used was 50 keV.
@@ -198,7 +197,7 @@ No other physics process was looked at in this simulation.
 The ratio consisting of the energy absorbed over the initial energy was the output of the simulation.
 That ratio is the effective efficiency of absorbing the inner bremsstrahlung photons.
 Multiplying that ratio by equation \ref{eq:fayansrad} gives the effective radiative correction.
-The comparison of all three radiative corrections is shown in figure \ref{fig:rad}
+The comparison of all three radiative corrections is shown in figure \ref{fig:rad}.
 
 \begin{figure}[!htb]
 	\centerline{\includegraphics[width=0.65\textwidth]{RadCorrections_20F.pdf}}
@@ -214,7 +213,6 @@ The screening correction is the next largest electromagnetic correction.
 This is a correction to the Fermi function.
 It corresponds to the screening of the nuclear charge due to the electron cloud of the atom.
 The strongest effect of the screening correction is at low electron energies and for large atomic numbers.
-
 
 \subsubsection{Potentials Used in Screening Derivation}
 To calculate this correction, the Coulomb potential used to calculate the Fermi function is replaced with a Hulth\'en potential.
@@ -271,7 +269,7 @@ By comparing equations \ref{eq:hulthorg}, \ref{eq:screenbeta} and \ref{eq:hartor
 	\label{eq:betaanswer}
 \end{equation} 
 There is only one term in $^{20}$F. 
-The parameters in equation \ref{eq:betaanswer} are $c_{1} = 1$, and $b_{1} = 0.907$ \cite{Bya56}.
+The parameters in equation \ref{eq:betaanswer} are $c_{1} = 1$ and $b_{1} = 0.907$ \cite{Bya56}.
 
 \subsubsection{Screening Correction Formula}
 From equation \ref{eq:betaanswer}, the factor $C(Z)$ in equation \ref{eq:screenbeta} is evaluated $0.907 * 1.13 = 1.02491$.
@@ -333,7 +331,7 @@ Where the $a_{i}$ coefficients are parameterized by %equation \ref{eq:A}
 	a = \sum_{x = 1}^{6} b_{x} (\alpha Z)^{x}
 	\label{eq:A}
 \end{equation}
-The $b_{x}$ coefficients are numbers shown in table \ref{tab:bcoef}
+The $b_{x}$ coefficients are numbers shown in table \ref{tab:bcoef}.
 
 \begin{table}[!hbt]
 	\centering
@@ -379,9 +377,8 @@ The contribution from this correction to the shape is minimal.
 \subsection{Hadronic Corrections}
 
 Nuclear form factors are one of the largest corrections to the beta spectrum.
-There are four relevant form factors that come together into a correction called here the nuclear shape factor
+There are four relevant form factors that come together into a correction called here the nuclear shape factor.
 The form factors are described in table \ref{tab:formfact} \cite{Min11} \cite{Cal77}.
-
 \begin{table}[!hbt]
 	\centering
 	\caption{Nuclear form factors.}
@@ -394,9 +391,7 @@ The form factors are described in table \ref{tab:formfact} \cite{Min11} \cite{Ca
 		\end{tabular}
 	\label{tab:formfact}
 \end{table}
-
 The shape factor is written as 
-
 \begin{equation}
 	\label{eq:shapefactor}
 	S(E) = 1 + c_{0} + c_{1} + \frac{c_{-1}}{E} + c_{2}E^{2}	

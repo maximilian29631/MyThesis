@@ -14,7 +14,7 @@ with $PS(E)$ being the phase space, $C(E)$ the corrections, the $c_{i}$ the term
 The $PS(E)\times C(E)$ can be distributed to the shape factor, and four terms appear.
 Since the $c_{i}$ and $b_{GT}$ are small, $b_{GT} \times m_{e}$ can be, to first order, added to $c_{-1}$. 
 These four terms are the inputs to the GEANT4 simulation.
-These are summarized in table \ref{tab:4histfit}
+These are summarized in table \ref{tab:4histfit}.
 
 \begin{table}[!hbt]
 	\centering
@@ -113,8 +113,8 @@ This was done separately for each spectrum.
 
 \subsubsection{Determining Detector Response}
 In order to properly fit the energy spectrum, a calibration of the CsI(Na) detector had to be done.
-The calibration was used to find what the detector resolution was.
-Several different energy lines were used to find the calibration and the energy resolution function.
+The calibration was used to find the value of $A$ in equation \ref{eq:convo}.
+Several different energy lines were used.
 The lines were the 1.173 MeV and 1.332 MeV gammas from a $^{60}$Co source, the 0.662 MeV gamma ray from a$^{137}$Cs source, and the 0.511 MeV and 1.274 MeV gamma rays from a $^{22}$Na source.
 These gamma rays were fitted with a Gaussian and a background.
 The background varied from no background, a linear background, a quadratic background, and an error function background.
@@ -122,7 +122,6 @@ For the $^{60}$Co, both peaks were fit at once.
 These different background gave slightly different results for the centroids and the widths of the Gaussian.
 The range of the centroids and widths was taken as a systematic error.
 From the centroids, the calibration for each detector was calculated with equation \ref{eq:cal}. 
-This calibration curve was only used for the resolution determination.
 The widths of the peaks were calibrated with the gain and plotted vs energy.
 Then, equation \ref{eq:convo} was fit to the results in order to determine $A$.
 The value of $A$ used for this procedure was 1.112 with an uncertainty of 0.008.
@@ -146,7 +145,7 @@ If the two samples fell within the pile-up window, then the piled-up signal mode
 The calculated pile-up energy was saved to a histogram.
 If the two samples did not fall with in the pile-up window, then they were not fed into the filter model and just filled into the histogram.
 The parameters were adjusted until the generated pile-up matched the measured pile-up in the spectrum.
-The results of the tuning is seen in figure \ref{fig:pileuptune}
+The results of the tuning is seen in figure \ref{fig:pileuptune}.
 
 \begin{figure}[!htb]
 	\centerline{\includegraphics[width=0.78\textwidth]{PileUpTuningThesis_v2.png}}
@@ -182,7 +181,7 @@ The beta only spectrum and the beta-gamma sum spectrum of this simulation was ad
 With the pile-up spectrum described, all the pieces of the fit function are in place.
 
 \subsection{Fit Function}
-For the fit function, the convoluted histograms and pile-up were rebinned to a bin width of 64 keV.
+For the fit function, the convoluted histograms and pile-up were rebinned to a bin width of 32 keV.
 Then, each of the histograms were turned into a spline. 
 The five splines were fed into a fit function.
 The fit function was
@@ -201,8 +200,7 @@ In the fit, each of the $c$s were written out in terms of the nuclear form facto
 In these form factors, $b_{WM}$ was left as a potential free parameter. 
 If $b_{WM}$ was fit with the fit function, $b_{GT}$ was fixed to be 0. 
 If $b_{GT}$ was fit, then $b_{WM}$ was fixed to be 43.4. 
-In total, the fit function had four free parameters:
-$A$, $B$, the gain $G$, and either $b_{WM}$ or $b_{GT}$. 
+In total, the fit function had four free parameters: $A$, $B$, the gain $G$, and either $b_{WM}$ or $b_{GT}$. 
 In order to benchmark this fitting method, pseudo-data was generated and fitted.
 
 \subsubsection{Fit Function Characterization}
@@ -217,7 +215,7 @@ This function was
 	\label{eq:hybridmodel}
 \end{equation}
 with $A$ being a normalization constant and $S(E)$ the shape factor. 
-This method of fitting is not correct, as the $E$ in $f(E)$ is not the same as the initial energy in the analytical shape factor $S(E)$. 
+This method of fitting is not correct, as the $E$ in $f^{*}(E)$ is not the same as the initial energy in the analytical shape factor $S(E)$. 
 
 The first test was done just with a linear term in the pseudo-data.
 An older version of the GEANT4 code had a phase space times corrections times a linear shape factor fed into it.
@@ -475,7 +473,7 @@ The parameter then was then decreased by one unit of the error.
 Half the difference of the output $b_{WM}$ and $b_{GT}$ were the systematic error.
 
 As stated above, the different systematic uncertainties can be divided into three different categories. 
-There are the systematic uncertainties due to the simulation inputs, which are summarized in table \ref{tab:simsyseffect}
+There are the systematic uncertainties due to the simulation inputs, which are summarized in table \ref{tab:simsyseffect}.
 These were all calculated by running the four histograms with $2 \times 10^{9}$ events each.
 
 \begin{table}[!hbt]
@@ -496,8 +494,6 @@ On the other hand, an uncertainty in the end point can have a larger effect.
 The endpoint energy of the electron is only around 5 MeV.  
 
 The systematic effects due to the fit inputs are shown in table \ref{tab:fitsyseffect}.
-The systematic effect on the offset is linked to the lower beta cut effect and not listed yet.
-They still need to be investigated.
 There is no systematic upper beta cut effect.
 
 \begin{table}[!hbt]
@@ -516,14 +512,14 @@ There is no systematic upper beta cut effect.
 
 Lastly, there are the systematic uncertainties due to the form factors inside the shape factor.
 To calculate the systematic uncertainty on $b_{WM}$ due to $b_{GT}$, two fits one after another were done.
-First, $b_{GT}$ was fit with the central value of $b_{WM}$
+First, $b_{GT}$ was fit with the central value of $b_{WM}$.
 The resulting gain was recorded.
 This gain was fixed, and the altered value of $b_{WM}$ applied and $b_{GT}$ was fit again.
 The difference between the fitted values of $b_{GT}$ was recorded as a systematic uncertainty.
 It was found that the systematic uncertainty of $b_{GT}$ due to the uncertainty on $b_{WM}$ depended on where the fit was started. 
-This is shown in figure \ref{fig:syseffvLBC}
+This is shown in figure \ref{fig:syseffvLBC}.
 This is another reason to start the fit as low as possible. 
-These are summarized in table \ref{tab:formfactorsyseffect}
+These are summarized in table \ref{tab:formfactorsyseffect}.
 \begin{figure}[!htb]
 	\centerline{\includegraphics[width=0.70\textwidth]{CsIbwmSysEffvLBC.png}}
 	\caption{This is the systematic uncertainty on $b_{GT}$ due to the uncertainty of $b_{WM}$.

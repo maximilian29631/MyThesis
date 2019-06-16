@@ -232,7 +232,7 @@ The values shown in this chapter are those with the dead time correction.
 Once the decay spectra were put in coincidence and stacked up, it was fit with the function
 %
 \begin{equation}
-	f(t) = a\exp{(-t*ln2/T_{1/2})}
+	f(t) = a\exp{(-t \times ln2/T_{1/2})}
 	\label{eq:fit-function}
 \end{equation}
 %
@@ -310,7 +310,7 @@ The first attempt was by simultaneously fitting each run with a different fittin
 The equation used was 
 %
 \begin{equation}
-	f(t) = a(\exp(-t*ln2/T_{1/2}) + b)
+	f(t) = a(\exp(-t \times ln2/T_{1/2}) + b)
 	\label{eq:fit-bg}
 \end{equation}
 %
@@ -372,7 +372,7 @@ The end of the fit was varied the other way to cut out the end of the decay spec
 Since there was no noticeable systematic effect, there was no increase in error associated with this effect.
 
 \subsection{Oscillator Stability}
-The oscillator of the PIXIE board has a stability of $\pm 5 * 10^{-5}$.
+The oscillator of the PIXIE board has a stability of $\pm 5 \times 10^{-5}$.
 All times in the analysis were stretched by this value, and the half life calculated.
 Half the difference between the stretched value and the original value was taken as the systematic error. 
 

@@ -60,13 +60,14 @@ For this work, a nucleon level treatment of beta decay will suffice.
 In order to determine the observables in beta decay, the energy spectrum must be written down. 
 The spectrum is %shown as in equation \ref{eq:fgr}.
 \begin{equation}
-	\frac{dE}{dN} = PS(E) \times C(E) \times W(E)  
+	\frac{dN}{dE d\Sigma} = PS(E,\Sigma) \times C(E, \Sigma) \times W(E, \Sigma)  
 	\label{eq:betaenspectrum}
 \end{equation}
-The phase space, $PS(E)$, and the corrections, $C(E)$, will be discusses further in the thesis. 
-The contributions from the weak interaction, $W(E)$, are to first order \cite{Jack57} %shown in equation \ref{eq:matrixelement} \cite{Gon19}
+with $E$ being the energies of all the outgoing particles and $\Sigma$ the direction of all outgoing particles.
+The phase space, $PS(E,\Sigma)$, and the corrections, $C(E,\Sigma)$, will be discusses further in the thesis. 
+The contributions from the weak interaction, $W(E,\Sigma)$, are to first order \cite{Jack57} %shown in equation \ref{eq:matrixelement} \cite{Gon19}
 \begin{equation}
-	 W(E) = \xi [1 + a \frac{\vec{p_{e}} \cdot \vec{p_{\nu}}} {E_{e} E_{\nu}}  +  b \frac{m_{e}}{E_{e}} + \frac{\vec{<J>}}{J} \cdot (A \frac{ \vec{p_{e}} }{E_{e}} + B \frac{\vec{p_{\nu}}}{E_{\nu}} + D \frac{\vec{p_{e}} \times \vec{p_{\nu}}}{E_{e} E_{\nu}})]
+	 W(E,\Sigma) = \xi [1 + a \frac{\vec{p_{e}} \cdot \vec{p_{\nu}}} {E_{e} E_{\nu}}  +  b \frac{m_{e}}{E_{e}} + \frac{\vec{<J>}}{J} \cdot (A \frac{ \vec{p_{e}} }{E_{e}} + B \frac{\vec{p_{\nu}}}{E_{\nu}} + D \frac{\vec{p_{e}} \times \vec{p_{\nu}}}{E_{e} E_{\nu}})]
 	\label{eq:matrixelement}
 \end{equation}
 $\xi$ is written out to linear order is %in equation \ref{eq:xiwrittenout}. 
@@ -101,7 +102,7 @@ To do this measurement, the beta decay in question must be available enough in o
 Other requirements for a spectrum shape measurement are described in the next chapter.
 
 To extract the Fierz term, b, electromagnetic and hardonic corrections are needed.
-For the shape measurements, the energy dependence of the corrections are important.
+For the shape measurements, the energy dependence of these corrections are important.
 Getting a better measurement of this term is one of the goals of this work.
 
 \subsection{Fierz Term}
@@ -188,7 +189,6 @@ For events with one electron and other particles, the constraint is $|\epsilon_{
 Looking at neutral currents, where the output particles include an electron and a positron, gives stronger constraints.
 There, the constraint is $|\epsilon_{T}| < 0.6 \times 10^{-3}$.
 To be competitive with the stronger constraint from high energy experiments, the Fierz term $b_{GT}$ should be measured to better than $3.7 \times 10^{-3}$, assuming that $\epsilon_{T}$ is real. 
-
 In order to achieve such a sensitivity, the technique used was a shape measurement.
 
 \end{document}

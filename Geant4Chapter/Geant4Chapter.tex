@@ -23,7 +23,7 @@ A drawing of the CsI(Na) implant detector is shown in figure \ref{fig:ImplantTec
 	\label{fig:ImplantTech}
 \end{figure}
 Based on this figure, the geometry of the detectors was programmed into the simulation.
-The implant detector was a 54 x 54 x 101.6 mm square prism of CsI.
+The implant detector was a 54 $\times$ 54 $\times$ 101.6 mm square prism of CsI.
 Around the square prism there was an empty layer.
 Along the sides, the empty layer was 1.5 mm thick.
 On the front and back of the detector, the empty layer was 3.64 mm thick.
@@ -31,7 +31,7 @@ After the empty layer, a 1 mm aluminum can surrounded the detector on all sides.
 The center of this detector was placed at the center of the simulation.
 
 The four large gamma detectors are also square prisms.
-The active volume was 79.5 x 79.5 x 76.2 mm of CsI.
+The active volume was 79.5 $\times$ 79.5 $\times$ 76.2 mm of CsI.
 An empty layer was  added to the gamma detectors.
 The empty layer on the sides was 1.5 mm thick.
 On the front, however, the empty layer was 2.92 mm thick.
@@ -53,7 +53,7 @@ The next step was to define a region inside the implant detector.
 This region was where the primary particles originated from.
 The depth of the region was calculated using LISE++, a ion optics code.
 The vertical and horizontal size of the region was calculated by using the PPAC measurement and an ion optics simulation.
-This size was 0.4 x 3.5 x 3.6 mm.
+This size was 0.4 $\times$ 3.5 $\times$ 3.6 mm.
 The source was implanted 11.56 mm from the front edge of the detector.
 
 \subsection{Primary Particle Definitions}
@@ -89,7 +89,7 @@ The sampled energy is given to the third primary particle.
 If the random number is more than the integral, the third primary particle is given an energy of 0 keV.
 The energy of the electron is reduced accordingly.
 
-The two photons had their initial points moved to match that of the electrons.
+The two photons had their initial points moved to match that of the electron.
 All three particles were then free to propagate through the detectors.
 
 \section{Particle Propagation}  
@@ -153,9 +153,9 @@ After modification, it only took 6 hours to run $2 \times 10^{9}$ events.
 \subsection{Detector Geometry Changes}
 The detector geometry itself was adjusted several times.
 Initially, the implant detector was just left as a CsI crystal without any dead layer or cans.
-This crystal was 50 x 50 x 97.6 mm.
+This crystal was 50 $\times$ 50 $\times$ 97.6 mm.
 This size was given from the group that uses the detectors for $\gamma$ spectroscopy.
-The four gamma detectors initially had CsI crystals that were 75.5 x 75.5 x 72.2 mm in size.
+The four gamma detectors initially had CsI crystals that were 75.5 $\times$ 75.5 $\times$ 72.2 mm in size.
 These crystals were surrounded by 2 mm of vacuum, which was supposed to model a dead layer.
 After the dead layer, the crystal was surrounded by 1.5 mm of MgO on the sides.
 The two sides ends of the crystal the short dimension was left open.
@@ -194,7 +194,7 @@ Then, when it came time to apply the beta cuts, the 2-D histogram was projected 
 To check if the binning applied to the histogram distorted the output spectra at all, ratios were of the two output spectra were taken.
 The results of the ratios can be seen in figure \ref{fig:histogramtottreeratio}.
 The red line fits the ratio very well.
-The relative normalization $\mathit{p0}$ is unimportant in the analysis.
+The relative normalization $\mathit{p0}$ is consistent with 1, which means both spectra have the same number of counts. 
 The slope $\mathit{p1}$ is consistent with zero to $10^{-7}$.
 This is much smaller than the linear term in the shape factor.
 From this, it is seen that processing the data differently has no effect on the outcome.

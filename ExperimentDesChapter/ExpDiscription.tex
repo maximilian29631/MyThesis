@@ -73,13 +73,13 @@ The calibrated data of the signals was built into a 2-D histogram.
 There was some ringing in the PPAC.
 To suppress this ringing, a threshold for the PPAC was applied. 
 To calculate the threshold, the peak of the beam spot was fitted with a 2-D Gaussian function
-The average of the Gaussian and the sigma in the $x$ and $y$ direction was taken. 
+The centroid of the Gaussian and the sigma in the $x$ and $y$ direction was taken. 
 From the standard deviations, the half widths at half maximum (HWHM) in both directions were calculated. 
 Using the HWHM and the center of the Gaussian, 8 points were selected.
 These eight points are the black dots in figure \ref{fig:PPACSpotch}.
 The $z$ values of the PPAC distribution at each of those points was averaged.
 This value was the threshold above which the PPAC distribution was plotted.  
-The resulting width was read off to be 8 mm wide by 6 mm high.
+The resulting width was read off to be 8 $\times$ 6 mm.
 
 \begin{figure}
 	\centerline{\includegraphics[width=0.74\textwidth]{PPACFitted.png}}
@@ -93,6 +93,7 @@ This is the size of the spot at the location of the PPAC.
 Ion optics simulations were used to build the envelope of the beam at the PPAC and at the target.
 Using these cross sections, the magnification between the two locations was calculated.
 The magnification was different for the $x$ and $y$ directions.
+With these magnifications, the beam spot was 3.6 $\times$ 3.5 mm.  
 
 For the depth of the implantation of the beam, ion simulations were used. 
 The LISE++ program was fed the geometry and the settings of the beam magnets. 
@@ -108,7 +109,8 @@ The degrader was made of aluminum and had two different thicknesses: 7.89 mm and
 The beam was caught by a CsI(Na) scintillator of a similar design to the one used during the main measurement.
 The angle of the degrader was changed to change the effective thickness of aluminum that the beam had to travel through. 
 By comparing the measurement to the one predicted to stop the beam out side of the detector, the depth of implantation could be verified. 
-This was done after the main run, and the simulation matched the measurement in figure \ref{fig:degraderdata}.
+This was done after the main run, and the simulation matched the measurement.
+The two are plotted side by side in figure \ref{fig:degraderdata}.
 
 \begin{figure}
     \centering
@@ -128,7 +130,7 @@ This was done after the main run, and the simulation matched the measurement in 
 \section{Detector Configuration}
 
 \subsection{Detectors}
-One implant detector was a scintillator 3"\diameter x  3 " cylinder of EJ-200 polyvinyltoluene (PVT).
+One implant detector was a scintillator 3"\diameter $\times$  3 " cylinder of EJ-200 polyvinyltoluene (PVT).
 It was glued to a clear acrylic disk glued to a photomultiplier tube.
 The plastic detector signal is fast (around 10 ns wide) which makes pile-up a lesser concern.
 This detector was built by collaborators from Wittenburg University.
@@ -151,11 +153,11 @@ A sketch of the PVT crystal including the acrylic disk is shown in figure \ref{f
 	\label{fig:PVTDetSketch}
 \end{figure}
 To check for systematics effects, another implant detector was used.
-It was a 2" x 2" x 4"  CsI(Na) detector. 
+It was a 2" $\times$ 2" $\times$ 4"  CsI(Na) detector. 
 This detector was a module from the CAESAR array \cite{Wei10}.
 It does not have any gain monitoring like the PVT detector.
 
-In order to measure the gamma ray from the $^{20}$F decay, a frame was built to hold four 3" x 3" x 3" CsI(Na) detectors.  
+In order to measure the gamma ray from the $^{20}$F decay, a frame was built to hold four 3" $\times$ 3" $\times$ 3" CsI(Na) detectors.  
 These were also part of the CAESAR array.
 The frame to hold the four detectors was designed to be able to adjust the four outer detectors around.
 A sketch of the PVT implant detector configuration is shown in figure \ref{fig:detsketch}.
@@ -183,7 +185,7 @@ The rail for the PVT detector, along with the four gamma detectors,  can be see 
 A better view of the gamma detector cross can be seen in figure \ref{fig:CsIPicture}.
 
 \begin{figure}
-	\centerline{\includegraphics[width=0.58\textwidth]{fig_PVTSetupPicture.png}}
+	\centerline{\includegraphics[width=0.45\textwidth]{fig_PVTSetupPicture.png}}
 	\caption{A picture of the PVT configuration. 
 		 The rail the detector rested on can be seen.
 		 The optical fibers (the black cords) can be seen running into the black box with the LED.

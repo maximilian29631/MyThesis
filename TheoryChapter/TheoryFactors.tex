@@ -114,7 +114,6 @@ This accounts for the interaction of the charge of the outgoing electron and the
 It is calculated by taking the Dirac equation wave functions and assuming the nucleus is a point charge of $Ze$.
 The Dirac wave functions are taken down to a nuclear radius $R$.
 This is since the wave functions diverge \cite{Wil89}.
-
 The Fermi function is %printed in equation \ref{eq:fermifunc}
 \begin{equation}
 	F(Z,W) = 2\frac{\gamma + 1}{\Gamma(2\gamma +1)^{2}}(2pR)^{2(\gamma - 1)}e^{\frac{\pi\alpha ZW}{p}}\|\Gamma(\gamma + i\frac{\alpha ZW}{p}\|^{2}
@@ -240,7 +239,7 @@ and $\beta$ is given by \cite{Buh84} %equation \ref{eq:screenbeta} \cite{Buh84}.
 Here, the $Z$ is number the electrons of the daughter atom because the assumption is that beta decay is occurring from neutral atoms.
 The only unknown is $C(Z)$.
 
-To find the value of $C(Z)$, a comparison to another method of treating screening is needed.
+To find the value of $C(Z)$, a comparison is needed. 
 In another method of describing screening, the potential is described as a series of exponentials.
 This is written as \cite{Bya56} %shown in \ref{eq:hart} \cite{Bya56}.
 
@@ -284,7 +283,7 @@ with $y = \frac{\alpha Z W}{p}$, $y' = \frac{\alpha Z W'}{p'}$,$ \gamma$ is in t
 
 $X(\frac{W'}{W})$ is %in equation \ref{eq:screeningX}
 \begin{equation}
-	X = \frac{1 + \frac{W' + \gamma m}{8 W'} (\frac{\beta}{p})^{2} + \frac{1}{2}\gamma^{2}[1 + (1 - \frac{\alpha Z \beta}{(W + m)})^{1/2}]^{-2} [\frac{W - m}{W'}] \frac{\beta}{p}^{2}[1 - \frac{1 - \gamma}{8\gamma}(\frac{\beta}{p})^{2}]}{(1 + \frac{\beta}{4p}^{2})}
+	X = \frac{1 + \frac{W' + \gamma m}{8 W'} (\frac{\beta}{p})^{2} + \frac{1}{2}\gamma^{2}[1 + (1 - \frac{\alpha Z \beta}{(W + m)})^{1/2}]^{-2} [\frac{W - m}{W'}] (\frac{\beta}{p})^{2}[1 - \frac{1 - \gamma}{8\gamma}(\frac{\beta}{p})^{2}]}{(1 + \frac{\beta}{4p}^{2})}
 	\label{eq:screeningX}
 \end{equation}
 The factor $X$ in equation \ref{eq:screeningX} is very close to 1.
@@ -379,6 +378,12 @@ The contribution from this correction to the shape is minimal.
 Nuclear form factors are one of the largest corrections to the beta spectrum.
 There are four relevant form factors that come together into a correction called here the nuclear shape factor.
 The form factors are described in table \ref{tab:formfact} \cite{Min11} \cite{Cal77}.
+The shape factor is written as 
+\begin{equation}
+	\label{eq:shapefactor}
+	S(E) = 1 + c_{0} + c_{1} + \frac{c_{-1}}{E} + c_{2}E^{2}	
+\end{equation}
+where the terms depend on the form factors and nuclear decay variables.
 \begin{table}[!hbt]
 	\centering
 	\caption{Nuclear form factors.}
@@ -391,12 +396,6 @@ The form factors are described in table \ref{tab:formfact} \cite{Min11} \cite{Ca
 		\end{tabular}
 	\label{tab:formfact}
 \end{table}
-The shape factor is written as 
-\begin{equation}
-	\label{eq:shapefactor}
-	S(E) = 1 + c_{0} + c_{1} + \frac{c_{-1}}{E} + c_{2}E^{2}	
-\end{equation}
-where the terms depend on the form factors and nuclear decay variables.
 The dependence of the coefficients $c_{i}$ is given by\cite{Cal77}
 
 \begin{equation}
@@ -416,7 +415,7 @@ The calculation of $c_{1h}$ depends on the $ft$ value and is \cite{Min11}
 	c_{1h}^{2} = \frac{2 ft_{0}}{ft_{20}}
 	\label{eq:c1eq}
 \end{equation}
-where $ft_{0}$ is the $ft$ value of the Fermi superallowed $\beta$ decays, and $ft_{20}$ the average of the $ft$ values of the decays of $^{20}F$ and $^{20}$Ne.
+where $ft_{0}$ is the $ft$ value of the Fermi super-allowed $\beta$ decays, and $ft_{20}$ the average of the $ft$ values of the decays of $^{20}F$ and $^{20}$Ne.
 This gives a value of $0.254 \pm 0.004$ \cite{Min11}.
 The weak magnetism, $b_{WM}$, is of special theoretical interest. 
 
@@ -438,7 +437,7 @@ This gives a value of $43.4 \pm$ 1.2 \cite{Min11}.
 Getting a measurement of this value is of interest for two reasons.
 One, it tests the Conserved Vector Current (CVC) hypothesis.
 This hypothesis states that the weak interaction possesses a universal strength and a universal $V-A$ form \cite{Man58}.
-This means the weak magnetism can be determined from experimental data involving mirror transitions.
+This means the weak magnetism can be determined from experimental data of mirror transitions.
 In decays involving a $T = 1$ multiplet, the form of the calculation is equation \ref{eq:bwmcal}. 
 This is the largest of the nuclear corrections, and can be determined from experimental data, which has a much smaller uncertainty than any theory calculations.
 The second reason is more experimental.
@@ -466,7 +465,7 @@ The corrections and phase space were calculated with the central value of both p
 Then, two more spectra were calculated.
 One was calculated with $R + eR$ instead of $R$, and the other was calculated with $Q + eQ$ instead of $Q$.
 Here, $eR$ is the uncertainty of $R$ and $eQ$ the uncertainty of $Q$.
-Two ratios were taken, which were $Y(E,R+eR,Q)/Y(E,R,Q)$ and $Y(E,R,Q+eQ)/Y(E,R,Q)$, where $Y(E)$ is $dN/dE$ in equation \ref{eq:betaspectrum}.
+Two ratios were taken, which were $(PS(E,Q)C(E,Q,R+eR))/(PS(E,Q)C(E,Q,R))$ and $(PS(E,Q+eQ)C(E,R,Q+eQ))/(PS(E,Q)C(E,Q,R))$.
 From these ratios, numerical derivatives were taken and weighted with the phase space normalized to 1.
 These results are shown in figure \ref{fig:theoryuncer}, where it is seen the change of shape induced is small.
 These results were further verified by generating a spectrum with a $b_{WM}$ and a $b_{GT}$.

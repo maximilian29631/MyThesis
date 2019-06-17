@@ -112,7 +112,7 @@ Then, the process was repeated.
 A new location inside the region was generated and another decay generated.
 
 For the fit, four different simulations had to be run.
-Each of them needed $1.4 * 10^{10}$ events in order to have 100 times the total in the data.
+Each of them needed $1.4 \times 10^{10}$ events in order to have 100 times the total in the data.
 To test the systematic effects, only $2 \times 10^{9}$ events were run.
 In order to decrease the time it took to run, the range cuts on the gamma rays were changed.
 The range cuts were changed from 5 $\mu$m to 5 mm for all gamma rays.
@@ -144,11 +144,11 @@ Initially, the corrected phase space without the shape factor was fed into the G
 Then, during the fitting, the shape factor multiplied the output. 
 This was found not to be correct, so four simulations were needed.
 The simulations were the phase space times the pieces of the shape factor.
-The first version of the code took a week to run $2 * 10^{9}$ events.
+The first version of the code took a week to run $2 \times 10^{9}$ events.
 This was an issue if four simulations would be needed.
 To speed up the code, the code was modified to use GEANT4 MPI parallelization.
 The code was then run on the fireside cluster at the NSCL.
-After modification, it only took 6 hours to run $2 * 10^{9}$ events.
+After modification, it only took 6 hours to run $2 \times 10^{9}$ events.
 
 \subsection{Detector Geometry Changes}
 The detector geometry itself was adjusted several times.
@@ -180,8 +180,8 @@ To reduce this space requirement, only events were any gamma detector had a non-
 This cut down the space required by 1/3 to 20 GB.
 This was not enough, however, as each fit needed four histograms.
 A requirement that only one detector fired in order to get the event recorded in the TTree was imposed. 
-This cut down the space to 16 GB for $2 * 10^{9}$ events.
-As the final simulation needed $1.4 * 10^{10}$ events, this still was not enough.
+This cut down the space to 16 GB for $2 \times 10^{9}$ events.
+As the final simulation needed $1.4 \times 10^{10}$ events, this still was not enough.
 The lesser amount of events was used to test the fit method and calculate systematic effects.
 
 Since there is a requirement for only one gamma detector to absorb energy, the gamma-beta coincidences are independent detector to detector.

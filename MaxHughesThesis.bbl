@@ -123,7 +123,7 @@ J.K. Knipp and G.E. Uhlenbeck.
 \newblock {\em Physica}, 3(6):425 -- 439, 1936.
 
 \bibitem{Buh84}
-Wolfgang Bühring.
+Wolfgang B{\"u}hring.
 \newblock The screening correction to the fermi function of nuclear
   $\beta$-decay and its model dependence.
 \newblock {\em Nuclear Physics A}, 430(1):1 -- 20, 1984.
@@ -152,6 +152,17 @@ Murray Gell-Mann.
 \newblock Test of the nature of the vector interaction in $\ensuremath{\beta}$
   decay.
 \newblock {\em Phys. Rev.}, 111:362--365, Jul 1958.
+
+\bibitem{Huy18}
+X.~Huyan, O.~Naviliat-Cuncic, P.~Voytas, S.~Chandavar, M.~Hughes,
+  K.~Minamisono, and S.V. Paulauskas.
+\newblock Geant4 simulations of the absorption of photons in csi and nai
+  produced by electrons with energies up to 4 mev and their application to
+  precision measurements of the $\beta$-energy spectrum with a calorimetric
+  technique.
+\newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
+  Accelerators, Spectrometers, Detectors and Associated Equipment}, 879:134 --
+  140, 2018.
 
 \bibitem{Wei10}
 D.~Weisshaar, A.~Gade, T.~Glasmacher, G.F. Grinyer, D.~Bazin, P.~Adrich,

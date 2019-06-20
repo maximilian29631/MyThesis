@@ -124,11 +124,16 @@ An implant and decay cycle was used to measure the beta decay spectrum.
 A calibration beta spectrum is shown in figure \ref{fig:hethspec}.
 
 \begin{figure}[!htb]
-	\centerline{\includegraphics[width=0.78\textwidth]{fig_hethBetaSpec.png}}
-	\caption{A beta spectrum using a scintillator \cite{Het89}.
-		    The line shows the statistical beta spectrum.
-		    The crosses shows the measured beta spectrum.
-		    This spectrum shows effect of the back-scattering of electrons.}
+	\centering
+	\begin{minipage}{0.50\textwidth}
+		\centerline{\includegraphics[width=0.9\textwidth]{fig_hethBetaSpec.png}}
+	\end{minipage}\hfill
+	\begin{minipage}{0.50\textwidth}
+		\centerline{\includegraphics[width=0.9\textwidth]{fig_heth20f.png}}
+	\end{minipage}
+	\caption{On the left there are simulated spectra of beta spectrum measured with a scintillator \cite{Het89}.
+		 The line is the original beta spectrum, and the crosses a simulated spectrum showing the back-scattering.
+		 On the right is the measured and fitted $^{20}$F beta spectrum.}
 	\label{fig:hethspec}
 \end{figure}
 
@@ -137,13 +142,8 @@ This is due to back-scattering inside the germanium detector.
 Another issue for this measurement was that energy calibration was non-linear.
 Below 1.5 MeV, there was a non-linearity which caused a distortion down to 35 keV. 
 This all had to be accounted for and contributed to the uncertainty.
-The resulting energy spectrum and fit is shown in figure \ref{fig:heth20Fspec}.
+The resulting energy spectrum and fit is shown on the right in figure \ref{fig:hethspec}.
 
-\begin{figure}[!htb]
-	\centerline{\includegraphics[width=0.78\textwidth]{fig_heth20f.png}}
-	\caption{The measured and fitted $^{20}$F spectrum from reference \cite{Het89}.}
-	\label{fig:heth20Fspec}
-\end{figure}
 
 The beta spectrum is greatly distorted.
 The effective shape measurement analysis was started at 1.5 MeV.
@@ -160,7 +160,7 @@ It was found that the $W^{2}$ term had more of an effect in the measurement than
 Ultimately, the measured linear term was consistent with the CVC hypothesis. 
 %Spectrum is on page 168 in thesis. Put it here
 
-The current work is also was a spectrum shape measurement, much like the two cited above.
+The current work is also a spectrum shape measurement, much like the two cited above.
 The ultimate goal is however a  determination of the Fierz term. 
 In order to get the Fierz term, the beta energy spectrum must be described precisely.
 

@@ -19,14 +19,14 @@ This chapter will describe all that goes into the determining the beta energy sp
 The corrections depend on several parameters of the decay. 
 Some of them are just numbers, such as the atomic number of the daughter or mother nucleus or the mass number of the system.
 However, there are two important parameters that are experimental measurements.
-One is the Q-value of the decay, which is defined as %in equation \ref{eq:qval}.
+One is the $Q$-value of the decay, which is defined as %in equation \ref{eq:qval}.
 
 \begin{equation}
 	Q = m_{^{20}F} - (m_{^{20}Ne} + E_{level})
 	\label{eq:qval}
 \end{equation} 
 where $m_{^{20}F}$ is the nuclear mass of $^{20}$F, $m_{^{20}Ne}$ is the nuclear mass of $^{20}$Ne, and $E_{level}$ is the energy of the 1.6 MeV nuclear state in $^{20}$Ne. 
-The tabulated masses for these nuclei are the atomic mass, $M$, which differ from the nuclear masses by the electron mass and the binding energy of the electrons.
+The tabulated masses for these nuclei are the atomic masses, $M$, which differ from the nuclear masses by the electron mass and the binding energy of the electrons.
 The electron masses are subtracted off, since the binding energy of the electrons is too small to be significant.
 For $^{20}$F, $M_{20Ne} = 19.9924401762 (17)$ amu, $M_{20F} = 19.999981252 (31) $ amu \cite{Wan17} , and $E_{level} = 1.633674 (15)$ MeV  \cite{Til98} .
 
@@ -46,10 +46,10 @@ In this work, the charge radius was taken from the measured root mean square (RM
 It was assumed that the $^{20}$Ne nucleus was a sphere. 
 From this, the radius was calculated using %equation \ref{eq:sphereeq}
 \begin{equation}
-	r = \sqrt{\frac{5}{3}}r_{rms}	
+	R = \sqrt{\frac{5}{3}}r_{rms}	
 	\label{eq:sphereeq}
 \end{equation}
-where $r_{rms}$ is the root mean square charge radius, and $r$ the charge radius.
+where $r_{rms}$ is the root mean square charge radius, and $R$ the charge radius.
 For this work, $r_{rms} = 3.0055 (21)$ \cite{Ang13}.
 
 \section{Phase Space Factor}
@@ -80,7 +80,7 @@ The other important variables are shown in table \ref{tab:vars}.
 		$A$ & Mass number & 20 \\ 
 		$Z$ & Atomic number of daughter & 10 \\
 		$\alpha$ & Fine structure constant & 1/137.0359\\
-		$R$ & Root mean square charge radius of daughter & 3.055 fm \cite{Ang13} \\
+		$R$ & Charge radius of daughter & 3.944 fm \cite{Ang13} \\
 		$W$ & Total energy of the electron & $E/m_{e}$ \\
 		$p$ & Electron momentum & $\sqrt{W^{2} - 1}$ \\
 		$W_{0}$ & Maximum electron energy &  5.900864 (82) MeV \\ 
@@ -109,7 +109,7 @@ A graph of the various electromagnetic corrections is shown in figure \ref{fig:c
 
 \subsection{Fermi Function}
 
-The largest correction by over all size is the Fermi function.
+In absolute value, the largest correction is the Fermi function.
 This accounts for the interaction of the charge of the outgoing electron and the charge of the nucleus.
 It is calculated by taking the Dirac equation wave functions and assuming the nucleus is a point charge of $Ze$.
 The Dirac wave functions are taken down to a nuclear radius $R$.
@@ -173,7 +173,7 @@ The spectrum is written as \cite{Kni36}%in equation {\ref{eq:KUB} \cite{Kni36}
 	\Phi(k,W_{e}) = \frac{ \alpha p}{ \pi p_{e} k} [\frac{W_{e}^{2} + W^{2}}{W_{e}p}log(W + p) - 2]
 	\label{eq:KUB}
 \end{equation}
-where $\Phi(k,W_{e})$ is the probability density of seeing a photon of energy $k$ from an electron of initial energy $W_{e}$.
+where $\Phi(k,W_{e})$ is the probability density of emitting a photon of energy $k$ from an electron of initial energy $W_{e}$.
 This equation was derived using outgoing waves from the Dirac equation in polar coordinates.
 This was calculated with the first order Born approximation.
 This means that at low energies, equation \ref{eq:KUB} is inaccurate. 
@@ -255,7 +255,7 @@ The value of $x$ is \cite{Bya56} %shown in equation \ref{eq:screeningx} \cite{By
 	x = 1.13 \alpha Z^{1/3} r m_{e}
 	\label{eq:screeningx}
 \end{equation}
-When equation \ref{eq:hart} is expanded near the origin, the result is %equation \ref{eq:hartorg}
+When equation \ref{eq:hart} is expanded near the origin and $x$ is written explicitly, the result is %equation \ref{eq:hartorg}
 
 \begin{equation}
 	V(r) = - \frac{\alpha Z}{r} + \frac{1}{2} \alpha Z \times 2 (1.13 \sum_{n} b_{n} c_{n}) \alpha Z^{1/3} m_{e} 
@@ -311,7 +311,7 @@ Since $^{20}$F is an axial decay, the finite mass correction coefficients are %s
 	r_{3} & = \frac{88}{9M}
 	\end{split}
 \end{equation}
-This effect is different than the hadronic shape factor described later. 
+This correctoin is different from the hadronic shape factor described later. 
 
 \subsection{Finite Size Correction}
 The finite size correction originates from treating the nucleus as a uniformly charged sphere instead of a point particle.
@@ -377,7 +377,7 @@ The contribution from this correction to the shape is minimal.
 
 Nuclear form factors are one of the largest corrections to the beta spectrum.
 There are four relevant form factors that come together into a correction called here the nuclear shape factor.
-The form factors are described in table \ref{tab:formfact} \cite{Min11} \cite{Cal77}.
+The form factors are listed in table \ref{tab:formfact} \cite{Min11} \cite{Cal77}.
 The shape factor is written as 
 \begin{equation}
 	\label{eq:shapefactor}
@@ -389,7 +389,7 @@ where the terms depend on the form factors and nuclear decay variables.
 	\caption{Nuclear form factors.}
 		\begin{tabular}{lrr}
 		Form Factor & Name & Value \\ \hline
-		$c_{1h}$ & Fermi matrix element & 0.253  \\
+		$c_{1h}$ & Gamow-Teller matrix element & 0.253  \\
 		$c_{2h}$ & Second forbidden matrix element & 0.755 fm$^{2}$  \\
 		$b_{WM}$ & Weak magnetism & 43.4   \\
 		$d$ & Induced tensor term & 40.5 
@@ -407,9 +407,9 @@ The dependence of the coefficients $c_{i}$ is given by\cite{Cal77}
 	c_{2} & = -\frac{40 c_{2h}}{9 c_{1h}} 
 	\end{split}
 \end{equation}
-Three of the form factors, $b_{WM}$, $d$ and $c_{1h}$ are calculated from experimental data. 
+Three of the form factors, $b_{WM}$, $d$ and $c_{1h}$ are extracted from experimental data. 
 $c_{2h}$ is calculated from nuclear theory. 
-The calculation of $c_{1h}$ depends on the $ft$ value and is \cite{Min11}
+The extraction of $c_{1h}$ depends on the $ft$ value and is \cite{Min11}
 
 \begin{equation}
 	c_{1h}^{2} = \frac{2 ft_{0}}{ft_{20}}
@@ -424,8 +424,8 @@ The form factor having the largest effect is the weak magnetism form factor.
 It can be calculated from the $M1$ analog gamma-ray decay strength.
 This decay strength is from the 10.275 MeV analog state to the 1.634 MeV first excited state in $^{20}$Ne.
 This is a $2^{+}$ to $2^{+}$ angular momentum transition, and a $1$ to $0$ isospin transition.
-The decay strength, $\Gamma_{M1}$, can be used to calculate $b_{WM}$.
-This calculation is 
+The decay strength, $\Gamma_{M1}$, can be used to extract $b_{WM}$.
+This extraction is 
 
 \begin{equation}
 	b_{WM} = \sqrt{\frac{6\Gamma_{M1}M^{2}}{\alpha E_{\gamma}^{3}}}
@@ -437,7 +437,6 @@ This gives a value of $43.4 \pm$ 1.2 \cite{Min11}.
 Getting a measurement of this value is of interest for two reasons.
 One, it tests the Conserved Vector Current (CVC) hypothesis.
 This hypothesis states that the weak interaction possesses a universal strength and a universal $V-A$ form \cite{Man58}.
-This means the weak magnetism can be determined from experimental data of mirror transitions.
 In decays involving a $T = 1$ multiplet, the form of the calculation is equation \ref{eq:bwmcal}. 
 This is the largest of the nuclear corrections, and can be determined from experimental data, which has a much smaller uncertainty than any theory calculations.
 The second reason is more experimental.
@@ -473,7 +472,7 @@ This spectrum was fit with an additional generated spectrum with $R$ or $Q$ adju
 The change in the fitted parameter was found to be smaller than the expected statistical uncertainty.
 
 \begin{figure}[!htb]
-	\centerline{\includegraphics[width=0.58\textwidth]{DerivPlot.png}}
+	\centerline{\includegraphics[width=0.64\textwidth]{DerivPlot.png}}
 	\caption{The weighted numerical derivative.
 		 These derivatives are order of magnitude smaller than the 10$^{-2}$/MeV of the $c_{1}$ of the shape factor.}
 	\label{fig:theoryuncer}

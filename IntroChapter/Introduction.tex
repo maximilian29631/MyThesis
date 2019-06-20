@@ -54,7 +54,7 @@ The microscopic view of beta decay (for the beta$^{-}$ case) is shown in figure 
 A down quark in a neutron goes to an up quark.
 This process emits a $W^{-}$ boson that decays into an electron and an anti-electron neutrino.
 Measurements of beta decay are complementary to high energy measurements of weak interactions.
-For this work, a nucleon level treatment of beta decay will suffice.  
+For this work, a neclear level treatment of beta decay is done.  
 
 \subsection{Beta Energy Spectrum}
 In order to determine the observables in beta decay, the energy spectrum must be written down. 
@@ -65,22 +65,21 @@ The spectrum is %shown as in equation \ref{eq:fgr}.
 \end{equation}
 with $E$ being the energies of all the outgoing particles and $\Omega$ the direction of all outgoing particles.
 The phase space, $PS(E,\Omega)$, and the corrections, $C(E,\Omega)$, will be discusses further in the thesis. 
-The contributions from the weak interaction, $W(E,\Omega)$, are to first order \cite{Jack57} %shown in equation \ref{eq:matrixelement} \cite{Gon19}
+The decay rate function, $W(E,\Omega)$, is \cite{Jack57} %shown in equation \ref{eq:matrixelement} \cite{Gon19}
 \begin{equation}
 	 W(E,\Omega) = \xi [1 + a \frac{\vec{p_{e}} \cdot \vec{p_{\nu}}} {E_{e} E_{\nu}}  +  b \frac{m_{e}}{E_{e}} + \frac{\vec{<J>}}{J} \cdot (A \frac{ \vec{p_{e}} }{E_{e}} + B \frac{\vec{p_{\nu}}}{E_{\nu}} + D \frac{\vec{p_{e}} \times \vec{p_{\nu}}}{E_{e} E_{\nu}})]
 	\label{eq:matrixelement}
 \end{equation}
-$\xi$ is written out to linear order is %in equation \ref{eq:xiwrittenout}. 
+where $\xi$ is 
  
 \begin{equation}
 	\xi = \frac{1}{2} |M_{F}|^{2} |C_{V} + C'_{V}|^{2} (1 + |\rho|^{2})
 	\label{eq:xiwrittenout}
 \end{equation}
-where $M_{F}$ is the Fermi matrix element, $C_{V}$ and $C_{V}'$ are vector coupling constants, and $|\rho|$ is the ratio of the Gamow-Teller matrix element to the Fermi matrix element times $g_{A}/g_{V}$.
+where $M_{F}$ is the Fermi matrix element, $C_{V}$ and $C_{V}'$ are vector coupling constants, and $|\rho|$ is the ratio of the Gamow-Teller matrix element to the Fermi matrix element times $C_{A}/C_{V}$.
 In equation \ref{eq:matrixelement}, $<\vec{J}>$ is the average total angular momentum. 
 The constants $a$, $b$, $A$, $B$, and $D$ can be written in terms of the coupling constants.
 The $\vec{p_{i}}$ are the momenta of the particles, and the $E_{i}$ the energies of those particles.
-$a$ depends on the ratio of the Fermi and Gamow-Teller matrix elements $\rho$.
 The functional form of equation \ref{eq:matrixelement} informs the experimental design.
 
 \section{Types of Precision Measurements in Beta Decay}
@@ -92,7 +91,7 @@ To measure $A$, $B$, or $D$, a polarized nucleus is needed.
 This points $<\vec{J}>/J$ in one direction, and then the corresponding momentum is measured.
 To measure $A$, for example, the direction of the outgoing electrons is measured.
 This direction corresponds to $AP\cos{\theta}$, where $P$ is the polarization fraction and $\theta$ the direction of the electron momentum.
-Many more correlations exist at higher orders.
+Many more correlations exist involving the kinematic vectors.
 
 For an unpolarized nucleus where only the energy of the electron is measured, the momenta are averaged over and all terms in equation \ref{eq:matrixelement} disappear except for $b$.
 There are two general kinds of unpolarized beta decay measurements.
@@ -101,7 +100,7 @@ There is a measurement of $b$ over the entire range of values, and the entire $1
 To do this measurement, the beta decay in question must be available enough in order to get enough statistics for a good spectrum.
 Other requirements for a spectrum shape measurement are described in the next chapter.
 
-To extract the Fierz term, b, electromagnetic and hardonic corrections are needed.
+To extract the Fierz term electromagnetic and hardonic corrections are needed.
 For the shape measurements, the energy dependence of these corrections are important.
 Getting a better measurement of this term is one of the goals of this work.
 
@@ -128,15 +127,13 @@ This gives a value of $b$ modulated by the average value of $1/W$.
 From the supperallowed beta decays, the result for the Fierz term is $-0.0028 \pm 0.0026$ \cite{Har17}.
 It was obtained with $ft$ measurements of 14 different nuclei.
 The uncertainty is the statistical uncertainty of the fit after the $ft$ values were corrected.
-It took 14 different measurements to come up with this number.
 However, this Fierz term is sensitive to scalar couplings.
 To measure tensor couplings, a beta decay with a Gamow-Teller contribution is needed. 
 
 A spectrum shape measurement was done with ultra-cold neutrons \cite{Hic17}.
 The beta energy spectrum was measured using a magnetic spectrometer.
 The neutrons were confined in the center with a magnetic field, and allowed to decay.
-A superratio was used to extract the Fierz term.
-With the systematic effects, the final results of the Fierz term was $0.067 \pm 0.005_{stat}$ $ ^{+0.090}_{-0.061} sys$.
+With the systematic effects, the final results of the Fierz term was $0.067 \pm 0.005_{\rm{stat}}$ $^{+0.090}_{-0.061}$ $_{rm{sys}}$.
 A sample beta spectrum is shown in figure \ref{fig:ucnabeta}.
 
 \begin{figure}[!htb]
@@ -149,8 +146,6 @@ There are large distortions at low energy due to back-scattering effects.
 What happens is that electrons enter the detector, deposit some of their energy, and bounce back out.
 This causes events that should be at higher energies to be instead read at very low energies.
 Since the decay of a neutron is a mixed decay, this Fierz term is sensitive to both the tensor couplings and the scalar couplings.
-In order to get a good measurement of  tensor couplings, an allowed Gamow-Teller decay must be used. 
-The nucleus for this measurement was $^{20}$F.
 
 \subsection{High Energy Probes of the Tensor Couplings} 
 

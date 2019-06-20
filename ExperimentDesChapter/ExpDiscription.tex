@@ -98,7 +98,7 @@ With these magnifications, the beam spot was at the stopping postion deduced to 
 For the depth of the implantation of the beam, ion simulations were used. 
 The LISE++ program was fed the geometry and the settings of the beam magnets. 
 It was given the energy of the beam and the location of the implant detector. 
-It then calculated the depth of the implantation of the detector and the range of the depth inside the detector. 
+It then calculated the depth of the implantation in the detector and the range of the depth inside the detector. 
 This gave a depth of 3.02 cm in side the PVT detector and a depth of 1.156 cm in the CsI(Na) detector. 
 The ranges straggling was 1.2 mm in the PVT detector and 0.4 mm in the CsI(Na) detector.
 
@@ -108,7 +108,7 @@ In order to verify the simulations for the beam implantation depth, a degrader w
 The degrader was made of aluminum and had two different thicknesses: 7.89 mm and 11.38 mm. 
 The beam was caught by a CsI(Na) scintillator of a similar design to the one used during the main measurement.
 The angle of the degrader was changed to change the effective thickness of aluminum that the beam had to travel through. 
-By comparing the measurement to the one predicted to stop the beam out side of the detector, the depth of implantation could be verified. 
+By comparing the measurement to the one predicted to stop the beam outside of the detector, the depth of implantation could be verified. 
 This was done after the main run, and the simulation matched the measurement.
 The two are plotted side by side in figure \ref{fig:degraderdata}.
 
@@ -134,16 +134,16 @@ One implant detector was a scintillator 3"\diameter $\times$  3 " cylinder of EJ
 It was glued to a clear acrylic disk glued to a photomultiplier tube.
 The plastic detector signal is fast (around 10 ns wide) which makes pile-up a lesser concern.
 This detector was built by collaborators from Wittenburg University.
-During the experiment the voltage on the PMT of this scintillator was varied and a gain monitoring system was installed.
+During the experiment, the voltage on the PMT of this scintillator was varied and a gain monitoring system was installed.
 
 To monitor the gain of the plastic detector, an acrylic disk containing an optical fiber was placed between the crystal and the photomultiplier tube. 
-The other end of the fiber was fed into a box with an LED driven by a function generator, which ran at a trigger rate of 500 counts per second. 
+The other end of the fiber was fed into a box with a LED driven by a function generator, which ran at a trigger rate of 500 counts per second. 
 The function generator produced two pulses separated by 136 $\mu$s.
 These two pulses had different amplitudes, so that the gain drift could be monitored by observing the drift from two different energies.
 The box was made light-tight with electrical tape and black paint.
 An additional optical fiber fed the light to a Si PIN diode.
 This was to monitor the light output of the LED.
-A sketch of the PVT crystal including the acrylic disk is shown in figure \ref{fig:PVTDetSketch}.
+A sketch of the PVT scintillator including the acrylic disk is shown in figure \ref{fig:PVTDetSketch}.
 
 \begin{figure}
 	\centerline{\includegraphics[width=0.90\textwidth]{PVTDetectorSketch.png}}
@@ -181,25 +181,22 @@ A sketch of the CsI Implant detector configuration is shown in figure \ref{fig:c
 To switch between different implant detectors, the central detector in the frame was removed and put on the floor.
 The other detector was placed in the center of the four gamma detectors.
 The PVT detector was supported on a metal rail, while the CsI (Na) detector was supported on pile of scrap aluminum.
-The rail for the PVT detector, along with the four gamma detectors,  can be see in figure \ref{fig:PVTPicture}.
-A better view of the gamma detector cross can be seen in figure \ref{fig:CsIPicture}.
+Pictures of both detector set ups can be see in figure \ref{fig:PVTPicture}.
 
 \begin{figure}
-	\centerline{\includegraphics[width=0.45\textwidth]{fig_PVTSetupPicture.png}}
-	\caption{A picture of the PVT configuration. 
-		 The rail the detector rested on can be seen.
-		 The optical fibers (the black cords) can be seen running into the black box with the LED.
+    \centering
+    \begin{minipage}{0.50\textwidth}
+	\centerline{\includegraphics[width=0.90\textwidth]{fig_PVTSetupPicture.png}}
+    \end{minipage}\hfill
+    \begin{minipage}{0.50\textwidth}
+	\centerline{\includegraphics[width=0.90\textwidth]{fig_CsISetupPicture.png}}
+    \end{minipage}
+	\caption{On the left the PVT set up can be seen. 
+		 The rail the detector sits on and the optical fibers (the black cords) can be seen.
+		 On the right the CsI(Na) set up can be seen.
+		 In the center the implantation detector is seen.
 		 }
 	\label{fig:PVTPicture}
-\end{figure}
-
-
-\begin{figure}
-	\centerline{\includegraphics[width=0.45\textwidth]{fig_CsISetupPicture.png}}
-	\caption{A picture of the CsI setup.
-		 The active crystal of the implant detector can been seen. 
-		 }
-	\label{fig:CsIPicture}
 \end{figure}
 
 \subsection{Powering the Detectors}
@@ -238,7 +235,7 @@ During the implantation cycle, a large amount of current was generated in the im
 In order to counteract this, a limiter box was installed.
 The limiter box had several relays that reduced power to the PVT detector's photomultiplier tube during the beam on cycle. 
 To accomplish this, the limiter box was given the same signal that fed the beam on/beam off for the cyclotrons.
-Due to concerns about the beta energy spectrum shape, the voltage on the PVT detector was changed as the experiment went on. 
+Due to concerns about the beta energy spectrum shape, the voltage on the PVT detector was set to several values as the experiment went on. 
 For the CsI(Na) implant detector, the HV supply had the current limiter enabled.
 The power setting was not changed for the CsI(Na) implant detector. 
 
@@ -256,12 +253,12 @@ A CAEN N1145 quad scaler module was used to control the beam off time.
 This module had a digital control of time down to 1 ms.
 Once the the time finished counting down, a signal was sent to a second module. 
 A CAEN N93B dual timer used the signal from the quad scaler as a start signal.
-The time period was set with an oscilloscope, which was less precise. 
+The beam-off time period was set with an oscilloscope, which was less precise. 
 Once the dual timer finished its time, it sent a signal back to the quad scaler to restart the cycle.
 The output of these two modules created a signal with one voltage level during the dual timer's time and another voltage condition during the quad scaler's time.
 This signal was fed into a box.
-The voltage level during the quad scaler's time dephased the cyclotron RF, turning the beam off.
-When the dual timer voltage level occurred, the RF returned to the tuned value, turning the beam on.  
+The voltage level during the quad scaler's time dephased the cyclotron RF, turning the beam-off.
+When the dual timer voltage level occurred, the RF returned to the tuned value, turning the beam-on.  
 A flowchart showing the timing circuit is shown in figure \ref{fig:TimingFig} 
 \begin{figure}
 	\centerline{\includegraphics[width=0.68\textwidth]{BeamOnBeamOffFigure_v2.png}}

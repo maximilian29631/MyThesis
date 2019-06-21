@@ -52,8 +52,8 @@ As shown in the table, the major conditions were the PVT high voltage, the inhib
 %
 
 The inhibitor box was not installed until the third set of data. 
-The inhibitor box reduced the high-voltage by about 100 V during the beam on period.
-Without the box, the current on the PMT was saturated during the beam on period.
+The inhibitor box reduced the high-voltage by about 100 V during the beam-on period.
+Without the box, the current on the PMT was saturated during the beam-on period.
 This caused a gain shift over time as the power supply recovered.
 This time-dependent gain shift caused large systematic errors when the beta cuts were moved.
 Thus, sets 1 and 2 where not used in the final analysis, but are listed here for completeness's sake.
@@ -90,17 +90,17 @@ A sample spectrum of the gamma and beta energies is shown in figure \ref{fig:2DG
 \end{table}
 
 \begin{figure}[!htb]
-	\centerline{\includegraphics[width=0.68\textwidth]{fig_2Dh.pdf}}
+	\centerline{\includegraphics[width=0.65\textwidth]{fig_2Dh.pdf}}
 	\caption{The $y$ axis shows the gamma detector energy.
 		   The $x$ axis is the implant detector energy.
 		   The $^{20}$F coincidence region can be seen towards the top of the spectrum.
-		   The spectrum at 511 keV can be seen closer to the bottom of the figure.
+		   The region at 511 keV can be seen closer to the bottom of the figure.
 		   }
 	\label{fig:2DGraph}
 \end{figure}
 
 \begin{figure}[!htb]
-	\centerline{\includegraphics[width=0.68\textwidth]{fig_betaSpec.pdf}}
+	\centerline{\includegraphics[width=0.65\textwidth]{fig_betaSpec.pdf}}
 	\caption{
 		 A beta spectrum built by applying the gamma cuts and time difference cuts. 
 		 The beta cuts for the half-life analysis are shown as the red lines.
@@ -125,13 +125,13 @@ A sample spectrum of the gamma and beta energies is shown in figure \ref{fig:2DG
 \end{figure}
 
 Fixed energy gates were used to select in the beta window for the PVT run sets.
-Each different data set had a different energy window due to the gain shifts.
+Each different data set had a different energy window adapted to the gain.
 A sample spectrum with the gates can be seen in figure \ref{fig:BetaGraph}.
 These cuts varied from set to set.
 A summary of the PVT energy cuts can be seen in table \ref{tab:PVTCuts}.
 This spectrum was put in coincidence with the gamma spectra. 
-The lower beta cut was selected to cut out the 511 beta spectrum as seen in figure \ref{fig:2DGraph}.
-When gated around that energies, the resulting gammas measured by the large CsI(Na) detectors are consistent with $^{10}$C and $^{11}$C.
+The lower beta cut was selected to cut out the 511 keV distribution as seen in figure \ref{fig:2DGraph}.
+When gated around that energies, the resulting gammas measured by the other large CsI(Na) detectors are consistent with $^{10}$C and $^{11}$C.
 This comes from the break-up of the $^{12}$C in the plastic scintillator. 
 
 \begin{table}[!htb]
@@ -164,14 +164,13 @@ A sample time difference spectrum can be seen in figure \ref{fig:timediff}.
 \end{figure}
 
 The time difference spectrum shows several features.
-First is the prompt peak, which are correlated gamma and beta events. 
+First is the prompt peak, which are a correlated gamma and beta in an event. 
 To the right of the prompt peak, there is a pedestal of events.
 These come from pile-up events.
 What happens is that a $^{20}$F event decays and the time stamp of the emitted beta is recorded.
 The corresponding gamma ray is not detected.
 Then, within the pile-up window, a second $^{20}$F decays.  
-The implant detector is dead and does not record the second time stamp.
-Due to pile-up, the time stamp of the second beta event is not recorded.
+The implant detector is dead and does not record the second beta time stamp.
 The gamma ray is then detected at a later time compared to the first event.
 An cartoon sketch of this effect is shown in figure \ref{fig:PileUp}.
 The pedestal can be seen in full in figure \ref{fig:timediff2}.
@@ -182,8 +181,8 @@ The pedestal can be seen in full in figure \ref{fig:timediff2}.
 		 A $^{20}$F decay happens at time = t1.
 		 The green electron is detected in the implant detector.
 		 The black arrow (the gamma ray) is not.
-		 Then, later at time = t2, another $^{20}$F decays.
-		 t2 is within the pile-up window of t1.
+		 Then, later at time $t2$, another $^{20}$F decays.
+		 t2 is within the pile-up window of $t1$.
 		 Both electrons energies pile-up and are added together.
 		 However, the time stamp recorded by the DAQ is still t1.
 		 The gamma ray from event t2 can be detected in a gamma detector at time t2.
@@ -205,7 +204,7 @@ These include the background coincidences.
 The time signals for the outer four gamma detectors were used for the half-life analysis.
 This gave 4 independent measurements of the half-life per run. 
 Only full decay cycles were used. 
-This was done by finding the last beam on and putting a condition on the run time of the events.
+This was done by finding the last beam-on signal and putting a condition on the run time of the events.
 
 The dead time was corrected using measured rates and a dead time of 464 ns for the implant detector and 656 ns for the gamma detectors.  
 The dead time was measured by building a spectrum of the time difference between consecutive time stamps.
@@ -222,8 +221,8 @@ r^{c}_{coincidence} = \frac{1}{1 - r_{\beta}\tau_{\beta}}\frac{1}{1 - r_{\gamma}
 \end{equation}
 %
 where $r^{c}_{coincidence}$ is the corrected gamma-beta coincidence rate, $r_{\beta}$ the raw measured implant rate, $\tau_{\beta}$ the dead time of the implant detector, $r_{\gamma}$ and $\tau_{\gamma}$ the raw measured rate and dead time for the CsI(Na) detector, and $r^{m}_{coincidence}$ the measured coincidence rate.   
-Then, after corrected for the dead time, each cycle was added together relative to the last beam off.
-These stacked cycles were used to find the half life.
+Then, after corrected for the dead time, each cycle was added together relative to the last beam-off.
+These stacked cycles were used to find the half-life.
 
 For high beam intensity runs (i.e. sets 4,5 and 7), the dead time corrections had a size of 31 to 36 ms.
 For low beam intensity runs, (i.e. set 3) the dead time correction changed the half-life by 6 to 8 ms. 
@@ -238,7 +237,7 @@ Once the decay spectra were put in coincidence and stacked up, it was fit with t
 %
 where $a$ and $T_{1/2}$ are free parameters.
 $a$ is the initial rate and $T_{1/2}$ the half-life.
-The decay curves were fit from 1.5 seconds past the beam on time to 1.5 second from the end of the decay time. 
+The decay curves were fit from 1.5 seconds past the beam-on time to 1.5 second from the end of the decay time. 
 The fitting method used was the log likelihood method. 
 The 60 second decay run up detector result is shown in figure \ref{fig:60secdecay}.
 From this run, it is seen that the spectra does not decay back down to the background. 
@@ -265,7 +264,7 @@ The dead time correction was applied before any other systematics were investiga
 The timing resolution of the clock is 8 ns.
 Due to this, there is an uncertainty on the dead times of at least 8 ns.
 The dead times were varied $\pm$4 ns and the half lives calculated.
-Half the difference of those half lives is the systematic uncertainty.
+Half the difference of those half lives was taken as the systematic uncertainty.
 
 \subsection{Pile-up Effects}
 The dead time is over-corrected. 
@@ -284,8 +283,6 @@ To account for this effect, several other time cuts were taken.
 These cuts were plotted vs half-life in figure \ref{fig:timediffvhl}. 
 The values were fit with a quadratic function.
 This function was extrapolated to zero, which was the correction due to the pile-up.
- 
-
 \begin{figure}[!htb]
 \centerline{\includegraphics[width=0.88\textwidth]{fig_hlVsWtbg.png}}
 \caption{Time difference vs the resulting half-life.
@@ -293,7 +290,6 @@ This function was extrapolated to zero, which was the correction due to the pile
 	}
 \label{fig:timediffvhl}
 \end{figure}
-The extrapolation function is shown.
 The half-life was corrected to the zero value of the window.
 The difference between this extrapolated value and the previously measured value was taken as a correction and as an error bar.
  
@@ -301,7 +297,7 @@ The difference between this extrapolated value and the previously measured value
 
 The first systematic effect is the effect of background.
 Due to the short measuring window, directly fitting a background is impossible.
-There is no background region for the fitting function to anchor to, which induces a large correlation between the background and the half life.
+There is no background region for the fitting function to anchor to, which induces a large correlation between the background and the half-life.
 Several techniques were used to estimate the background.
 
 \subsubsection{Simultaneous vs Separate Fitting}
@@ -316,17 +312,17 @@ The equation used was
 with $b$ the relative background level.
 The half-life of the four detectors was set to be a common parameter. 
 The relative background level and initial rate, however, were assumed to be independent for each spectrum.
-The resulting half life was compared to the value found with fitting each detector separately without a background.
+The resulting half-life was compared to the value found with fitting each detector separately without a background.
 
 The effect of adding a background was investigated using Monte Carlo.
 Exponential functions were generated and an amount of background added.
 The resulting function was fit with a decay curve without a background parameter.
 The amount of background added was varied, and the resulting half lives plotted.
-It was found that increasing the background decreased the value of the half life, and that the background level and the half life value were strongly correlated.
+It was found that increasing the background decreased the value of the half-life, and that the background level and the half-life value were strongly correlated.
 
 A similar Monte Carlo was written to check the simultaneous fit method.
-Four decay curves were simultaneously fitted the same way was the data.
-They were also fitted separately with only an exponential decay.
+Four decay curves were simultaneously fit the same way was the data.
+They were also fit separately with only an exponential decay.
 The background was varied and the difference between the two values was taken.
 The method shows a trend similar to the one seen in the previous Monte Carlo.
 
@@ -339,15 +335,9 @@ As long as the dead time is known exactly, the background can be extracted with 
 \subsubsection{Spectra Arguments}
 The other way to try and gauge the background size is to look at the spectra.
 Looking at figure \ref{fig:timediff}, it can be seen that on the left side of the large peak, there are very few counts.
-It can also be seen that the prompt peak in the center contains most of the counts, while there is a long tail on the right side of the peak.
-This tail is due to pile-up. 
-An event in the beta window piles up with another event later in time. 
-The second event is read by a gamma detector, but is correlated with the first event, causing the large time difference.
-The time spectrum changes if the beta spectrum is cut in different ways.
+It can also be seen that the prompt peak in the center contains most of the counts, while there is a long pile-up tail on the right side of the peak.
 
-In the gamma beta 2D plot (figure \ref{fig:2DGraph}), it can be seen that there is no background events aside from the 511 region.
-This is due to the presence of $^{10}$C and $^{11}$C.
-When the detectors are put into triple and quadruple coincidence, the gamma rays of those isotopes appear.
+In the gamma-beta energy 2D plot (figure \ref{fig:2DGraph}), it can be seen that there is no background events aside from the 511 region.
 There are no gamma rays in the 1620 keV window which was filtered on.
 The only coincidence possible is if there is pile-up into that window along with a beta event.
 The estimate of those events is shown on the left side of the peak in the time difference figure shown in figure \ref{fig:timediff}.  
@@ -372,16 +362,16 @@ Since there was no noticeable systematic effect, there was no increase in error 
 
 \subsection{Oscillator Stability}
 The oscillator of the PIXIE board has a stability of $\pm 5 \times 10^{-5}$.
-All times in the analysis were stretched by this value, and the half life calculated.
+All times in the analysis were stretched by this value, and the half-life calculated.
 Half the difference between the stretched value and the original value was taken as the systematic error. 
 
 \subsection{Binning and Fitting}
 In order to check the sensitivity of the result to binning, the decay curves were rebinned by a factor of two.
-Half the difference between the rebinned half life and the original half life is considered the correction and the uncertainty.
+Half the difference between the rebinned half-life and the original half-life is considered the correction and the uncertainty.
 
 For the fitting method, log-likelihood estimators were used to fit the summed data.
 This was done with two different packages which gave identical results. 
-This was compared to analytic results, which gave the same results, so the half life is insensitive to the fitting method.
+This was compared to analytic results, which gave the same results, so the half-life is insensitive to the fitting method.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Result and Discussion}
@@ -433,7 +423,7 @@ The size of the systematic uncertainties investigated are shown in table \ref{ta
 	\label{tab:SysTable}
 \end{table}
 %\end{center}
-After the dead time correction, the value of the half-life was found to be 11.0011 $\pm$ 0.0069 (stat) $\pm$ 0.0030 (syst) s.
+After the dead time correction, the value of the half-life was found to be 11.0011 $\pm 0.0069_{\rm{stat}} \pm 0.0030_{\rm{syst}} $s.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
@@ -441,7 +431,7 @@ After the dead time correction, the value of the half-life was found to be 11.00
 
 The half-life measured is most consistent with some previous measurements of about 11 s. 
 This can be seen in figure \ref{fig:ideogramfinal}.
-This measurement disagrees with the most recent measurements.
+This measurement disagrees with the most recent and most precise measurements.
 
 \begin{figure}[!htb]
 \centerline{\includegraphics[width=0.88\textwidth]{fig_ideogramAfter.png}}
@@ -453,8 +443,8 @@ This measurement disagrees with the most recent measurements.
 \end{figure}
 
 Motivated by this measurement, another measure of the $^{20}$F half-life has been done by a group at Notre Dame. 
-The outcome of the measurements was 11.0160 (41)$_{stat}$(155)$_{sys}$ s \cite{Bur19}.
-This confirms the result obtained in this measurement.
+The outcome of the measurements was 11.0160 $ \pm 0.0041_{\rm{stat}} \pm 0.0155_{\rm{sys}}$ s \cite{Bur19}.
+This confirms the result obtained in the present work. 
 
 Several things about the data set were discovered.
 It was learned that there were contaminants coming from the fragmentation of the $^{12}$C in the plastic scintillator.

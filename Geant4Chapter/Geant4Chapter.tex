@@ -15,7 +15,7 @@ The program used to model the detectors was GEANT4 version 10.04.02.
 In order to use the program, the detector geometries where needed.
 
 \subsection{Detector Geometry}
-A source of the detector geometry were the technical drawings of detectors. 
+The detector geometry was taken from the technical drawings of detectors. 
 A drawing of the CsI(Na) implant detector is shown in figure \ref{fig:ImplantTech}.
 \begin{figure}[!htb]
 	\centerline{\includegraphics[width=0.78\textwidth]{ImplantDrawing.png}}
@@ -51,8 +51,8 @@ A visualization of the CsI crystals in GEANT4 is shown in figure \ref{fig:GEANT4
 \subsection{Source Definition}
 The next step was to define a region inside the implant detector.
 This region was where the primary particles originated from.
-The depth of the region was calculated using LISE++, a ion optics code.
-The vertical and horizontal size of the region was calculated by using the PPAC measurement and an ion optics simulation.
+The depth of the region was calculated using LISE++.
+As explained in section \ref{sec:beamsize}, the vertical and horizontal size of the region was calculated by using the PPAC measurement and an ion optics simulation.
 This size was 0.4 $\times$ 3.5 $\times$ 3.6 mm.
 The source was implanted 11.56 mm from the front edge of the detector.
 
@@ -60,7 +60,6 @@ The source was implanted 11.56 mm from the front edge of the detector.
 There were three primary particles generated.
 Two were photons and one was an electron.
 All three particles had an isotropic angular distribution.
-
 The first particle was an electron. 
 This selected the point in the source region.
 In order to generate the correct energy for this electron, the following process was used.
@@ -78,7 +77,6 @@ The last photon was to account for the inner bremsstrahlung.
 The radiative correction used to generate the electron energy was the formula that assumes all real photon energy is absorbed (equation \ref{eq:fayansrad}).
 After the electron energy is generated, the formula describing the energy spectrum of the inner bremsstrahlung photons is generated. 
 This spectrum is written out in equation \ref{eq:KUB}. % Add KUB again here? Probably.
-Further discussion of this formula is found in the theory chapter.
 A cutoff of 50 keV is imposed to the formula.
 Then, the formula is numerical integrated from 50 keV to the electron energy over 1000 steps using the trapezoidal rule.
 This is the total probability that an electron emits a KUB photon.
@@ -115,7 +113,7 @@ For the fit, four different simulations had to be run.
 Each of them needed $1.4 \times 10^{10}$ events in order to have 100 times the total in the data.
 To test the systematic effects, only $2 \times 10^{9}$ events were run.
 In order to decrease the time it took to run, the range cuts on the gamma rays were changed.
-The range cuts were changed from 5 $\mu$m to 5 mm for all gamma rays.
+The range cuts were changed from 5 $\mu$m to 5 mm for gamma rays.
 The range cuts for other particles stayed at 5 $\mu$m.
 
 \section{Simulation Development}
@@ -142,7 +140,7 @@ Therefore, the entire simulation had to be rerun with the inner bremsstrahlung p
 Then, it was discovered that only running one simulation was not the correct way of fitting the data.
 Initially, the corrected phase space without the shape factor was fed into the GEANT4 Monte Carlo.
 Then, during the fitting, the shape factor multiplied the output. 
-This was found not to be correct, so four simulations were needed.
+This is not correct, and four simulations were needed.
 The simulations were the phase space times the pieces of the shape factor.
 The first version of the code took a week to run $2 \times 10^{9}$ events.
 This was an issue if four simulations would be needed.
@@ -150,48 +148,26 @@ To speed up the code, the code was modified to use GEANT4 MPI parallelization.
 The code was then run on the fireside cluster at the NSCL.
 After modification, it only took 6 hours to run $2 \times 10^{9}$ events.
 
-\subsection{Detector Geometry Changes}
-The detector geometry itself was adjusted several times.
-Initially, the implant detector was just left as a CsI crystal without any dead layer or cans.
-This crystal was 50 $\times$ 50 $\times$ 97.6 mm.
-This size was given from the group that uses the detectors for $\gamma$ spectroscopy.
-The four gamma detectors initially had CsI crystals that were 75.5 $\times$ 75.5 $\times$ 72.2 mm in size.
-These crystals were surrounded by 2 mm of vacuum, which was supposed to model a dead layer.
-After the dead layer, the crystal was surrounded by 1.5 mm of MgO on the sides.
-The two sides ends of the crystal the short dimension was left open.
-A 1 mm Al can surrounded the crystal, and was also open on the sides.
-Both the can and the MgO layer were offset.
-
-After that geometry, the implant's geometry was updated to match the gamma detectors' geometries more closely.
-A 2 mm gap was added, and then surrounded by 1.5 mm of MgO. 
-On top of that, a 1 mm layer of Al was added.
-However, the top and bottom of the detector was left bare in the MgO and the Al layer.
-This was fixed, and the can and the MgO completely surrounded the detector.
-
-It was found that the detector geometry in the simulation has a large effect on the results of the fit.
-The final detector geometry was that from technical drawings of the detectors.
-This geometry ultimately used  is the one described above. 
-
 \subsection{Data Output Changes}
 Another change that was made is in how the simulation results were built.
 Initially, all the energy absorbed in each detector was put into a TTree.
-This meant that 2e9 events generated 60 GB of output files.
+This meant that $2 \times 10^{9}$ events generated 60 GB of output files.
 To reduce this space requirement, only events were any gamma detector had a non-zero input were first recorded.
 This cut down the space required by 1/3 to 20 GB.
 This was not enough, however, as each fit needed four histograms.
 A requirement that only one detector fired in order to get the event recorded in the TTree was imposed. 
-This cut down the space to 16 GB for $2 \times 10^{9}$ events.
+This cut down the space to 16 GB.
 As the final simulation needed $1.4 \times 10^{10}$ events, this still was not enough.
 The lesser amount of events was used to test the fit method and calculate systematic effects.
 
 Since there is a requirement for only one gamma detector to absorb energy, the gamma-beta coincidences are independent detector to detector.
 To save space, it is then possible to build 2-D histograms for each of the four gamma detectors.
-The energy of the gamma ray was plotted on the x-axis, and the energy absorbed in the implant detector on the y-axis. 
+The energy of the gamma ray was plotted on the $x$-axis, and the energy absorbed in the implant detector on the $y$-axis. 
 For each detector, two of these histograms were built.
 One had the beta-only information.
 The other had the information about the beta-gamma sum spectra.
-Then, when it came time to apply the beta cuts, the 2-D histogram was projected onto the x-axis and the spectra built.
-To check if the binning applied to the histogram distorted the output spectra at all, ratios were of the two output spectra were taken.
+Then, when it came time to apply the beta cuts, the 2-D histogram was projected onto the $x$-axis and the spectra built.
+To check if the binning applied to the histogram distorted the output spectra at all, ratios of the two output spectra were taken.
 The results of the ratios can be seen in figure \ref{fig:histogramtottreeratio}.
 The red line fits the ratio very well.
 The relative normalization $\mathit{p0}$ is consistent with 1, which means both spectra have the same number of counts. 

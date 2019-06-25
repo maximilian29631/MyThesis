@@ -126,7 +126,7 @@ Initially, all energy absorbed by the implant was recorded, regardless of its or
 This was found not to be the correct way to fit the data, so the class G4VUserTrackInformation was implemented.
 This gave to each track the information about the primary particle.
 To split the energies from different detectors, the initial energy and charge of each primary particle was checked.
-Since the gamma rays are mono-chromatic, the energy of the primary particle was compared to 1.6336 MeV.
+Since the gamma rays are monochromatic, the energy of the primary particle was compared to 1.6336 MeV.
 If the primary particle had charge or it was a photon without an initial energy of 1.6336 MeV, it was put in the category of energy from the initial electron. 
 This took care of most cases, unless a sampled inner bremsstrahlung photon had exactly that energy, which was rare enough to be negligible.
 

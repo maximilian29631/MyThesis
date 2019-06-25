@@ -36,7 +36,7 @@ Given the half-life of $^{20}$F of 11 s, the measuring time was varied between 2
 
 The beam of $^{20}$F was created at the coupled cyclotron facility at the NSCL.
 The primary beam of $^{22}$Ne was accelerated by the coupled cyclotrons to 150 MeV/A. 
-A typical intensity of the primary beam was around $60 \times 10^{-5}$pnA.
+A typical intensity of the primary beam was around $60 \times 10^{-5}$ pnA.
 It was impinged on a 188 mg/cm$^{2}$ Be target and sent through the A1900 fragment separator. 
 The resulting $^{20}$F beam was at an energy of 130 MeV/A. 
 The intensity of the $^{20}$F was about $2 \times 10^{-5}$ pnA.
@@ -73,7 +73,7 @@ After adjusting the parameters of the upstream beam optics, the final beam size 
 The calibrated data of the signals was built into a 2-D histogram.
 There was some ringing in the PPAC.
 To suppress this ringing, a threshold for the PPAC was applied. 
-To calculate the threshold, the peak of the beam spot was fitted with a 2-D Gaussian function
+To calculate the threshold, the peak of the beam spot was fit with a 2-D Gaussian function
 The centroid of the Gaussian and the sigma in the $x$ and $y$ direction was taken. 
 From the standard deviations, the half widths at half maximum (HWHM) in both directions were calculated. 
 Using the HWHM and the center of the Gaussian, 8 points were selected.
@@ -101,7 +101,7 @@ The LISE++ program was fed the geometry and the settings of the beam magnets.
 It was given the energy of the beam and the location of the implant detector. 
 It then calculated the depth of the implantation in the detector and the range of the depth inside the detector. 
 This gave a depth of 3.02 cm in side the PVT detector and a depth of 1.156 cm in the CsI(Na) detector. 
-The ranges straggling was 1.2 mm in the PVT detector and 0.4 mm in the CsI(Na) detector.
+The range straggling was 1.2 mm in the PVT detector and 0.4 mm in the CsI(Na) detector.
 
 \subsubsection{Verification of Implantation Depth}
 
@@ -209,6 +209,7 @@ The PPAC was powered by an integrated power supply.
 Each detector had a different voltage. 
 The PVT implant detector was varied in voltage over the course of the experiment.
 Initially, the high voltage on the PVT detector was chosen to take advantage of the dynamic range of the detector.
+Due to concerns about the beta energy spectrum shape, the voltage on the PVT detector was changed to several values as the experiment went on. 
 For the PPAC, the voltage setting was adjusted to get a large enough signal.
 The voltage for the four gamma detectors was chosen so that they had roughly the same gain.
 The voltages of the detectors is shown in table \ref{tab:detvolt}.
@@ -236,7 +237,6 @@ During the implantation cycle, a large amount of current was generated in the im
 In order to counteract this, a limiter box was installed.
 The limiter box had several relays that reduced power to the PVT detector's photomultiplier tube during the beam-on cycle. 
 To accomplish this, the limiter box was given the same signal that fed the beam-on/beam-off for the cyclotrons.
-Due to concerns about the beta energy spectrum shape, the voltage on the PVT detector was set to several values as the experiment went on. 
 For the CsI(Na) implant detector, the HV supply had the current limiter enabled.
 The power setting was not changed for the CsI(Na) implant detector. 
 
@@ -254,7 +254,7 @@ A CAEN N1145 quad scaler module was used to control the beam-off time.
 This module had a digital control of time down to 1 ms.
 Once the the time finished counting down, a signal was sent to a second module. 
 A CAEN N93B dual timer used the signal from the quad scaler as a start signal.
-The beam-off time period was set with an oscilloscope, which was less precise. 
+The beam-on time period was set with an oscilloscope, which was less precise. 
 Once the dual timer finished its time, it sent a signal back to the quad scaler to restart the cycle.
 The output of these two modules created a signal with one voltage level during the dual timer's time and another voltage condition during the quad scaler's time.
 This signal was fed into a box.

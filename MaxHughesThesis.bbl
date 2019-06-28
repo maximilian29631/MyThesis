@@ -112,6 +112,32 @@ D.H. Wilkinson.
   Accelerators, Spectrometers, Detectors and Associated Equipment}, 275(2):378
   -- 386, 1989.
 
+\bibitem{Buh84}
+Wolfgang B{\"u}hring.
+\newblock The screening correction to the fermi function of nuclear
+  $\beta$-decay and its model dependence.
+\newblock {\em Nuclear Physics A}, 430(1):1 -- 20, 1984.
+
+\bibitem{WIL90}
+D.H. Wilkinson.
+\newblock Evaluation of beta-decay: Ii. finite mass and size effects.
+\newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
+  Accelerators, Spectrometers, Detectors and Associated Equipment}, 290(2):509
+  -- 515, 1990.
+
+\bibitem{Fay86}
+S.~A. Fayans.
+\newblock {Radiative Corrections and Recoil Effects in the Reaction
+  $\bar{\nu}_e + P \to N + e^+$ at Low-energies. (In Russian)}.
+\newblock {\em Sov. J. Nucl. Phys.}, 42:590, 1985.
+\newblock [Yad. Fiz.42,929(1985)].
+
+\bibitem{Cal77}
+Frank~P. Calaprice, W.~Chung, and B.~H. Wildenthal.
+\newblock Calculation of recoil-order matrix elements for the beta decays of
+  $^{20}\mathrm{F}$ and $^{20}\mathrm{Na}$.
+\newblock {\em Phys. Rev. C}, 15:2178--2186, Jun 1977.
+
 \bibitem{Sir67}
 A.~Sirlin.
 \newblock General properties of the electromagnetic corrections to the beta
@@ -126,42 +152,16 @@ D.H. Wilkinson.
   Accelerators, Spectrometers, Detectors and Associated Equipment}, 365(2):497
   -- 507, 1995.
 
-\bibitem{Fay86}
-S.~A. Fayans.
-\newblock {Radiative Corrections and Recoil Effects in the Reaction
-  $\bar{\nu}_e + P \to N + e^+$ at Low-energies. (In Russian)}.
-\newblock {\em Sov. J. Nucl. Phys.}, 42:590, 1985.
-\newblock [Yad. Fiz.42,929(1985)].
-
 \bibitem{Kni36}
 J.K. Knipp and G.E. Uhlenbeck.
 \newblock Emission of gamma radiation during the beta decay of nuclei.
 \newblock {\em Physica}, 3(6):425 -- 439, 1936.
-
-\bibitem{Buh84}
-Wolfgang B{\"u}hring.
-\newblock The screening correction to the fermi function of nuclear
-  $\beta$-decay and its model dependence.
-\newblock {\em Nuclear Physics A}, 430(1):1 -- 20, 1984.
 
 \bibitem{Bya56}
 William~J. Byatt.
 \newblock Analytical representation of hartree potentials and electron
   scattering.
 \newblock {\em Phys. Rev.}, 104:1298--1300, Dec 1956.
-
-\bibitem{WIL90}
-D.H. Wilkinson.
-\newblock Evaluation of beta-decay: Ii. finite mass and size effects.
-\newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
-  Accelerators, Spectrometers, Detectors and Associated Equipment}, 290(2):509
-  -- 515, 1990.
-
-\bibitem{Cal77}
-Frank~P. Calaprice, W.~Chung, and B.~H. Wildenthal.
-\newblock Calculation of recoil-order matrix elements for the beta decays of
-  $^{20}\mathrm{F}$ and $^{20}\mathrm{Na}$.
-\newblock {\em Phys. Rev. C}, 15:2178--2186, Jun 1977.
 
 \bibitem{Man58}
 Murray Gell-Mann.
@@ -200,6 +200,18 @@ H.~{Tan}, M.~{Momayezi}, A.~{Fallu-Labruyere}, Y.~{Chu}, and W.~K. {Warburton}.
 \bibitem{DAQ17}
 Ron Fox.
 \newblock Nscl data acquisition documentation, 2017.
+
+\bibitem{Ant09}
+I.~Antcheva, M.~Ballintijn, B.~Bellenot, M.~Biskup, R.~Brun, N.~Buncic, Ph.
+  Canal, D.~Casadei, O.~Couet, V.~Fine, L.~Franco, G.~Ganis, A.~Gheata,
+  D.~Gonzalez Maline, M.~Goto, J.~Iwaszkiewicz, A.~Kreshuk, D.~Marcos Segura,
+  R.~Maunder, L.~Moneta, A.~Naumann, E.~Offermann, V.~Onuchin, S.~Panacek,
+  F.~Rademakers, P.~Russo, and M.~Tadel.
+\newblock Root — a c++ framework for petabyte data storage, statistical
+  analysis and visualization.
+\newblock {\em Computer Physics Communications}, 180(12):2499 -- 2512, 2009.
+\newblock 40 YEARS OF CPC: A celebratory issue focused on quality software for
+  high performance, grid and novel computing architectures.
 
 \bibitem{Hug18}
 M.~Hughes, E.~A. George, O.~Naviliat-Cuncic, P.~A. Voytas, S.~Chandavar,

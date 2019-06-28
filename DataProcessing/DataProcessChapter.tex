@@ -2,12 +2,12 @@
 
 \begin{document}
 A digital data acquisition (DAQ) system was used to record the data for this experiment.
-To configure the DAQ, the detector signals were looked at using an oscilloscope.
-The input parameters were tuned from the decay time of the signals.
+To configure the DAQ, the detector signals were looked at using an oscilloscope in order to get the decay time.
+The input parameters of the energy filter were tuned from the decay time of the signals.
 
 \section{Data Acquisition}
 
-All the signals for all the detectors were sent to 16 channel XIA PIXIE modules. 
+All the signals for all the detectors were sent to 16 channel XIA (X-ray Instrumentation Associates) Pixie modules. 
 Each channel had a 250 mega-sample per second digitizer. 
 The incoming signal was first digitized, and then processed by the module. 
 The modules were run with the NSCL firmware.
@@ -43,12 +43,13 @@ A list of the three modules and which channel processed the signals from which d
 %
 For module 2 channel 0, the digitized wave-form was recorded over 400 ns.
 The clock used for the digitizers was a stable EPSON SGR-8002JC programmable crystal oscillator.
-The first thing the PIXIE modules did was to digitize the wave forms of the signals.
+The first thing the Pixie modules did was to digitize the wave forms of the signals.
 The digital wave forms of the signals were only saved for the PVT implant detector.
-The PIXIE modules' software applied a trapezoidal energy filter to the digital wave-forms.
+The Pixie modules' software applied a trapezoidal energy filter to the digital wave-forms.
 Each of the channels gave a time stamp and an energy calculated from a trapezoidal filter.
 
 \subsection{Trapezoidal Filter Description}
+In order to get timing and energy information for the digitized signals, a trapezoidal filter was applied.
 After the parameters of the filter were set, the filter was taken on the digitized detector signals.
 First, three sums of the digitized wave-forms were taken.
 The first sum was over a time known as $t_{PEAKING}$.
@@ -61,7 +62,7 @@ These three sums were associated with weights given as \cite{Tan03}
 	\label{eq:ensum}
 \end{equation} 
 %
-with $S_{0}$ being the first sum over $t_{PEAKING}$ described above, $S_{G}$ being the sum over $t_{GAP}$, and $S_{1}$ being the second sum over $t_{PEAKING}$.
+with $E$ being the energy of the signal, $S_{0}$ being the first sum over $t_{PEAKING}$ described above, $S_{G}$ being the sum over $t_{GAP}$, and $S_{1}$ being the second sum over $t_{PEAKING}$.
 $C_{0}$ is given by 
 
 \begin{equation}
@@ -108,7 +109,7 @@ For this experiment, the various filter parameters are summarized in table \ref{
 		\label{tab:pixieparams}
 \end{table}
 %
-There was also a trigger filter in the PIXIE system.
+There was also a trigger filter in the Pixie system.
 The expression in equation \ref{eq:ensum} is the same, but the parameters are shorter.
 The parameters in the trigger filter are half of the parameters in the energy filter.
 There was a threshold that the output of the trigger filter had to be above in order to be recorded.
@@ -146,7 +147,7 @@ The program recorded data as an .evt binary file if the record option was select
 The ringbuffer was also fed to a program called scalers.
 This gave the rates of the events coming into each channel.
 It gave an input rate to each channel, the recorded rate, and the total over each run.
-This was to check how each channel in each module was doing.
+This was to check if every channel in each module was still recording data.
 
 For online analysis, a program called SpecTcl was used.
 It took the .evt files and processed them into histograms.
@@ -157,7 +158,7 @@ Additionally, the implant energy vs time since last beam-on was plotted as a 2-D
 The decay curves were also plotted.
 These were built by histogramming the time stamp in the detector relative the time since the last beam-on.
 These histograms were used as diagnostics. 
-The program allowed for gates to be drawn.
+The program allowed for building spectra with coincidence conditions. 
 %Sample spectcl plot?
 
 \section{Data Taking and Processing}
@@ -195,5 +196,22 @@ This information was used to build new events for a new TTree.
 Each event started with a non-zero energy reading in any of the five detectors.
 Then, a 400 ns long time gate opened, during which all energies and times were saved into the event.
 The time signatures of the last beam-on and beam-off signals were also saved into each event.
-The beam-on and beam-off signals were logic NIM signals.
+The beam-on and beam-off signals were logic Nuclear Instrumentation Module (NIM) signals.
+
+\begin{table}[!hbt]
+	\centering
+	\caption{Summary of programs used.}
+		\begin{tabularx}{\textwidth}{RLLLL}
+			Program & Inputs & Ouputs & Author & Purpose \\ \hline
+			NSCOPE \cite{DAQ17} & Pixie output & Energy histograms & Ron Fox & Tuning filter parameters \\
+			ReadOut \cite{DAQ17} & Pixie output & Events in the binary file & Ron Fox & Recording data to disk \\ 
+			DDAS Dumper \cite{DAQ17} & Events in the binary file & ROOT TTree & Ron Fox & Processing events to ROOT format \\
+			scan & ROOT Tree & Histograms and simpler ROOT TTree & Stan Paulauskus & Further processing of ROOT format \\
+			ROOT \cite{Ant09} & Root files & Histograms & CERN & For data analysis 
+		\end{tabularx}	
+		\label{tab:programs}
+\end{table}
+
+A summary of all the programs used is show in table \ref{tab:programs}.
+
 \end{document}

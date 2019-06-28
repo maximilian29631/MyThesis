@@ -149,7 +149,7 @@ A sketch of the PVT scintillator including the acrylic disk is shown in figure \
 \begin{figure}
 	\centerline{\includegraphics[width=0.90\textwidth]{PVTDetectorSketch.png}}
 	\caption{A sketch of the PVT implant detector.
-		    The acrylic disk is seen along as PVT scintillator. 
+		 The acrylic disk is seen along as PVT scintillator. 
 		   }
 	\label{fig:PVTDetSketch}
 \end{figure}
@@ -257,9 +257,9 @@ A CAEN N93B dual timer used the signal from the quad scaler as a start signal.
 The beam-on time period was set with an oscilloscope, which was less precise. 
 Once the dual timer finished its time, it sent a signal back to the quad scaler to restart the cycle.
 The output of these two modules created a signal with one voltage level during the dual timer's time and another voltage condition during the quad scaler's time.
-This signal was fed into a box.
-The voltage level during the quad scaler's time dephased the cyclotron RF, turning the beam-off.
-When the dual timer voltage level occurred, the RF returned to the tuned value, turning the beam-on.  
+This signal was sent to the cyclotron control room.
+There, the voltage level during the quad scaler's time dephased the cyclotron RF, turning the beam off.
+When the dual timer voltage level occurred, the RF returned to the tuned value, turning the beam on.  
 A flowchart showing the timing circuit is shown in figure \ref{fig:TimingFig} 
 \begin{figure}
 	\centerline{\includegraphics[width=0.68\textwidth]{BeamOnBeamOffFigure_v2.png}}

@@ -56,6 +56,7 @@ The inhibitor box reduced the high-voltage by about 100 V during the beam-on per
 Without the box, the current on the PMT was saturated during the beam-on period.
 This caused a gain shift over time as the power supply recovered.
 This time-dependent gain shift caused large systematic errors when the beta cuts were moved.
+The beta cuts are the energy conditions imposed on the implant detector when the coincidence was imposed.  
 Thus, sets 1 and 2 where not used in the final analysis, but are listed here for completeness's sake.
 These gain shifts can be seen in figure \ref{fig:pulserfig}.
 
@@ -73,6 +74,7 @@ In order to do the half-life analysis, software coincidences were imposed.
 Three conditions were set in total.
 Two conditions were on the energy in the implantation detector and one of the four CsI(Na) detectors.
 The gamma cuts are summarized in table \ref{tab:GammaCuts}.
+These are the energy cuts imposed on the four gamma detectors when the coincidence was imposed.  
 An additional condition was imposed on the time difference between the events recorded in the two detectors. 
 A sample spectrum of the gamma and beta energies is shown in figure \ref{fig:2DGraph}.  
 
@@ -133,6 +135,7 @@ This spectrum was put in coincidence with the gamma spectra.
 The lower beta cut was selected to cut out the 511 keV distribution as seen in figure \ref{fig:2DGraph}.
 When gated around that energies, the resulting gammas measured by the other large CsI(Na) detectors are consistent with $^{10}$C and $^{11}$C.
 This comes from the break-up of the $^{12}$C in the plastic scintillator. 
+The lower beta cut was chosen to exclude any potential pile-up from this region. 
 
 \begin{table}[!htb]
 	\centering
@@ -238,7 +241,8 @@ Once the decay spectra were put in coincidence and stacked up, it was fit with t
 where $a$ and $T_{1/2}$ are free parameters.
 $a$ is the initial rate and $T_{1/2}$ the half-life.
 The decay curves were fit from 1.5 seconds past the beam-on time to 1.5 second from the end of the decay time. 
-The fitting method used was the log likelihood method. 
+The fitting method used was the log likelihood method.
+This method was chosen to keep the result independent of the binning of the decay curves.  
 The 60 second decay run up detector result is shown in figure \ref{fig:60secdecay}.
 From this run, it is seen that the spectra does not decay back down to the background. 
 

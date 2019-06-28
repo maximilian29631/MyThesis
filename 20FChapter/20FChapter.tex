@@ -40,8 +40,9 @@ $^{20}$F is relatively close to stability, so it can be made in sufficient quant
 \section{Previous Measurements in $^{20}$F Decay}
 
 Some of the earliest measurements of $^{20}$F were $ft$ value measurements \cite{Wil70} \cite{Alb75}.
-The half-lives were measured with a plastic scintillator in either case.  
-These $ft$ values were compared to the mirror nucleus $^{20}$Na in order to search for second class currents in beta decay. 
+The half-lives were measured with a plastic scintillator in both cases.  
+These $ft$ values were compared to the mirror nucleus $^{20}$Na in order to search for second class currents in beta decay.
+Second class currents have different properties under $G$-parity than first class currents \cite{Wei58}.
 
 Another, more recent measurement whose goal was putting limits on second class currents was done with with a polarized $^{20}$F and $^{20}$Na beam \cite{Min11}.
 The technique was an alignment measurement over different energies.
@@ -51,6 +52,7 @@ The angular distribution was measured using the beta-nuclear magnetic resonance 
 Plastic scintillators at the end of magnets were used to measure the direction of the electrons.
 The correlations were corrected for and plotted vs energy.
 The outcome of that analysis was a measurement of the various form factors that correct the beta decay spectrum shape. 
+Specifically, the second-class current induced tensor term was measured.
 The resulting $^{20}$F energy spectrum is shown in figure \ref{fig:keispec}.
 In this spectrum, there are several background contributions. 
 Since this measurement  was an asymmetry measurement, the influence of the backgrounds is reduced. 
@@ -60,7 +62,10 @@ The threshold was taken to be 2 MeV, as below that energy, the spectrum is disto
 
 \begin{figure}[!htb]
 	\centerline{\includegraphics[width=0.75\textwidth]{Kei1120FSpectrum.png}}
-	\caption{A sample beta energy spectrum using a plastic scintillator detector \cite{Min11}.}
+	\caption{A sample beta energy spectrum using a plastic scintillator detector \cite{Min11}.
+		 The polarization of the decay was part of an experiment to put a limit on second class currents.
+		 This was measured at Tandem Accelerator Complex of the Unversity of Tsukuba.
+		 } 
 	\label{fig:keispec}
 \end{figure}
 
@@ -74,7 +79,7 @@ The other large systematic effect has to do with gamma rays.
 Since the $^{20}$F is polarized, the direction of the emitted gamma rays is anisotropic.
 The gamma rays contribute and pile-up with the detected beta spectrum in different ways.
 This has to be corrected for with the detector response.
-With all these effects, the second class current effects were found to be consistent with zero.   
+With all these effects, the second-class current induced tensor term was measured as $0.18 \pm 0.48$. 
 
 \subsection{Shape Measurements} 
 
@@ -95,7 +100,10 @@ A sample energy spectrum is shown in figure \ref{fig:elmspec}.
 
 \begin{figure}[!htb]
 	\centerline{\includegraphics[width=0.78\textwidth]{fig_elmBetaSpec.png}}
-	\caption{A sample beta energy spectrum using a spectrometer \cite{Elm87}.}
+	\caption{A sample beta energy spectrum using a spectrometer \cite{Elm87}.
+		 The goal of the experiment was a measurement of the spectrum shape.
+		 This was measured at Louvain University in Louvain-la-Neuve.
+		 }
 	\label{fig:elmspec}
 \end{figure}
 
@@ -113,9 +121,9 @@ In that measurement, adjusting the spectrometer field was used as a benchmark fo
 An issue with this measurement is that the shape factor is not just the linear term.
 The shape factor depend on the other nuclear form factors and are not independent.
 The other terms were calculated and fixed.
-Ultimately the resulting measurement of the linear term matched the CVC prediction.
+Ultimately the resulting measurement of the linear term was $0.0057 \pm 0.0004 $ /m$_{e}$, where m$_{e}$ is the mass of the electron.
 
-Using a single detector would take care of the normalization automatically. 
+A different shape measurement used  a single detector, which took care of the normalization automatically. 
 A shape measurement of $^{20}$F was made with a spectrometer and a high purity germanium detector \cite{Het89}.
 The linear term in the shape factor was measured just like in the previous measurement.
 The magnetic field was used to enhance the solid angle for the electrons compared to the gamma rays.
@@ -130,9 +138,12 @@ A simulated and a data beta spectrum is shown in figure \ref{fig:hethspec}.
 	\begin{minipage}[b][][b]{0.50\textwidth}
 		\centerline{\includegraphics[width=0.9\textwidth,height = 8 cm]{fig_heth20f.png}}
 	\end{minipage}
-	\caption{On the left there are simulated spectra of beta spectrum measured with a scintillator \cite{Het89}.
+	\caption{On the left there are simulated spectra of beta spectrum measured with a germanium detector \cite{Het89}.
 		 The line is the original beta spectrum, and the crosses a simulated spectrum showing the back-scattering.
-		 On the right is the measured and fit $^{20}$F beta spectrum.}
+		 On the right is the measured and fit $^{20}$F beta spectrum.
+		 The residuals of the fit are shown above the beta spectrum.
+		 This experiment was to measure the shape of beta spectrum to measure the nuclear shape factor.
+		 The beta spectrum was measured at the Labratory of Physics at the University of Montreal. }
 	\label{fig:hethspec}
 \end{figure}
 
@@ -147,19 +158,20 @@ The resulting energy spectrum and fit is shown on the right in figure \ref{fig:h
 The beta spectrum is greatly distorted.
 The effective shape measurement analysis was started at 1.5 MeV.
 For this measurement there were several systematic effects.
-The largest uncertainty was due to the response function.
-The paper refers this to ``peak position.'' 
-This experiment used many different sources to get a calibration.
+The largest systematic uncertainty is due to what  paper refers  to as ``peak fraction.''
+This is part of the model of how the detector responds to electrons, which is known as the response function.
+Specifically, the ``peak fraction'' is the ratio of the integral of the full energy peak in the response function to the total integral of the response function. 
+This experiment used many different sources to get the calibration and the response fuction.
 They also had to take the bremsstrahlung of the electrons into account.
-That systematic effect was the limiting factor in their measurement.
+The systematic uncertainties were larger than the statistical uncertainties in this measurement. 
 
 Much like the spectrometer measurement, the other terms of the shape factor were fixed.
 Here however the other terms were calculated as a systematic error.
 It was found that the $E^{2}$ term had more of an effect in the measurement than the $1/E$ term.
-Ultimately, the measured linear term was consistent with the CVC hypothesis. 
+Ultimately, the measured linear term was $0.0060 \pm 0.0018$ /m$_{e}$, which is consistent with the CVC hypothesis. 
 %Spectrum is on page 168 in thesis. Put it here
 
-The current work is also a spectrum shape measurement, much like the two cited above.
+The present work is also a spectrum shape measurement, much like the two cited above.
 The ultimate goal is however a  determination of the Fierz term. 
 In order to get the Fierz term, the beta energy spectrum must be described precisely.
 

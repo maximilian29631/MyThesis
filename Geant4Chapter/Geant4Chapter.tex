@@ -23,11 +23,13 @@ A drawing of the CsI(Na) implant detector is shown in figure \ref{fig:ImplantTec
 	\label{fig:ImplantTech}
 \end{figure}
 Based on this figure, the geometry of the detectors was programmed into the simulation.
-The implant detector was a 54 $\times$ 54 $\times$ 101.6 mm square prism of CsI.
-Around the square prism there was an empty layer.
+The implant detector was a 54 $\times$ 54 $\times$ 101.6 mm$^{3}$ prism of CsI.
+Around the prism there was an empty layer.
 Along the sides, the empty layer was 1.5 mm thick.
 On the front and back of the detector, the empty layer was 3.64 mm thick.
 After the empty layer, a 1 mm aluminum can surrounded the detector on all sides.  
+The nature of the material indicated as "Reflector" was checked with the manufacturer (Scintitech). 
+This material does not cover the empty layer as suggested by the drawing and was confirmed by the implantation depth measurement, which is seen in figure \ref{fig:degraderdata}.
 The center of this detector was placed at the center of the simulation.
 
 The four large gamma detectors are also square prisms.
@@ -118,7 +120,7 @@ The range cuts for other particles stayed at 5 $\mu$m.
 
 \section{Simulation Development}
 The GEANT4 simulation is based on the example TestEm5.
-The first changes were to change the detector geometry. 
+The first changes were in the detector geometry. 
 The next changes were to add a second primary particle, which was the gamma ray from the decay.
 The data structure that recorded all the data absorbed event by event was added, so that the gamma cuts could be changed after the fact.
 

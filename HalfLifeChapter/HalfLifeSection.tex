@@ -37,7 +37,7 @@ As shown in the table, the major conditions were the PVT high voltage, the inhib
 \begin{table}[!hbt]
 	\centering
 	\caption{Settings for the PVT runs.}
-			\begin{tabularx}{\textwidth}{RLLLLLL}
+			\begin{tabularx}{\textwidth}{RLLLLLL}\hline \hline
 			Set & Beam-on Time [s] & Measuring Time [s] & PVT HV [v] & HV Inhibit Installed& Beam intensity [nA] & Runs \\ \hline
 			1 & 1.67 & 30 & -975  & No & 30 & 9 \\		
 			2 & 1.67 & 30 & -975  & No & 93 & 2 \\		
@@ -45,7 +45,7 @@ As shown in the table, the major conditions were the PVT high voltage, the inhib
 			4 & 1.67 & 30 & -975  & Yes & 93 & 11 \\		
 			5 & 1.67 & 30 & -856  & Yes & 30 & 93 \\		
 			6 & 1.00 & 60 & -800  & Yes & 93 & 1 \\		
-			7 & 1.10 & 20 & -780  & Yes & 93 & 10 	
+			7 & 1.10 & 20 & -780  & Yes & 93 & 10 \\ \hline \hline
 			\end{tabularx}
 			\label{tab:ExpConditions}
 \end{table}
@@ -81,12 +81,12 @@ A sample spectrum of the gamma and beta energies is shown in figure \ref{fig:2DG
 \begin{table}[!htb]
 	\centering
 	\caption{Energy cuts for the gamma detectors.}
-	\begin{tabular}{lrr}
+	\begin{tabular}{lrr}  \hline \hline
 	Detector & Lower Cut [ADC units] & Upper Cut [ADC units] \\ \hline
 	Up & 1350 & 1650 \\
 	Left & 1280 & 1600\\
 	Down & 1440 & 1800 \\
-	Right & 1450 & 1800
+	Right & 1450 & 1800 \\ \hline \hline
 	\end{tabular}
 	\label{tab:GammaCuts}
 \end{table}
@@ -107,7 +107,7 @@ A sample spectrum of the gamma and beta energies is shown in figure \ref{fig:2DG
 		 A beta spectrum built by applying the gamma cuts and time difference cuts. 
 		 The beta cuts for the half-life analysis are shown as the red lines.
 		 The lower beta cut was selected to be above the 511 region.
-		 The upper beta cut was selected to include all the pile-up}
+		 The upper beta cut was selected to include all the pile-up.}
 	
 	\label{fig:BetaGraph}
 \end{figure}
@@ -140,14 +140,14 @@ The lower beta cut was chosen to exclude any potential pile-up from this region.
 \begin{table}[!htb]
 	\centering
 	\caption{Energy cuts for the PVT detector.}
-	\begin{tabular}{lrr}
+	\begin{tabular}{lrr}  \hline \hline
 	Set & Lower Cut [ADC units] & Upper Cut [ADC units] \\ \hline
 	1-2 & 2000 & 14400 \\
 	3 & 1500 & 12000\\
 	4 & 1700 & 13800 \\
 	5 & 800 & 6200 \\
 	6 & 480 & 4200 \\
-	7 & 400 & 3600
+	7 & 400 & 3600 \\ \hline \hline
 	\end{tabular}
 	\label{tab:PVTCuts}
 \end{table}
@@ -395,14 +395,14 @@ The size of the systematic uncertainties investigated are shown in table \ref{ta
 	\begin{table}[!hbt]
 			\centering
 			\caption{Half-life results.}
-			\begin{tabular}{lrr}
+			\begin{tabular}{lrr} \hline \hline
 			Detector & Half-Life & Error \\ \hline
 			Up & 11.0195 & 0.0088 \\
 			Left & 10.9944 & 0.0087 \\
 			Down & 10.9980 & 0.0085 \\
 			Right & 10.9987 & 0.0095 \\ 
 			      &		& 	 \\
-			Mean & 10.9999 & 0.0044
+			Mean & 10.9999 & 0.0044 \\ \hline \hline
 			\end{tabular}
 			\label{tab:PVTTable}
 	\end{table}
@@ -412,7 +412,7 @@ The size of the systematic uncertainties investigated are shown in table \ref{ta
 	\caption{Systematics.}
 	\centering
 	\label{tab:err-budget}
-		\begin{tabular}{lrr}
+		\begin{tabular}{lrr} \hline \hline 
 		Source & Correction [ms] & Uncertainty [ms] \\ \hline
 		Dead-time & 0.00 & 0.24 \\
 		Oscillator stability & 0.00 & 0.80 \\
@@ -422,7 +422,7 @@ The size of the systematic uncertainties investigated are shown in table \ref{ta
 		Uncorrelated events & 1.47 & 1.47 \\
 		Binning & -0.30 & 0.30 \\
 			&	&	\\
-		Total systematic & 1.17 & 2.89
+		Total systematic & 1.17 & 2.89 \\ \hline \hline 
 		\end{tabular}
 	\label{tab:SysTable}
 \end{table}

@@ -16,7 +16,7 @@ A list of the three modules and which channel processed the signals from which d
 \begin{table}[!hbt]
 	\centering
 	\caption{DAQ cabling Scheme.}
-		\begin{tabular}{llr}
+		\begin{tabular}{llr} \hline \hline 
 		Module & Channel & Detector \\ \hline
 		0 & 0 & PVT Implant \\
 		0 & 1 & CsI(Na) Implant \\
@@ -36,7 +36,7 @@ A list of the three modules and which channel processed the signals from which d
 		1 & 9 & Beam-off Signal\\
 		1 & 10 & 100 Hz Pulser \\
 		1 & 11 & PVT Gain Monitoring Pulser \\
-		2 & 0 & PVT Implant (With Digitized Wave Forms)
+		2 & 0 & PVT Implant (With Digitized Wave Forms) \\ \hline \hline
 		\end{tabular}	
 		\label{tab:cablingscheme}
 \end{table}
@@ -62,7 +62,7 @@ These three sums were associated with weights given as \cite{Tan03}
 	\label{eq:ensum}
 \end{equation} 
 %
-with $E$ being the energy of the signal, $S_{0}$ being the first sum over $t_{PEAKING}$ described above, $S_{G}$ being the sum over $t_{GAP}$, and $S_{1}$ being the second sum over $t_{PEAKING}$.
+with $E$ being the energy of the signal, $S_{0}$ being the first sum over $t_{PEAKING}$ described above, $S_{g}$ being the sum over $t_{GAP}$, and $S_{1}$ being the second sum over $t_{PEAKING}$.
 $C_{0}$ is given by 
 
 \begin{equation}
@@ -96,7 +96,7 @@ For this experiment, the various filter parameters are summarized in table \ref{
 \begin{table}[!hbt]
 	\centering
 	\caption{Energy filter parameters.}
-		\begin{tabular}{lrrr}
+		\begin{tabular}{lrrr} \hline \hline 
 			Detector & $\tau$ & $t_{PEAKING}$ & $t_{GAP}$ \\ \hline
 			PVT implant & 60 ns & 208 ns & 128 ns \\
 			All CsI (Na) detectors & 900 ns & 480 ns & 48 ns \\
@@ -104,14 +104,13 @@ For this experiment, the various filter parameters are summarized in table \ref{
 			Si PIN & 50000 ns & 1744 ns & 96 ns \\
 			Beam-on/beam-off signals & 1000000 ns & 400 ns & 96 ns \\
 			Pulser & 5000000 ns & 400 ns & 96 ns \\
-			Light pulser & 150 ns & 608 ns & 96 ns 
+			Light pulser & 150 ns & 608 ns & 96 ns \\ \hline \hline
 		\end{tabular}	
 		\label{tab:pixieparams}
 \end{table}
 %
 There was also a trigger filter in the Pixie system.
 The expression in equation \ref{eq:ensum} is the same, but the parameters are shorter.
-The parameters in the trigger filter are half of the parameters in the energy filter.
 There was a threshold that the output of the trigger filter had to be above in order to be recorded.
 These values are shown in table \ref{tab:trigfilter}.
 The trigger filter was used to calculate the time stamps of the events.  
@@ -119,7 +118,7 @@ The trigger filter was used to calculate the time stamps of the events.
 \begin{table}[!hbt]
 	\centering
 	\caption{Trigger filter parameters.}
-		\begin{tabular}{lrrr}
+		\begin{tabular}{lrrr} \hline \hline
 			Detector & $t_{PEAKING}$ & $t_{GAP}$ & Threshold\\ \hline
 			PVT implant & 104 ns & 104 ns & 30 \\ 
 			All CsI (Na) Detectors & 200 ns & 72 ns & 20 \\
@@ -127,7 +126,7 @@ The trigger filter was used to calculate the time stamps of the events.
 			Si PIN & 400 ns & 80 ns & 100 \\
 			Beam on/beam-off signals & 104 ns & 40 ns & 20 \\
 			Pulser & 104 ns & 40 ns & 20 \\
-			Light pulser & 104 ns & 72 ns & 35
+			Light pulser & 104 ns & 72 ns & 35 \\ \hline \hline 
 		\end{tabular}	
 		\label{tab:trigfilter}
 \end{table}

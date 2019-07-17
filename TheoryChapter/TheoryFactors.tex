@@ -76,16 +76,16 @@ The other important variables are shown in table \ref{tab:vars}.
 	\centering
 	\caption{Variables used in the corrections.}
 		\begin{tabular}{lrr}
-		Variable & Description & Equation or Value \\ \hline		
+		\hline \hline Variable & Description & Equation or Value \\ \hline		
 		$A$ & Mass number & 20 \\ 
 		$Z$ & Atomic number of daughter & 10 \\
 		$\alpha$ & Fine structure constant & 1/137.0359\\
-		$R$ & Charge radius of daughter & 3.944 fm \cite{Ang13} \\
+		$R$ & Charge radius of daughter & 3.8801 fm \cite{Ang13} \\
 		$W$ & Total energy of the electron & $E/m_{e}$ \\
 		$p$ & Electron momentum & $\sqrt{W^{2} - 1}$ \\
 		$W_{0}$ & Maximum electron energy &  5.900864 (82) MeV \\ 
 		$M_{ave}$ & Average nuclear mass &  18621.497033 (40) MeV  \\
-		$\gamma = \sqrt{1 - (\alpha Z)^{2}} $ & $\gamma$ factor & 0.9973 
+		$\gamma = \sqrt{1 - (\alpha Z)^{2}} $ & $\gamma$ factor & 0.9973 \\ \hline \hline
 		\end{tabular}
 	\label{tab:vars}
 \end{table}
@@ -333,7 +333,7 @@ The $b_{x}$ coefficients are numbers shown in table \ref{tab:bcoef}.
 \begin{table}[!hbt]
 	\centering
 	\caption{Coefficients for finite mass correction.}
-		\begin{tabular}{lrrrrrr}
+		\begin{tabular}{lrrrrrr} \hline \hline
 		         & $b^{n}_{1}$ & $b^{n}_{2}$ & $b^{n}_{3}$ & $b^{n}_{4}$ & $b^{n}_{5}$ & $b^{n}_{6}$ \\ \hline
 		$a_{-1}$ & 0.115 & -1.8123 & 8.2498 & -11.223 & -14.854 & 32.086 \\
 		$a_{0}$  & -0.00062 & 0.007165 & 0.01841 & -0.053736 & 1.12691 & -1.5467 \\
@@ -341,7 +341,7 @@ The $b_{x}$ coefficients are numbers shown in table \ref{tab:bcoef}.
 		$a_{2}$  & -0.14038 & 3.64953 & -38.8143 & 172.1368 & -346.708 & 288.7873 \\
 		$a_{3}$  & 0.008152 & -1.15664 & 49.9663 & -273.711 & 657.6292 & -603.7033 \\
 		$a_{4}$  & 1.2145 & -23.9931 & 149.9718 & -471.2985 & 662.1909 & -305.6804 \\
-		$a_{5}$  & -1.5632 & 33.4192 & -255.1333 & 938.5297 & -1641.2845 & 1095.358 
+		$a_{5}$  & -1.5632 & 33.4192 & -255.1333 & 938.5297 & -1641.2845 & 1095.358 \\ \hline \hline
 		\end{tabular}
 	\label{tab:bcoef}
 \end{table}
@@ -385,12 +385,12 @@ where the terms depend on the form factors and nuclear decay variables.
 \begin{table}[!hbt]
 	\centering
 	\caption{Nuclear form factors.}
-		\begin{tabular}{lrr}
+		\begin{tabular}{lrr} \hline \hline
 		Form Factor & Name & Value \\ \hline
 		$c_{1h}$ & Gamow-Teller matrix element & 0.253  \cite{Min11}\\
 		$c_{2h}$ & Second forbidden matrix element & 0.755 fm$^{2}$ \cite{Cal77} \\
 		$b_{WM}$ & Weak magnetism & 43.4  \cite{Min11} \\
-		$d$ & Induced tensor term & 40.5  \cite{Min11}
+		$d$ & Induced tensor term & 40.5  \cite{Min11} \\ \hline \hline
 		\end{tabular}
 	\label{tab:formfact}
 \end{table}
@@ -460,7 +460,7 @@ Using $A = 20$ and $c_{1h} = 0.253$, this gives $d = 40.5 \pm 3.7$.
 	\centerline{\includegraphics[width=0.75\textwidth]{DerivPlot_NoWeight.png}}
 	\caption{The numerical derivative of the ratios in 1/MeV.
 		 This is to check how sensitive the shape of the theoretical spectrum is to the uncertainty of the parameters extracted from experiment. 
-		 These derivatives are order of an magnitude smaller than the 10$^{-2}$/MeV of the $c_{1}$ of the shape factor.}
+		 These derivatives are an order of magnitude smaller than the 10$^{-2}$/MeV of the $c_{1}$ of the shape factor.}
 	\label{fig:theoryuncer}
 \end{figure}
 
@@ -472,7 +472,7 @@ Here, $eR$ is the uncertainty of $R$ and $eQ$ the uncertainty of $Q$.
 Two ratios were taken, which were $[PS(E,Q)C(E,Q,R+eR)]/[PS(E,Q)C(E,Q,R)]$ and $[PS(E,Q+eQ)C(E,R,Q+eQ)]/[PS(E,Q)C(E,Q,R)]$.
 These results are shown in figure \ref{fig:theoryuncer}, where it is seen the change of shape induced is small.
 The largest value of the numerical derivative is at the end point of the ratio of  $Q$. 
-Even there it the ratio is smaller than the terms of the shape factor.
+Even there the ratio is smaller than the terms of the shape factor.
 These results were further verified by generating a spectrum with a $b_{WM}$ and a $b_{GT}$.
 This spectrum was fit with an additional generated spectrum with $R$ or $Q$ adjusted by one unit of uncertainty.
 The change in the fit parameter was found to be smaller than the expected statistical uncertainty.

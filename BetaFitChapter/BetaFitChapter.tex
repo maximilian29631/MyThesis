@@ -436,12 +436,27 @@ In order to induce an effect, the size of the beta-gamma sum spectrum would have
 Additionally, this effect would be seen in both $G_{SM}$ and $G_{BSM}$. 
 Therefore, this effect can be excluded.
 
-In order to get a better estimate of the systematic uncertainty on the normalization, a gamma detector was fit.
+\begin{figure}[!htb]
+	\centerline{\includegraphics[width=0.80\textwidth]{CsIGammaFitsRun317.png}}
+	\caption{A sample fitting of the gamma detectors over the compton scattering range.} 
+	\label{fig:GammaFit}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centerline{\includegraphics[width=0.80\textwidth]{CsIGammaRatiosRun317.png}}
+	\caption{The ratio of the data to the fit function in the fits shown in figure \ref{fig:GammaFit}.}
+	\label{fig:GammaRatio}
+\end{figure}
+
+In order to get a better estimate of the systematic uncertainty on the normalization, sample gamma spectra were fit. 
 The energy absorbed in the up detector in the Monte Carlo was built into a histogram.
 This histogram had the detector response of the up detector applied to it.
-After that, the data spectrum in the up detector was fit with the Monte Carlo.
-From this, it was seen that GEANT4 reproduced the experimental spectrum to 20\%.
-Since both the the sum spectrum and the gamma rays deal with the absorption of gamma rays, the normalization of the Beta-gamma sum spectrum is known to 20\%.    
+The gamma spectrum was over a range before the main peak. 
+This is seen in figure \ref{fig:GammaFit}.
+This range was chosen as this is where the gamma detector is more sensitive to the relative size of the gamma-beta sum spectrum.
+A ratio of the data to this fit was built, which is seen in figure \ref{fig:GammaRatio}.
+GEANT4 reproduces this spectrum to 10\% over this range.
+As a conservative estimate, this was doubled to 20\% and taken as the uncertainty of the normalization of the gamma-beta sum spectrum.
 
 
 \subsection{Upper Beta Cut Sensitivity}
@@ -458,21 +473,16 @@ Both parameters are flat after 5500 keV.
 \begin{figure}
     \centering
     \begin{minipage}{0.50\textwidth}
-        \centerline{\includegraphics[width=0.9\textwidth,height = 5 cm]{CsIGSMvUBC4HistFit.png}}
+        \centerline{\includegraphics[width=0.9\textwidth,height = 5 cm]{CsIUBCvGSM_ForThesis.png}}
     \end{minipage}\hfill
     \begin{minipage}{0.50\textwidth}
-        \centerline{\includegraphics[width=0.9\textwidth,height = 5 cm]{CsIGBSMvUBC4HistFit.png}}
+        \centerline{\includegraphics[width=0.9\textwidth,height = 5 cm]{CsIUBCvGBSM_ForThesis.png}}
     \end{minipage}
     \caption{The effect of changing the upper beta cut.}
     \label{fig:UBCEffect}
 \end{figure}
 
-\subsection{Other Systematic Uncertainties}
-
-The lower beta cut effect is the largest of the systematic uncertainties.
-To calculate these uncertainties, the lower beta cut was fixed to 250 keV.
-The offset was set to -6.6.
-These parameters give the conditions in figure \ref{fig:offset0LBCeffect}.
+\subsection{Summary of Systematic Uncertainties}
 
 For the calculation of the systematic uncertainties, one parameter at a time was changed.
 The parameter was increased by one unit of the error on that parameter.
@@ -488,10 +498,10 @@ These were all calculated by running the four histograms with $2 \times 10^{9}$ 
 \begin{table}[!hbt]
 	\centering
 	\caption{Systematic uncertainties due to simulation inputs.}
-		\begin{tabularx}{\textwidth}{RLLLL}
+		\begin{tabularx}{\textwidth}{RLLLL} \hline \hline
 		Parameter Name & Parameter Value & Parameter Uncertainty & Systematic Uncertainty $b_{WM}$ & Systematic Uncertainty $b_{GT}$ \\ \hline
 		Electron maximum total energy & 5900.864 keV & 0.081 keV & 0.2 & 0.0012\\
-		Charge radius & 3.0055 fm & 0.0021 fm  & 0.2 & 0.0003 \\
+		Charge radius & 3.0055 fm & 0.0021 fm  & 0.2 & 0.0003 \\ \hline \hline
 		\end{tabularx}
 		\label{tab:simsyseffect}
 \end{table}
@@ -500,23 +510,19 @@ The uncertainty due to the average mass $M_{ave}$ was ignored, as it is very sma
 The value of the average mass used is $18621497.033 \pm 0.040$ keV.
 Since this value appears in the denominator, and the uncertainty is so small, the effect of the uncertainty due to this average mass value is negligible. 
 On the other hand, an uncertainty in the end point can have a larger effect.
-The endpoint energy of the electron is only around 5 MeV.  
 
 The systematic effects due to the fit inputs are shown in table \ref{tab:fitsyseffect}.
-The lower beta cut uncertainty is calculated by 
-There is no systematic upper beta cut effect.
 
 \begin{table}[!hbt]
 	\centering
 	\caption{Systematic uncertainties due to fit inputs.} 
-		\begin{tabularx}{\textwidth}{RLLLL}
+		\begin{tabularx}{\textwidth}{RLLLL} \hline \hline
 		Parameter Name & Parameter Value & Parameter Range or Uncertainty & Systematic Uncertainty on $b_{WM}$ & Systematic Uncertainty $b_{GT}$\\ \hline
- 		Lower beta cut & 250 keV & 200 to 2000 keV & 5.5 & 0.0235 \\
 		Relative normalization of the beta-gamma sum spectrum & 1 & 0.2 & 2.7 & 0.0063 \\
 		Binning of data histogram & 32 & 16 to 64 & 0.6 & 0.0003\\
 		Binning of fitting histograms & 32 & 16 to 64 & 0.2 & 0.0007 \\ 
-		Offset & -6.6 & 0.1 & 0.3 & 0.0008 \\
-		Convolution & 1.112 & 0.008 &  0.3 & 0.0004 	 
+		Offset & -5.1 & 0.5 & 1.4 & 0.0047 \\
+		Convolution & 1.112 & 0.008 &  0.3 & 0.0004 \\ \hline \hline	 
 		\end{tabularx}
 		\label{tab:fitsyseffect}
 \end{table}
@@ -528,19 +534,18 @@ The resulting gain was recorded.
 This gain was fixed, and the altered value of $b_{WM}$ applied and $b_{GT}$ was fit again.
 The difference between the fit values of $b_{GT}$ was recorded as a systematic uncertainty.
 It was found that the systematic uncertainty of $b_{GT}$ due to the uncertainty on $b_{WM}$ depended on where the fit was started. 
-This is due to the functional form of the shape factor and the Fierz term.
-$b_{WM}$ contributes most to the shape factor in the linear term $c_{1}$, which increases as a function of energy.
-Conversely, the energy dependence of the Fierz term decreases as a function of energy.  
-This is shown in figure \ref{fig:syseffvLBC}.
-This is another reason to start the fit as low as possible. 
-These uncertainties for the form factors are summarized in table \ref{tab:formfactorsyseffect}.
 \begin{figure}[!htb]
 	\centerline{\includegraphics[width=0.65\textwidth]{CsIbwmSysEffvLBC.png}}
 	\caption{This is the systematic uncertainty on $b_{GT}$ due to the uncertainty of $b_{WM}$.
 		 It changes as a function of the lower beta cut.}
 	\label{fig:syseffvLBC}
 \end{figure}
-
+This is due to the functional form of the shape factor and the Fierz term.
+$b_{WM}$ contributes most to the shape factor in the linear term $c_{1}$, which increases as a function of energy.
+Conversely, the energy dependence of the Fierz term decreases as a function of energy.  
+This is shown in figure \ref{fig:syseffvLBC}.
+This is another reason to start the fit as low as possible. 
+These uncertainties for the form factors are summarized in table \ref{tab:formfactorsyseffect}.
 \begin{table}[!hbt]
 	\centering
 	\caption{Systematic uncertainties due to nuclear form factors.} 
@@ -554,7 +559,14 @@ These uncertainties for the form factors are summarized in table \ref{tab:formfa
 		\label{tab:formfactorsyseffect}
 \end{table}
 
-In summary, the largest uncertainty is due to the lower beta cut effect.
-The second largest uncertainty is due to the relative normalization of the beta-gamma sum spectrum.
-The third largest uncertainty is due to the uncertainty of the weak magnetism.
+The largest uncertainty is due to the relative normalization of the beta-gamma sum spectrum.
+The next two largest uncertainties are of similar size and are the uncertainties due to the weak magnetism form factor and the uncertainty due to the offset. 
+
+\section{Preliminary Results}
+
+The preliminary result of the measurement of the Fierz term is $b_{GT} = 0.0021 \pm 0.0051_{\rm{stat}} \pm 0.0084_{\rm{sys}}$.
+The statistical uncertainty is with $7 \times 10^{6}$ events that pass the gamma coincidence with the data.
+Since it is a preliminary result, it cannot yet be compared to other measurements.
+
+
 \end{document}

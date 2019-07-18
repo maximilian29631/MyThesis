@@ -1,40 +1,34 @@
 \documentclass[../MaxHughesThesis.tex]{subfiles}
 
 \begin{document}
-There is still a mismatch between the simulated data and the experimental data.
-This is revealed in that changing the lower beta cut changes the fit value of $b_{WM}$ and $b_{GT}$.
-How the simulation deals with the absorption of gamma rays and the detector geometry will have to be investigated.
-However, most of the systematic effects have been calculated.
+The half-life in $^{20}$F has been measured to be  $1.0011 \pm   0.0069_{\rm{stat}}  \pm 0.0030_{\rm{sys}}$ s.
+This result has been published and is the most precise measurement of the half-life of $^{20}$F to date.
+A preliminary result of the Fierz term has been obtained and is $0.0021 \pm 0.0051_{\rm{stat}} \pm 0.0084_{\rm{sys}}$.
+Using equation \ref{eq:bgtproper}, a constraint on the underlying $Re(\epsilon_{T})$ is that $Re(\epsilon_{T}) = 0.00034 \pm 0.00082_{\rm{stat}} \pm 0.00136_{\rm{sys}}$.
+This assumes that the only new physics beyond the standard model is the tensor coupling. 
+The constraint on $Re(\epsilon_{T})$ is comparable to the constraint obtained with high energy methods.
 
-\section{Discussion of Results}
-
-The statistical uncertainty of $b_{GT}$ is 0.0042.
-This is with $7 \times 10^{6}$ events that pass the gamma coincidence.
-%If the lower beta cut uncertainty is excluded, the total systematic uncertainty is 0.0043.
-If the lower beta cut uncertainty is excluded, the total systematic uncertainty is 0.0076.
-This is larger than the statistical uncertainty.
-The largest systematic effect is the uncertainty on the size of the beta-gamma sum spectrum.
-This is a conservative estimate of the uncertainty.
-Since it is a preliminary result, it cannot be compared to other measurements.
-The next largest systematic effect is the uncertainty on the $b_{WM}$.
-Increasing the number of counts will not decrease the uncertainty of $b_{GT}$ below 0.0034.
-
-%In order to compare this to high energy techniques, equation \ref{eq:bgtpropor} is used \cite{Gon19}.
-%If the lower beta cut effect is resolved and the systematic effects described above accurate, then the total uncertainty on $b_{GT}$ is 0.0078. 
-%This corresponds to an uncertainty on $Re(\epsilon_{t})$ of 0.0013.
-%This is about twice the uncertainty from the neutral current channel at the LHC. 
-%Running the experiment with more statistics would help reach that uncertainty.
-%Then, the statistical uncertainty would be negligible, and the systematic uncertainty would be the limiting factor. 
-
-\section{Further Refinements to the Technique}
-This measurement is already systematics limited, so running more events would not improve sensitivity.
-However, other steps could be taken to improve the technique.
-
-The largest systematic effect right now is the sensitivity to the lower beta cut. 
-A likely way to solve this issue is to verify the shape of the fitting functions. 
-A method would be to compare the output of GEANT4 to that of another simulation code.
+\section{Outlook}
+This analysis is not yet complete.
+To complete the analysis, first several systematic effects have to be added and reevaluated.
+The uncertainty on the normalization of the beta-gamma sum spectrum can be re-evaluated.
+The energy deposited in the gamma can be similarly split into two parts.
+Then, by fitting the gamma spectra with the realtive normalization as a free parameter, the uncertainty can be determined more accurately.
+This will likely reduce the uncertainty due to this effect.
+Another method would be to compare the output of GEANT4 to that of another simulation code.
 EGSnrc is being used by the collaborators from Wittenburg University. 
-These results will be added to the systematic uncertainty.
+
+Two systematic effects still have to be evaluated.
+Both deal with the inputs of the GEANT4 Monte Carlo.
+The first is the uncertainty due to different physics lists. 
+This will require running GEANT4 again.
+The second uncertainty has to do with an uncertainty due to the detector geometry.
+The detector geometry will have to be varied by some amount, and GEANT4 run again.
+
+%ADD STUFF ABOUT CONSTRAINT FIT 
+
+\subsection{Technique Improvements}
+For future experiments, other improvements of this technique could be done.
 
 Ideally, the lowest lower beta cut should be used for the fit.
 This both increases the statistics in the spectrum and decreases the uncertainty due to the uncertainty in $b_{WM}$.

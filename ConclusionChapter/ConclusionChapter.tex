@@ -25,7 +25,16 @@ This will require running GEANT4 again.
 The second uncertainty has to do with an uncertainty due to the detector geometry.
 The detector geometry will have to be varied by some amount, and GEANT4 run again.
 
-%ADD STUFF ABOUT CONSTRAINT FIT 
+The fitting method needs revision.
+Both $b_{WM}$ and $b_{GT}$ are correlated.
+To account for the correlation, a constraint fit would be needed.
+The method of this fit is to fix both $b_{WM}$ and $b_{GT}$ at some reasonable value and fit for a common gain.
+The total $\chi^{2}$ of the fit is recorded, and a new set of parameters fit. 
+The parameters would be varied over a region, and the $\chi^{2}$s plotted.
+The minimum of the $\chi^{2}$ would be located, and contours around the minimum would be drawn. 
+The contours would correspond to the 1-$\sigma$, 2-$\sigma$, and 3-$\sigma$ uncertainties of the parameters. 
+The projection of the 1-$\sigma$ contour on each axis would give the uncertainties for each parameter.
+The systematic uncertainties would have to be recalculated.
 
 \subsection{Technique Improvements}
 For future experiments, other improvements of this technique could be done.

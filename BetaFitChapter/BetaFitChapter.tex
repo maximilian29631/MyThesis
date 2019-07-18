@@ -303,7 +303,8 @@ A sample fit is shown in figure \ref{fig:samplefit}, where the offset was fixed 
 \begin{figure}[!htb]
 	\centerline{\includegraphics[width=0.60\textwidth]{CsIRun317FierzTermResids.png}}
 	\caption{A sample fit of the beta spectrum. 
-		 The residuals of the fit are shown below the graph.}
+		 The residuals of the fit are shown below the graph.
+		 The $\chi^{2}/NDF$ of this fit is 175.4/151.}
 	\label{fig:samplefit}
 \end{figure}
 
@@ -316,12 +317,12 @@ The second  has to do with the inputs to the fit.
 The final  has to do with the uncertainties of the nuclear form factors in the shape factor. 
 One of the largest systematic uncertainty has to do with the position where the fit is started. 
 
-\subsection{Lower Beta Cut Effect}
+\subsection{Lower Beta Cut Sensitivity}
 
 The lower beta cut effect is the systematic shift of the fit gain $G$ as a function of where the fit started.
 If these are incorrect settings, $b_{WM}$ and $b_{GT}$ get correlated with $G$ and shift as well.
 There are several different input factors that can induce such an effect.
-Plotted in this section is the average gain from the $b_{WM}$ fit, $G_{SM}$, and the average gain from the $b_{GT}$ fit, $G_{BSM}$.
+Plotted in this section is the average gain from the $b_{WM}$ fit, $G_{SM}$, and the average gain from the $b_{GT}$ fit, $G_{BSM}$ obtained from the 57 individual fits.
 
 \subsubsection{The Offset}
 Initially, the used offset was the offset from the calibration in equation \ref{eq:cal}.
@@ -356,8 +357,8 @@ These histograms were generated with an offset of 10 ADC units.
 A random gain was applied to the pseudo-data histogram. 
 Then, the fit function had a different offset applied to it.
 For example, fitting the histogram generated with an offset of 0, and fit with an offset of 16.65 gives an effect as seen in \ref{fig:MCoffset10applied20}.
-In the Monte Carlo, this fit resulting with a gain shift of $6.5 \times 10^{-4}$ from $200$ keV to $2000$ keV.
-In the data, this shift is $7.1 \times 10^{-4}$. 
+In the Monte Carlo, this fit resulting with a gain shift of $6.2 \times 10^{-4}$ from $200$ keV to $2000$ keV.
+In the data, this shift is $5.0 \times 10^{-4}$. 
 In addition, in both the data and the Monte Carlo, the trend is only seen in the $G_{SM}$ fits.
 
 \begin{figure}
@@ -400,28 +401,13 @@ The resulting $G_{SM}$ and $G_{BSM}$ curves are seen in figure \ref{fig:offset0L
     \label{fig:offset0LBCeffect}
 \end{figure}
 
-To estimate the uncertainty on the offset, the statistical uncertainty of the slope of the lines fit to the $G_{SM}$  was taken.
-The offset was varied and the way how the slope of the line changed as the offset changed was recorded.
-Then, the uncertainty of the slope was changed into an uncertainty on the offset using this information.
-This gave an uncertainty of 0.1 on the offset.
+To estimate the uncertainty on the offset, the difference between the fitted gains was recorded as a function of the lower beta cut.
+The offset was changed from -5.1.
+The point at which the effect induced by the offset overwhelmed the statistical fluctuations was taken as the uncertainty of the offset.
+This uncertainty was 0.5.
 
 The gains plotted in figures \ref{fig:offset10LBCeffect} and \ref{fig:offset0LBCeffect} are the averages of the fit gains over the full run. 
 Since there is a large global gain shift from run to run, other effects could be important. 
-This can be seen in the values of the parameters in figure \ref{fig:lbcvals}.
-
-\begin{figure}
-    \centering
-    \begin{minipage}{0.50\textwidth}
-        \centerline{\includegraphics[width=0.9\textwidth,height = 5 cm]{CsIbwmvLBCoffsetm6p6.png}}
-    \end{minipage}\hfill
-    \begin{minipage}{0.50\textwidth}
-        \centerline{\includegraphics[width=0.9\textwidth,height = 5 cm]{CsIbgtvLBCoffsetm6p6.png}}
-    \end{minipage}
-    \caption{The dependence of $b_{WM}$ and $b_{GT}$ on the start of the fit.
-	     The offset here is -5.1.
-   	     The parameters are not consistent.}
-   \label{fig:lbcvals}
-\end{figure}
 
 \subsubsection{The Convolution}
 

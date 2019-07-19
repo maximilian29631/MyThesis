@@ -438,13 +438,13 @@ Additionally, this effect would be seen in both $G_{SM}$ and $G_{BSM}$.
 Therefore, this effect can be excluded.
 
 \begin{figure}[!htb]
-	\centerline{\includegraphics[width=0.90\textwidth]{CsIGammaFitsRun317.png}}
+	\centerline{\includegraphics[width=0.90\textwidth]{CsIGammaFitsRun317_SameScale.png}}
 	\caption{A sample fitting of the gamma detectors over the Compton scattering range.} 
 	\label{fig:GammaFit}
 \end{figure}
 
 \begin{figure}[!htb]
-	\centerline{\includegraphics[width=0.90\textwidth]{CsIGammaRatiosRun317.png}}
+	\centerline{\includegraphics[width=0.90\textwidth]{CsIGammaRatiosRun317_SameScale.png}}
 	\caption{The ratio of the data to the fit function in the fits shown in figure \ref{fig:GammaFit}.}
 	\label{fig:GammaRatio}
 \end{figure}
@@ -452,12 +452,12 @@ Therefore, this effect can be excluded.
 In order to get an estimate of the systematic uncertainty on the normalization, sample gamma spectra were fit. 
 The energy absorbed in the up detector in the Monte Carlo was built into a histogram.
 This histogram had the detector response of the up detector applied to it.
-The gamma spectrum was over a range before the main peak. 
+The gamma spectrum was over a range including the main peak.
 This is seen in figure \ref{fig:GammaFit}.
-This range was chosen as this is where the gamma detector is more sensitive to the relative size of the gamma-beta sum spectrum.
+GEANT4 overestimates the main peak relative to the region below the main peak.
 A ratio of the data to this fit was built, which is seen in figure \ref{fig:GammaRatio}.
-GEANT4 reproduces this spectrum to 10\% over this range.
-As a conservative estimate, this was doubled to 20\% and taken as the uncertainty of the normalization of the gamma-beta sum spectrum.
+This was done where gamma detector is more sensitive to the relative size of the gamma-beta sum spectrum.
+The ratio is within 20\% over the center for all four detectors.
 
 
 \subsection{Upper Beta Cut Sensitivity}

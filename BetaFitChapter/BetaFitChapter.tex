@@ -317,13 +317,13 @@ The systematic uncertainties can be divided into three categories.
 The first  are the uncertainties that have to do with the inputs to the simulation.
 The second  has to do with the inputs to the fit.
 The final  has to do with the uncertainties of the nuclear form factors in the shape factor. 
-One of the largest systematic uncertainty has to do with the position where the fit is started. 
+One of the largest systematic uncertainties has to do with the position where the fit is started. 
 
 \subsection{Lower Beta Cut Sensitivity}
 
 The lower beta cut sensitivity is the systematic shift of the fit gain $G$ as a function of where the fit started.
 If these are incorrect settings, $b_{WM}$ and $b_{GT}$ get correlated with $G$ and shift as well.
-There are several different input factors that can induce such an effect.
+There are several different input factors that can induce such an trend. 
 Plotted in this section is the average gain from the $b_{WM}$ fit, $G_{SM}$, and the average gain from the $b_{GT}$ fit, $G_{BSM}$ obtained from the 57 individual fits.
 
 \subsubsection{The Offset}
@@ -358,7 +358,7 @@ A sample histogram with only the phase space and the shape factor was generated.
 These histograms were generated with an offset of 10 ADC units.
 A random gain was applied to the pseudo-data histogram. 
 Then, the fit function had a different offset applied to it.
-For example, fitting the histogram generated with an offset of 0, and fit with an offset of 16.65 gives an effect as seen in \ref{fig:MCoffset10applied20}.
+For example, fitting the histogram generated with an offset of 0, and fit with an offset of 16.65 gives an effect as seen in figure \ref{fig:MCoffset10applied20}.
 In the Monte Carlo, this fit resulting with a gain shift of $6.2 \times 10^{-4}$ from $200$ keV to $2000$ keV.
 In the data, this shift is $5.0 \times 10^{-4}$. 
 In addition, in both the data and the Monte Carlo, the trend is only seen in the $G_{SM}$ fits.
@@ -403,13 +403,12 @@ The resulting $G_{SM}$ and $G_{BSM}$ curves are seen in figure \ref{fig:offset0L
     \label{fig:offset0LBCeffect}
 \end{figure}
 
-To estimate the uncertainty on the offset, the difference between the fitted gains was recorded as a function of the lower beta cut.
+To estimate the uncertainty on the offset, the difference between the fitted gains were plotted vs thee lower beta cut.
 The offset was changed from -5.1.
 The point at which the effect induced by the offset overwhelmed the statistical fluctuations was taken as the uncertainty of the offset.
 This uncertainty was 0.5.
 
-The gains plotted in figures \ref{fig:offset10LBCeffect} and \ref{fig:offset0LBCeffect} are the averages of the fit gains over the full run. 
-Since there is a large global gain shift from run to run, other effects could be important. 
+Since gains plotted in figures \ref{fig:offset10LBCeffect} and \ref{fig:offset0LBCeffect} are the averages of the fit gains and there is a large global gain shift from run to run, other effects could be important. 
 
 \subsubsection{The Convolution}
 
@@ -450,7 +449,7 @@ Therefore, this effect can be excluded.
 	\label{fig:GammaRatio}
 \end{figure}
 
-In order to get a better estimate of the systematic uncertainty on the normalization, sample gamma spectra were fit. 
+In order to get an estimate of the systematic uncertainty on the normalization, sample gamma spectra were fit. 
 The energy absorbed in the up detector in the Monte Carlo was built into a histogram.
 This histogram had the detector response of the up detector applied to it.
 The gamma spectrum was over a range before the main peak. 
@@ -463,7 +462,7 @@ As a conservative estimate, this was doubled to 20\% and taken as the uncertaint
 
 \subsection{Upper Beta Cut Sensitivity}
 
-There is no sensitivity to the result on where the fit ends.
+There is no sensitivity of the result on where the fit ends.
 An issue is that at small enough upper beta cut, there is nothing to fix the pile-up parameter on. 
 This means that there could be correlations induced.
 To avoid this, the  prefit was done, and the level of pile-up recorded.
@@ -568,7 +567,7 @@ The next two largest uncertainties are of similar size and are the uncertainties
 
 The preliminary result of the measurement of the Fierz term is $b_{GT} = 0.0021 \pm 0.0051_{\rm{stat}} \pm 0.0084_{\rm{sys}}$.
 The statistical uncertainty is with $7 \times 10^{6}$ events that pass the gamma coincidence with the data.
-Since it is a preliminary result, it cannot yet be compared to other measurements.
+Since it is a preliminary result, it cannot yet be compared to previous measurements.
 
 
 \end{document}

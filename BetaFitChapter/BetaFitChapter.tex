@@ -366,7 +366,7 @@ A sample histogram with only the phase space and the shape factor was generated.
 These histograms were generated with an offset of 10 ADC units.
 A random gain was applied to the pseudo-data histogram. 
 Then, the fit function had a different offset applied to it.
-For example, fitting the histogram generated with an offset of 0, and fit with an offset of 16.65 gives an effect as seen in figure \ref{fig:MCoffset10applied20}.
+For example, fitting the histogram generated with an offset of 0, and fit with an offset of 15 gives an effect as seen in figure \ref{fig:MCoffset10applied20}.
 In the Monte Carlo, this fit resulting with a gain shift of $6.2 \times 10^{-4}$ from $200$ keV to $2000$ keV.
 In the data, this shift is $5.0 \times 10^{-4}$. 
 In addition, in both the data and the Monte Carlo, the trend is only seen in the $G_{SM}$ fits.
@@ -462,10 +462,12 @@ The energy absorbed in the up detector in the Monte Carlo was built into a histo
 This histogram had the detector response of the up detector applied to it.
 The gamma spectrum was over a range including the main peak.
 This is seen in figure \ref{fig:GammaFit}.
-GEANT4 overestimates the main peak relative to the region below the main peak.
-A ratio of the data to this fit was built, which is seen in figure \ref{fig:GammaRatio}.
+GEANT4 overestimates the main peak relative to the Compton scattering region.
+Since the GEANT4 spectrum, the red line in figure \ref{fig:GammaFit}, is always above the data, there is no issue with the description of the detector response of the four gamma detectors.
+This was checked by fitting around the gamma peak and seeing a good match.  
+A ratio of the data to this fit was built over the Compton scattering region, which is seen in figure \ref{fig:GammaRatio}.
 This was done where gamma detector is more sensitive to the relative size of the gamma-beta sum spectrum.
-The ratio is within 20\% over the center for all four detectors.
+The ratio is within 20\% of 1.1 for all four detectors, so this was taken as a conservative estimate of the uncertainty in the normalization.
 
 
 \subsection{Upper Beta Cut Sensitivity}
@@ -515,13 +517,12 @@ These were all calculated by running the four histograms with $2 \times 10^{9}$ 
 		\label{tab:simsyseffect}
 \end{table}
 
-The uncertainty due to the average mass $M_{ave}$ was ignored, as it is very small.
+The uncertainty due to the average mass $M_{ave}$ was ignored.
 The value of the average mass used is $18621497.033 \pm 0.040$ keV.
 Since this value appears in the denominator, and the uncertainty is so small, the effect of the uncertainty due to this average mass value is negligible. 
 On the other hand, an uncertainty in the end point can have a larger effect.
 
 The systematic effects due to the fit inputs are shown in table \ref{tab:fitsyseffect}.
-
 \begin{table}[!hbt]
 	\centering
 	\caption{Systematic uncertainties due to fit inputs.} 

@@ -264,17 +264,16 @@ The energy spectrum of the implant detector was put in coincidence with the 4 ga
 The energy cuts of the gamma detectors were the same as in the life-time measurement, as seen in table \ref{tab:GammaCuts}.
 An additional condition was that only one of the gamma detectors could have fired for each event, much like the processing for the GEANT4 events.
 
-An additional condition in the data was a time difference condition.
+A different condition in the data was on the time difference.
 For this measurement, the time difference between a beta event and a gamma event had to be between -300 and 24 ns.
 This captures the entire spectrum, as the time stamps are strongly dependent on energy. 
 Then, a 2-D histogram was built, with energy on one axis and time since last beam-on on there other.
-The decay cycles were 22 s long for the CsI(Na) implant data. 
-The decay cycles were split up into 3 segments with equal number of counts.
+The decay cycles were 22 s long for the CsI(Na) implant data and were split up into 3 segments with equal number of counts.
 To do this, it was assumed that the rate depended on the time as an exponential with a half-life of 11 s.
 The time interval was split in such a way that the integral of the exponential was equal over the 3 different segments.
 The total time interval was from 1.5 to 22 s.
 These splits worked out to be at 5.89 s and at 11.98 s. 
-This 2-D histogram was projected onto the time axis between the splits in order to build the energy spectrum of the fit. 
+This 2-D histogram was projected onto the energy axis between the splits in order to build the energy spectrum of the fit. 
 
 \subsection{Background Subtraction}
 
@@ -301,7 +300,12 @@ The offset used for the fit was varied.
 The effect of the offset will be discussed in the next section. 
 The calibrated start and end of the fits were 250 keV to 7500 keV. 
 A sample fit is shown in figure \ref{fig:samplefit}.
-The spread of values of the fits can be seen in figure \ref{fig:histofallfits}.
+The spread of values from the fits can be seen in figure \ref{fig:histofallfits}.
+Fitting the resulting values of $b_{WM}$ with a constant gives $41.0 \pm 1.7_{\rm{stat}}$ with a $\chi^{2}$/NDF of 70.4/56.
+Since the $\chi^{2}$/NDF is greater than 1, the statistical uncertainty was increased by $\sqrt(70.4/56)$ to $1.9$. 
+Similarly, fitting the resulting values of $b_{GT}$ with a constant gives $0.0021 \pm 0.0041_{\rm{stat}}$ with a $\chi^{2}$/NDF of 86.4/56.
+Multiplying the statistical uncertainty by $\sqrt(86.4/56)$ gives 0.0051.
+
 
 \begin{figure}[!htb]
 	\centerline{\includegraphics[width=0.60\textwidth]{CsIRun317FierzTermResids.png}}
@@ -313,7 +317,7 @@ The spread of values of the fits can be seen in figure \ref{fig:histofallfits}.
 
 \begin{figure}[!htb]
 	\centerline{\includegraphics[width=0.90\textwidth]{CsIbwmbgtHistograms.png}}
-	\caption{A histogram of all the results of the fits.
+	\caption{Histograms of all the results from the fits.
 		 These graphs do not account for the uncertainties in each fit}
 	\label{fig:histofallfits}
 \end{figure}
@@ -380,7 +384,7 @@ In addition, in both the data and the Monte Carlo, the trend is only seen in the
 		\centerline{\includegraphics[width=0.9\textwidth,height = 5 cm]{MCGBSMvLBCOffsetis15.png}}
 	\end{minipage}
 	\caption{This is Monte Carlo data.
-		 The curves were generated with an offset of 0 and fit with an offset of 16.
+		 The curves were generated with an offset of 0 and fit with an offset of 15.
 		 A trend similar to that in the data is seen.}
 	\label{fig:MCoffset10applied20}
 \end{figure}
@@ -389,6 +393,7 @@ This effect can be exploited to determine an offset using only the data.
 The size of the slope induced is linear compared to the offset. %Add figure here
 By adjusting the offset and noting the slope of the $G_{SM}$ vs the lower beta cut and plotting against the offset, the location of zero slope can be calculated.
 This graph is shown in figure \ref{fig:slopevoffset}.
+The difference between the mean value of $G_{SM}$ and $G_{BSM}$ is $3.8 \times 10^{-5}$.
 \begin{figure}[!htb]
 	\centerline{\includegraphics[width=0.70\textwidth]{CsISlopevOffsetNoErrorBar.png}}
 	\caption{How the slope of the $G_{SM}$ vs LBC curve changes with offset.
@@ -429,9 +434,9 @@ One histogram was sampled a further $10^{6}$ times 10 times to build a sample da
 The other convoluted histogram was used to fit the generated data set.
 The first histogram's $A$ was fixed, while the second histogram's $A$ was adjusted.
 When the sample data's $A$ matched the $A$ that were used, no dependence of $b_{WM}$ on the start of the fit was found.
-When the $A$ of the data sample and the $A$, the first thing that happened was that the $b_{WM}$ changed.
+When the $A$ of the data sample and the $A$ of the fitting histogram differed, the first thing that happened was that the $b_{WM}$ changed.
 If the $A$ differ by a factor of 2 or more, a shift in $b_{WM}$ appears.
-However, this is much larger than any uncertainty in detector resolution.
+However, this is much larger than any uncertainty in detector resolution, which is estimated to 0.008.
 The effect of a wrong detector resolution is negligible. 
 
 \subsubsection{The Relative Normalization of the Beta-gamma Sum Spectrum}
@@ -498,7 +503,7 @@ For the calculation of the systematic uncertainties, one parameter at a time was
 The parameter was increased by one unit of the error on that parameter.
 The fit was redone with the different parameter values.
 The output $b_{WM}$ and $b_{GT}$ for the changes in the parameters were recorded.
-The parameter then was then decreased by one unit of the error.
+The parameter was then decreased by one unit of the error.
 Half the difference of the output $b_{WM}$ and $b_{GT}$ was the systematic error.
 
 As stated above, the different systematic uncertainties can be divided into three different categories. 
@@ -576,7 +581,7 @@ The next two largest uncertainties are of similar size and are the uncertainties
 The preliminary result of the measurement of the weak magnetism form factor  is $b_{WM} = 41.0 \pm 1.9_{\rm{stat}} \pm 3.2_{\rm{sys}}$.
 The preliminary result of the measurement of the Fierz term is $b_{GT} = 0.0021 \pm 0.0051_{\rm{stat}} \pm 0.0084_{\rm{sys}}$.
 The statistical uncertainty is with $7 \times 10^{6}$ events that pass the gamma coincidence with the data.
-Since it is a preliminary result, it cannot yet be compared to previous measurements.
+Since this is a preliminary result, it is not yet compared here to previous measurements.
 
 
 \end{document}

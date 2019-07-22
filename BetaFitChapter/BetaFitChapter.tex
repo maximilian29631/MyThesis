@@ -302,9 +302,9 @@ The calibrated start and end of the fits were 250 keV to 7500 keV.
 A sample fit is shown in figure \ref{fig:samplefit}.
 The spread of values from the fits can be seen in figure \ref{fig:histofallfits}.
 Fitting the resulting values of $b_{WM}$ with a constant gives $41.0 \pm 1.7_{\rm{stat}}$ with a $\chi^{2}$/NDF of 70.4/56.
-Since the $\chi^{2}$/NDF is greater than 1, the statistical uncertainty was increased by $\sqrt(70.4/56)$ to $1.9$. 
+Since the $\chi^{2}$/NDF is greater than 1, the statistical uncertainty was multiplied by $\sqrt{70.4/56}$ to give $1.9$. 
 Similarly, fitting the resulting values of $b_{GT}$ with a constant gives $0.0021 \pm 0.0041_{\rm{stat}}$ with a $\chi^{2}$/NDF of 86.4/56.
-Multiplying the statistical uncertainty by $\sqrt(86.4/56)$ gives 0.0051.
+Multiplying the statistical uncertainty by $\sqrt{86.4/56}$ gives 0.0051.
 
 
 \begin{figure}[!htb]
@@ -393,7 +393,6 @@ This effect can be exploited to determine an offset using only the data.
 The size of the slope induced is linear compared to the offset. %Add figure here
 By adjusting the offset and noting the slope of the $G_{SM}$ vs the lower beta cut and plotting against the offset, the location of zero slope can be calculated.
 This graph is shown in figure \ref{fig:slopevoffset}.
-The difference between the mean value of $G_{SM}$ and $G_{BSM}$ is $3.8 \times 10^{-5}$.
 \begin{figure}[!htb]
 	\centerline{\includegraphics[width=0.70\textwidth]{CsISlopevOffsetNoErrorBar.png}}
 	\caption{How the slope of the $G_{SM}$ vs LBC curve changes with offset.
@@ -401,6 +400,7 @@ The difference between the mean value of $G_{SM}$ and $G_{BSM}$ is $3.8 \times 1
 	\label{fig:slopevoffset}
 \end{figure}
 The resulting $G_{SM}$ and $G_{BSM}$ curves are seen in figure \ref{fig:offset0LBCeffect}.
+The difference between the mean value of $G_{SM}$ and $G_{BSM}$ is $3.8 \times 10^{-5}$.
 
 \begin{figure}
     \centering

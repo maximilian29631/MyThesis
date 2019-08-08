@@ -78,7 +78,7 @@
 %Define the Title Page
 \newcommand\maketitlepage
 	{\begin{titlepage}%
-	\vspace*{.5in}
+	\vspace*{.55in}
 	\begin{center}%
 	\begin{singlespace}
 	\MakeUppercase{\large{\@title}}
